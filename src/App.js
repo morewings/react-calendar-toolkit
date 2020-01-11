@@ -1,9 +1,10 @@
 import React from 'react';
-import Counter from './components/Counter';
+import Calendar from 'components/Calendar';
+import './App.scss';
 
 const App = () => (
-  <div className="App">
-    <Counter />
+  <div className="app">
+    <Calendar />
   </div>
 );
 

@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import store from './store';
 import App from './App';
 
-it('renders without crashing', () => {
+it.skip('renders without crashing', () => {
   const wrapper = mount(
     <Provider store={store}>
       <App />
