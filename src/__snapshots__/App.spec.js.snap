@@ -14,28 +14,13 @@ exports[`renders without crashing 1`] = `
 >
   <App>
     <div
-      className="App"
+      className="app"
     >
-      <Counter>
+      <Calendar>
         <div>
-          <div>
-            Counter component
-          </div>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            Click me!
-          </button>
-          <div>
-            You clicked: 
-            <strong>
-              0
-            </strong>
-             times.
-          </div>
+          Calendar
         </div>
-      </Counter>
+      </Calendar>
     </div>
   </App>
 </Provider>

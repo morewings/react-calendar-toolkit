@@ -33,7 +33,7 @@ describe('src > components > Counter', () => {
     );
 
     /* Basic snapshot test to make sure, that rendered component matches expected footprint. Note we are using `toJson` helper to transform enzyme output to jest snapshot */
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
 
     /* More precise test for counter value */
     const countValue = wrapper.find('strong').text(); // here count value is displayed, note the `text()` method, https://airbnb.io/enzyme/docs/api/ReactWrapper/text.html
