@@ -1,14 +1,15 @@
 /*eslint-disable*/
 import React from 'react';
-import {getWeekDays} from 'utils/dateUtils';
+import {getWeekDayNames} from 'utils/dateUtils';
+import Weekday from './WeekDay'
 import './WeekDays.scss';
 
 const WeekDays = props => {
-  const weekDays = getWeekDays();
+  const weekDayNames = getWeekDayNames();
   return (
     <div className="weekdays-wrapper">
-      {weekDays.map(day => (
-        <div className={} key={day}>{day}</div>
+      {weekDayNames.map(name => (
+        <Weekday key={name} name={name} />
       ))}
     </div>
   );

@@ -1,0 +1,9 @@
+@import "./../../variables";
+
+.day-wrapper {
+  //width: $dayWidth;
+  text-align: center;
+  padding: $dayPadding;
+  box-sizing: border-box;
+  flex: $dayCellFlex;
+}

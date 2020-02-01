@@ -1,0 +1,10 @@
+@import "./../../variables";
+
+.weekday{
+  //margin-left: 3px;
+  //width: $dayWidth;
+  text-align: center;
+  padding: $dayPadding;
+  box-sizing: border-box;
+  flex: $dayCellFlex;
+}
