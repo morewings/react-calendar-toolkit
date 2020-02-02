@@ -4,7 +4,12 @@
   //margin-left: 3px;
   //width: $dayWidth;
   text-align: center;
-  padding: $dayPadding;
+  //padding: $basePadding;
   box-sizing: border-box;
   flex: $dayCellFlex;
+  height: $dayHeight;
+  line-height: $dayHeight;
+  display: inline-block;
+  vertical-align: middle;
+  color: $gray;
 }

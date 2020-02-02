@@ -3,7 +3,16 @@
 .day-wrapper {
   //width: $dayWidth;
   text-align: center;
-  padding: $dayPadding;
+  //padding: $basePadding;
   box-sizing: border-box;
   flex: $dayCellFlex;
+  height: $dayHeight;
+  line-height: $dayHeight;
+  &.disabled {
+    color: $disabled;
+  }
+  &.isToday {
+    border: 1px solid $gray;
+    border-radius: 50%;
+  }
 }

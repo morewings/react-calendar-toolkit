@@ -7,6 +7,8 @@ import {
   startOfMonth,
   startOfWeek,
   getDate,
+  isSameMonth,
+  isSameDay,
 } from 'date-fns';
 
 export const getWeekDayNames = () =>
@@ -23,3 +25,11 @@ export const getMonthDays = date => {
     dayNumber: getDate(addDays(startDate, i)),
   }));
 };
+
+export const getIsSameMonth = (day, month) => {
+  const monthStart = startOfMonth(month);
+  return isSameMonth(day, monthStart);
+};
+
+export const getIsSameDay = (dateLeft, dateRight) =>
+  isSameDay(dateLeft, dateRight);

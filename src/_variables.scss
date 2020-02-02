@@ -1,4 +1,8 @@
 $dayWidth: 40px;
-$dayPadding: 6px;
+$dayHeight: $dayWidth;
+$basePadding: 6px;
 $datePickerWidth: 280px;
 $dayCellFlex: 1 1 calc(100% / 7);
+
+$gray: rgba(0, 0, 0, 0.38);
+$disabled: $gray;

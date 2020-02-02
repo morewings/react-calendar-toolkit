@@ -1,9 +1,23 @@
-/*eslint-disable*/
 import React from 'react';
-import './Day.scss'
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import './Day.scss';
 
-const Day = props => {
-  return <div className="day-wrapper">{props.dayNumber}</div>
+const Day = props => (
+  <div
+    className={classNames({
+      'day-wrapper': true,
+      disabled: props.disabled,
+      isToday: props.isToday,
+    })}>
+    {props.dayNumber}
+  </div>
+);
+
+Day.propTypes = {
+  disabled: PropTypes.bool.isRequired,
+  isToday: PropTypes.bool.isRequired,
+  dayNumber: PropTypes.string.isRequired,
 };
 
 export default Day;
