@@ -7,6 +7,7 @@ const Header = props => {
   const formattedDate = getFormattedDate('MMM d', new Date());
   return (
     <div className="header-wrapper">
+      <div className="datepicker-name">name</div>
       <div className="current-date">{formattedDate}</div>
     </div>
   )

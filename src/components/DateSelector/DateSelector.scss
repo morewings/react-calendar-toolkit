@@ -1,0 +1,39 @@
+@import "./../../variables";
+
+@mixin button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  &:hover{
+    background-color: $hoverColor;
+  }
+}
+
+.date-selector-wrapper{
+  padding: $innerPadding $innerPadding $innerPadding/2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-selector-buttons{
+  button{
+    @include button;
+    padding: 8px;
+    border-radius: 4px;
+  }
+}
+
+.date-stepper{
+  button{
+    @include button;
+    font-weight: bold;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+  }
+}

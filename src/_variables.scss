@@ -7,8 +7,10 @@ $datePickerWidth: $innerWidth + $innerPadding * 2;
 $dayCellFlex: 1 1 calc(100% / 7);
 
 $gray: rgba(0, 0, 0, 0.38);
+$lightGray: rgba(0, 0, 0, 0.08);
 $green: #43a047;
 $disabled: $gray;
+$hoverColor: $lightGray;
 $headerBgColor: $green;
 $headerTextColor: white;
 
