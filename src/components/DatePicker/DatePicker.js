@@ -1,5 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
+import Header from 'components/Header';
+import MonthStepper from 'components/MonthStepper';
 import DayGrid from 'components/DayGrid';
 import './DatePicker.scss';
 
@@ -7,7 +9,9 @@ import './DatePicker.scss';
 const DatePicker = props => {
   return (
     <div className="datepicker-wrapper">
-      <DayGrid></DayGrid>
+      <Header />
+      <MonthStepper />
+      <DayGrid />
     </div>
   );
 };

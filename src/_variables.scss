@@ -1,8 +1,14 @@
 $dayWidth: 40px;
 $dayHeight: $dayWidth;
 $basePadding: 6px;
-$datePickerWidth: 280px;
+$innerPadding: 16px;
+$innerWidth: 280px;
+$datePickerWidth: $innerWidth + $innerPadding * 2;
 $dayCellFlex: 1 1 calc(100% / 7);
 
 $gray: rgba(0, 0, 0, 0.38);
+$green: #43a047;
 $disabled: $gray;
+$headerBgColor: $green;
+$headerTextColor: white;
+

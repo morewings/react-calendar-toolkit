@@ -1,6 +1,9 @@
+@import "./../../../variables";
+
 .days-wrapper {
   display: flex;
-  width: 100%;
+  width: $innerWidth;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 0 $innerPadding;
 }
