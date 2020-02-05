@@ -1,4 +1,4 @@
-import {INCREMENT_COUNTER} from './actionTypes';
+import {SET_DATE} from './actionTypes';
 
 const initialState = {
   date: 0,
@@ -7,8 +7,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT_COUNTER:
-      return {...state, value: state.value + 1};
+    case SET_DATE:
+      return {
+        date: action.payload.date,
+        precision: action.payload.precision,
+      };
 
     default:
       return state;
