@@ -1,10 +1,13 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+import {actionTypes, selectors} from 'features/datepicker';
 import {getFormattedDate} from 'utils/dateUtils';
-import './DateSelector.scss';
+import DateSelectorVisual from 'components/visual/DateSelector';
 
 const DateSelector = props => {
-  const year = getFormattedDate('y', new Date());
-  const month = getFormattedDate('MMMM', new Date());
+  const selectedDate = useSelector(selectors.getSelectedDate);
+  const year = getFormattedDate('y', selectedDate);
+  const month = getFormattedDate('MMMM', selectedDate);
   const setYear = yearDate => {
     console.log(yearDate);
   };
@@ -21,28 +24,16 @@ const DateSelector = props => {
     console.log('setPrecision precision');
   };
   return (
-    <div className="date-selector-wrapper">
-      <div className="date-selector-buttons">
-        <button
-          onClick={() => {
-            setPrecision('year');
-          }}
-          type="button">
-          {year}
-        </button>
-        <button onClick={setMonth} type="button">
-          {month}
-        </button>
-      </div>
-      <div className="date-stepper">
-        <button onClick={incrementMonth} type="button">
-          ⟨
-        </button>
-        <button onClick={decrementMonth} type="button">
-          ⟩
-        </button>
-      </div>
-    </div>
+    <DateSelectorVisual
+      setMonth={setMonth}
+      setYear={setYear}
+      incrementMonth={incrementMonth}
+      decrementMonth={decrementMonth}
+      setPrecision={setPrecision}
+      year={year}
+      month={month}
+      date={new Date(selectedDate)}
+    />
   );
 };
 
