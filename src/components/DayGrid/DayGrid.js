@@ -1,22 +1,33 @@
-import React, {Fragment} from 'react';
-import {useSelector} from 'react-redux';
-import {selectors} from 'features/datepicker';
+import React, {Fragment, useCallback} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {actionTypes, selectors} from 'features/datepicker';
 import {
   getWeekDayNames,
   getMonthDays,
   getIsSameMonth,
   getIsSameDay,
+  getTime,
 } from 'utils/dateUtils';
 import Weekday, {WeekDayWrapper} from 'components/visual/WeekDay';
 import Day, {DaysWrapper} from 'components/visual/Day';
 
 const DayGrid = props => {
-  const currentDate = useSelector(selectors.getDate);
+  const selectedDate = useSelector(selectors.getSelectedDate);
+  const today = useSelector(selectors.getToday);
   const weekDayNames = getWeekDayNames();
-  const monthDays = getMonthDays(currentDate);
-  const setDay = date => {
-    console.log('Set day', date);
-  };
+  const monthDays = getMonthDays(selectedDate);
+  const dispatch = useDispatch();
+  const setDay = useCallback(
+    date =>
+      dispatch({
+        type: actionTypes.SET_DATE,
+        payload: {
+          date: getTime(date),
+          precision: 'day',
+        },
+      }),
+    [dispatch]
+  );
   return (
     <Fragment>
       <WeekDayWrapper>
@@ -27,12 +38,17 @@ const DayGrid = props => {
       <DaysWrapper>
         {monthDays.map(({dayNumber, date}, i) => (
           <Day
-            onClick={setDay}
-            isToday={getIsSameDay(date, currentDate)}
-            disabled={!getIsSameMonth(date, currentDate)}
+            // TODO: add real holiday
+            isHoliday={false}
+            // TODO: add real highlighter
+            isHiglighted={false}
+            onSetDay={setDay}
+            isToday={getIsSameDay(date, today)}
+            isSelected={getIsSameDay(date, selectedDate)}
+            disabled={!getIsSameMonth(date, selectedDate)}
             dayNumber={dayNumber}
             date={date}
-            key={i}
+            key={date}
           />
         ))}
       </DaysWrapper>

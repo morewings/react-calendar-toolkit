@@ -9,7 +9,7 @@ import {
   getDate,
   isSameMonth,
   isSameDay,
-  format
+  format,
 } from 'date-fns';
 
 export const getWeekDayNames = () =>
@@ -38,3 +38,5 @@ export const getIsSameDay = (dateLeft, dateRight) =>
 export const getFormattedDate = (template, date) => format(date, template);
 
 export {toDate, getUnixTime} from 'date-fns';
+
+export {getTime} from 'date-fns';

@@ -8,11 +8,23 @@
   flex: $dayCellFlex;
   height: $dayHeight;
   line-height: $dayHeight;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  &:active{
+    outline: none;
+  }
+  &:hover{
+    background-color: $lightGray;
+  }
   &.disabled {
     color: $disabled;
   }
+  &.isSelected {
+    color: white;
+    background-color: $active;
+  }
   &.isToday {
-    border: 1px solid $gray;
-    border-radius: 50%;
+    border-color: $gray;
   }
 }
