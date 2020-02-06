@@ -6,17 +6,17 @@ import {
   getMonthDays,
   getIsSameMonth,
   getIsSameDay,
-  toDate,
 } from 'utils/dateUtils';
 import Weekday, {WeekDayWrapper} from 'components/visual/WeekDay';
 import Day, {DaysWrapper} from 'components/visual/Day';
 
 const DayGrid = props => {
-  const weekDayNames = getWeekDayNames();
-  const monthDays = getMonthDays(new Date());
   const currentDate = useSelector(selectors.getDate);
-  // const currentDate = useSelector((state) => state.datepicker.date);
-  console.log('render', currentDate)
+  const weekDayNames = getWeekDayNames();
+  const monthDays = getMonthDays(currentDate);
+  const setDay = date => {
+    console.log('Set day', date);
+  };
   return (
     <Fragment>
       <WeekDayWrapper>
@@ -25,19 +25,16 @@ const DayGrid = props => {
         ))}
       </WeekDayWrapper>
       <DaysWrapper>
-        {monthDays.map(({dayNumber, date}, i) => {
-          // console.log(date)
-          // console.log(currentDate)
-          return (
-            <Day
-              isToday={getIsSameDay(date, currentDate)}
-              disabled={!getIsSameMonth(date, currentDate)}
-              dayNumber={dayNumber}
-              date={date}
-              key={i}
-            />
-          )
-        })}
+        {monthDays.map(({dayNumber, date}, i) => (
+          <Day
+            onClick={setDay}
+            isToday={getIsSameDay(date, currentDate)}
+            disabled={!getIsSameMonth(date, currentDate)}
+            dayNumber={dayNumber}
+            date={date}
+            key={i}
+          />
+        ))}
       </DaysWrapper>
     </Fragment>
   );
