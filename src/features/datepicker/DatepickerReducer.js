@@ -1,4 +1,4 @@
-import {SET_DATE, SET_TODAY} from './actionTypes';
+import {SET_DATE, SET_TODAY, SET_PRECISION} from './actionTypes';
 
 const initialState = {
   date: 0,
@@ -21,6 +21,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         today,
+      };
+    }
+    case SET_PRECISION: {
+      return {
+        ...state,
+        precision: action.payload,
       };
     }
     default:

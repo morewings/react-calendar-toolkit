@@ -1,11 +1,31 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, {useCallback} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {actionTypes, selectors} from 'features/datepicker';
-import {getFormattedDate} from 'utils/dateUtils';
+import {getFormattedDate, getAddMonth} from 'utils/dateUtils';
 import DateSelectorVisual from 'components/visual/DateSelector';
 
 const DateSelector = props => {
   const selectedDate = useSelector(selectors.getSelectedDate);
+  const dispatch = useDispatch();
+  const setPrecision = useCallback(
+    precision =>
+      dispatch({
+        type: actionTypes.SET_PRECISION,
+        payload: precision,
+      }),
+    [dispatch]
+  );
+  const incrementMonth = useCallback(
+    date =>
+      dispatch({
+        type: actionTypes.SET_DATE,
+        payload: {
+          date: getAddMonth(date, 1),
+          precision: 'month',
+        },
+      }),
+    [dispatch]
+  );
   const year = getFormattedDate('y', selectedDate);
   const month = getFormattedDate('MMMM', selectedDate);
   const setYear = yearDate => {
@@ -14,14 +34,8 @@ const DateSelector = props => {
   const setMonth = monthDate => {
     console.log(monthDate);
   };
-  const incrementMonth = monthDate => {
-    console.log(`increment month;`);
-  };
   const decrementMonth = monthDate => {
     console.log(`decrement month;`);
-  };
-  const setPrecision = precision => {
-    console.log('setPrecision precision');
   };
   return (
     <DateSelectorVisual
