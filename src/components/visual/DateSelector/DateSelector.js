@@ -21,10 +21,18 @@ const DateSelector = props => (
       </button>
     </div>
     <div className="date-stepper">
-      <button onClick={props.decrementMonth} type="button">
+      <button
+        onClick={() => {
+          props.decrementMonth(props.date);
+        }}
+        type="button">
         ⟨
       </button>
-      <button onClick={props.incrementMonth} type="button">
+      <button
+        onClick={() => {
+          props.incrementMonth(props.date);
+        }}
+        type="button">
         ⟩
       </button>
     </div>

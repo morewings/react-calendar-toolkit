@@ -38,10 +38,7 @@ export const getIsSameMonth = (day, month) => {
 export const getIsSameDay = (dateLeft, dateRight) =>
   isSameDay(dateLeft, dateRight);
 
-export const getFormattedDate = (template, date) => {
-  console.log(date);
-  return format(date, template);
-};
+export const getFormattedDate = (template, date) => format(date, template);
 
 export {getUnixTime} from 'date-fns';
 
@@ -49,3 +46,5 @@ export {getTime, toDate};
 
 export const getAddMonth = (date, amount) =>
   getTime(addMonths(toDate(date), amount));
+
+export const getSubMonth = (date, amount) => getAddMonth(date, -amount);
