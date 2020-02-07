@@ -1,26 +1,26 @@
 import {SET_DATE, SET_TODAY, SET_PRECISION} from './actionTypes';
 
 const initialState = {
-  date: 0,
-  today: 0,
+  selectedTimestamp: 0,
+  todayTimestamp: 0,
   precision: 'day',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_DATE: {
-      const {date, precision} = action.payload;
+      const {selectedTimestamp, precision} = action.payload;
       return {
         ...state,
-        date,
+        selectedTimestamp,
         precision,
       };
     }
     case SET_TODAY: {
-      const {today} = action.payload;
+      const {todayTimestamp} = action.payload;
       return {
         ...state,
-        today,
+        todayTimestamp,
       };
     }
     case SET_PRECISION: {

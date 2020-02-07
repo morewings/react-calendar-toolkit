@@ -14,7 +14,7 @@ const DatePicker = ({date, today}) => {
     dispatch({
       type: actionTypes.SET_DATE,
       payload: {
-        date: getTime(date),
+        selectedTimestamp: getTime(date),
         precision: 'day',
       },
     });
@@ -23,7 +23,7 @@ const DatePicker = ({date, today}) => {
     dispatch({
       type: actionTypes.SET_TODAY,
       payload: {
-        today: getTime(today),
+        todayTimestamp: getTime(today),
       },
     });
   }, [dispatch, today]);

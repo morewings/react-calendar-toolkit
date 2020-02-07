@@ -12,17 +12,17 @@ import Weekday, {WeekDayWrapper} from 'components/visual/WeekDay';
 import Day, {DaysWrapper} from 'components/visual/Day';
 
 const DayGrid = props => {
-  const selectedDate = useSelector(selectors.getSelectedDate);
-  const today = useSelector(selectors.getToday);
+  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
+  const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const weekDayNames = getWeekDayNames();
-  const monthDays = getMonthDays(selectedDate);
+  const monthDays = getMonthDays(selectedTimestamp);
   const dispatch = useDispatch();
   const setDay = useCallback(
     date =>
       dispatch({
         type: actionTypes.SET_DATE,
         payload: {
-          date: getTime(date),
+          selectedTimestamp: getTime(date),
           precision: 'day',
         },
       }),
@@ -43,9 +43,9 @@ const DayGrid = props => {
             // TODO: add real highlighter
             isHiglighted={false}
             onSetDay={setDay}
-            isToday={getIsSameDay(date, today)}
-            isSelected={getIsSameDay(date, selectedDate)}
-            disabled={!getIsSameMonth(date, selectedDate)}
+            isToday={getIsSameDay(date, todayTimestamp)}
+            isSelected={getIsSameDay(date, selectedTimestamp)}
+            disabled={!getIsSameMonth(date, selectedTimestamp)}
             dayNumber={dayNumber}
             date={date}
             key={date}

@@ -1,3 +1,3 @@
-export const getSelectedDate = state => state.datepicker.date;
-export const getToday = state => state.datepicker.today;
+export const getSelectedTimestamp = state => state.datepicker.selectedTimestamp;
+export const getTodayTimestamp = state => state.datepicker.todayTimestamp;
 export const getPrecision = state => state.datepicker.precision;

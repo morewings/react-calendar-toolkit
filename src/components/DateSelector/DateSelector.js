@@ -5,7 +5,7 @@ import {getFormattedDate, getAddMonth} from 'utils/dateUtils';
 import DateSelectorVisual from 'components/visual/DateSelector';
 
 const DateSelector = props => {
-  const selectedDate = useSelector(selectors.getSelectedDate);
+  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const dispatch = useDispatch();
   const setPrecision = useCallback(
     precision =>
@@ -20,14 +20,14 @@ const DateSelector = props => {
       dispatch({
         type: actionTypes.SET_DATE,
         payload: {
-          date: getAddMonth(date, 1),
+          selectedTimestamp: getAddMonth(date, 1),
           precision: 'month',
         },
       }),
     [dispatch]
   );
-  const year = getFormattedDate('y', selectedDate);
-  const month = getFormattedDate('MMMM', selectedDate);
+  const year = getFormattedDate('y', selectedTimestamp);
+  const month = getFormattedDate('MMMM', selectedTimestamp);
   const setYear = yearDate => {
     console.log(yearDate);
   };
@@ -46,7 +46,7 @@ const DateSelector = props => {
       setPrecision={setPrecision}
       year={year}
       month={month}
-      date={new Date(selectedDate)}
+      date={new Date(selectedTimestamp)}
     />
   );
 };
