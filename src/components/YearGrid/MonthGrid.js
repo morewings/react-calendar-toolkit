@@ -1,11 +1,11 @@
 import React, {useCallback} from 'react';
-import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {actionTypes, selectors} from 'features/datepicker';
 import {getIsSameMonth, getMonths, getTime} from 'utils/dateUtils';
 import Month from 'components/visual/Month';
+import './MonthGrid.scss';
 
-const MonthGrid = props => {
+const MonthGrid = () => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
@@ -21,12 +21,10 @@ const MonthGrid = props => {
       }),
     [dispatch]
   );
-  const Wrapper = props.wrapperElement;
   return (
-    <Wrapper className={props.wrapperClassname}>
+    <div className="month-grid-wrapper">
       {months.map(({name, date}) => (
         <Month
-          disabled={false}
           date={date}
           onSetMonth={setMonth}
           isSameMonth={getIsSameMonth(date, todayTimestamp)}
@@ -35,18 +33,8 @@ const MonthGrid = props => {
           name={name}
         />
       ))}
-    </Wrapper>
+    </div>
   );
-};
-
-MonthGrid.propTypes = {
-  wrapperClassname: PropTypes.string,
-  wrapperElement: PropTypes.elementType,
-};
-
-MonthGrid.defaultProps = {
-  wrapperClassname: 'month-grid-wrapper',
-  wrapperElement: 'div',
 };
 
 export default MonthGrid;

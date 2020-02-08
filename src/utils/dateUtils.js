@@ -24,11 +24,10 @@ export const getMonthNames = () =>
 
 export const getMonths = date => {
   const year = startOfYear(date);
-  const months = getMonthNames().map((name, i) => ({
+  return getMonthNames().map((name, i) => ({
     name,
-    date: getAddMonth(year, i),
+    date: toDate(getAddMonth(year, i)), // TODO: fix this shit, double date conversion
   }));
-  return months;
 };
 
 export const getMonthDays = timestamp => {
@@ -58,6 +57,6 @@ export {getUnixTime} from 'date-fns';
 export {getTime, toDate};
 
 export const getAddMonth = (date, amount) =>
-  getTime(addMonths(toDate(date), amount));
+  getTime(addMonths(toDate(date), amount)); // TODO: fix this double date
 
 export const getSubMonth = (date, amount) => getAddMonth(date, -amount);
