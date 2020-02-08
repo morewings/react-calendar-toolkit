@@ -1,0 +1,36 @@
+@import "./../../variables";
+
+.month-grid-wrapper {
+  display: flex;
+  width: $innerWidth;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 $innerPadding $innerPadding;
+}
+
+.month {
+  text-align: center;
+  box-sizing: border-box;
+  flex: $monthCellFlex;
+  height: $dayHeight;
+  line-height: $dayHeight;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: $borderRadius;
+  &:active{
+    outline: none;
+  }
+  &:hover{
+    background-color: $lightGray;
+  }
+  &.disabled {
+    color: $disabled;
+  }
+  &.isSelected {
+    color: white;
+    background-color: $active;
+  }
+  &.isToday {
+    border-color: $gray;
+  }
+}

@@ -13,13 +13,26 @@ import {
   addMonths,
   getTime,
   toDate,
+  startOfYear,
 } from 'date-fns';
 
 export const getWeekDayNames = () =>
   [...Array(7).keys()].map(i => locale.localize.day(i, {width: 'short'}));
 
-export const getMonthDays = date => {
-  const monthStart = startOfMonth(date);
+export const getMonthNames = () =>
+  [...Array(12).keys()].map(i => locale.localize.month(i, {width: 'wide'}));
+
+export const getMonths = date => {
+  const year = startOfYear(date);
+  const months = getMonthNames().map((name, i) => ({
+    name,
+    date: getAddMonth(year, i),
+  }));
+  return months;
+};
+
+export const getMonthDays = timestamp => {
+  const monthStart = startOfMonth(timestamp);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
   const endDate = endOfWeek(monthEnd);

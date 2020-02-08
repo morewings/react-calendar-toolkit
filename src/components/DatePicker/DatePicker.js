@@ -18,7 +18,6 @@ const DatePicker = ({date, today}) => {
       type: actionTypes.SET_DATE,
       payload: {
         selectedTimestamp: getTime(date),
-        precision: 'day',
       },
     });
   }, [date, dispatch]);
@@ -30,28 +29,13 @@ const DatePicker = ({date, today}) => {
       },
     });
   }, [dispatch, today]);
-  const picker = () => {
-    switch (precision) {
-      case 'year': {
-        return <YearGrid />;
-      }
-      case 'month': {
-        return <MonthGrid />;
-      }
-      case 'day': {
-        return <DayGrid />;
-      }
-      default: {
-        console.error('No precision set!');
-        return null;
-      }
-    }
-  };
   return (
     <DatepickerWrapper>
       <Header />
       <MonthStepper />
-      {picker()}
+      {precision === 'day' && <DayGrid />}
+      {precision === 'month' && <MonthGrid />}
+      {precision === 'year' && <YearGrid />}
     </DatepickerWrapper>
   );
 };

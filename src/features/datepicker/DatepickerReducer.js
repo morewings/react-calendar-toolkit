@@ -3,7 +3,7 @@ import {SET_DATE, SET_TODAY, SET_PRECISION} from './actionTypes';
 const initialState = {
   selectedTimestamp: 0,
   todayTimestamp: 0,
-  precision: 'day',
+  precision: 'month',
 };
 
 export default (state = initialState, action) => {
@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selectedTimestamp,
-        precision,
+        precision: precision || state.precision,
       };
     }
     case SET_TODAY: {
