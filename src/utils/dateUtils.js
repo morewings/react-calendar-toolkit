@@ -14,6 +14,9 @@ import {
   getTime,
   toDate,
   startOfYear,
+  parse,
+  addYears,
+  isSameYear,
 } from 'date-fns';
 
 export const getWeekDayNames = () =>
@@ -27,6 +30,18 @@ export const getMonths = date => {
   return getMonthNames().map((name, i) => ({
     name,
     date: toDate(getAddMonth(year, i)), // TODO: fix this shit, double date conversion
+  }));
+};
+
+export const parseYearNumber = yearNumber =>
+  parse(yearNumber, 'y', new Date(1900, 0, 1));
+
+export const getYears = (startYear = 1900, endYear = 2050) => {
+  const startDate = parseYearNumber(startYear);
+  const years = [...Array(endYear - startYear).keys()];
+  return years.map((year, i) => ({
+    yearNumber: startYear + i,
+    date: addYears(startDate, i),
   }));
 };
 
@@ -46,6 +61,9 @@ export const getIsSameMonth = (day, month) => {
   const monthStart = startOfMonth(month);
   return isSameMonth(day, monthStart);
 };
+
+export const getIsSameYear = (yearLeft, yearRight) =>
+  isSameYear(yearLeft, yearRight);
 
 export const getIsSameDay = (dateLeft, dateRight) =>
   isSameDay(dateLeft, dateRight);

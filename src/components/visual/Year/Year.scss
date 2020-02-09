@@ -1,6 +1,11 @@
-@import "./../../variables";
+@import "./../../../variables";
 
-.month-grid-wrapper {
+.year-scroll-container{
+  height: $gridHeight;
+  overflow: auto;
+}
+
+.year-grid-wrapper {
   display: flex;
   width: $innerWidth;
   flex-direction: row;
@@ -8,15 +13,16 @@
   padding: 0 $innerPadding $innerPadding;
 }
 
-.month {
+.year-wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: $monthCellFlex;
+  flex: $yearCellFlex;
   height: $dayHeight;
   line-height: $dayHeight;
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: $borderRadius;
+  margin-top: $innerPadding;
   &:active{
     outline: none;
   }
@@ -30,7 +36,7 @@
     color: white;
     background-color: $active;
   }
-  &.isToday {
+  &.isSameYear {
     border-color: $gray;
   }
 }
