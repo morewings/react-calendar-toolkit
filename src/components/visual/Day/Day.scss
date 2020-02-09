@@ -1,5 +1,13 @@
 @import "./../../../variables";
 
+.days-wrapper {
+  display: flex;
+  width: $innerWidth;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 $innerPadding $innerPadding;
+}
+
 .day-wrapper {
   //width: $dayWidth;
   text-align: center;

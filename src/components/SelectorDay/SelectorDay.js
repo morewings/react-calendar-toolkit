@@ -8,8 +8,9 @@ import {
   getIsSameDay,
   getTime,
 } from 'utils/dateUtils';
-import Weekday, {WeekDayWrapper} from 'components/visual/WeekDay';
-import Day, {DaysWrapper} from 'components/visual/Day';
+import Weekday from 'components/visual/WeekDay';
+import Day from 'components/visual/Day';
+import PropTypes from 'prop-types';
 
 const SelectorDay = props => {
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -28,14 +29,16 @@ const SelectorDay = props => {
       }),
     [dispatch]
   );
+  const DaysWrapper = props.wrapperElement;
+  const WeekDaysWrapper = props.subWrapperElement;
   return (
     <Fragment>
-      <WeekDayWrapper>
+      <WeekDaysWrapper className={props.subWrapperClassname}>
         {weekDayNames.map(name => (
           <Weekday key={name} name={name} />
         ))}
-      </WeekDayWrapper>
-      <DaysWrapper>
+      </WeekDaysWrapper>
+      <DaysWrapper className={props.wrapperClassname}>
         {monthDays.map(({dayNumber, date}, i) => (
           <Day
             // TODO: add real holiday
@@ -54,6 +57,20 @@ const SelectorDay = props => {
       </DaysWrapper>
     </Fragment>
   );
+};
+
+SelectorDay.propTypes = {
+  wrapperClassname: PropTypes.string,
+  wrapperElement: PropTypes.elementType,
+  subWrapperClassname: PropTypes.string,
+  subWrapperElement: PropTypes.elementType,
+};
+
+SelectorDay.defaultProps = {
+  subWrapperClassname: 'weekdays-wrapper',
+  wrapperClassname: 'month-grid-wrapper',
+  wrapperElement: 'div',
+  subWrapperElement: 'div',
 };
 
 export default SelectorDay;
