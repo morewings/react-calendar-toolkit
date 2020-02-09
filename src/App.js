@@ -4,7 +4,7 @@ import './App.scss';
 
 const App = () => (
   <div className="app">
-    <DatePicker />
+    <DatePicker title="Demo datepicker" />
   </div>
 );
 

@@ -10,7 +10,7 @@ import SelectorDay from 'components/SelectorDay';
 import SelectorMonth from 'components/SelectorMonth';
 import SelectorYear from 'components/SelectorYear';
 
-const DatePicker = ({date, today}) => {
+const DatePicker = ({date, today, wrapperElement, wrapperClassname}) => {
   const dispatch = useDispatch();
   const precision = useSelector(selectors.getPrecision);
   useEffect(() => {
@@ -29,25 +29,30 @@ const DatePicker = ({date, today}) => {
       },
     });
   }, [dispatch, today]);
+  const Wrapper = wrapperElement;
   return (
-    <DatepickerWrapper>
+    <Wrapper className={wrapperClassname}>
       <Header />
       <SelectorCombined />
       {precision === 'day' && <SelectorDay />}
       {precision === 'month' && <SelectorMonth />}
       {precision === 'year' && <SelectorYear />}
-    </DatepickerWrapper>
+    </Wrapper>
   );
 };
 
 DatePicker.propTypes = {
   date: PropTypes.instanceOf(Date),
   today: PropTypes.instanceOf(Date),
+  wrapperClassname: PropTypes.string,
+  wrapperElement: PropTypes.elementType,
 };
 
 DatePicker.defaultProps = {
   date: new Date(2020, 1, 1),
   today: new Date(),
+  wrapperClassname: 'datepicker-wrapper',
+  wrapperElement: DatepickerWrapper,
 };
 
 export default DatePicker;
