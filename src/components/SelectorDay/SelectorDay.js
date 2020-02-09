@@ -11,7 +11,7 @@ import {
 import Weekday, {WeekDayWrapper} from 'components/visual/WeekDay';
 import Day, {DaysWrapper} from 'components/visual/Day';
 
-const DayGrid = props => {
+const SelectorDay = props => {
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const weekDayNames = getWeekDayNames();
@@ -56,4 +56,4 @@ const DayGrid = props => {
   );
 };
 
-export default DayGrid;
+export default SelectorDay;

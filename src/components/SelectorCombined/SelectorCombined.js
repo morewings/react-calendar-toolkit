@@ -4,7 +4,7 @@ import {actionTypes, selectors} from 'features/datepicker';
 import {getFormattedDate, getAddMonth, getSubMonth} from 'utils/dateUtils';
 import DateSelectorVisual from 'components/visual/DateSelector';
 
-const DateSelector = props => {
+const SelectorCombined = props => {
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const dispatch = useDispatch();
   const setPrecision = useCallback(
@@ -59,4 +59,4 @@ const DateSelector = props => {
   );
 };
 
-export default DateSelector;
+export default SelectorCombined;

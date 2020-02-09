@@ -5,10 +5,10 @@ import {getTime} from 'utils/dateUtils';
 import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
 import Header from 'components/Header';
-import MonthStepper from 'components/DateSelector';
-import DayGrid from 'components/DayGrid';
-import MonthGrid from 'components/MonthGrid';
-import YearGrid from 'components/YearGrid';
+import SelectorCombined from 'components/SelectorCombined';
+import SelectorDay from 'components/SelectorDay';
+import SelectorMonth from 'components/SelectorMonth';
+import SelectorYear from 'components/SelectorYear';
 
 const DatePicker = ({date, today}) => {
   const dispatch = useDispatch();
@@ -32,10 +32,10 @@ const DatePicker = ({date, today}) => {
   return (
     <DatepickerWrapper>
       <Header />
-      <MonthStepper />
-      {precision === 'day' && <DayGrid />}
-      {precision === 'month' && <MonthGrid />}
-      {precision === 'year' && <YearGrid />}
+      <SelectorCombined />
+      {precision === 'day' && <SelectorDay />}
+      {precision === 'month' && <SelectorMonth />}
+      {precision === 'year' && <SelectorYear />}
     </DatepickerWrapper>
   );
 };

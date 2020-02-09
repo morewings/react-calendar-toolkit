@@ -5,7 +5,7 @@ import {actionTypes, selectors} from 'features/datepicker';
 import {getIsSameMonth, getMonths, getTime} from 'utils/dateUtils';
 import Month from 'components/visual/Month';
 
-const MonthGrid = props => {
+const SelectorMonth = props => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
@@ -39,14 +39,14 @@ const MonthGrid = props => {
   );
 };
 
-MonthGrid.propTypes = {
+SelectorMonth.propTypes = {
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
 };
 
-MonthGrid.defaultProps = {
+SelectorMonth.defaultProps = {
   wrapperClassname: 'month-grid-wrapper',
   wrapperElement: 'div',
 };
 
-export default MonthGrid;
+export default SelectorMonth;

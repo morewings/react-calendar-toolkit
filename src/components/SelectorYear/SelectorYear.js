@@ -5,7 +5,7 @@ import {actionTypes, selectors} from 'features/datepicker';
 import {getTime, getYears, getIsSameYear} from 'utils/dateUtils';
 import Year, {YearWrapper} from 'components/visual/Year';
 
-const YearGrid = props => {
+const SelectorYear = props => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
@@ -39,14 +39,14 @@ const YearGrid = props => {
   );
 };
 
-YearGrid.propTypes = {
+SelectorYear.propTypes = {
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
 };
 
-YearGrid.defaultProps = {
+SelectorYear.defaultProps = {
   wrapperClassname: 'year-grid-wrapper',
   wrapperElement: YearWrapper,
 };
 
-export default YearGrid;
+export default SelectorYear;

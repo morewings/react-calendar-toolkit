@@ -1,6 +1,6 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
-import {useScrollIntoView} from 'components/YearGrid';
+import {useScrollIntoView} from 'components/SelectorYear';
 import classNames from 'classnames';
 import './Year.scss';
 
