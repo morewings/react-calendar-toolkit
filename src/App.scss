@@ -1,4 +1,8 @@
 .app{
-  width: 500px;
+  width: 900px;
   margin: 50px auto;
+  display: flex;
+  .container {
+    margin-right: 100px;
+  }
 }

@@ -1,11 +1,13 @@
 import {combineReducers, createStore} from 'redux';
 import {CounterReducer} from 'features/counter';
-import {DatepickerReducer} from './features/datepicker';
+import {DatepickerReducer} from 'features/datepicker';
+import {ModalReducer} from 'features/modal';
 
 /* Create root reducer, containing all features of the application */
 const rootReducer = combineReducers({
   count: CounterReducer,
   datepicker: DatepickerReducer,
+  modal: ModalReducer,
 });
 
 /* eslint-disable no-underscore-dangle */

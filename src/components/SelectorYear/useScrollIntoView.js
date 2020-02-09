@@ -6,12 +6,12 @@ const defaultOptions = {
   behavior: 'smooth',
 };
 
-const useScrollIntoView = (ref, isSelected, options = defaultOptions) => {
+const useScrollIntoView = (ref, condition, options = defaultOptions) => {
   useEffect(() => {
-    if (isSelected) {
+    if (condition) {
       ref.current.scrollIntoView(options);
     }
-  }, [ref, isSelected, options]);
+  }, [ref, condition, options]);
 };
 
 export default useScrollIntoView;

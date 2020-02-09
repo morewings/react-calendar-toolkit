@@ -10,7 +10,14 @@ import SelectorDay from 'components/SelectorDay';
 import SelectorMonth from 'components/SelectorMonth';
 import SelectorYear from 'components/SelectorYear';
 
-const DatePicker = ({date, today, wrapperElement, wrapperClassname}) => {
+const DatePicker = ({
+  date,
+  today,
+  wrapperElement,
+  wrapperClassname,
+  showHeader,
+  title,
+}) => {
   const dispatch = useDispatch();
   const precision = useSelector(selectors.getPrecision);
   useEffect(() => {
@@ -32,7 +39,7 @@ const DatePicker = ({date, today, wrapperElement, wrapperClassname}) => {
   const Wrapper = wrapperElement;
   return (
     <Wrapper className={wrapperClassname}>
-      <Header />
+      {showHeader && <Header title={title} />}
       <SelectorCombined />
       {precision === 'day' && <SelectorDay />}
       {precision === 'month' && <SelectorMonth />}
@@ -46,6 +53,8 @@ DatePicker.propTypes = {
   today: PropTypes.instanceOf(Date),
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
+  showHeader: PropTypes.bool,
+  title: PropTypes.string,
 };
 
 DatePicker.defaultProps = {
@@ -53,6 +62,8 @@ DatePicker.defaultProps = {
   today: new Date(),
   wrapperClassname: 'datepicker-wrapper',
   wrapperElement: DatepickerWrapper,
+  showHeader: true,
+  title: '',
 };
 
 export default DatePicker;

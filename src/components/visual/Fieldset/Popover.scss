@@ -1,0 +1,21 @@
+@import "./../../../variables";
+
+.popover-container{
+  position: absolute;
+  &.bottom-left {
+    left: 0;
+    top: $inputHeight;
+  }
+  &.bottom-right {
+    right: 0;
+    top: $inputHeight;
+  }
+  &.top-left {
+    left: 0;
+    bottom: $inputHeight;
+  }
+  &.top-right {
+    right: 0;
+    bottom: $inputHeight;
+  }
+}

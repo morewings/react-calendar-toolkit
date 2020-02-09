@@ -21,7 +21,6 @@ const SelectorCombined = props => {
         type: actionTypes.SET_DATE,
         payload: {
           selectedTimestamp: getAddMonth(date, 1),
-          precision: 'month',
         },
       }),
     [dispatch]
@@ -32,7 +31,6 @@ const SelectorCombined = props => {
         type: actionTypes.SET_DATE,
         payload: {
           selectedTimestamp: getSubMonth(date, 1),
-          precision: 'month',
         },
       }),
     [dispatch]
