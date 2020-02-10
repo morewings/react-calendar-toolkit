@@ -45,7 +45,7 @@
       {
         "commonjs": true,
         "allowThis": true,
-        "exceptions": [{"property": "propTypes"}, {"property": "defaultProps"}]
+        "exceptions": [{"property": "propTypes"}, {"property": "defaultProps"}, {"property": "current"}]
       }
     ]
   },
