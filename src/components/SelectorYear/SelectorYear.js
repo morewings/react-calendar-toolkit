@@ -5,25 +5,27 @@ import {actionTypes, selectors} from 'features/datepicker';
 import {getTime, getYears, getIsSameYear} from 'utils/dateUtils';
 import Year, {YearWrapper} from 'components/visual/Year';
 
-const SelectorYear = props => {
+const SelectorYear = ({wrapperElement, wrapperClassname, onDateSet}) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const years = getYears();
   const setYear = useCallback(
-    date =>
+    date => {
+      onDateSet();
       dispatch({
         type: actionTypes.SET_DATE,
         payload: {
           selectedTimestamp: getTime(date),
           precision: 'month',
         },
-      }),
-    [dispatch]
+      });
+    },
+    [dispatch, onDateSet]
   );
-  const Wrapper = props.wrapperElement;
+  const Wrapper = wrapperElement;
   return (
-    <Wrapper className={props.wrapperClassname}>
+    <Wrapper className={wrapperClassname}>
       {years.map(({yearNumber, date}) => (
         <Year
           disabled={false}
@@ -42,6 +44,7 @@ const SelectorYear = props => {
 SelectorYear.propTypes = {
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
+  onDateSet: PropTypes.func.isRequired,
 };
 
 SelectorYear.defaultProps = {

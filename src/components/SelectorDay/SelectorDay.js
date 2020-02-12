@@ -1,4 +1,5 @@
 import React, {Fragment, useCallback} from 'react';
+import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {actionTypes, selectors} from 'features/datepicker';
 import {
@@ -10,35 +11,42 @@ import {
 } from 'utils/dateUtils';
 import Weekday from 'components/visual/WeekDay';
 import Day from 'components/visual/Day';
-import PropTypes from 'prop-types';
 
-const SelectorDay = props => {
+const SelectorDay = ({
+  onDateSet,
+  wrapperElement,
+  subWrapperElement,
+  subWrapperClassname,
+  wrapperClassname,
+}) => {
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const weekDayNames = getWeekDayNames();
   const monthDays = getMonthDays(selectedTimestamp);
   const dispatch = useDispatch();
   const setDay = useCallback(
-    date =>
+    date => {
       dispatch({
         type: actionTypes.SET_DATE,
         payload: {
           selectedTimestamp: getTime(date),
           precision: 'day',
         },
-      }),
-    [dispatch]
+      });
+      onDateSet(date);
+    },
+    [dispatch, onDateSet]
   );
-  const DaysWrapper = props.wrapperElement;
-  const WeekDaysWrapper = props.subWrapperElement;
+  const DaysWrapper = wrapperElement;
+  const WeekDaysWrapper = subWrapperElement;
   return (
     <Fragment>
-      <WeekDaysWrapper className={props.subWrapperClassname}>
+      <WeekDaysWrapper className={subWrapperClassname}>
         {weekDayNames.map(name => (
           <Weekday key={name} name={name} />
         ))}
       </WeekDaysWrapper>
-      <DaysWrapper className={props.wrapperClassname}>
+      <DaysWrapper className={wrapperClassname}>
         {monthDays.map(({dayNumber, date}, i) => (
           <Day
             // TODO: add real holiday
@@ -48,7 +56,7 @@ const SelectorDay = props => {
             onSetDay={setDay}
             isToday={getIsSameDay(date, todayTimestamp)}
             isSelected={getIsSameDay(date, selectedTimestamp)}
-            disabled={!getIsSameMonth(date, selectedTimestamp)}
+            disabled={!getIsSameMonth(date, selectedTimestamp)} // TODO: rename to proper value
             dayNumber={dayNumber}
             date={date}
             key={date}
@@ -64,6 +72,7 @@ SelectorDay.propTypes = {
   wrapperElement: PropTypes.elementType,
   subWrapperClassname: PropTypes.string,
   subWrapperElement: PropTypes.elementType,
+  onDateSet: PropTypes.func.isRequired,
 };
 
 SelectorDay.defaultProps = {

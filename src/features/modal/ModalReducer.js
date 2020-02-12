@@ -1,7 +1,7 @@
 import {TOGGLE_DATEPICKER} from './actionTypes';
 
 const initialState = {
-  showDatepicker: true,
+  showDatepicker: false,
   datepickerMode: 'popover',
 };
 

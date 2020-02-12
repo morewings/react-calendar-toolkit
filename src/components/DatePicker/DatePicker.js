@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+/*eslint-disable*/
+import React, {useCallback, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {getTime} from 'utils/dateUtils';
@@ -10,6 +11,8 @@ import SelectorDay from 'components/SelectorDay';
 import SelectorMonth from 'components/SelectorMonth';
 import SelectorYear from 'components/SelectorYear';
 
+const precisionEnum = ['year', 'month', 'day']
+
 const DatePicker = ({
   date,
   today,
@@ -17,9 +20,14 @@ const DatePicker = ({
   wrapperClassname,
   showHeader,
   title,
+  minPrecision,
+  onDateSet,
 }) => {
   const dispatch = useDispatch();
   const precision = useSelector(selectors.getPrecision);
+  const handleDateSet = useCallback(date => {
+    precision === minPrecision && onDateSet(date)
+  }, [precision]);
   useEffect(() => {
     dispatch({
       type: actionTypes.SET_DATE,
@@ -36,14 +44,17 @@ const DatePicker = ({
       },
     });
   }, [dispatch, today]);
+  useEffect(() => {
+    console.log('rerender')
+  }, [])
   const Wrapper = wrapperElement;
   return (
     <Wrapper className={wrapperClassname}>
       {showHeader && <Header title={title} />}
       <SelectorCombined />
-      {precision === 'day' && <SelectorDay />}
-      {precision === 'month' && <SelectorMonth />}
-      {precision === 'year' && <SelectorYear />}
+      {precision === 'day' && <SelectorDay onDateSet={handleDateSet} />}
+      {precision === 'month' && <SelectorMonth onDateSet={handleDateSet} />}
+      {precision === 'year' && <SelectorYear onDateSet={handleDateSet} />}
     </Wrapper>
   );
 };
@@ -55,6 +66,8 @@ DatePicker.propTypes = {
   wrapperElement: PropTypes.elementType,
   showHeader: PropTypes.bool,
   title: PropTypes.string,
+  minPrecision: PropTypes.oneOf(precisionEnum),
+  onDateSet: PropTypes.func,
 };
 
 DatePicker.defaultProps = {
@@ -64,6 +77,7 @@ DatePicker.defaultProps = {
   wrapperElement: DatepickerWrapper,
   showHeader: true,
   title: '',
+  minPrecision: 'day',
 };
 
 export default DatePicker;

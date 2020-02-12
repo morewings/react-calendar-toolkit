@@ -5,25 +5,27 @@ import {actionTypes, selectors} from 'features/datepicker';
 import {getIsSameMonth, getMonths, getTime} from 'utils/dateUtils';
 import Month from 'components/visual/Month';
 
-const SelectorMonth = props => {
+const SelectorMonth = ({wrapperElement, wrapperClassname, onDateSet}) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const months = getMonths(selectedTimestamp);
   const setMonth = useCallback(
-    date =>
+    date => {
+      onDateSet();
       dispatch({
         type: actionTypes.SET_DATE,
         payload: {
           selectedTimestamp: getTime(date),
           precision: 'day',
         },
-      }),
-    [dispatch]
+      });
+    },
+    [dispatch, onDateSet]
   );
-  const Wrapper = props.wrapperElement;
+  const Wrapper = wrapperElement;
   return (
-    <Wrapper className={props.wrapperClassname}>
+    <Wrapper className={wrapperClassname}>
       {months.map(({name, date}) => (
         <Month
           disabled={false}
@@ -42,6 +44,7 @@ const SelectorMonth = props => {
 SelectorMonth.propTypes = {
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
+  onDateSet: PropTypes.func.isRequired,
 };
 
 SelectorMonth.defaultProps = {
