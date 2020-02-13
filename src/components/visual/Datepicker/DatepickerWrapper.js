@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import './DatepickerWrapper.scss';
 
 const DatepickerWrapper = props => (
-  <div className={props.className}>{props.children}</div>
+  <div className={props.wrapperClassname}>{props.children}</div>
 );
 
 DatepickerWrapper.propTypes = {
-  className: PropTypes.string,
+  wrapperClassname: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
 DatepickerWrapper.defaultProps = {
-  className: 'datepicker-wrapper',
+  wrapperClassname: 'datepicker-wrapper',
 };
 
 export default DatepickerWrapper;

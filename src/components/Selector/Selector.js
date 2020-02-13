@@ -1,10 +1,9 @@
-import React, {Fragment, useCallback} from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import config from 'utils/config';
 import {getIsSameMonth, getIsSameDay, getIsSameYear} from 'utils/dateUtils';
 
 const Selector = ({
-  onDateSet,
   wrapperComponent,
   wrapperClassname,
   items,
@@ -13,12 +12,6 @@ const Selector = ({
   visualComponent,
   precision,
 }) => {
-  const handleDateSet = useCallback(
-    date => {
-      onDateSet(date);
-    },
-    [onDateSet]
-  );
   const getIsSelected = (matcherPrecision, date, timestamp) => {
     const matchers = {
       day: getIsSameDay,
@@ -34,7 +27,6 @@ const Selector = ({
       <Wrapper className={wrapperClassname}>
         {items.map(({name, date}, i) => (
           <VisualComponent
-            onDateSet={handleDateSet}
             isToday={getIsSameDay(date, todayTimestamp)}
             isSelected={getIsSelected(precision, date, selectedTimestamp)}
             isSameMonth={getIsSameMonth(date, selectedTimestamp)}
@@ -54,7 +46,6 @@ Selector.propTypes = {
   precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
   wrapperComponent: PropTypes.elementType.isRequired,
   visualComponent: PropTypes.elementType.isRequired,
-  onDateSet: PropTypes.func.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
   selectedTimestamp: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(

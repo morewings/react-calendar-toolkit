@@ -99,7 +99,13 @@ const DatePicker = ({
   const WeekDayGridVisual = weekDayGridComponent;
   return (
     <Wrapper className={wrapperClassname}>
-      {showHeader && <Header title={title} />}
+      {showHeader && (
+        <Header
+          selectedTimestamp={selectedTimestamp}
+          todayTimestamp={todayTimestamp}
+          title={title}
+        />
+      )}
       <SelectorCombined />
       {precision === 'day' && (
         <Fragment>
@@ -112,6 +118,7 @@ const DatePicker = ({
             wrapperComponent={DayGridVisual}
             visualComponent={props => (
               <DayVisual
+                onDateSet={handleDateSet}
                 disabled={false} // TODO: add real disabled
                 isHoliday={false} // TODO: add real holiday
                 {...props}
@@ -120,7 +127,6 @@ const DatePicker = ({
             selectedTimestamp={selectedTimestamp}
             todayTimestamp={todayTimestamp}
             items={getMonthDays(selectedTimestamp)}
-            onDateSet={handleDateSet}
           />
         </Fragment>
       )}
@@ -130,6 +136,7 @@ const DatePicker = ({
           wrapperComponent={MonthGridVisual}
           visualComponent={props => (
             <MonthVisual
+              onDateSet={handleDateSet}
               disabled={false} // TODO: add real disabled
               {...props}
             />
@@ -137,7 +144,6 @@ const DatePicker = ({
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           items={getMonths(selectedTimestamp)}
-          onDateSet={handleDateSet}
         />
       )}
       {precision === 'year' && (
@@ -146,6 +152,7 @@ const DatePicker = ({
           wrapperComponent={YearGridVisual}
           visualComponent={props => (
             <YearVisual
+              onDateSet={handleDateSet}
               disabled={false} // TODO: add real disabled
               {...props}
             />
@@ -153,7 +160,6 @@ const DatePicker = ({
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           items={getYears()}
-          onDateSet={handleDateSet}
         />
       )}
     </Wrapper>
@@ -163,6 +169,10 @@ const DatePicker = ({
 DatePicker.propTypes = {
   initialDate: PropTypes.instanceOf(Date),
   today: PropTypes.instanceOf(Date),
+  showHeader: PropTypes.bool,
+  title: PropTypes.string,
+  minPrecision: PropTypes.oneOf(config.supportedPrecisions),
+  onDateSet: PropTypes.func.isRequired,
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
   dayComponent: PropTypes.elementType,
@@ -173,16 +183,15 @@ DatePicker.propTypes = {
   yearGridComponent: PropTypes.elementType,
   weekDayComponent: PropTypes.elementType,
   weekDayGridComponent: PropTypes.elementType,
-  showHeader: PropTypes.bool,
-  title: PropTypes.string,
-  minPrecision: PropTypes.oneOf(config.supportedPrecisions),
-  onDateSet: PropTypes.func.isRequired,
 };
 
 DatePicker.defaultProps = {
   initialDate: new Date(2020, 1, 1),
   today: new Date(),
-  wrapperClassname: 'datepicker-wrapper', // TODO: move name to visual
+  showHeader: true,
+  title: '',
+  minPrecision: 'day',
+  wrapperClassname: '',
   wrapperElement: DatepickerWrapper,
   dayComponent: Day,
   dayGridComponent: DayGrid,
@@ -192,9 +201,6 @@ DatePicker.defaultProps = {
   yearGridComponent: YearGrid,
   weekDayComponent: WeekDay,
   weekDayGridComponent: WeekDayGrid,
-  showHeader: true,
-  title: '',
-  minPrecision: 'day',
 };
 
 export default DatePicker;

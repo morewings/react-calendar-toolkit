@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import {getFormattedDate} from 'utils/dateUtils';
@@ -8,7 +9,7 @@ const Header = props => {
   return (
     <div className="header-wrapper">
       <div className="datepicker-name">{props.title}</div>
-      <div className="current-date">{date}</div>
+      <div className="current-date">{props.formattedDate}</div>
     </div>
   );
 };
