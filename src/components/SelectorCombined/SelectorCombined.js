@@ -37,16 +37,8 @@ const SelectorCombined = props => {
   );
   const year = getFormattedDate('y', selectedTimestamp);
   const month = getFormattedDate('MMMM', selectedTimestamp);
-  const setYear = yearDate => {
-    console.log(yearDate); // TODO: add real logic or delete
-  };
-  const setMonth = monthDate => {
-    console.log(monthDate); // TODO: add real logic or delete
-  };
   return (
     <DateSelectorVisual
-      setMonth={setMonth}
-      setYear={setYear}
       incrementMonth={incrementMonth}
       decrementMonth={decrementMonth}
       setPrecision={setPrecision}

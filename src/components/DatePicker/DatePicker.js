@@ -12,6 +12,7 @@ import WeekDays from 'components/Weekdays';
 import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
+import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
   const currentIndex = precisionEnum.indexOf(currentPrecision);
@@ -32,6 +33,14 @@ const DatePicker = ({
   title,
   minPrecision,
   onDateSet,
+  dayComponent,
+  dayGridComponent,
+  monthComponent,
+  monthGridComponent,
+  yearComponent,
+  yearGridComponent,
+  weekDayComponent,
+  weekDayGridComponent,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -80,18 +89,29 @@ const DatePicker = ({
     });
   }, [dispatch, minPrecision, today]);
   const Wrapper = wrapperElement;
+  const DayVisual = dayComponent;
+  const DayGridVisual = dayGridComponent;
+  const MonthVisual = monthComponent;
+  const MonthGridVisual = monthGridComponent;
+  const YearVisual = yearComponent;
+  const YearGridVisual = yearGridComponent;
+  const WeekDayVisual = weekDayComponent;
+  const WeekDayGridVisual = weekDayGridComponent;
   return (
     <Wrapper className={wrapperClassname}>
       {showHeader && <Header title={title} />}
       <SelectorCombined />
       {precision === 'day' && (
         <Fragment>
-          <WeekDays />
+          <WeekDays
+            visualComponent={WeekDayVisual}
+            wrapperComponent={WeekDayGridVisual}
+          />
           <Selector
             precision="day"
-            wrapperComponent={DayGrid}
+            wrapperComponent={DayGridVisual}
             visualComponent={props => (
-              <Day
+              <DayVisual
                 disabled={false} // TODO: add real disabled
                 isHoliday={false} // TODO: add real holiday
                 {...props}
@@ -107,9 +127,9 @@ const DatePicker = ({
       {precision === 'month' && (
         <Selector
           precision="month"
-          wrapperComponent={MonthGrid}
+          wrapperComponent={MonthGridVisual}
           visualComponent={props => (
-            <Month
+            <MonthVisual
               disabled={false} // TODO: add real disabled
               {...props}
             />
@@ -123,9 +143,9 @@ const DatePicker = ({
       {precision === 'year' && (
         <Selector
           precision="year"
-          wrapperComponent={YearGrid}
+          wrapperComponent={YearGridVisual}
           visualComponent={props => (
-            <Year
+            <YearVisual
               disabled={false} // TODO: add real disabled
               {...props}
             />
@@ -145,6 +165,14 @@ DatePicker.propTypes = {
   today: PropTypes.instanceOf(Date),
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
+  dayComponent: PropTypes.elementType,
+  dayGridComponent: PropTypes.elementType,
+  monthComponent: PropTypes.elementType,
+  monthGridComponent: PropTypes.elementType,
+  yearComponent: PropTypes.elementType,
+  yearGridComponent: PropTypes.elementType,
+  weekDayComponent: PropTypes.elementType,
+  weekDayGridComponent: PropTypes.elementType,
   showHeader: PropTypes.bool,
   title: PropTypes.string,
   minPrecision: PropTypes.oneOf(config.supportedPrecisions),
@@ -156,6 +184,14 @@ DatePicker.defaultProps = {
   today: new Date(),
   wrapperClassname: 'datepicker-wrapper', // TODO: move name to visual
   wrapperElement: DatepickerWrapper,
+  dayComponent: Day,
+  dayGridComponent: DayGrid,
+  monthComponent: Month,
+  monthGridComponent: MonthGrid,
+  yearComponent: Year,
+  yearGridComponent: YearGrid,
+  weekDayComponent: WeekDay,
+  weekDayGridComponent: WeekDayGrid,
   showHeader: true,
   title: '',
   minPrecision: 'day',

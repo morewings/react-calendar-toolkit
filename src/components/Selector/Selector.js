@@ -1,8 +1,6 @@
 import React, {Fragment, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import config from 'utils/config';
-import {useSelector} from 'react-redux';
-import {selectors} from 'features/datepicker';
 import {getIsSameMonth, getIsSameDay, getIsSameYear} from 'utils/dateUtils';
 
 const Selector = ({
