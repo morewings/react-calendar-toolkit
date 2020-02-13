@@ -1,8 +1,8 @@
-/*eslint-disable*/
 import React, {useCallback, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {getTime} from 'utils/dateUtils';
+import config from 'utils/config';
 import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
 import Header from 'components/Header';
@@ -11,9 +11,14 @@ import SelectorDay from 'components/SelectorDay';
 import SelectorMonth from 'components/SelectorMonth';
 import SelectorYear from 'components/SelectorYear';
 
-const precisionEnum = ['year', 'month', 'day'];
-const getNextPrecision = (precisionEnum, precision) => {
+const getNextPrecision = (precisionEnum, currentPrecision) => {
+  const currentIndex = precisionEnum.indexOf(currentPrecision);
+  return precisionEnum[currentIndex + 1];
+};
 
+const limitPrecision = (precisionEnum, minPrecision) => {
+  const currentIndex = precisionEnum.indexOf(minPrecision);
+  return precisionEnum.slice(0, currentIndex + 1);
 };
 
 const DatePicker = ({
@@ -28,16 +33,28 @@ const DatePicker = ({
 }) => {
   const dispatch = useDispatch();
   const precision = useSelector(selectors.getPrecision);
-  console.log('precision1', precision)
+  const datepickerPrecisions = limitPrecision(
+    config.supportedPrecisions,
+    minPrecision
+  );
   const handleDateSet = useCallback(
     date => {
       precision === minPrecision && onDateSet(date);
+      const nextPrecision = getNextPrecision(datepickerPrecisions, precision);
+      dispatch({
+        type: actionTypes.SET_DATE,
+        payload: {
+          selectedTimestamp: getTime(date),
+        },
+      });
+      nextPrecision &&
+        dispatch({
+          type: actionTypes.SET_PRECISION,
+          payload: nextPrecision,
+        });
     },
-    [minPrecision, onDateSet, precision]
+    [datepickerPrecisions, dispatch, minPrecision, onDateSet, precision]
   );
-  useEffect(() => {
-    getNextPrecision(precision)
-  }, [precision])
   useEffect(() => {
     dispatch({
       type: actionTypes.SET_DATE,
@@ -53,7 +70,11 @@ const DatePicker = ({
         todayTimestamp: getTime(today),
       },
     });
-  }, [dispatch, today]);
+    dispatch({
+      type: actionTypes.SET_PRECISION,
+      payload: minPrecision,
+    });
+  }, [dispatch, minPrecision, today]);
   const Wrapper = wrapperElement;
   return (
     <Wrapper className={wrapperClassname}>
@@ -73,7 +94,7 @@ DatePicker.propTypes = {
   wrapperElement: PropTypes.elementType,
   showHeader: PropTypes.bool,
   title: PropTypes.string,
-  minPrecision: PropTypes.oneOf(precisionEnum),
+  minPrecision: PropTypes.oneOf(config.supportedPrecisions),
   onDateSet: PropTypes.func.isRequired,
 };
 

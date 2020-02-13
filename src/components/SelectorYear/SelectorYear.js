@@ -1,27 +1,20 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import {useDispatch, useSelector} from 'react-redux';
-import {actionTypes, selectors} from 'features/datepicker';
-import {getTime, getYears, getIsSameYear} from 'utils/dateUtils';
+import {useSelector} from 'react-redux';
+import {selectors} from 'features/datepicker';
+import config from 'utils/config';
+import {getYears, getIsSameYear} from 'utils/dateUtils';
 import Year, {YearWrapper} from 'components/visual/Year';
 
 const SelectorYear = ({wrapperElement, wrapperClassname, onDateSet}) => {
-  const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const years = getYears();
-  const setYear = useCallback(
+  const handleDateSet = useCallback(
     date => {
-      onDateSet();
-      dispatch({
-        type: actionTypes.SET_DATE,
-        payload: {
-          selectedTimestamp: getTime(date),
-          precision: 'month',
-        },
-      });
+      onDateSet(date);
     },
-    [dispatch, onDateSet]
+    [onDateSet]
   );
   const Wrapper = wrapperElement;
   return (
@@ -30,7 +23,7 @@ const SelectorYear = ({wrapperElement, wrapperClassname, onDateSet}) => {
         <Year
           disabled={false}
           date={date}
-          onSetYear={setYear}
+          onSetYear={handleDateSet}
           isSameYear={getIsSameYear(date, todayTimestamp)}
           isSelected={getIsSameYear(date, selectedTimestamp)}
           key={yearNumber}

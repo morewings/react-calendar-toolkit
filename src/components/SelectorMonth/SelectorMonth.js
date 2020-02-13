@@ -1,27 +1,20 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import {useDispatch, useSelector} from 'react-redux';
-import {actionTypes, selectors} from 'features/datepicker';
-import {getIsSameMonth, getMonths, getTime} from 'utils/dateUtils';
+import {useSelector} from 'react-redux';
+import {selectors} from 'features/datepicker';
+import config from 'utils/config';
+import {getIsSameMonth, getMonths} from 'utils/dateUtils';
 import Month from 'components/visual/Month';
 
 const SelectorMonth = ({wrapperElement, wrapperClassname, onDateSet}) => {
-  const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const months = getMonths(selectedTimestamp);
-  const setMonth = useCallback(
+  const handleDateSet = useCallback(
     date => {
-      onDateSet();
-      dispatch({
-        type: actionTypes.SET_DATE,
-        payload: {
-          selectedTimestamp: getTime(date),
-          precision: 'day',
-        },
-      });
+      onDateSet(date);
     },
-    [dispatch, onDateSet]
+    [onDateSet]
   );
   const Wrapper = wrapperElement;
   return (
@@ -30,7 +23,7 @@ const SelectorMonth = ({wrapperElement, wrapperClassname, onDateSet}) => {
         <Month
           disabled={false}
           date={date}
-          onSetMonth={setMonth}
+          onSetMonth={handleDateSet}
           isSameMonth={getIsSameMonth(date, todayTimestamp)}
           isSelected={getIsSameMonth(date, selectedTimestamp)}
           key={name}

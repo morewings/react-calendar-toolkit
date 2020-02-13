@@ -1,13 +1,13 @@
 import React, {Fragment, useCallback} from 'react';
 import PropTypes from 'prop-types';
-import {useDispatch, useSelector} from 'react-redux';
-import {actionTypes, selectors} from 'features/datepicker';
+import {useSelector} from 'react-redux';
+import {selectors} from 'features/datepicker';
+import config from 'utils/config';
 import {
   getWeekDayNames,
   getMonthDays,
   getIsSameMonth,
   getIsSameDay,
-  getTime,
 } from 'utils/dateUtils';
 import Weekday from 'components/visual/WeekDay';
 import Day from 'components/visual/Day';
@@ -23,19 +23,11 @@ const SelectorDay = ({
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const weekDayNames = getWeekDayNames();
   const monthDays = getMonthDays(selectedTimestamp);
-  const dispatch = useDispatch();
-  const setDay = useCallback(
+  const handleDateSet = useCallback(
     date => {
-      dispatch({
-        type: actionTypes.SET_DATE,
-        payload: {
-          selectedTimestamp: getTime(date),
-          precision: 'day',
-        },
-      });
       onDateSet(date);
     },
-    [dispatch, onDateSet]
+    [onDateSet]
   );
   const DaysWrapper = wrapperElement;
   const WeekDaysWrapper = subWrapperElement;
@@ -53,7 +45,7 @@ const SelectorDay = ({
             isHoliday={false}
             // TODO: add real highlighter
             isHiglighted={false}
-            onSetDay={setDay}
+            onSetDay={handleDateSet}
             isToday={getIsSameDay(date, todayTimestamp)}
             isSelected={getIsSameDay(date, selectedTimestamp)}
             disabled={!getIsSameMonth(date, selectedTimestamp)} // TODO: rename to proper value
