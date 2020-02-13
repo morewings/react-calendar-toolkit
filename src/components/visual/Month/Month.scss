@@ -1,14 +1,5 @@
 @import "./../../../variables";
 
-.month-grid-wrapper {
-  display: flex;
-  width: $innerWidth;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0 $innerPadding $innerPadding;
-  height: $gridHeight;
-}
-
 .month-wrapper {
   text-align: center;
   box-sizing: border-box;

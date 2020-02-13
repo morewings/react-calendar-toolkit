@@ -15,22 +15,22 @@ const Day = props => {
       onKeyPress={handleClick}
       className={classNames({
         'day-wrapper': true,
-        disabled: props.disabled,
+        isOtherMonth: !props.isSameMonth,
         isToday: props.isToday,
         isSelected: props.isSelected,
       })}>
-      {props.dayNumber}
+      {props.name}
     </div>
   );
 };
 
 Day.propTypes = {
-  disabled: PropTypes.bool.isRequired,
+  isSameMonth: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
   onSetDay: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isToday: PropTypes.bool.isRequired,
-  dayNumber: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Day;

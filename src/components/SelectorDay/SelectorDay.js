@@ -19,7 +19,7 @@ const SelectorDay = ({onDateSet, wrapperElement, wrapperClassname}) => {
   return (
     <Fragment>
       <DaysWrapper className={wrapperClassname}>
-        {monthDays.map(({dayNumber, date}, i) => (
+        {monthDays.map(({name, date}, i) => (
           <Day
             // TODO: add real holiday
             isHoliday={false}
@@ -29,7 +29,7 @@ const SelectorDay = ({onDateSet, wrapperElement, wrapperClassname}) => {
             isToday={getIsSameDay(date, todayTimestamp)}
             isSelected={getIsSameDay(date, selectedTimestamp)}
             disabled={!getIsSameMonth(date, selectedTimestamp)} // TODO: rename to proper value
-            dayNumber={dayNumber}
+            dayNumber={name}
             date={date}
             key={date}
           />

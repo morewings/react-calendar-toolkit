@@ -18,15 +18,15 @@ const SelectorYear = ({wrapperElement, wrapperClassname, onDateSet}) => {
   const Wrapper = wrapperElement;
   return (
     <Wrapper className={wrapperClassname}>
-      {years.map(({yearNumber, date}) => (
+      {years.map(({name, date}) => (
         <Year
           disabled={false}
           date={date}
           onSetYear={handleDateSet}
           isSameYear={getIsSameYear(date, todayTimestamp)}
           isSelected={getIsSameYear(date, selectedTimestamp)}
-          key={yearNumber}
-          yearNumber={yearNumber}
+          key={name}
+          yearNumber={name}
         />
       ))}
     </Wrapper>

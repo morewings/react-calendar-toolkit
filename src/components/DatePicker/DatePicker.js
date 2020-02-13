@@ -1,7 +1,13 @@
 import React, {useCallback, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import {getTime} from 'utils/dateUtils';
+import {
+  getTime,
+  getMonthDays,
+  getIsSameMonth,
+  getIsSameDay,
+  getIsSameYear,
+} from 'utils/dateUtils';
 import config from 'utils/config';
 import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
@@ -10,6 +16,8 @@ import SelectorCombined from 'components/SelectorCombined';
 import SelectorDay, {WeekDays} from 'components/SelectorDay';
 import SelectorMonth from 'components/SelectorMonth';
 import SelectorYear from 'components/SelectorYear';
+import Selector from 'components/Selector';
+import Day, {DayGrid} from 'components/visual/Day';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
   const currentIndex = precisionEnum.indexOf(currentPrecision);
@@ -32,6 +40,8 @@ const DatePicker = ({
   onDateSet,
 }) => {
   const dispatch = useDispatch();
+  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
+  const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const precision = useSelector(selectors.getPrecision);
   const datepickerPrecisions = limitPrecision(
     config.supportedPrecisions,
@@ -83,7 +93,21 @@ const DatePicker = ({
       {precision === 'day' && (
         <Fragment>
           <WeekDays />
-          <SelectorDay onDateSet={handleDateSet} />
+          <Selector
+            precision="day"
+            wrapperComponent={DayGrid}
+            visualComponent={props => (
+              <Day
+                disabled={false} // TODO: add real disabled
+                isHoliday={false} // TODO: add real holiday
+                {...props}
+              />
+            )}
+            selectedTimestamp={selectedTimestamp}
+            todayTimestamp={todayTimestamp}
+            items={getMonthDays(selectedTimestamp)}
+            onDateSet={handleDateSet}
+          />
         </Fragment>
       )}
       {precision === 'month' && <SelectorMonth onDateSet={handleDateSet} />}
