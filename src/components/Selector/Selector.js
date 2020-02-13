@@ -15,7 +15,6 @@ const Selector = ({
   visualComponent,
   precision,
 }) => {
-  // const monthDays = getMonthDays(selectedTimestamp);
   const handleDateSet = useCallback(
     date => {
       onDateSet(date);
@@ -37,10 +36,11 @@ const Selector = ({
       <Wrapper className={wrapperClassname}>
         {items.map(({name, date}, i) => (
           <VisualComponent
-            onSetDay={handleDateSet}
+            onDateSet={handleDateSet}
             isToday={getIsSameDay(date, todayTimestamp)}
             isSelected={getIsSelected(precision, date, selectedTimestamp)}
             isSameMonth={getIsSameMonth(date, selectedTimestamp)}
+            isSameYear={getIsSameMonth(date, selectedTimestamp)}
             name={name}
             date={date}
             key={date}

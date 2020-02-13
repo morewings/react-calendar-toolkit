@@ -1,2 +1,2 @@
 export {default} from './Year';
-export {default as YearWrapper} from './YearWrapper';
+export {default as YearGrid} from './YearGrid';

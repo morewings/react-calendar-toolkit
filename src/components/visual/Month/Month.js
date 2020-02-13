@@ -5,7 +5,7 @@ import './Month.scss';
 
 const Month = props => {
   const handleClick = () => {
-    props.onSetMonth(props.date);
+    props.onDateSet(props.date);
   };
   return (
     <div
@@ -27,7 +27,7 @@ const Month = props => {
 Month.propTypes = {
   disabled: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
-  onSetMonth: PropTypes.func.isRequired,
+  onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isSameMonth: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,

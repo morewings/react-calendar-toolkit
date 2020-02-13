@@ -5,7 +5,7 @@ import './Day.scss';
 
 const Day = props => {
   const handleClick = () => {
-    props.onSetDay(props.date);
+    props.onDateSet(props.date);
   };
   return (
     <div
@@ -27,7 +27,7 @@ const Day = props => {
 Day.propTypes = {
   isSameMonth: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
-  onSetDay: PropTypes.func.isRequired,
+  onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isToday: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,

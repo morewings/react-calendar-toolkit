@@ -1,12 +1,12 @@
 import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
-import {useScrollIntoView} from 'components/SelectorYear';
+import useScrollIntoView from 'utils/useScrollIntoView';
 import classNames from 'classnames';
 import './Year.scss';
 
 const Year = props => {
   const handleClick = () => {
-    props.onSetYear(props.date);
+    props.onDateSet(props.date);
   };
   const currentYear = useRef();
   useScrollIntoView(currentYear, props.isSelected);
@@ -23,7 +23,7 @@ const Year = props => {
         isSameYear: props.isSameYear,
         isSelected: props.isSelected,
       })}>
-      {props.yearNumber}
+      {props.name}
     </div>
   );
 };
@@ -31,10 +31,10 @@ const Year = props => {
 Year.propTypes = {
   disabled: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
-  onSetYear: PropTypes.func.isRequired,
+  onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isSameYear: PropTypes.bool.isRequired,
-  yearNumber: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Year;

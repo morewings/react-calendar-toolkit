@@ -40,7 +40,7 @@ export const getYears = (startYear = 1900, endYear = 2050) => {
   const startDate = parseYearNumber(startYear);
   const years = [...Array(endYear - startYear).keys()];
   return years.map((year, i) => ({
-    name: startYear + i,
+    name: `${startYear + i}`,
     date: addYears(startDate, i),
   }));
 };

@@ -7,8 +7,12 @@ const DatepickerWrapper = props => (
 );
 
 DatepickerWrapper.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+};
+
+DatepickerWrapper.defaultProps = {
+  className: 'datepicker-wrapper',
 };
 
 export default DatepickerWrapper;
