@@ -11,10 +11,13 @@ import SelectorDay from 'components/SelectorDay';
 import SelectorMonth from 'components/SelectorMonth';
 import SelectorYear from 'components/SelectorYear';
 
-const precisionEnum = ['year', 'month', 'day']
+const precisionEnum = ['year', 'month', 'day'];
+const getNextPrecision = (precisionEnum, precision) => {
+
+};
 
 const DatePicker = ({
-  date,
+  initialDate,
   today,
   wrapperElement,
   wrapperClassname,
@@ -25,17 +28,24 @@ const DatePicker = ({
 }) => {
   const dispatch = useDispatch();
   const precision = useSelector(selectors.getPrecision);
-  const handleDateSet = useCallback(date => {
-    precision === minPrecision && onDateSet(date)
-  }, [precision]);
+  console.log('precision1', precision)
+  const handleDateSet = useCallback(
+    date => {
+      precision === minPrecision && onDateSet(date);
+    },
+    [minPrecision, onDateSet, precision]
+  );
+  useEffect(() => {
+    getNextPrecision(precision)
+  }, [precision])
   useEffect(() => {
     dispatch({
       type: actionTypes.SET_DATE,
       payload: {
-        selectedTimestamp: getTime(date),
+        selectedTimestamp: getTime(initialDate),
       },
     });
-  }, [date, dispatch]);
+  }, [initialDate, dispatch]);
   useEffect(() => {
     dispatch({
       type: actionTypes.SET_TODAY,
@@ -44,9 +54,6 @@ const DatePicker = ({
       },
     });
   }, [dispatch, today]);
-  useEffect(() => {
-    console.log('rerender')
-  }, [])
   const Wrapper = wrapperElement;
   return (
     <Wrapper className={wrapperClassname}>
@@ -60,18 +67,18 @@ const DatePicker = ({
 };
 
 DatePicker.propTypes = {
-  date: PropTypes.instanceOf(Date),
+  initialDate: PropTypes.instanceOf(Date),
   today: PropTypes.instanceOf(Date),
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
   showHeader: PropTypes.bool,
   title: PropTypes.string,
   minPrecision: PropTypes.oneOf(precisionEnum),
-  onDateSet: PropTypes.func,
+  onDateSet: PropTypes.func.isRequired,
 };
 
 DatePicker.defaultProps = {
-  date: new Date(2020, 1, 1),
+  initialDate: new Date(2020, 1, 1),
   today: new Date(),
   wrapperClassname: 'datepicker-wrapper',
   wrapperElement: DatepickerWrapper,
