@@ -2,7 +2,6 @@ import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 import {selectors} from 'features/datepicker';
-import config from 'utils/config';
 import {getYears, getIsSameYear} from 'utils/dateUtils';
 import Year, {YearWrapper} from 'components/visual/Year';
 

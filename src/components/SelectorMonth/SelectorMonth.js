@@ -2,7 +2,6 @@ import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 import {selectors} from 'features/datepicker';
-import config from 'utils/config';
 import {getIsSameMonth, getMonths} from 'utils/dateUtils';
 import Month from 'components/visual/Month';
 
