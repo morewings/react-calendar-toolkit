@@ -29,9 +29,6 @@
   &:hover{
     background-color: $lightGray;
   }
-  &.disabled {
-    color: $disabled;
-  }
   &.isSelected {
     color: white;
     background-color: $active;

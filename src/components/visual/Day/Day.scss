@@ -29,6 +29,10 @@
   &.isOtherMonth {
     color: $disabled;
   }
+  &.isDisabled {
+    color: $disabled;
+    cursor: not-allowed;
+  }
   &.isSelected {
     color: white;
     background-color: $active;

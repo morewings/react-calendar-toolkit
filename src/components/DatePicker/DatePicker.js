@@ -41,6 +41,8 @@ const DatePicker = ({
   yearGridComponent,
   weekDayComponent,
   weekDayGridComponent,
+  startDate,
+  endDate,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -118,8 +120,6 @@ const DatePicker = ({
             wrapperComponent={DayGridVisual}
             visualComponent={props => (
               <DayVisual
-                onDateSet={handleDateSet}
-                disabled={false} // TODO: add real disabled
                 isHoliday={false} // TODO: add real holiday
                 {...props}
               />
@@ -127,6 +127,9 @@ const DatePicker = ({
             selectedTimestamp={selectedTimestamp}
             todayTimestamp={todayTimestamp}
             items={getMonthDays(selectedTimestamp)}
+            onDateSet={handleDateSet}
+            startDate={startDate}
+            endDate={endDate}
           />
         </Fragment>
       )}
@@ -134,32 +137,26 @@ const DatePicker = ({
         <Selector
           precision="month"
           wrapperComponent={MonthGridVisual}
-          visualComponent={props => (
-            <MonthVisual
-              onDateSet={handleDateSet}
-              disabled={false} // TODO: add real disabled
-              {...props}
-            />
-          )}
+          visualComponent={props => <MonthVisual {...props} />}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           items={getMonths(selectedTimestamp)}
+          onDateSet={handleDateSet}
+          startDate={startDate}
+          endDate={endDate}
         />
       )}
       {precision === 'year' && (
         <Selector
           precision="year"
           wrapperComponent={YearGridVisual}
-          visualComponent={props => (
-            <YearVisual
-              onDateSet={handleDateSet}
-              disabled={false} // TODO: add real disabled
-              {...props}
-            />
-          )}
+          visualComponent={props => <YearVisual {...props} />}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
-          items={getYears()}
+          items={getYears(startDate, endDate)}
+          onDateSet={handleDateSet}
+          startDate={startDate}
+          endDate={endDate}
         />
       )}
     </Wrapper>
@@ -169,6 +166,8 @@ const DatePicker = ({
 DatePicker.propTypes = {
   initialDate: PropTypes.instanceOf(Date),
   today: PropTypes.instanceOf(Date),
+  startDate: PropTypes.instanceOf(Date),
+  endDate: PropTypes.instanceOf(Date),
   showHeader: PropTypes.bool,
   title: PropTypes.string,
   minPrecision: PropTypes.oneOf(config.supportedPrecisions),
@@ -186,7 +185,9 @@ DatePicker.propTypes = {
 };
 
 DatePicker.defaultProps = {
-  initialDate: new Date(2020, 1, 1),
+  initialDate: new Date(2020, 9, 1),
+  startDate: new Date(2010, 1, 1),
+  endDate: new Date(2020, 9, 20),
   today: new Date(),
   showHeader: true,
   title: '',

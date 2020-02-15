@@ -15,7 +15,7 @@ const Month = props => {
       onKeyPress={handleClick}
       className={classNames({
         'month-wrapper': true,
-        disabled: props.disabled,
+        isDisabled: props.isDisabled,
         isSameMonth: props.isSameMonth,
         isSelected: props.isSelected,
       })}>
@@ -25,7 +25,7 @@ const Month = props => {
 };
 
 Month.propTypes = {
-  disabled: PropTypes.bool.isRequired,
+  isDisabled: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,

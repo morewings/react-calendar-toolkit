@@ -19,7 +19,6 @@ const Year = props => {
       onKeyPress={handleClick}
       className={classNames({
         'year-wrapper': true,
-        disabled: props.disabled,
         isSameYear: props.isSameYear,
         isSelected: props.isSelected,
       })}>
@@ -29,7 +28,6 @@ const Year = props => {
 };
 
 Year.propTypes = {
-  disabled: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,

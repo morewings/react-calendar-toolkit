@@ -16,8 +16,9 @@
   &:hover{
     background-color: $lightGray;
   }
-  &.disabled {
+  &.isDisabled {
     color: $disabled;
+    cursor: not-allowed;
   }
   &.isSelected {
     color: white;

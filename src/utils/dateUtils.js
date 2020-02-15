@@ -17,6 +17,8 @@ import {
   parse,
   addYears,
   isSameYear,
+  getYear,
+  isWithinInterval,
 } from 'date-fns';
 
 export const getWeekDayNames = () =>
@@ -36,8 +38,9 @@ export const getMonths = date => {
 export const parseYearNumber = yearNumber =>
   parse(yearNumber, 'y', new Date(1900, 0, 1));
 
-export const getYears = (startYear = 1900, endYear = 2050) => {
-  const startDate = parseYearNumber(startYear);
+export const getYears = (startDate, endDate) => {
+  const startYear = getYear(startDate);
+  const endYear = getYear(endDate) + 1;
   const years = [...Array(endYear - startYear).keys()];
   return years.map((year, i) => ({
     name: `${startYear + i}`,
@@ -78,3 +81,6 @@ export const getAddMonth = (date, amount) =>
   getTime(addMonths(toDate(date), amount)); // TODO: fix this double date
 
 export const getSubMonth = (date, amount) => getAddMonth(date, -amount);
+
+export const getIsWithinInterval = (date, interval) =>
+  isWithinInterval(date, interval);
