@@ -10,6 +10,7 @@ const Day = ({
   isToday,
   isSelected,
   isDisabled,
+  isHighlighted,
   isWeekend,
   name,
   formatDate,
@@ -30,6 +31,7 @@ const Day = ({
         isSelected,
         isDisabled,
         isWeekend,
+        isHighlighted,
       })}>
       {name.numeric}
     </div>
@@ -40,6 +42,7 @@ Day.propTypes = {
   isSameMonth: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
   isDisabled: PropTypes.bool.isRequired,
+  isHighlighted: PropTypes.bool.isRequired,
   isWeekend: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
   formatDate: PropTypes.func.isRequired,

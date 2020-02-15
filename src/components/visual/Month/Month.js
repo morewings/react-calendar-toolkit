@@ -11,6 +11,7 @@ const Month = ({
   isSelected,
   name,
   formatDate,
+  isHighlighted,
 }) => {
   const handleClick = () => {
     onDateSet(date);
@@ -26,6 +27,7 @@ const Month = ({
         isDisabled,
         isSameMonth,
         isSelected,
+        isHighlighted,
       })}>
       {name.wide}
     </div>
@@ -34,6 +36,7 @@ const Month = ({
 
 Month.propTypes = {
   isDisabled: PropTypes.bool.isRequired,
+  isHighlighted: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,

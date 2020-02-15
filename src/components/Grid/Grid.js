@@ -21,6 +21,7 @@ const Grid = ({
   startDate,
   endDate,
   disableDate,
+  highlightDate,
   highlightWeekends,
 }) => {
   const getIsDisabled = useCallback(
@@ -32,11 +33,16 @@ const Grid = ({
         );
       }
       return (
-        disableDate({date, isWeekend: checkIsWeekend(date)}) ||
+        disableDate({date, isWeekend: checkIsWeekend(date), precision}) ||
         !checkIsWithinInterval({start: startDate, end: endDate}, date)
       );
     },
     [disableDate, endDate, precision, startDate]
+  );
+
+  const getIsHighlighted = useCallback(
+    date => highlightDate({date, isWeekend: checkIsWeekend(date), precision}),
+    [highlightDate, precision]
   );
 
   const handleDateSet = useCallback(
@@ -74,6 +80,7 @@ const Grid = ({
             isSameMonth={checkIsSameMonth(date, selectedTimestamp)}
             isSameYear={checkIsSameMonth(date, selectedTimestamp)}
             isDisabled={getIsDisabled(date)}
+            isHighlighted={getIsHighlighted(date)}
             name={name}
             date={date}
             key={date}
@@ -107,6 +114,7 @@ Grid.propTypes = {
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
   disableDate: PropTypes.func.isRequired,
+  highlightDate: PropTypes.func.isRequired,
   highlightWeekends: PropTypes.bool,
 };
 

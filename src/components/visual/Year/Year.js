@@ -4,12 +4,19 @@ import useScrollIntoView from 'utils/useScrollIntoView';
 import classNames from 'classnames';
 import './Year.scss';
 
-const Year = props => {
+const Year = ({
+  isHighlighted,
+  onDateSet,
+  date,
+  isSelected,
+  isSameYear,
+  name,
+}) => {
   const handleClick = () => {
-    props.onDateSet(props.date);
+    onDateSet(date);
   };
   const currentYear = useRef();
-  useScrollIntoView(currentYear, props.isSelected);
+  useScrollIntoView(currentYear, isSelected);
   return (
     <div
       ref={currentYear}
@@ -19,16 +26,18 @@ const Year = props => {
       onKeyPress={handleClick}
       className={classNames({
         'year-wrapper': true,
-        isSameYear: props.isSameYear,
-        isSelected: props.isSelected,
+        isSameYear,
+        isSelected,
+        isHighlighted,
       })}>
-      {props.name.numeric}
+      {name.numeric}
     </div>
   );
 };
 
 Year.propTypes = {
   isSelected: PropTypes.bool.isRequired,
+  isHighlighted: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isSameYear: PropTypes.bool.isRequired,

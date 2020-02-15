@@ -14,7 +14,7 @@ import {
   isSameDay,
   differenceInDays,
   endOfMonth,
-  endOfWeek,
+  endOfWeekWithOptions,
   startOfMonth,
   startOfWeekWithOptions,
   getDate,
@@ -110,7 +110,7 @@ export const getDays = (locale, timestamp) => {
   const monthStart = startOfMonth(timestamp);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeekWithOptions({locale}, monthStart);
-  const endDate = endOfWeek(monthEnd);
+  const endDate = endOfWeekWithOptions({locale}, monthEnd);
   const cellLength = differenceInDays(startDate, endDate);
   return new Array(cellLength + 1).fill('').map((_, i) => ({
     date: addDays(i, startDate),

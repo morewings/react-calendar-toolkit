@@ -57,6 +57,7 @@ const DatePicker = ({
   dateFnsLocale,
   headerComponent,
   selectorComponent,
+  highlightDate,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -145,12 +146,9 @@ const DatePicker = ({
             highlightWeekends={highlightWeekends}
             wrapperComponent={DayGridVisual}
             disableDate={disableDate}
+            highlightDate={highlightDate}
             visualComponent={props => (
-              <DayVisual
-                formatDate={formatDate}
-                isHoliday={false} // TODO: add real holiday
-                {...props}
-              />
+              <DayVisual formatDate={formatDate} {...props} />
             )}
             selectedTimestamp={selectedTimestamp}
             todayTimestamp={todayTimestamp}
@@ -165,6 +163,7 @@ const DatePicker = ({
         <Grid
           precision="month"
           disableDate={disableDate}
+          highlightDate={highlightDate}
           wrapperComponent={MonthGridVisual}
           visualComponent={props => (
             <MonthVisual formatDate={formatDate} {...props} />
@@ -181,6 +180,7 @@ const DatePicker = ({
         <Grid
           precision="year"
           disableDate={disableDate}
+          highlightDate={highlightDate}
           wrapperComponent={YearGridVisual}
           visualComponent={props => (
             <YearVisual formatDate={formatDate} {...props} />
@@ -219,6 +219,7 @@ DatePicker.propTypes = {
   headerComponent: PropTypes.elementType,
   selectorComponent: PropTypes.elementType,
   disableDate: PropTypes.func,
+  highlightDate: PropTypes.func,
   highlightWeekends: PropTypes.bool,
   dateFnsLocale: PropTypes.shape({}),
 };
@@ -243,7 +244,8 @@ DatePicker.defaultProps = {
   weekDayGridComponent: WeekDayGrid,
   headerComponent: Header,
   selectorComponent: DateSelector,
-  disableDate: ({isWeekend, date}) => false,
+  disableDate: ({isWeekend, precision, date}) => false,
+  highlightDate: ({isWeekend, precision, date}) => false,
   highlightWeekends: true,
   dateFnsLocale: locale,
 };
