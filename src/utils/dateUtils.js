@@ -16,7 +16,7 @@ import {
   endOfMonth,
   endOfWeek,
   startOfMonth,
-  startOfWeek,
+  startOfWeekWithOptions,
   getDate,
 } from 'date-fns/fp';
 
@@ -48,13 +48,19 @@ import {
  * @return {Array.<string>} Array of weekday names
  */
 export const getWeekDayNames = locale =>
-  [...Array(7).keys()].map(i => ({
-    short: locale.localize.day(i, {width: 'short'}),
-    narrow: locale.localize.day(i, {width: 'narrow'}),
-    abbreviated: locale.localize.day(i, {width: 'abbreviated'}),
-    wide: locale.localize.day(i, {width: 'wide'}),
-    numeric: i,
-  }));
+  [...Array(7).keys()].map(i => {
+    const dayNumber =
+      i + locale.options.weekStartsOn === 7
+        ? 0
+        : i + locale.options.weekStartsOn;
+    return {
+      short: locale.localize.day(dayNumber, {width: 'short'}),
+      narrow: locale.localize.day(dayNumber, {width: 'narrow'}),
+      abbreviated: locale.localize.day(dayNumber, {width: 'abbreviated'}),
+      wide: locale.localize.day(dayNumber, {width: 'wide'}),
+      numeric: i,
+    };
+  });
 
 /**
  * Returns collection year description objects in the provided range
@@ -96,13 +102,14 @@ export const getMonths = (locale, date) => {
 
 /**
  * Returns collection of day description objects based on provided date
- * @param {number} timestamp - Locale object
+ * @param {Object} locale - Locale object
+ * @param {DateUnion} timestamp - Unix timestamp or Date object
  * @return {Array.<ItemDescription>} Array of month description objects
  */
-export const getMonthDays = timestamp => {
+export const getDays = (locale, timestamp) => {
   const monthStart = startOfMonth(timestamp);
   const monthEnd = endOfMonth(monthStart);
-  const startDate = startOfWeek(monthStart);
+  const startDate = startOfWeekWithOptions({locale}, monthStart);
   const endDate = endOfWeek(monthEnd);
   const cellLength = differenceInDays(startDate, endDate);
   return new Array(cellLength + 1).fill('').map((_, i) => ({

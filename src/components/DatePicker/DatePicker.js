@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import locale from 'date-fns/esm/locale/ru';
 import {
   convertToTimestamp,
-  getMonthDays,
+  getDays,
   getMonths,
   getYears,
   getWeekDayNames,
@@ -154,7 +154,7 @@ const DatePicker = ({
             )}
             selectedTimestamp={selectedTimestamp}
             todayTimestamp={todayTimestamp}
-            items={getMonthDays(selectedTimestamp)}
+            items={getDays(dateFnsLocale, selectedTimestamp)}
             onDateSet={handleDateSet}
             startDate={startDate}
             endDate={endDate}
