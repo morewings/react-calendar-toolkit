@@ -1,13 +1,21 @@
 import React, {useCallback, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import {getTime, getMonthDays, getMonths, getYears} from 'utils/dateUtils';
+import locale from 'date-fns/esm/locale/ru';
+import {
+  convertToTimestamp,
+  getMonthDays,
+  getMonths,
+  getYears,
+  getWeekDayNames,
+  formatDateWithLocale,
+} from 'utils/dateUtils';
 import config from 'utils/config';
 import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
 import Header from 'components/Header';
-import SelectorCombined from 'components/SelectorCombined';
 import Selector from 'components/Selector';
+import Grid from 'components/Grid';
 import WeekDays from 'components/Weekdays';
 import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
@@ -45,6 +53,7 @@ const DatePicker = ({
   endDate,
   disableDate,
   highlightWeekends,
+  dateFnsLocale,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -61,7 +70,7 @@ const DatePicker = ({
       dispatch({
         type: actionTypes.SET_DATE,
         payload: {
-          selectedTimestamp: getTime(date),
+          selectedTimestamp: convertToTimestamp(date),
         },
       });
       nextPrecision &&
@@ -72,11 +81,12 @@ const DatePicker = ({
     },
     [datepickerPrecisions, dispatch, minPrecision, onDateSet, precision]
   );
+  const formatDate = formatDateWithLocale({locale: dateFnsLocale});
   useEffect(() => {
     dispatch({
       type: actionTypes.SET_DATE,
       payload: {
-        selectedTimestamp: getTime(initialDate),
+        selectedTimestamp: convertToTimestamp(initialDate),
       },
     });
   }, [initialDate, dispatch]);
@@ -84,7 +94,7 @@ const DatePicker = ({
     dispatch({
       type: actionTypes.SET_TODAY,
       payload: {
-        todayTimestamp: getTime(today),
+        todayTimestamp: convertToTimestamp(today),
       },
     });
     dispatch({
@@ -105,19 +115,21 @@ const DatePicker = ({
     <Wrapper className={wrapperClassname}>
       {showHeader && (
         <Header
+          formatDate={formatDate}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           title={title}
         />
       )}
-      <SelectorCombined />
+      <Selector formatDate={formatDate} />
       {precision === 'day' && (
         <Fragment>
           <WeekDays
+            items={getWeekDayNames(dateFnsLocale)}
             visualComponent={WeekDayVisual}
             wrapperComponent={WeekDayGridVisual}
           />
-          <Selector
+          <Grid
             precision="day"
             highlightWeekends={highlightWeekends}
             wrapperComponent={DayGridVisual}
@@ -138,21 +150,23 @@ const DatePicker = ({
         </Fragment>
       )}
       {precision === 'month' && (
-        <Selector
+        <Grid
           precision="month"
+          disableDate={disableDate}
           wrapperComponent={MonthGridVisual}
           visualComponent={props => <MonthVisual {...props} />}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
-          items={getMonths(selectedTimestamp)}
+          items={getMonths(dateFnsLocale, selectedTimestamp)}
           onDateSet={handleDateSet}
           startDate={startDate}
           endDate={endDate}
         />
       )}
       {precision === 'year' && (
-        <Selector
+        <Grid
           precision="year"
+          disableDate={disableDate}
           wrapperComponent={YearGridVisual}
           visualComponent={props => <YearVisual {...props} />}
           selectedTimestamp={selectedTimestamp}
@@ -188,16 +202,17 @@ DatePicker.propTypes = {
   weekDayGridComponent: PropTypes.elementType,
   disableDate: PropTypes.func,
   highlightWeekends: PropTypes.bool,
+  dateFnsLocale: PropTypes.shape({}),
 };
 
 DatePicker.defaultProps = {
-  initialDate: new Date(2020, 9, 1),
-  startDate: new Date(2010, 1, 1),
-  endDate: new Date(2020, 9, 20),
+  initialDate: new Date(2020, 0, 6),
+  startDate: new Date(2020, 0, 1),
+  endDate: new Date(2020, 1, 25),
   today: new Date(),
   showHeader: true,
   title: '',
-  minPrecision: 'day',
+  minPrecision: 'month',
   wrapperClassname: '',
   wrapperElement: DatepickerWrapper,
   dayComponent: Day,
@@ -210,6 +225,7 @@ DatePicker.defaultProps = {
   weekDayGridComponent: WeekDayGrid,
   disableDate: ({isWeekend, date}) => false,
   highlightWeekends: true,
+  dateFnsLocale: locale,
 };
 
 export default DatePicker;

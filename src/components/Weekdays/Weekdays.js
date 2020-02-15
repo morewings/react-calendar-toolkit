@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {getWeekDayNames} from 'utils/dateUtils';
 
-const WeekDays = ({wrapperComponent, visualComponent}) => {
-  const weekDayNames = getWeekDayNames();
+const WeekDays = ({wrapperComponent, visualComponent, items}) => {
   const WeekDaysWrapper = wrapperComponent;
   const VisualComponent = visualComponent;
   return (
     <WeekDaysWrapper>
-      {weekDayNames.map(name => (
+      {items.map(name => (
         <VisualComponent key={name} name={name} />
       ))}
     </WeekDaysWrapper>
@@ -18,6 +16,7 @@ const WeekDays = ({wrapperComponent, visualComponent}) => {
 WeekDays.propTypes = {
   wrapperComponent: PropTypes.elementType.isRequired,
   visualComponent: PropTypes.elementType.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default WeekDays;

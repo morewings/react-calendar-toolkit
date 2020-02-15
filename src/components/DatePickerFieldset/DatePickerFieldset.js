@@ -1,7 +1,8 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
+import locale from 'date-fns/esm/locale/ru';
 import {useDispatch, useSelector} from 'react-redux';
-import {toDate, getFormattedDate} from 'utils/dateUtils';
+import {convertToDate, formatDateWithLocale} from 'utils/dateUtils';
 import {
   selectors as modalSelectors,
   actionTypes as modalActionTypes,
@@ -12,9 +13,9 @@ import InputVisual, {
   Fieldset,
   Popover,
   Modal,
-} from 'components/visual/Fieldset'; // TODO: fix {default} naming
+} from 'components/visual/Fieldset';
 
-const DatePickerFieldset = ({input, mode, formatDate, ...restProps}) => {
+const DatePickerFieldset = ({input, mode, formatPattern, ...restProps}) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
@@ -32,14 +33,18 @@ const DatePickerFieldset = ({input, mode, formatDate, ...restProps}) => {
   return (
     <Fieldset>
       <InputComponent
-        date={toDate(todayTimestamp)}
-        value={formatDate(selectedTimestamp)}
+        date={convertToDate(todayTimestamp)}
+        value={formatDateWithLocale(
+          restProps.dateFnsLocale,
+          'MM/dd/yyyy',
+          convertToDate(selectedTimestamp)
+        )}
         toggleDatepicker={toggleDatepicker}
       />
       {showDatepicker && (
         <InputWrapper toggleDatepicker={toggleDatepicker}>
           <DatePicker
-            date={toDate(selectedTimestamp)}
+            date={convertToDate(selectedTimestamp)}
             showHeader={false} // TODO: merge with restProps
             {...restProps}
           />
@@ -53,14 +58,16 @@ DatePickerFieldset.propTypes = {
   mode: PropTypes.oneOf(['popover', 'modal']),
   hideOnSelect: PropTypes.bool,
   input: PropTypes.elementType,
-  formatDate: PropTypes.func,
+  formatPattern: PropTypes.string,
+  dateFnsLocale: PropTypes.shape({}),
 };
 
 DatePickerFieldset.defaultProps = {
   mode: 'modal',
   hideOnSelect: true,
   input: InputVisual,
-  formatDate: timestamp => getFormattedDate('MM/dd/yyyy', timestamp),
+  formatPattern: 'MM/dd/yyyy',
+  dateFnsLocale: locale,
 };
 
 export default DatePickerFieldset;
