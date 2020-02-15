@@ -6,6 +6,7 @@ import {
   getIsSameDay,
   getIsSameYear,
   getIsWithinInterval,
+  getIsWeekend,
 } from 'utils/dateUtils';
 
 const Selector = ({
@@ -19,13 +20,18 @@ const Selector = ({
   precision,
   startDate,
   endDate,
+  disableDate,
+  highlightWeekends,
 }) => {
   const getIsDisabled = useCallback(
     date => {
       if (precision === 'year') return false; // we are not disabling years, just rendering the range
-      return !getIsWithinInterval(date, {start: startDate, end: endDate});
+      return (
+        disableDate({date, isWeekend: getIsWeekend(date)}) ||
+        !getIsWithinInterval(date, {start: startDate, end: endDate})
+      );
     },
-    [endDate, precision, startDate]
+    [disableDate, endDate, precision, startDate]
   );
 
   const handleDateSet = useCallback(
@@ -47,13 +53,15 @@ const Selector = ({
     },
     [precision]
   );
+  const isWeekendHighlighted = date => highlightWeekends && getIsWeekend(date);
   const Wrapper = wrapperComponent;
   const VisualComponent = visualComponent;
   return (
     <Fragment>
       <Wrapper className={wrapperClassname}>
-        {items.map(({name, date}, i) => (
+        {items.map(({name, date}) => (
           <VisualComponent
+            isWeekend={precision === 'day' ? isWeekendHighlighted(date) : false}
             onDateSet={handleDateSet}
             isToday={getIsSameDay(date, todayTimestamp)}
             isSelected={getIsSelected(date, selectedTimestamp)}
@@ -86,6 +94,8 @@ Selector.propTypes = {
   ).isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
+  disableDate: PropTypes.func.isRequired,
+  highlightWeekends: PropTypes.bool.isRequired,
 };
 
 Selector.defaultProps = {

@@ -19,6 +19,7 @@ const Day = props => {
         isToday: props.isToday,
         isSelected: props.isSelected,
         isDisabled: props.isDisabled,
+        isWeekend: props.isWeekend,
       })}>
       {props.name}
     </div>
@@ -29,6 +30,7 @@ Day.propTypes = {
   isSameMonth: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
   isDisabled: PropTypes.bool.isRequired,
+  isWeekend: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isToday: PropTypes.bool.isRequired,

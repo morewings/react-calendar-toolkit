@@ -29,6 +29,9 @@
   &.isOtherMonth {
     color: $disabled;
   }
+  &.isWeekend {
+    color: $weekendColor;
+  }
   &.isDisabled {
     color: $disabled;
     cursor: not-allowed;

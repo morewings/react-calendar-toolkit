@@ -43,6 +43,8 @@ const DatePicker = ({
   weekDayGridComponent,
   startDate,
   endDate,
+  disableDate,
+  highlightWeekends,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -117,7 +119,9 @@ const DatePicker = ({
           />
           <Selector
             precision="day"
+            highlightWeekends={highlightWeekends}
             wrapperComponent={DayGridVisual}
+            disableDate={disableDate}
             visualComponent={props => (
               <DayVisual
                 isHoliday={false} // TODO: add real holiday
@@ -182,6 +186,8 @@ DatePicker.propTypes = {
   yearGridComponent: PropTypes.elementType,
   weekDayComponent: PropTypes.elementType,
   weekDayGridComponent: PropTypes.elementType,
+  disableDate: PropTypes.func,
+  highlightWeekends: PropTypes.bool,
 };
 
 DatePicker.defaultProps = {
@@ -202,6 +208,8 @@ DatePicker.defaultProps = {
   yearGridComponent: YearGrid,
   weekDayComponent: WeekDay,
   weekDayGridComponent: WeekDayGrid,
+  disableDate: ({isWeekend, date}) => false,
+  highlightWeekends: true,
 };
 
 export default DatePicker;

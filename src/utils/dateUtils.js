@@ -19,6 +19,7 @@ import {
   isSameYear,
   getYear,
   isWithinInterval,
+  isWeekend,
 } from 'date-fns';
 
 export const getWeekDayNames = () =>
@@ -84,3 +85,5 @@ export const getSubMonth = (date, amount) => getAddMonth(date, -amount);
 
 export const getIsWithinInterval = (date, interval) =>
   isWithinInterval(date, interval);
+
+export const getIsWeekend = date => isWeekend(date);
