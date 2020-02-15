@@ -21,10 +21,20 @@ import {
 } from 'date-fns/fp';
 
 /**
+ * Item name
+ * @typedef {Object} ItemName
+ * @property {string} [narrow] - Narrow name of item - 'S'
+ * @property {string} [short] - Short name of item - 'Su'
+ * @property {string} [abbreviated] - Abbreviated name of item - 'Sun'
+ * @property {string} [wide] - Full name of item - 'Sunday'
+ * @property {number} [numeric] - Numeric name of item - 1
+ */
+
+/**
  * Item description
  * @typedef {Object} ItemDescription
- * @property {string} name - The name of the month
- * @property {Date} date - starting date of the month
+ * @property {ItemName} name - Item name vocabulary
+ * @property {Date} date - starting date of the item
  */
 
 /**
@@ -38,7 +48,13 @@ import {
  * @return {Array.<string>} Array of weekday names
  */
 export const getWeekDayNames = locale =>
-  [...Array(7).keys()].map(i => locale.localize.day(i, {width: 'short'}));
+  [...Array(7).keys()].map(i => ({
+    short: locale.localize.day(i, {width: 'short'}),
+    narrow: locale.localize.day(i, {width: 'narrow'}),
+    abbreviated: locale.localize.day(i, {width: 'abbreviated'}),
+    wide: locale.localize.day(i, {width: 'wide'}),
+    numeric: i,
+  }));
 
 /**
  * Returns collection year description objects in the provided range
@@ -51,7 +67,9 @@ export const getYears = (startDate, endDate) => {
   const endYear = getYear(endDate) + 1;
   const years = [...Array(endYear - startYear).keys()];
   return years.map((year, i) => ({
-    name: `${startYear + i}`,
+    name: {
+      numeric: startYear + i,
+    },
     date: addYears(i, startDate),
   }));
 };
@@ -64,9 +82,12 @@ export const getYears = (startDate, endDate) => {
  */
 export const getMonths = (locale, date) => {
   const year = startOfYear(date);
-  const monthNames = [...Array(12).keys()].map(i =>
-    locale.localize.month(i, {width: 'wide'})
-  );
+  const monthNames = [...Array(12).keys()].map(i => ({
+    wide: locale.localize.month(i, {width: 'wide'}),
+    abbreviated: locale.localize.month(i, {width: 'abbreviated'}),
+    narrow: locale.localize.month(i, {width: 'narrow'}),
+    numeric: i,
+  }));
   return monthNames.map((name, i) => ({
     name,
     date: toDate(incrementMonth(year, i)),
@@ -86,7 +107,9 @@ export const getMonthDays = timestamp => {
   const cellLength = differenceInDays(startDate, endDate);
   return new Array(cellLength + 1).fill('').map((_, i) => ({
     date: addDays(i, startDate),
-    name: `${getDate(addDays(i, startDate))}`,
+    name: {
+      numeric: getDate(addDays(i, startDate)),
+    },
   }));
 };
 

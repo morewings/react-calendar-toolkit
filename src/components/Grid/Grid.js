@@ -94,7 +94,13 @@ Grid.propTypes = {
   selectedTimestamp: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      name: PropTypes.shape({
+        wide: PropTypes.string,
+        abbreviated: PropTypes.string,
+        narrow: PropTypes.string,
+        numeric: PropTypes.number,
+        short: PropTypes.string,
+      }).isRequired,
       date: PropTypes.instanceOf(Date).isRequired,
     }).isRequired
   ).isRequired,

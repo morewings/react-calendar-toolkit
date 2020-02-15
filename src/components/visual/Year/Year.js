@@ -22,7 +22,7 @@ const Year = props => {
         isSameYear: props.isSameYear,
         isSelected: props.isSelected,
       })}>
-      {props.name}
+      {props.name.numeric}
     </div>
   );
 };
@@ -32,7 +32,9 @@ Year.propTypes = {
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isSameYear: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.shape({
+    numeric: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default Year;

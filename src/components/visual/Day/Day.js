@@ -3,9 +3,19 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Day.scss';
 
-const Day = props => {
+const Day = ({
+  onDateSet,
+  date,
+  isSameMonth,
+  isToday,
+  isSelected,
+  isDisabled,
+  isWeekend,
+  name,
+  formatDate,
+}) => {
   const handleClick = () => {
-    props.onDateSet(props.date);
+    onDateSet(date);
   };
   return (
     <div
@@ -15,13 +25,13 @@ const Day = props => {
       onKeyPress={handleClick}
       className={classNames({
         'day-wrapper': true,
-        isOtherMonth: !props.isSameMonth,
-        isToday: props.isToday,
-        isSelected: props.isSelected,
-        isDisabled: props.isDisabled,
-        isWeekend: props.isWeekend,
+        isOtherMonth: !isSameMonth,
+        isToday,
+        isSelected,
+        isDisabled,
+        isWeekend,
       })}>
-      {props.name}
+      {name.numeric}
     </div>
   );
 };
@@ -32,9 +42,12 @@ Day.propTypes = {
   isDisabled: PropTypes.bool.isRequired,
   isWeekend: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
+  formatDate: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isToday: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.shape({
+    numeric: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default Day;

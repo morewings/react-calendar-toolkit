@@ -3,9 +3,17 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Month.scss';
 
-const Month = props => {
+const Month = ({
+  onDateSet,
+  date,
+  isDisabled,
+  isSameMonth,
+  isSelected,
+  name,
+  formatDate,
+}) => {
   const handleClick = () => {
-    props.onDateSet(props.date);
+    onDateSet(date);
   };
   return (
     <div
@@ -15,11 +23,11 @@ const Month = props => {
       onKeyPress={handleClick}
       className={classNames({
         'month-wrapper': true,
-        isDisabled: props.isDisabled,
-        isSameMonth: props.isSameMonth,
-        isSelected: props.isSelected,
+        isDisabled,
+        isSameMonth,
+        isSelected,
       })}>
-      {props.name}
+      {name.wide}
     </div>
   );
 };
@@ -30,7 +38,13 @@ Month.propTypes = {
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isSameMonth: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
+  formatDate: PropTypes.func.isRequired,
+  name: PropTypes.shape({
+    wide: PropTypes.string.isRequired,
+    abbreviated: PropTypes.string.isRequired,
+    narrow: PropTypes.string.isRequired,
+    numeric: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default Month;

@@ -1,12 +1,10 @@
-/*eslint-disable*/
 import React, {useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {actionTypes, selectors} from 'features/datepicker';
+import PropTypes from 'prop-types';
+import {useDispatch} from 'react-redux';
+import {actionTypes} from 'features/datepicker';
 import {decrementMonth, incrementMonth, convertToDate} from 'utils/dateUtils';
-import DateSelectorVisual from 'components/visual/DateSelector';
 
-const Selector = props => {
-  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
+const Selector = ({todayTimestamp, selectedTimestamp, selectorComponent}) => {
   const dispatch = useDispatch();
   const setPrecision = useCallback(
     precision =>
@@ -23,7 +21,7 @@ const Selector = props => {
         payload: {
           selectedTimestamp: incrementMonth(date, 1),
         },
-      })
+      });
     },
     [dispatch]
   );
@@ -37,18 +35,23 @@ const Selector = props => {
       }),
     [dispatch]
   );
-  const year = props.formatDate('y', selectedTimestamp);
-  const month = props.formatDate('LLLL', selectedTimestamp);
+  const SelectorVisual = selectorComponent;
   return (
-    <DateSelectorVisual
+    <SelectorVisual
+      selectedTimestamp={selectedTimestamp}
+      todayTimestamp={todayTimestamp}
       incrementMonth={onIncrementMonth}
       decrementMonth={onDecrementMonth}
       setPrecision={setPrecision}
-      year={year}
-      month={month}
       date={convertToDate(selectedTimestamp)}
     />
   );
+};
+
+Selector.propTypes = {
+  selectedTimestamp: PropTypes.number.isRequired,
+  todayTimestamp: PropTypes.number.isRequired,
+  selectorComponent: PropTypes.elementType.isRequired,
 };
 
 export default Selector;

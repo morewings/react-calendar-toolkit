@@ -13,7 +13,7 @@ import {
 import config from 'utils/config';
 import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
-import Header from 'components/Header';
+import Header from 'components/visual/Header';
 import Selector from 'components/Selector';
 import Grid from 'components/Grid';
 import WeekDays from 'components/Weekdays';
@@ -21,6 +21,7 @@ import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
+import DateSelector from 'components/visual/DateSelector';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
   const currentIndex = precisionEnum.indexOf(currentPrecision);
@@ -54,6 +55,8 @@ const DatePicker = ({
   disableDate,
   highlightWeekends,
   dateFnsLocale,
+  headerComponent,
+  selectorComponent,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -111,17 +114,25 @@ const DatePicker = ({
   const YearGridVisual = yearGridComponent;
   const WeekDayVisual = weekDayComponent;
   const WeekDayGridVisual = weekDayGridComponent;
+  const HeaderVisual = headerComponent;
+  const SelectorComponent = selectorComponent;
   return (
     <Wrapper className={wrapperClassname}>
       {showHeader && (
-        <Header
+        <HeaderVisual
           formatDate={formatDate}
-          selectedTimestamp={selectedTimestamp}
-          todayTimestamp={todayTimestamp}
           title={title}
+          todayTimestamp={todayTimestamp}
+          selectedTimestamp={selectedTimestamp}
         />
       )}
-      <Selector formatDate={formatDate} />
+      <Selector
+        selectorComponent={props => (
+          <SelectorComponent formatDate={formatDate} {...props} />
+        )}
+        selectedTimestamp={selectedTimestamp}
+        todayTimestamp={todayTimestamp}
+      />
       {precision === 'day' && (
         <Fragment>
           <WeekDays
@@ -136,6 +147,7 @@ const DatePicker = ({
             disableDate={disableDate}
             visualComponent={props => (
               <DayVisual
+                formatDate={formatDate}
                 isHoliday={false} // TODO: add real holiday
                 {...props}
               />
@@ -154,7 +166,9 @@ const DatePicker = ({
           precision="month"
           disableDate={disableDate}
           wrapperComponent={MonthGridVisual}
-          visualComponent={props => <MonthVisual {...props} />}
+          visualComponent={props => (
+            <MonthVisual formatDate={formatDate} {...props} />
+          )}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           items={getMonths(dateFnsLocale, selectedTimestamp)}
@@ -168,7 +182,9 @@ const DatePicker = ({
           precision="year"
           disableDate={disableDate}
           wrapperComponent={YearGridVisual}
-          visualComponent={props => <YearVisual {...props} />}
+          visualComponent={props => (
+            <YearVisual formatDate={formatDate} {...props} />
+          )}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           items={getYears(startDate, endDate)}
@@ -200,6 +216,8 @@ DatePicker.propTypes = {
   yearGridComponent: PropTypes.elementType,
   weekDayComponent: PropTypes.elementType,
   weekDayGridComponent: PropTypes.elementType,
+  headerComponent: PropTypes.elementType,
+  selectorComponent: PropTypes.elementType,
   disableDate: PropTypes.func,
   highlightWeekends: PropTypes.bool,
   dateFnsLocale: PropTypes.shape({}),
@@ -212,7 +230,7 @@ DatePicker.defaultProps = {
   today: new Date(),
   showHeader: true,
   title: '',
-  minPrecision: 'month',
+  minPrecision: 'day',
   wrapperClassname: '',
   wrapperElement: DatepickerWrapper,
   dayComponent: Day,
@@ -223,6 +241,8 @@ DatePicker.defaultProps = {
   yearGridComponent: YearGrid,
   weekDayComponent: WeekDay,
   weekDayGridComponent: WeekDayGrid,
+  headerComponent: Header,
+  selectorComponent: DateSelector,
   disableDate: ({isWeekend, date}) => false,
   highlightWeekends: true,
   dateFnsLocale: locale,
