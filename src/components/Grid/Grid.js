@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React, {Fragment, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import config from 'utils/config';
@@ -31,12 +30,13 @@ const Grid = ({
     if (precision === 'day') {
       return getDays(selectedTimestamp);
     }
-    if(precision === 'month') {
+    if (precision === 'month') {
       return getMonths(selectedTimestamp);
     }
-    if(precision === 'year') {
+    if (precision === 'year') {
       return getYears(startDate, endDate);
     }
+    return null;
   };
   const getIsDisabled = useCallback(
     date => {

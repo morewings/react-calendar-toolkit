@@ -1,15 +1,18 @@
-/*eslint-disable*/
 import React from 'react';
-import './Fieldset.scss'
+import PropTypes from 'prop-types';
+import './Fieldset.scss';
 
-const Fieldset = props => {
-  return (
-    <fieldset className={props.className}>{props.children}</fieldset>
-  )
+const Fieldset = props => (
+  <fieldset className={props.className}>{props.children}</fieldset>
+);
+
+Fieldset.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 Fieldset.defaultProps = {
-  className: 'datepicker-fieldset'
+  className: 'datepicker-fieldset',
 };
 
 export default Fieldset;
