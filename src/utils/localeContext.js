@@ -1,13 +1,8 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 import defaultLocale from 'date-fns/esm/locale/ru';
-import {
-  getWeekDayNames,
-  getYears,
-  getMonths,
-  getDays,
-  formatDateWithLocale,
-} from 'utils/dateUtils';
+import {getWeekDayNames, getYears, getMonths, getDays} from 'utils/enumerators';
+import {formatDateWithLocale} from 'utils/dateUtils';
 
 const LocaleContext = React.createContext({});
 
