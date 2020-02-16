@@ -1,1 +1,4 @@
-export {default} from './DatePickerFieldset';
+import {withLocaleContext} from 'utils/localeContext';
+import DatePickerFieldset from './DatePickerFieldset';
+
+export default withLocaleContext(DatePickerFieldset);

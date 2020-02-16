@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, {Fragment, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import config from 'utils/config';
@@ -8,6 +9,7 @@ import {
   checkIsWithinInterval,
   checkIsWeekend,
 } from 'utils/dateUtils';
+import {useLocaleEnumerators} from 'utils/localeContext';
 
 const Grid = ({
   onDateSet,
@@ -24,6 +26,18 @@ const Grid = ({
   highlightDate,
   highlightWeekends,
 }) => {
+  const {getYears, getMonths, getDays} = useLocaleEnumerators();
+  const getItems = () => {
+    if (precision === 'day') {
+      return getDays(selectedTimestamp);
+    }
+    if(precision === 'month') {
+      return getMonths(selectedTimestamp);
+    }
+    if(precision === 'year') {
+      return getYears(startDate, endDate);
+    }
+  };
   const getIsDisabled = useCallback(
     date => {
       if (precision === 'year') return false; // we are not disabling years, just rendering the range
@@ -71,7 +85,7 @@ const Grid = ({
   return (
     <Fragment>
       <Wrapper className={wrapperClassname}>
-        {items.map(({name, date}) => (
+        {getItems().map(({name, date}) => (
           <VisualComponent
             isWeekend={precision === 'day' ? isWeekendHighlighted(date) : false}
             onDateSet={handleDateSet}

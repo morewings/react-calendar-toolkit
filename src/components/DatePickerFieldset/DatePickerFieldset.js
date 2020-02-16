@@ -1,14 +1,14 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import locale from 'date-fns/esm/locale/ru';
 import {useDispatch, useSelector} from 'react-redux';
-import {convertToDate, formatDateWithLocale} from 'utils/dateUtils';
+import {convertToDate} from 'utils/dateUtils';
+import {useFormatDate} from 'utils/localeContext';
 import {
   selectors as modalSelectors,
   actionTypes as modalActionTypes,
 } from 'features/modal';
 import {selectors} from 'features/datepicker';
-import DatePicker from 'components/DatePicker';
+import DatePicker from 'components/DatePicker/DatePicker';
 import InputVisual, {
   Fieldset,
   Popover,
@@ -20,6 +20,7 @@ const DatePickerFieldset = ({input, mode, formatPattern, ...restProps}) => {
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const showDatepicker = useSelector(modalSelectors.getShowDatepicker);
+  const formatDate = useFormatDate();
   const InputWrapper = mode === 'popover' ? Popover : Modal;
   const toggleDatepicker = useCallback(
     isVisible =>
@@ -34,11 +35,7 @@ const DatePickerFieldset = ({input, mode, formatPattern, ...restProps}) => {
     <Fieldset>
       <InputComponent
         date={convertToDate(todayTimestamp)}
-        value={formatDateWithLocale(
-          restProps.dateFnsLocale,
-          'MM/dd/yyyy',
-          convertToDate(selectedTimestamp)
-        )}
+        value={formatDate('MM/dd/yyyy', convertToDate(selectedTimestamp))}
         toggleDatepicker={toggleDatepicker}
       />
       {showDatepicker && (
@@ -59,7 +56,6 @@ DatePickerFieldset.propTypes = {
   hideOnSelect: PropTypes.bool,
   input: PropTypes.elementType,
   formatPattern: PropTypes.string,
-  dateFnsLocale: PropTypes.shape({}),
 };
 
 DatePickerFieldset.defaultProps = {
@@ -67,7 +63,6 @@ DatePickerFieldset.defaultProps = {
   hideOnSelect: true,
   input: InputVisual,
   formatPattern: 'MM/dd/yyyy',
-  dateFnsLocale: locale,
 };
 
 export default DatePickerFieldset;

@@ -10,7 +10,6 @@ const Month = ({
   isSameMonth,
   isSelected,
   name,
-  formatDate,
   isHighlighted,
 }) => {
   const handleClick = () => {
@@ -41,7 +40,6 @@ Month.propTypes = {
   onDateSet: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isSameMonth: PropTypes.bool.isRequired,
-  formatDate: PropTypes.func.isRequired,
   name: PropTypes.shape({
     wide: PropTypes.string.isRequired,
     abbreviated: PropTypes.string.isRequired,

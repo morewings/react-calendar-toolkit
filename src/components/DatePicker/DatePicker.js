@@ -1,15 +1,7 @@
 import React, {useCallback, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import locale from 'date-fns/esm/locale/ru';
-import {
-  convertToTimestamp,
-  getDays,
-  getMonths,
-  getYears,
-  getWeekDayNames,
-  formatDateWithLocale,
-} from 'utils/dateUtils';
+import {convertToTimestamp} from 'utils/dateUtils';
 import config from 'utils/config';
 import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
@@ -54,7 +46,6 @@ const DatePicker = ({
   endDate,
   disableDate,
   highlightWeekends,
-  dateFnsLocale,
   headerComponent,
   selectorComponent,
   highlightDate,
@@ -85,7 +76,6 @@ const DatePicker = ({
     },
     [datepickerPrecisions, dispatch, minPrecision, onDateSet, precision]
   );
-  const formatDate = formatDateWithLocale({locale: dateFnsLocale});
   useEffect(() => {
     dispatch({
       type: actionTypes.SET_DATE,
@@ -121,23 +111,19 @@ const DatePicker = ({
     <Wrapper className={wrapperClassname}>
       {showHeader && (
         <HeaderVisual
-          formatDate={formatDate}
           title={title}
           todayTimestamp={todayTimestamp}
           selectedTimestamp={selectedTimestamp}
         />
       )}
       <Selector
-        selectorComponent={props => (
-          <SelectorComponent formatDate={formatDate} {...props} />
-        )}
+        selectorComponent={SelectorComponent}
         selectedTimestamp={selectedTimestamp}
         todayTimestamp={todayTimestamp}
       />
       {precision === 'day' && (
         <Fragment>
           <WeekDays
-            items={getWeekDayNames(dateFnsLocale)}
             visualComponent={WeekDayVisual}
             wrapperComponent={WeekDayGridVisual}
           />
@@ -147,12 +133,9 @@ const DatePicker = ({
             wrapperComponent={DayGridVisual}
             disableDate={disableDate}
             highlightDate={highlightDate}
-            visualComponent={props => (
-              <DayVisual formatDate={formatDate} {...props} />
-            )}
+            visualComponent={DayVisual}
             selectedTimestamp={selectedTimestamp}
             todayTimestamp={todayTimestamp}
-            items={getDays(dateFnsLocale, selectedTimestamp)}
             onDateSet={handleDateSet}
             startDate={startDate}
             endDate={endDate}
@@ -165,12 +148,9 @@ const DatePicker = ({
           disableDate={disableDate}
           highlightDate={highlightDate}
           wrapperComponent={MonthGridVisual}
-          visualComponent={props => (
-            <MonthVisual formatDate={formatDate} {...props} />
-          )}
+          visualComponent={MonthVisual}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
-          items={getMonths(dateFnsLocale, selectedTimestamp)}
           onDateSet={handleDateSet}
           startDate={startDate}
           endDate={endDate}
@@ -182,12 +162,9 @@ const DatePicker = ({
           disableDate={disableDate}
           highlightDate={highlightDate}
           wrapperComponent={YearGridVisual}
-          visualComponent={props => (
-            <YearVisual formatDate={formatDate} {...props} />
-          )}
+          visualComponent={YearVisual}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
-          items={getYears(startDate, endDate)}
           onDateSet={handleDateSet}
           startDate={startDate}
           endDate={endDate}
@@ -221,7 +198,7 @@ DatePicker.propTypes = {
   disableDate: PropTypes.func,
   highlightDate: PropTypes.func,
   highlightWeekends: PropTypes.bool,
-  dateFnsLocale: PropTypes.shape({}),
+  dateFnsLocale: PropTypes.shape({}).isRequired,
 };
 
 DatePicker.defaultProps = {
@@ -247,7 +224,6 @@ DatePicker.defaultProps = {
   disableDate: ({isWeekend, precision, date}) => false,
   highlightDate: ({isWeekend, precision, date}) => false,
   highlightWeekends: true,
-  dateFnsLocale: locale,
 };
 
 export default DatePicker;

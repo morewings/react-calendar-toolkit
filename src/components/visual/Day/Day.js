@@ -13,7 +13,6 @@ const Day = ({
   isHighlighted,
   isWeekend,
   name,
-  formatDate,
 }) => {
   const handleClick = () => {
     onDateSet(date);
@@ -45,7 +44,6 @@ Day.propTypes = {
   isHighlighted: PropTypes.bool.isRequired,
   isWeekend: PropTypes.bool.isRequired,
   onDateSet: PropTypes.func.isRequired,
-  formatDate: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   isToday: PropTypes.bool.isRequired,
   name: PropTypes.shape({

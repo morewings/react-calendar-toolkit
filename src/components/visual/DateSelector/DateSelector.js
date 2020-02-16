@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useFormatDate} from 'utils/localeContext';
 import './DateSelector.scss';
 
 const DateSelector = ({
-  formatDate,
   selectedTimestamp,
   todayTimestamp,
   setPrecision,
@@ -11,6 +11,7 @@ const DateSelector = ({
   date,
   incrementMonth,
 }) => {
+  const formatDate = useFormatDate();
   const year = formatDate('y', selectedTimestamp);
   const month = formatDate('LLLL', selectedTimestamp);
   return (
@@ -55,7 +56,6 @@ DateSelector.propTypes = {
   selectedTimestamp: PropTypes.number.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
   setPrecision: PropTypes.func.isRequired,
-  formatDate: PropTypes.func.isRequired,
   incrementMonth: PropTypes.func.isRequired,
   decrementMonth: PropTypes.func.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,

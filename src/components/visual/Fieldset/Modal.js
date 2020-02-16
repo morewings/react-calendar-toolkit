@@ -55,7 +55,7 @@ Modal.propTypes = {
 Modal.defaultProps = {
   wrapperClassName: 'modal-container',
   modalClassName: 'modal-content',
-  placement: 'bottom-left',
+  placement: '',
 };
 
 export default Modal;

@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useLocaleEnumerators} from 'utils/localeContext';
 
 const WeekDays = ({wrapperComponent, visualComponent, items}) => {
   const WeekDaysWrapper = wrapperComponent;
   const VisualComponent = visualComponent;
+  const {getWeekDayNames} = useLocaleEnumerators();
   return (
     <WeekDaysWrapper>
-      {items.map(name => (
+      {getWeekDayNames.map(name => (
         <VisualComponent key={name.short} name={name} />
       ))}
     </WeekDaysWrapper>

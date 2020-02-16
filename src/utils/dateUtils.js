@@ -19,6 +19,7 @@ import {
   startOfWeekWithOptions,
   getDate,
 } from 'date-fns/fp';
+import curry from 'lodash/curry';
 
 /**
  * Item name
@@ -47,7 +48,7 @@ import {
  * @param {Object} locale - Locale object
  * @return {Array.<string>} Array of weekday names
  */
-export const getWeekDayNames = locale =>
+const getWeekDayNames = locale =>
   [...Array(7).keys()].map(i => {
     const dayNumber =
       i + locale.options.weekStartsOn === 7
@@ -62,13 +63,17 @@ export const getWeekDayNames = locale =>
     };
   });
 
+const getWeekDayNamesCurried = curry(getWeekDayNames);
+
+export {getWeekDayNamesCurried as getWeekDayNames};
+
 /**
  * Returns collection year description objects in the provided range
- * @param {Date} startDate - Start date
- * @param {Date} endDate - End date
+ * @param {DateUnion} startDate - Start date
+ * @param {DateUnion} endDate - End date
  * @return {Array.<ItemDescription>} Array of year description objects
  */
-export const getYears = (startDate, endDate) => {
+const getYears = (startDate, endDate) => {
   const startYear = getYear(startDate);
   const endYear = getYear(endDate) + 1;
   const years = [...Array(endYear - startYear).keys()];
@@ -80,13 +85,17 @@ export const getYears = (startDate, endDate) => {
   }));
 };
 
+const getYearsCurried = curry(getYears);
+
+export {getYearsCurried as getYears};
+
 /**
  * Returns collection of month description objects based on provided date
  * @param {Object} locale - Locale object
- * @param {Date} date - Selected date
+ * @param {DateUnion} date - Date or Unix timestamp
  * @return {Array.<ItemDescription>} Array of month description objects
  */
-export const getMonths = (locale, date) => {
+const getMonths = (locale, date) => {
   const year = startOfYear(date);
   const monthNames = [...Array(12).keys()].map(i => ({
     wide: locale.localize.month(i, {width: 'wide'}),
@@ -100,13 +109,17 @@ export const getMonths = (locale, date) => {
   }));
 };
 
+const getMonthsCurried = curry(getMonths);
+
+export {getMonthsCurried as getMonths};
+
 /**
  * Returns collection of day description objects based on provided date
  * @param {Object} locale - Locale object
  * @param {DateUnion} timestamp - Unix timestamp or Date object
  * @return {Array.<ItemDescription>} Array of month description objects
  */
-export const getDays = (locale, timestamp) => {
+const getDays = (locale, timestamp) => {
   const monthStart = startOfMonth(timestamp);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeekWithOptions({locale}, monthStart);
@@ -119,6 +132,10 @@ export const getDays = (locale, timestamp) => {
     },
   }));
 };
+
+const getDaysCurried = curry(getDays);
+
+export {getDaysCurried as getDays};
 
 /**
  * Returns formatted date

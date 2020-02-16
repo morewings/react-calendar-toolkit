@@ -1,3 +1,4 @@
+import {withLocaleContext} from 'utils/localeContext';
 import DatePicker from './DatePicker';
 
-export default DatePicker;
+export default withLocaleContext(DatePicker);
