@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classes from './WeekDay.module.scss';
 
 const WeekdayGrid = ({children, wrapperClassName}) => (
   <div className={wrapperClassName}>{children}</div>
@@ -11,7 +12,7 @@ WeekdayGrid.propTypes = {
 };
 
 WeekdayGrid.defaultProps = {
-  wrapperClassName: 'weekdays-wrapper',
+  wrapperClassName: classes.grid,
 };
 
 export default WeekdayGrid;

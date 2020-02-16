@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFormatDate} from 'utils/localeContext';
-import './DateSelector.scss';
+import classes from './DateSelector.module.scss';
 
 const DateSelector = ({
   selectedTimestamp,
@@ -15,8 +15,8 @@ const DateSelector = ({
   const year = formatDate('y', selectedTimestamp);
   const month = formatDate('LLLL', selectedTimestamp);
   return (
-    <div className="date-selector-wrapper">
-      <div className="date-selector-buttons">
+    <div className={classes.wrapper}>
+      <div className={classes.buttons}>
         <button
           onClick={() => {
             setPrecision('year');
@@ -32,7 +32,7 @@ const DateSelector = ({
           {month}
         </button>
       </div>
-      <div className="date-stepper">
+      <div className={classes.stepper}>
         <button
           onClick={() => {
             decrementMonth(date);

@@ -1,6 +1,6 @@
 @import "./../../../variables";
 
-.day-grid-wrapper {
+.grid {
   display: flex;
   width: $innerWidth;
   flex-direction: row;
@@ -9,28 +9,21 @@
   height: $gridHeight;
 }
 
-.day-wrapper {
-  //width: $dayWidth;
+.wrapper {
   text-align: center;
-  //padding: $basePadding;
   box-sizing: border-box;
-  flex: $dayCellFlex;
+  flex: $monthCellFlex;
   height: $dayHeight;
   line-height: $dayHeight;
   border: 1px solid transparent;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: $borderRadius;
+  margin-top: $innerPadding;
   &:active{
     outline: none;
   }
   &:hover{
     background-color: $lightGray;
-  }
-  &.isOtherMonth {
-    color: $disabled;
-  }
-  &.isWeekend {
-    color: $weekendColor;
   }
   &.isDisabled {
     color: $disabled;
@@ -40,7 +33,7 @@
     color: white;
     background-color: $active;
   }
-  &.isToday {
+  &.isSameMonth {
     border-color: $gray;
   }
 }

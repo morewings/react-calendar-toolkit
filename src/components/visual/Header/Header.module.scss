@@ -1,16 +1,16 @@
 @import "./../../../variables";
 
-.header-wrapper{
+.wrapper{
   background: $headerBgColor;
   padding: $innerPadding;
 }
 
-.current-date{
+.currentDate{
   color: $headerTextColor;
   font-size: 34px;
 }
 
-.datepicker-name{
+.title{
   text-transform: uppercase;
   font-size: 12px;
   margin-bottom: 24px;

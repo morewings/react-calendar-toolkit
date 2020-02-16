@@ -1,6 +1,6 @@
 @import "./../../../variables";
 
-.weekdays-wrapper{
+.grid{
   display: flex;
   border-bottom: 1px solid $gray;
   margin-bottom: $basePadding;
@@ -8,11 +8,8 @@
   box-sizing: border-box;
 }
 
-.weekday{
-  //margin-left: 3px;
-  //width: $dayWidth;
+.wrapper{
   text-align: center;
-  //padding: $basePadding;
   box-sizing: border-box;
   flex: $dayCellFlex;
   height: $dayHeight;

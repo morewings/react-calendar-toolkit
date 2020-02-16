@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './DatepickerWrapper.scss';
+import classes from './DatepickerWrapper.module.scss';
 
 const DatepickerWrapper = props => (
   <div className={props.wrapperClassname}>{props.children}</div>
@@ -12,7 +12,7 @@ DatepickerWrapper.propTypes = {
 };
 
 DatepickerWrapper.defaultProps = {
-  wrapperClassname: 'datepicker-wrapper',
+  wrapperClassname: classes.datepickerWrapper,
 };
 
 export default DatepickerWrapper;

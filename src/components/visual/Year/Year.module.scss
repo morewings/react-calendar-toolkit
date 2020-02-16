@@ -1,9 +1,22 @@
 @import "./../../../variables";
 
-.month-wrapper {
+.scrollContainer{
+  height: $gridHeight;
+  overflow: auto;
+}
+
+.grid {
+  display: flex;
+  width: $innerWidth;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 $innerPadding $innerPadding;
+}
+
+.wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: $monthCellFlex;
+  flex: $yearCellFlex;
   height: $dayHeight;
   line-height: $dayHeight;
   border: 1px solid transparent;
@@ -16,15 +29,11 @@
   &:hover{
     background-color: $lightGray;
   }
-  &.isDisabled {
-    color: $disabled;
-    cursor: not-allowed;
-  }
   &.isSelected {
     color: white;
     background-color: $active;
   }
-  &.isSameMonth {
+  &.isSameYear {
     border-color: $gray;
   }
 }

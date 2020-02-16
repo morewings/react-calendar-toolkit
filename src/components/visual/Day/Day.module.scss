@@ -1,39 +1,44 @@
 @import "./../../../variables";
 
-.year-scroll-container{
-  height: $gridHeight;
-  overflow: auto;
-}
-
-.year-grid-wrapper {
+.grid {
   display: flex;
   width: $innerWidth;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0 $innerPadding $innerPadding;
+  height: $gridHeight;
 }
 
-.year-wrapper {
+.wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: $yearCellFlex;
+  flex: $dayCellFlex;
   height: $dayHeight;
   line-height: $dayHeight;
   border: 1px solid transparent;
   cursor: pointer;
-  border-radius: $borderRadius;
-  margin-top: $innerPadding;
+  border-radius: 50%;
   &:active{
     outline: none;
   }
   &:hover{
     background-color: $lightGray;
   }
+  &.isOtherMonth {
+    color: $disabled;
+  }
+  &.isWeekend {
+    color: $weekendColor;
+  }
+  &.isDisabled {
+    color: $disabled;
+    cursor: not-allowed;
+  }
   &.isSelected {
     color: white;
     background-color: $active;
   }
-  &.isSameYear {
+  &.isToday {
     border-color: $gray;
   }
 }

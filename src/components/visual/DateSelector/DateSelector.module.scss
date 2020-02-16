@@ -11,14 +11,14 @@
   }
 }
 
-.date-selector-wrapper{
+.wrapper{
   padding: $innerPadding/2 $innerPadding;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.date-selector-buttons{
+.buttons{
   button{
     @include button;
     padding: 8px;
@@ -26,7 +26,7 @@
   }
 }
 
-.date-stepper{
+.stepper{
   button{
     @include button;
     font-weight: bold;

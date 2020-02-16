@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import './Modal.scss';
+import classes from './Modal.module.scss';
 
 const Modal = ({
   toggleDatepicker,
@@ -53,8 +53,8 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  wrapperClassName: 'modal-container',
-  modalClassName: 'modal-content',
+  wrapperClassName: classes.container,
+  modalClassName: classes.content,
   placement: '',
 };
 

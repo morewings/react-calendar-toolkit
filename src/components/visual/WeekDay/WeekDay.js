@@ -1,8 +1,10 @@
 import React from 'react';
-import './WeekDay.scss';
 import PropTypes from 'prop-types';
+import classes from './WeekDay.module.scss';
 
-const WeekDay = props => <div className="weekday">{props.name.short}</div>;
+const WeekDay = props => (
+  <div className={classes.wrapper}>{props.name.short}</div>
+);
 
 WeekDay.propTypes = {
   name: PropTypes.shape({

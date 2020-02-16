@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Fieldset.scss';
+import classes from './Fieldset.module.scss';
 
 const Fieldset = props => (
   <fieldset className={props.className}>{props.children}</fieldset>
@@ -12,7 +12,7 @@ Fieldset.propTypes = {
 };
 
 Fieldset.defaultProps = {
-  className: 'datepicker-fieldset',
+  className: classes.wrapper,
 };
 
 export default Fieldset;

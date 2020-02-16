@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import './Month.scss';
+import classes from './Month.module.scss';
 
 const Month = ({
   onDateSet,
@@ -22,11 +22,11 @@ const Month = ({
       onClick={handleClick}
       onKeyPress={handleClick}
       className={classNames({
-        'month-wrapper': true,
-        isDisabled,
-        isSameMonth,
-        isSelected,
-        isHighlighted,
+        [classes.wrapper]: true,
+        [classes.isSelected]: isSelected,
+        [classes.isDisabled]: isDisabled,
+        [classes.isSameMonth]: isSameMonth,
+        [classes.isHighlighted]: isHighlighted,
       })}>
       {name.wide}
     </div>

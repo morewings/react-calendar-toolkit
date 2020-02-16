@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classes from './Year.module.scss';
 
 const YearGrid = props => (
-  <div className="year-scroll-container">
-    {/* TODO: fix class mismatch */}
-    <div className={props.className || 'year-grid-wrapper'}>
-      {props.children}
-    </div>
+  <div className={classes.scrollContainer}>
+    <div className={props.className}>{props.children}</div>
   </div>
 );
 
@@ -16,7 +14,7 @@ YearGrid.propTypes = {
 };
 
 YearGrid.defaultProps = {
-  className: 'year-grid-wrapper',
+  className: classes.wrapper,
 };
 
 export default YearGrid;

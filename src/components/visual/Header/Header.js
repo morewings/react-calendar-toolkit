@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFormatDate} from 'utils/localeContext';
-import './Header.scss';
+import classes from './Header.module.scss';
 
 const Header = ({selectedTimestamp, title}) => {
   const formatDate = useFormatDate();
   return (
-    <div className="header-wrapper">
-      <div className="datepicker-name">{title}</div>
-      <div className="current-date">
+    <div className={classes.wrapper}>
+      <div className={classes.title}>{title}</div>
+      <div className={classes.currentDate}>
         {formatDate('MMM do', selectedTimestamp)}
       </div>
     </div>

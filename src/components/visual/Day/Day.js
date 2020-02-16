@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import './Day.scss';
+import classes from './Day.module.scss';
 
 const Day = ({
   onDateSet,
@@ -24,13 +24,13 @@ const Day = ({
       onClick={handleClick}
       onKeyPress={handleClick}
       className={classNames({
-        'day-wrapper': true,
-        isOtherMonth: !isSameMonth,
-        isToday,
-        isSelected,
-        isDisabled,
-        isWeekend,
-        isHighlighted,
+        [classes.wrapper]: true,
+        [classes.isOtherMonth]: !isSameMonth,
+        [classes.isToday]: isToday,
+        [classes.isSelected]: isSelected,
+        [classes.isDisabled]: isDisabled,
+        [classes.isWeekend]: isWeekend,
+        [classes.isHighlighted]: isHighlighted,
       })}>
       {name.numeric}
     </div>

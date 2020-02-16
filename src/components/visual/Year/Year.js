@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import useScrollIntoView from 'utils/useScrollIntoView';
 import classNames from 'classnames';
-import './Year.scss';
+import classes from './Year.module.scss';
 
 const Year = ({
   isHighlighted,
@@ -25,10 +25,10 @@ const Year = ({
       onClick={handleClick}
       onKeyPress={handleClick}
       className={classNames({
-        'year-wrapper': true,
-        isSameYear,
-        isSelected,
-        isHighlighted,
+        [classes.wrapper]: true,
+        [classes.isSameYear]: isSameYear,
+        [classes.isSelected]: isSelected,
+        [classes.isHighlighted]: isHighlighted,
       })}>
       {name.numeric}
     </div>
