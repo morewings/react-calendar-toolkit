@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './Day.module.scss';
+import classes from './Day.module.css';
 
 const DayGrid = ({children, wrapperClassName}) => (
   <div className={wrapperClassName}>{children}</div>

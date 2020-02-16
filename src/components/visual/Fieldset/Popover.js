@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import classes from './Popover.module.scss';
+import classes from './Popover.module.css';
 
 const Popover = props => (
   <div

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './Month.module.scss';
+import classes from './Month.module.css';
 
 const MonthGrid = ({children, wrapperClassName}) => (
   <div className={wrapperClassName}>{children}</div>

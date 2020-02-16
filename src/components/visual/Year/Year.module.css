@@ -1,0 +1,43 @@
+@import "./../../../variables.css";
+
+.scrollContainer{
+  height: var(--gridHeight);
+  overflow: auto;
+}
+
+.grid {
+  display: flex;
+  width: var(--innerWidth);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 var(--innerPadding) var(--innerPadding);
+}
+
+.wrapper {
+  text-align: center;
+  box-sizing: border-box;
+  flex: 1 1 calc(100% / 5);
+  height: var(--dayHeight);
+  line-height: var(--dayHeight);
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  margin-top: var(--innerPadding);
+}
+
+.wrapper:active{
+  outline: none;
+}
+
+.wrapper:hover{
+  background-color: var(--lightGray);
+}
+
+.isSelected {
+  color: white;
+  background-color: var(--active);
+}
+
+.isSameYear {
+  border-color: var(--gray);
+}

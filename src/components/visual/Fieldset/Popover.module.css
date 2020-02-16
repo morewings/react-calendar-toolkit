@@ -1,0 +1,25 @@
+@import "./../../../variables.css";
+
+.container{
+  position: absolute;
+}
+
+.bottomLeft {
+  left: 0;
+  top: var(--inputHeight);
+}
+
+.bottomRight {
+  right: 0;
+  top: var(--inputHeight);
+}
+
+.topLeft {
+  left: 0;
+  bottom: var(--inputHeight);
+}
+
+.topRight {
+  right: 0;
+  bottom: var(--inputHeight);
+}

@@ -1,4 +1,4 @@
-@import "./../../../variables";
+@import "./../../../variables.css";
 
 .container{
   position: fixed;
@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: $gray;
+  background: var(--gray);
   z-index: 9999;
 }
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import classes from './Modal.module.scss';
+import classes from './Modal.module.css';
 
 const Modal = ({
   toggleDatepicker,

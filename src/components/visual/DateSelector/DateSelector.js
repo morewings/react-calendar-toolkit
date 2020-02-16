@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFormatDate} from 'utils/localeContext';
-import classes from './DateSelector.module.scss';
+import classes from './DateSelector.module.css';
 
 const DateSelector = ({
   selectedTimestamp,

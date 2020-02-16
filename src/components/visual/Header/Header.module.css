@@ -1,12 +1,12 @@
-@import "./../../../variables";
+@import "./../../../variables.css";
 
 .wrapper{
-  background: $headerBgColor;
-  padding: $innerPadding;
+  background: var(--headerBgColor);
+  padding: var(--innerPadding);
 }
 
 .currentDate{
-  color: $headerTextColor;
+  color: var(--headerTextColor);
   font-size: 34px;
 }
 

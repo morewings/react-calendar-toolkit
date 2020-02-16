@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './WeekDay.module.scss';
+import classes from './WeekDay.module.css';
 
 const WeekdayGrid = ({children, wrapperClassName}) => (
   <div className={wrapperClassName}>{children}</div>

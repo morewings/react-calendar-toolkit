@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './Year.module.scss';
+import classes from './Year.module.css';
 
 const YearGrid = props => (
   <div className={classes.scrollContainer}>

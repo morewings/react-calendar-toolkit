@@ -1,0 +1,23 @@
+:root {
+  --dayWidth: 40px;
+  --dayHeight: var(--dayWidth);
+  --basePadding: 6px;
+  --innerPadding: 16px;
+  --innerWidth: 280px;
+  --datePickerWidth: calc(var(--innerWidth) + var(--innerPadding) * 2);
+  //--dayCellFlex: 1 1 calc(100% / 7);
+  //--monthCellFlex: 1 1 calc(100% / 3);
+  //--yearCellFlex: 1 1 calc(100% / 5);
+  --borderRadius: 4px;
+  --gridHeight: 247px;
+  --inputHeight: 25px;
+  --gray: rgba(0, 0, 0, 0.38);
+  --lightGray: rgba(0, 0, 0, 0.08);
+  --green: #43a047;
+  --disabled: var(--gray);
+  --active: #43a047;
+  --hoverColor: var(--lightGray);
+  --headerBgColor: var(--green);
+  --headerTextColor: white;
+  --weekendColor: red;
+}

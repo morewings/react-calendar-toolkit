@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import useScrollIntoView from 'utils/useScrollIntoView';
 import classNames from 'classnames';
-import classes from './Year.module.scss';
+import classes from './Year.module.css';
 
 const Year = ({
   isHighlighted,

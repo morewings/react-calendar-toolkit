@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFormatDate} from 'utils/localeContext';
-import classes from './Header.module.scss';
+import classes from './Header.module.css';
 
 const Header = ({selectedTimestamp, title}) => {
   const formatDate = useFormatDate();
