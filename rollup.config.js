@@ -1,33 +1,71 @@
 import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import filesize from 'rollup-plugin-filesize';
+import includePaths from 'rollup-plugin-includepaths';
+import autoprefixer from 'autoprefixer';
+import localResolve from 'rollup-plugin-local-resolve';
 
-export default {
-  input: './src/index.js',
+import pkg from './package.json';
 
-  output: [
-    {
-      name: 'comlib',
-      sourcemap: true,
-      file: './dist/index.js',
-      format: 'umd',
-      globals: {react: 'React'},
-    },
-  ],
+const INPUT_FILE_PATH = 'src/entryPoint.js';
+const OUTPUT_NAME = 'Example';
 
-  plugins: [
-    peerDepsExternal(),
-    postcss({
-      extract: false,
-      modules: true,
-      use: ['sass'],
-    }),
-    babel({exclude: 'node_modules/**'}),
-    resolve(),
-    commonjs(),
-  ],
-
-  external: ['react', 'react-dom'],
+const GLOBALS = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
 };
+
+const PLUGINS = [
+  includePaths({
+    include: {},
+    paths: ['src'],
+    external: [],
+    extensions: ['.js', '.json', '.html'],
+  }),
+  postcss({
+    extract: true,
+    plugins: [autoprefixer],
+  }),
+  babel({
+    exclude: 'node_modules/**',
+  }),
+  localResolve(),
+  resolve({
+    browser: true,
+  }),
+  commonjs(),
+  filesize(),
+];
+
+const EXTERNAL = ['react', 'react-dom', 'react-is'];
+
+const OUTPUT_DATA = [
+  {
+    file: pkg.browser,
+    format: 'umd',
+  },
+  {
+    file: pkg.main,
+    format: 'cjs',
+  },
+  {
+    file: pkg.module,
+    format: 'es',
+  },
+];
+
+const config = OUTPUT_DATA.map(({file, format}) => ({
+  input: INPUT_FILE_PATH,
+  output: {
+    file,
+    format,
+    name: OUTPUT_NAME,
+    globals: GLOBALS,
+  },
+  external: EXTERNAL,
+  plugins: PLUGINS,
+}));
+
+export default config;
