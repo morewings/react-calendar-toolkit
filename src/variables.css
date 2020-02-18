@@ -5,9 +5,6 @@
   --innerPadding: 16px;
   --innerWidth: 280px;
   --datePickerWidth: calc(var(--innerWidth) + var(--innerPadding) * 2);
-  //--dayCellFlex: 1 1 calc(100% / 7);
-  //--monthCellFlex: 1 1 calc(100% / 3);
-  //--yearCellFlex: 1 1 calc(100% / 5);
   --borderRadius: 4px;
   --gridHeight: 247px;
   --inputHeight: 25px;

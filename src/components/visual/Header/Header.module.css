@@ -1,5 +1,3 @@
-@import "./../../../variables.css";
-
 .wrapper{
   background: var(--headerBgColor);
   padding: var(--innerPadding);

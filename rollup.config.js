@@ -7,46 +7,9 @@ import includePaths from 'rollup-plugin-includepaths';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-
+// import visualizer from 'rollup-plugin-visualizer';
+import postcssImport from 'postcss-import';
 import pkg from './package.json';
-
-const INPUT_FILE_PATH = 'src/entryPoint.js';
-const OUTPUT_NAME = 'Example';
-
-const GLOBALS = {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'prop-types': 'PropTypes',
-};
-
-const PLUGINS = [
-  peerDepsExternal(),
-  includePaths({
-    include: {},
-    paths: ['src'],
-    external: [],
-    extensions: ['.js', '.json', '.html'],
-  }),
-  postcss({
-    extract: true,
-    plugins: [autoprefixer],
-  }),
-  babel({
-    exclude: 'node_modules/**',
-  }),
-  localResolve(),
-  resolve({
-    browser: true,
-  }),
-  commonjs({
-    namedExports: {
-      'node_modules/react-is/index.js': ['isValidElementType'],
-    },
-  }),
-  filesize(),
-];
-
-const EXTERNAL = ['react', 'react-dom', 'react-is'];
 
 const OUTPUT_DATA = [
   {
@@ -81,14 +44,17 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     includePaths({
       include: {},
       paths: ['src'],
-      external: [],
+      external: ['react', 'react-dom', 'react-is'],
       extensions: ['.js', '.json', '.html'],
     }),
     postcss({
-      extract: true,
-      plugins: [autoprefixer],
+      extract: pkg.style, // we need only one copy of css
+      inline: false,
+      modules: true,
+      plugins: [postcssImport(), autoprefixer],
     }),
     babel({
+      runtimeHelpers: true,
       exclude: 'node_modules/**',
     }),
     localResolve(),
@@ -97,10 +63,11 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     }),
     commonjs({
       namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType'],
+        'node_modules/react-is/index.js': ['isValidElementType'], // TODO: check if it's still needed
       },
     }),
     filesize(),
+    // visualizer({open: true}),
   ],
 }));
 

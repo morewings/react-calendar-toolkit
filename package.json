@@ -4,6 +4,7 @@
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.js",
+  "style": "lib/default.css",
   "files": [
     "lib"
   ],
@@ -36,6 +37,7 @@
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
     "node-sass": "^4.13.0",
+    "postcss-import": "^12.0.1",
     "prettier": "1.19.1",
     "redux-mock-store": "^1.5.4",
     "rollup": "^1.31.1",
@@ -44,7 +46,8 @@
     "rollup-plugin-includepaths": "^0.2.3",
     "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-peer-deps-external": "^2.2.2",
-    "rollup-plugin-postcss": "^2.0.6"
+    "rollup-plugin-postcss": "^2.0.6",
+    "rollup-plugin-visualizer": "^3.3.1"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
@@ -54,7 +57,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-rollup": "rollup -c",
+    "build-rollup": "NODE_ENV=production rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix": "eslint --fix ./src/",

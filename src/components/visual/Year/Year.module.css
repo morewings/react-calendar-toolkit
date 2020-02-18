@@ -1,5 +1,3 @@
-@import "./../../../variables.css";
-
 .scrollContainer{
   height: var(--gridHeight);
   overflow: auto;

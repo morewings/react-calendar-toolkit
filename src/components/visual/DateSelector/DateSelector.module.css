@@ -1,15 +1,7 @@
+/*
 @import "./../../../variables.css";
+*/
 
-@mixin button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 0;
-  &:hover{
-    background-color: var(--hoverColor);
-  }
-}
 
 .wrapper{
   padding: calc(var(--innerPadding)/2) var(--innerPadding);
