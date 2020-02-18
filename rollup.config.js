@@ -6,6 +6,7 @@ import filesize from 'rollup-plugin-filesize';
 import includePaths from 'rollup-plugin-includepaths';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 import pkg from './package.json';
 
@@ -15,9 +16,11 @@ const OUTPUT_NAME = 'Example';
 const GLOBALS = {
   react: 'React',
   'react-dom': 'ReactDOM',
+  'prop-types': 'PropTypes',
 };
 
 const PLUGINS = [
+  peerDepsExternal(),
   includePaths({
     include: {},
     paths: ['src'],
@@ -35,7 +38,11 @@ const PLUGINS = [
   resolve({
     browser: true,
   }),
-  commonjs(),
+  commonjs({
+    namedExports: {
+      'node_modules/react-is/index.js': ['isValidElementType'],
+    },
+  }),
   filesize(),
 ];
 
@@ -57,15 +64,44 @@ const OUTPUT_DATA = [
 ];
 
 const config = OUTPUT_DATA.map(({file, format}) => ({
-  input: INPUT_FILE_PATH,
+  input: 'src/entryPoint.js',
   output: {
     file,
     format,
-    name: OUTPUT_NAME,
-    globals: GLOBALS,
+    name: 'Example',
+    globals: {
+      react: 'React',
+      'react-dom': 'ReactDOM',
+      'prop-types': 'PropTypes',
+    },
   },
-  external: EXTERNAL,
-  plugins: PLUGINS,
+  external: ['react', 'react-dom', 'react-is'],
+  plugins: [
+    peerDepsExternal(),
+    includePaths({
+      include: {},
+      paths: ['src'],
+      external: [],
+      extensions: ['.js', '.json', '.html'],
+    }),
+    postcss({
+      extract: true,
+      plugins: [autoprefixer],
+    }),
+    babel({
+      exclude: 'node_modules/**',
+    }),
+    localResolve(),
+    resolve({
+      browser: true,
+    }),
+    commonjs({
+      namedExports: {
+        'node_modules/react-is/index.js': ['isValidElementType'],
+      },
+    }),
+    filesize(),
+  ],
 }));
 
 export default config;

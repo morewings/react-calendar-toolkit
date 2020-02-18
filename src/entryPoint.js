@@ -3,9 +3,9 @@ import {Provider} from 'react-redux';
 import DatePicker from 'components/DatePicker';
 import store from './store';
 
-const Wrapped = () => (
+const Wrapped = props => (
   <Provider store={store}>
-    <DatePicker />
+    <DatePicker {...props} />
   </Provider>
 );
 

@@ -1,7 +1,6 @@
 {
   "name": "datepicker-toolkit",
   "version": "0.1.0",
-  "private": true,
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.js",
@@ -20,6 +19,7 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
@@ -46,11 +46,15 @@
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-postcss": "^2.0.6"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-rollup": "npx rollup -c",
+    "build-rollup": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix": "eslint --fix ./src/",
