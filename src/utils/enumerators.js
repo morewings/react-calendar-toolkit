@@ -12,7 +12,7 @@ import {
   getDate,
 } from 'date-fns/fp';
 import {incrementMonth} from 'utils/dateUtils';
-import curry from 'lodash/curry';
+import curry from 'utils/curry';
 
 /**
  * Item name

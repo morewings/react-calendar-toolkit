@@ -1,5 +1,5 @@
 {
-  "name": "datepicker-toolkit",
+  "name": "react-calendar-toolkit",
   "version": "0.1.0",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -11,7 +11,6 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "date-fns": "^2.9.0",
-    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -38,7 +37,7 @@
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
     "node-sass": "^4.13.0",
-    "postcss-import": "^12.0.1",
+    "postcss-custom-properties": "^9.0.2",
     "prettier": "1.19.1",
     "redux-mock-store": "^1.5.4",
     "rollup": "^1.31.1",
@@ -52,7 +51,8 @@
   },
   "peerDependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "date-fns": "^2.9.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,8 +1,3 @@
-/*
-@import "./../../../variables.css";
-*/
-
-
 .wrapper{
   padding: calc(var(--innerPadding)/2) var(--innerPadding);
   display: flex;

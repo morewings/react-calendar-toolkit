@@ -14,7 +14,6 @@ const Grid = ({
   onDateSet,
   wrapperComponent,
   wrapperClassname,
-  items,
   todayTimestamp,
   selectedTimestamp,
   visualComponent,
@@ -113,18 +112,18 @@ Grid.propTypes = {
   onDateSet: PropTypes.func.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
   selectedTimestamp: PropTypes.number.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.shape({
-        wide: PropTypes.string,
-        abbreviated: PropTypes.string,
-        narrow: PropTypes.string,
-        numeric: PropTypes.number,
-        short: PropTypes.string,
-      }).isRequired,
-      date: PropTypes.instanceOf(Date).isRequired,
-    }).isRequired
-  ).isRequired,
+  // items: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     name: PropTypes.shape({
+  //       wide: PropTypes.string,
+  //       abbreviated: PropTypes.string,
+  //       narrow: PropTypes.string,
+  //       numeric: PropTypes.number,
+  //       short: PropTypes.string,
+  //     }).isRequired,
+  //     date: PropTypes.instanceOf(Date).isRequired,
+  //   }).isRequired
+  // ).isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
   disableDate: PropTypes.func.isRequired,

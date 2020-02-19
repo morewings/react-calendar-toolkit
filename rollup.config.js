@@ -8,8 +8,8 @@ import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import replace from '@rollup/plugin-replace';
-// import visualizer from 'rollup-plugin-visualizer';
-import postcssImport from 'postcss-import';
+import visualizer from 'rollup-plugin-visualizer';
+import cssVariables from 'postcss-custom-properties';
 import pkg from './package.json';
 
 const OUTPUT_DATA = [
@@ -50,8 +50,14 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     postcss({
       extract: pkg.style, // we need only one copy of css
       inline: false,
-      modules: true,
-      plugins: [postcssImport(), autoprefixer],
+      plugins: [
+        cssVariables({
+          importFrom:
+            './src/components/visual/VariablesContainer/variables.css',
+          preserve: true,
+        }),
+        autoprefixer,
+      ],
     }),
     babel({
       runtimeHelpers: true,
@@ -70,7 +76,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       },
     }),
     filesize(),
-    // visualizer({open: true}),
+    visualizer({open: true}),
   ],
 }));
 
