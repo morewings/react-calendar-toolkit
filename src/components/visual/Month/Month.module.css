@@ -16,7 +16,7 @@
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: var(--borderRadius);
-  margin-top: $innerPadding;
+  margin-top: var(--innerPadding);
 }
 
 .wrapper:active{

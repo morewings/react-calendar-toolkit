@@ -7,6 +7,7 @@ import includePaths from 'rollup-plugin-includepaths';
 import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import replace from '@rollup/plugin-replace';
 // import visualizer from 'rollup-plugin-visualizer';
 import postcssImport from 'postcss-import';
 import pkg from './package.json';
@@ -35,16 +36,15 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',
-      'prop-types': 'PropTypes',
     },
   },
-  external: ['react', 'react-dom', 'react-is'],
   plugins: [
     peerDepsExternal(),
+    replace({'process.env.NODE_ENV': JSON.stringify('production')}), // we need this to reduce bundle size and silence prop-types
     includePaths({
       include: {},
       paths: ['src'],
-      external: ['react', 'react-dom', 'react-is'],
+      external: ['react', 'react-dom'],
       extensions: ['.js', '.json', '.html'],
     }),
     postcss({
@@ -63,7 +63,10 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     }),
     commonjs({
       namedExports: {
-        'node_modules/react-is/index.js': ['isValidElementType'], // TODO: check if it's still needed
+        'node_modules/react-is/index.js': [
+          'isValidElementType',
+          'isContextConsumer',
+        ], // TODO: check if it's still needed
       },
     }),
     filesize(),
