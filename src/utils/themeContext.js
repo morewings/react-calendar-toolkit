@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import VariablesContainer from 'components/visual/VariablesContainer';
 
 // TODO: make real context
@@ -8,20 +7,11 @@ import VariablesContainer from 'components/visual/VariablesContainer';
 //
 
 export const withTheme = WrappedComponent => {
-  const Component = ({wrapper, ...restProps}) => {
-    const Wrapper = wrapper;
-    return (
-      <Wrapper>
-        <WrappedComponent {...restProps} />
-      </Wrapper>
-    );
-  };
-  Component.propTypes = {
-    wrapper: PropTypes.elementType,
-  };
-  Component.defaultProps = {
-    wrapper: VariablesContainer,
-  };
+  const Component = props => (
+    <VariablesContainer>
+      <WrappedComponent {...props} />
+    </VariablesContainer>
+  );
   return Component;
 };
 
