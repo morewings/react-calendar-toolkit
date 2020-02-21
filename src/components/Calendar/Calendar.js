@@ -10,7 +10,7 @@ import {
 } from 'utils/dateUtils';
 import {useLocaleEnumerators} from 'utils/localeContext';
 
-const Grid = ({
+const Calendar = ({
   onDateSet,
   wrapperComponent,
   wrapperClassname,
@@ -104,7 +104,7 @@ const Grid = ({
   );
 };
 
-Grid.propTypes = {
+Calendar.propTypes = {
   wrapperClassname: PropTypes.string,
   precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
   wrapperComponent: PropTypes.elementType.isRequired,
@@ -131,9 +131,9 @@ Grid.propTypes = {
   highlightWeekends: PropTypes.bool,
 };
 
-Grid.defaultProps = {
+Calendar.defaultProps = {
   wrapperClassname: '',
   highlightWeekends: false,
 };
 
-export default Grid;
+export default Calendar;

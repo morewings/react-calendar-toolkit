@@ -1,4 +1,4 @@
-const curry = fn => {
+function curry(fn) {
   const curried = (...args) => {
     if (args.length >= fn.length) {
       return fn.apply(this, args);
@@ -6,6 +6,6 @@ const curry = fn => {
     return (...args2) => curried.apply(this, args.concat(args2));
   };
   return curried;
-};
+}
 
 export default curry;

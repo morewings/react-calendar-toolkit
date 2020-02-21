@@ -7,7 +7,7 @@ import {actionTypes, selectors} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
 import Header from 'components/visual/Header';
 import Selector from 'components/Selector';
-import Grid from 'components/Grid';
+import Calendar from 'components/Calendar';
 import WeekDays from 'components/Weekdays';
 import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
@@ -127,7 +127,7 @@ const DatePicker = ({
             visualComponent={WeekDayVisual}
             wrapperComponent={WeekDayGridVisual}
           />
-          <Grid
+          <Calendar
             precision="day"
             highlightWeekends={highlightWeekends}
             wrapperComponent={DayGridVisual}
@@ -143,7 +143,7 @@ const DatePicker = ({
         </Fragment>
       )}
       {precision === 'month' && (
-        <Grid
+        <Calendar
           precision="month"
           disableDate={disableDate}
           highlightDate={highlightDate}
@@ -157,7 +157,7 @@ const DatePicker = ({
         />
       )}
       {precision === 'year' && (
-        <Grid
+        <Calendar
           precision="year"
           disableDate={disableDate}
           highlightDate={highlightDate}

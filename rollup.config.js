@@ -8,13 +8,13 @@ import autoprefixer from 'autoprefixer';
 import localResolve from 'rollup-plugin-local-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import replace from '@rollup/plugin-replace';
-import visualizer from 'rollup-plugin-visualizer';
+// import visualizer from 'rollup-plugin-visualizer';
 import cssVariables from 'postcss-custom-properties';
 import pkg from './package.json';
 
 const OUTPUT_DATA = [
   {
-    file: pkg.browser,
+    file: pkg.browser, // TODO: check if date-fns supports UMD
     format: 'umd',
   },
   {
@@ -76,7 +76,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       },
     }),
     filesize(),
-    visualizer({open: true}),
+    // visualizer({open: true}),
   ],
 }));
 
