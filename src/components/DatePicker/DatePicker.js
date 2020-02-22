@@ -53,29 +53,33 @@ const DatePicker = ({
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
-  const precision = useSelector(selectors.getPrecision);
 
+  const precision = useSelector(selectors.getPrecision);
   const datepickerPrecisions = limitPrecision(
     config.supportedPrecisions,
     minPrecision
   );
+  const nextPrecision = getNextPrecision(datepickerPrecisions, precision);
+
   // TODO: refactor to hook
   const handleDateSet = useCallback(
     date => {
       precision === minPrecision && onDateSet(date);
-      const nextPrecision = getNextPrecision(datepickerPrecisions, precision);
       dispatch(actionCreators.setDate(convertToTimestamp(date)));
       nextPrecision && dispatch(actionCreators.setPrecision(nextPrecision));
     },
-    [datepickerPrecisions, dispatch, minPrecision, onDateSet, precision]
+    [dispatch, minPrecision, nextPrecision, onDateSet, precision]
   );
+
   useEffect(() => {
     dispatch(actionCreators.setDate(convertToTimestamp(initialDate)));
-  }, [initialDate, dispatch]);
+  }, [dispatch, initialDate]);
+
   useEffect(() => {
     dispatch(actionCreators.setToday(convertToTimestamp(today)));
     dispatch(actionCreators.setPrecision(minPrecision));
   }, [dispatch, minPrecision, today]);
+
   const Wrapper = wrapperElement;
   const DayVisual = dayComponent;
   const DayGridVisual = dayGridComponent;
@@ -87,6 +91,7 @@ const DatePicker = ({
   const WeekDayGridVisual = weekDayGridComponent;
   const HeaderVisual = headerComponent;
   const SelectorComponent = selectorComponent;
+
   return (
     <Wrapper className={wrapperClassname}>
       {showHeader && (
