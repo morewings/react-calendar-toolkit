@@ -1,8 +1,3 @@
-/**
- * Component is described here.
- *
- * @example ./DatePicker.md
- */
 import React, {useCallback, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
@@ -165,13 +160,21 @@ const DatePicker = ({
 };
 
 DatePicker.propTypes = {
+  /** Set initial selected date when component renders */
   initialDate: PropTypes.instanceOf(Date),
+  /** Set today date */
   today: PropTypes.instanceOf(Date),
+  /** Set start date of calendar */
   startDate: PropTypes.instanceOf(Date),
+  /** Set end date of calendar */
   endDate: PropTypes.instanceOf(Date),
+  /** Flag to show or hide header */
   showHeader: PropTypes.bool,
+  /** Set title of calendar show in Header */
   title: PropTypes.string,
+  /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year' */
   minPrecision: PropTypes.oneOf(config.supportedPrecisions),
+  /** Callback when user clicks selected date */
   onDateSet: PropTypes.func.isRequired,
   wrapperClassname: PropTypes.string,
   wrapperElement: PropTypes.elementType,
