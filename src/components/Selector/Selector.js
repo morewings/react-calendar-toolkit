@@ -1,38 +1,27 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
-import {actionTypes} from 'features/datepicker';
+import {actionCreators} from 'features/datepicker';
 import {decrementMonth, incrementMonth, convertToDate} from 'utils/dateUtils';
 
 const Selector = ({todayTimestamp, selectedTimestamp, selectorComponent}) => {
   const dispatch = useDispatch();
   const setPrecision = useCallback(
-    precision =>
-      dispatch({
-        type: actionTypes.SET_PRECISION,
-        payload: precision,
-      }),
+    precision => {
+      dispatch(actionCreators.setPrecision(precision));
+    },
     [dispatch]
   );
   const onIncrementMonth = useCallback(
     date => {
-      dispatch({
-        type: actionTypes.SET_DATE,
-        payload: {
-          selectedTimestamp: incrementMonth(date, 1),
-        },
-      });
+      dispatch(actionCreators.setDate(incrementMonth(date, 1)));
     },
     [dispatch]
   );
   const onDecrementMonth = useCallback(
-    date =>
-      dispatch({
-        type: actionTypes.SET_DATE,
-        payload: {
-          selectedTimestamp: decrementMonth(date, 1),
-        },
-      }),
+    date => {
+      dispatch(actionCreators.setDate(decrementMonth(date, 1)));
+    },
     [dispatch]
   );
   const SelectorVisual = selectorComponent;

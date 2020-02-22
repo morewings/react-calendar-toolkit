@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {convertToTimestamp} from 'utils/dateUtils';
 import config from 'utils/config';
-import {actionTypes, selectors} from 'features/datepicker';
+import {selectors, actionCreators} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
 import Header from 'components/visual/Header';
 import Selector from 'components/Selector';
@@ -54,47 +54,27 @@ const DatePicker = ({
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const precision = useSelector(selectors.getPrecision);
+
   const datepickerPrecisions = limitPrecision(
     config.supportedPrecisions,
     minPrecision
   );
+  // TODO: refactor to hook
   const handleDateSet = useCallback(
     date => {
       precision === minPrecision && onDateSet(date);
       const nextPrecision = getNextPrecision(datepickerPrecisions, precision);
-      dispatch({
-        type: actionTypes.SET_DATE,
-        payload: {
-          selectedTimestamp: convertToTimestamp(date),
-        },
-      });
-      nextPrecision &&
-        dispatch({
-          type: actionTypes.SET_PRECISION,
-          payload: nextPrecision,
-        });
+      dispatch(actionCreators.setDate(convertToTimestamp(date)));
+      nextPrecision && dispatch(actionCreators.setPrecision(nextPrecision));
     },
     [datepickerPrecisions, dispatch, minPrecision, onDateSet, precision]
   );
   useEffect(() => {
-    dispatch({
-      type: actionTypes.SET_DATE,
-      payload: {
-        selectedTimestamp: convertToTimestamp(initialDate),
-      },
-    });
+    dispatch(actionCreators.setDate(convertToTimestamp(initialDate)));
   }, [initialDate, dispatch]);
   useEffect(() => {
-    dispatch({
-      type: actionTypes.SET_TODAY,
-      payload: {
-        todayTimestamp: convertToTimestamp(today),
-      },
-    });
-    dispatch({
-      type: actionTypes.SET_PRECISION,
-      payload: minPrecision,
-    });
+    dispatch(actionCreators.setToday(convertToTimestamp(today)));
+    dispatch(actionCreators.setPrecision(minPrecision));
   }, [dispatch, minPrecision, today]);
   const Wrapper = wrapperElement;
   const DayVisual = dayComponent;
