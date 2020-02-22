@@ -25,30 +25,36 @@ const limitPrecision = (precisionEnum, minPrecision) => {
   return precisionEnum.slice(0, currentIndex + 1);
 };
 
+const getWrapper = wrapperProp =>
+  typeof wrapperProp === 'string'
+    ? {wrapperClassname: wrapperProp}
+    : {
+        wrapperElement: wrapperProp,
+      };
+
 const DatePicker = ({
   initialDate,
   today,
-  wrapperElement,
-  wrapperClassname,
   showHeader,
   title,
   minPrecision,
   onDateSet,
-  dayComponent,
-  dayGridComponent,
-  monthComponent,
-  monthGridComponent,
-  yearComponent,
-  yearGridComponent,
-  weekDayComponent,
-  weekDayGridComponent,
+  renderDayAs,
+  wrapDayWith,
+  renderMonthAs,
+  wrapMonthWith,
+  renderYearAs,
+  wrapYearWith,
+  renderWeekDayAs,
+  wrapWeekDayWith,
   startDate,
   endDate,
   disableDate,
   highlightWeekends,
-  headerComponent,
-  selectorComponent,
+  renderHeaderAs,
+  renderSelectorAs,
   highlightDate,
+  wrapWith,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
@@ -80,17 +86,22 @@ const DatePicker = ({
     dispatch(actionCreators.setPrecision(minPrecision));
   }, [dispatch, minPrecision, today]);
 
-  const Wrapper = wrapperElement;
-  const DayVisual = dayComponent;
-  const DayGridVisual = dayGridComponent;
-  const MonthVisual = monthComponent;
-  const MonthGridVisual = monthGridComponent;
-  const YearVisual = yearComponent;
-  const YearGridVisual = yearGridComponent;
-  const WeekDayVisual = weekDayComponent;
-  const WeekDayGridVisual = weekDayGridComponent;
-  const HeaderVisual = headerComponent;
-  const SelectorComponent = selectorComponent;
+  const Wrapper = getWrapper(wrapWith).wrapperElement
+    ? getWrapper(wrapWith).wrapperElement
+    : DatepickerWrapper;
+  const wrapperClassname = getWrapper(wrapWith).wrapperClassname
+    ? getWrapper(wrapWith).wrapperClassname
+    : '';
+  const DayVisual = renderDayAs;
+  const DayGridVisual = wrapDayWith;
+  const MonthVisual = renderMonthAs;
+  const MonthGridVisual = wrapMonthWith;
+  const YearVisual = renderYearAs;
+  const YearGridVisual = wrapYearWith;
+  const WeekDayVisual = renderWeekDayAs;
+  const WeekDayGridVisual = wrapWeekDayWith;
+  const HeaderVisual = renderHeaderAs;
+  const SelectorComponent = renderSelectorAs;
 
   return (
     <Wrapper className={wrapperClassname}>
@@ -160,37 +171,55 @@ const DatePicker = ({
 };
 
 DatePicker.propTypes = {
-  /** Set initial selected date when component renders */
+  /** Set initial selected date when component renders. */
   initialDate: PropTypes.instanceOf(Date),
-  /** Set today date */
+  /** Set today date. */
   today: PropTypes.instanceOf(Date),
-  /** Set start date of calendar */
+  /** Set start date of calendar. */
   startDate: PropTypes.instanceOf(Date),
-  /** Set end date of calendar */
+  /** Set end date of calendar. */
   endDate: PropTypes.instanceOf(Date),
-  /** Flag to show or hide header */
+  /** Flag to show or hide header. */
   showHeader: PropTypes.bool,
-  /** Set title of calendar show in Header */
+  /** Set title of calendar show in Header. */
   title: PropTypes.string,
-  /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year' */
+  /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
   minPrecision: PropTypes.oneOf(config.supportedPrecisions),
   /** Callback when user clicks selected date */
   onDateSet: PropTypes.func.isRequired,
-  wrapperClassname: PropTypes.string,
-  wrapperElement: PropTypes.elementType,
-  dayComponent: PropTypes.elementType,
-  dayGridComponent: PropTypes.elementType,
-  monthComponent: PropTypes.elementType,
-  monthGridComponent: PropTypes.elementType,
-  yearComponent: PropTypes.elementType,
-  yearGridComponent: PropTypes.elementType,
-  weekDayComponent: PropTypes.elementType,
-  weekDayGridComponent: PropTypes.elementType,
-  headerComponent: PropTypes.elementType,
-  selectorComponent: PropTypes.elementType,
+  /** Define wrapper for the calendar. Can be node, React element or className applied to wrapping div. */
+  wrapWith: PropTypes.oneOfType([PropTypes.elementType, PropTypes.string]),
+  /** Define component which renders __day__ entry. */
+  renderDayAs: PropTypes.elementType,
+  /** Define component which wraps __day__ entry. */
+  wrapDayWith: PropTypes.elementType,
+  /** Define component which renders __month__ entry. */
+  renderMonthAs: PropTypes.elementType,
+  /** Define component which wraps __month__ entry. */
+  wrapMonthWith: PropTypes.elementType,
+  /** Define component which renders __year__ entry. */
+  renderYearAs: PropTypes.elementType,
+  /** Define component which wraps __year__ entry. */
+  wrapYearWith: PropTypes.elementType,
+  /** Define component which renders __week day__ entry. */
+  renderWeekDayAs: PropTypes.elementType,
+  /** Define component which wraps __week day__ entry. */
+  wrapWeekDayWith: PropTypes.elementType,
+  /** Define component which renders __Header__. */
+  renderHeaderAs: PropTypes.elementType,
+  /** Define component which renders __Precision selector__. */
+  renderSelectorAs: PropTypes.elementType,
+  /** Function which decides if date should be __disabled__. It gets `isWeekend`, `precision` and `date` and outputs Boolean.
+   * `({isWeekend, precision, date}) => false`
+   * */
   disableDate: PropTypes.func,
+  /** Function which decides if date should be __highlighted__. It gets `isWeekend`, `precision` and `date` and outputs Boolean.
+   * `({isWeekend, precision, date}) => false`
+   * */
   highlightDate: PropTypes.func,
+  /** Flag to enable __weekend highlight__ prop. */
   highlightWeekends: PropTypes.bool,
+  /** date-fns locale object. Defaults to english */
   dateFnsLocale: PropTypes.shape({}).isRequired,
 };
 
@@ -202,18 +231,17 @@ DatePicker.defaultProps = {
   showHeader: true,
   title: '',
   minPrecision: 'day',
-  wrapperClassname: '',
-  wrapperElement: DatepickerWrapper,
-  dayComponent: Day,
-  dayGridComponent: DayGrid,
-  monthComponent: Month,
-  monthGridComponent: MonthGrid,
-  yearComponent: Year,
-  yearGridComponent: YearGrid,
-  weekDayComponent: WeekDay,
-  weekDayGridComponent: WeekDayGrid,
-  headerComponent: Header,
-  selectorComponent: DateSelector,
+  wrapWith: DatepickerWrapper,
+  renderDayAs: Day,
+  wrapDayWith: DayGrid,
+  renderMonthAs: Month,
+  wrapMonthWith: MonthGrid,
+  renderYearAs: Year,
+  wrapYearWith: YearGrid,
+  renderWeekDayAs: WeekDay,
+  wrapWeekDayWith: WeekDayGrid,
+  renderHeaderAs: Header,
+  renderSelectorAs: DateSelector,
   disableDate: ({isWeekend, precision, date}) => false,
   highlightDate: ({isWeekend, precision, date}) => false,
   highlightWeekends: true,

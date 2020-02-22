@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   pagePerSection: true,
+  assetsDir: './doc-assets',
   moduleAliases: {
     'react-calendar-toolkit': path.resolve(__dirname, 'src/entryPoint.js'), // custom resolver path
   },
@@ -16,9 +17,14 @@ module.exports = {
       description: 'The description for the installation section',
     },
     {
-      name: 'Components',
+      name: 'Available components',
       components: ['src/components/DatePicker/DatePicker.js'],
-      description: 'The description for the installation section',
+      description: 'Exported components',
+    },
+    {
+      name: 'Visual customization',
+      description: 'Exported components',
+      content: 'Visual_customization.md',
     },
     {
       pagePerSection: true,

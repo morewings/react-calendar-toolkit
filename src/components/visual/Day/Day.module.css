@@ -47,3 +47,7 @@
 .isToday {
   border-color: var(--gray);
 }
+
+.isHighlighted{
+  background-color: var(--highlightColor);
+}
