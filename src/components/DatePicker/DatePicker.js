@@ -1,3 +1,8 @@
+/**
+ * Component is described here.
+ *
+ * @example ./DatePicker.md
+ */
 import React, {useCallback, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';

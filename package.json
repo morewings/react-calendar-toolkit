@@ -39,6 +39,7 @@
     "node-sass": "^4.13.0",
     "postcss-custom-properties": "^9.0.2",
     "prettier": "1.19.1",
+    "react-styleguidist": "^10.6.2",
     "redux-mock-store": "^1.5.4",
     "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.3.3",
@@ -50,14 +51,15 @@
     "rollup-plugin-visualizer": "^3.3.1"
   },
   "peerDependencies": {
+    "date-fns": "^2.9.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "date-fns": "^2.9.0"
+    "react-dom": "^16.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-style": "npx styleguidist server --config styleguide.config.js",
     "build": "react-scripts build",
-    "build-rollup": "NODE_ENV=production rollup -c",
+    "build-rollup": "npx rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix": "eslint --fix ./src/",
