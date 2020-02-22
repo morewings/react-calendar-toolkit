@@ -48,16 +48,19 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       extensions: ['.js', '.json', '.html'],
     }),
     postcss({
-      extract: pkg.style, // we need only one copy of css
+      extract: format === 'umd' ? 'lib/ie.css' : pkg.style,
       inline: false,
-      plugins: [
-        cssVariables({
-          importFrom:
-            './src/components/visual/VariablesContainer/variables.css',
-          preserve: true,
-        }),
-        autoprefixer,
-      ],
+      plugins:
+        format === 'umd'
+          ? [
+              cssVariables({
+                importFrom:
+                  './src/components/visual/VariablesContainer/variables.css',
+                preserve: false,
+              }),
+              autoprefixer,
+            ]
+          : [autoprefixer],
     }),
     babel({
       runtimeHelpers: true,
