@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 
 const defaultOptions = {
-  block: 'center',
+  block: 'nearest',
   inline: 'center',
   behavior: 'smooth',
 };
