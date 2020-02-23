@@ -4,8 +4,8 @@
 
 ``year > month > day``
 
-```js noeditor
-import Calendar from './src/components/Calendar';
+```js
+import Calendar from './src/components/logic/Calendar';
 import {withLocaleContext} from './src/utils/localeContext';
 import {convertToTimestamp} from './src/utils/dateUtils';
 import MonthGrid from './src/components/visual/Month/MonthGrid.js';
@@ -36,20 +36,20 @@ const style = {
 <div style={style}>
   <WrappedCalendar
     {...props}
-    wrapperComponent={YearGrid}
-    visualComponent={Year}
+    wrapWith={YearGrid}
+    renderAs={Year}
     precision="year" />
 
   <WrappedCalendar
     {...props}
-    wrapperComponent={MonthGrid}
-    visualComponent={Month}
+    wrapWith={MonthGrid}
+    renderAs={Month}
     precision="month" />
   <div>
     <WrappedCalendar
       {...props}
-      wrapperComponent={DayGrid}
-      visualComponent={Day}
+      wrapWith={DayGrid}
+      renderAs={Day}
       precision="day" />
   </div>
 </div>
@@ -63,7 +63,7 @@ Datepicker toolkit architecture introduces concepts of __precision__ and __calen
 
 #### Changing precision
 
-User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ on Calendar. If target precision was met, e. g. user click year entry when `props.precision === 'year'` `onDateSet` callback is triggered.
+User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ entries on corresponding Calendar. If target precision was met, e. g. user click year entry when `props.precision === 'year'` `onDateSet` callback is triggered.
 
 User also can switch "downwards" and "upwards" by using Selector.
 

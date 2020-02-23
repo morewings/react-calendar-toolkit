@@ -14,7 +14,7 @@ module.exports = {
     {
       name: 'Overview',
       content: 'Overview.md',
-      description: 'Basic concepts',
+      description: 'How it works?',
     },
     {
       name: 'Available components',

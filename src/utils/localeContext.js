@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
-import defaultLocale from 'date-fns/esm/locale/ru';
+import defaultLocale from 'date-fns/esm/locale/en-US';
 import {getWeekDayNames, getYears, getMonths, getDays} from 'utils/enumerators';
 import {formatDateWithLocale} from 'utils/dateUtils';
 

@@ -10,7 +10,7 @@ import {
 } from 'utils/dateUtils';
 import {useLocaleEnumerators} from 'utils/localeContext';
 
-export const Calendar = ({
+const Calendar = ({
   onDateSet,
   wrapWith,
   wrapperClassname,
@@ -121,3 +121,5 @@ Calendar.defaultProps = {
   wrapperClassname: '',
   highlightWeekends: false,
 };
+
+export default Calendar;
