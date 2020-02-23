@@ -37,7 +37,7 @@ const CustomComponent = props => {
   <DatePicker
     renderHeaderAs={() => <CustomComponent style={styleHeader} title="<Header />" />}
     renderSelectorAs={() => <CustomComponent style={styleSelector} title="<Selector />" />}
-    wrapDaysWith={() => <CustomComponent style={styleCalendar} title="<Calendar />" />}
+    wrapMonthWith={() => <CustomComponent style={styleCalendar} title="<Calendar />" />}
     wrapWeekDaysWith={() => <CustomComponent style={style} title="<Weekdays />" />}
     minPrecision="month"
     initialDate={new Date(2020, 1, 6)}
@@ -51,6 +51,7 @@ const CustomComponent = props => {
     title="Demo datepicker" />
   <div style={{marginLeft: '30px'}}>
     <DatePicker
+      minPrecision="month"
       initialDate={new Date(2020, 1, 6)}
       startDate={new Date(2019, 11, 6)}
       endDate={new Date(2020, 1, 25)}

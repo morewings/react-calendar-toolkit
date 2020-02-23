@@ -16,13 +16,11 @@ const style = {
 const CustomComponent = ({
   onDateSet,
   date,
-  isSameMonth,
-  isToday,
-  isSelected,
   isDisabled,
+  isSameMonth,
+  isSelected,
+  name,
   isHighlighted,
-  isWeekend,
-  name
 }) => {
   return (
     <div style={style}>

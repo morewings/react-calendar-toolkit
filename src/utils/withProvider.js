@@ -1,11 +1,15 @@
 import React from 'react';
+import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import store from '../store';
+import {rootReducer} from '../store';
 
-const withTheme = WrappedComponent => props => (
-  <Provider store={store}>
-    <WrappedComponent {...props} />
-  </Provider>
-);
+const withTheme = WrappedComponent => props => {
+  const store = createStore(rootReducer);
+  return (
+    <Provider store={store}>
+      <WrappedComponent {...props} />
+    </Provider>
+  );
+};
 
 export default withTheme;

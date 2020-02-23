@@ -16,6 +16,7 @@ const Year = ({
     onDateSet(date);
   };
   const currentYear = useRef();
+  // hook which scrolls provided node into view
   useScrollIntoView(currentYear, isSelected);
   return (
     <div
@@ -26,8 +27,11 @@ const Year = ({
       onKeyPress={handleClick}
       className={classNames({
         [classes.wrapper]: true,
+        /** Conditional class to display, if year belongs to same year as today */
         [classes.isSameYear]: isSameYear,
+        /** Conditional class to display, if year is selected */
         [classes.isSelected]: isSelected,
+        /** Conditional class to display, if year is highlighted */
         [classes.isHighlighted]: isHighlighted,
       })}>
       {name.numeric}

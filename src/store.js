@@ -4,7 +4,7 @@ import {DatepickerReducer} from 'features/datepicker';
 import {ModalReducer} from 'features/modal';
 
 /* Create root reducer, containing all features of the application */
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   count: CounterReducer,
   datepicker: DatepickerReducer,
   modal: ModalReducer,

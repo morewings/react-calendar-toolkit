@@ -14,15 +14,12 @@ const style = {
 };
 
 const CustomComponent = ({
+  isHighlighted,
   onDateSet,
   date,
-  isSameMonth,
-  isToday,
   isSelected,
-  isDisabled,
-  isHighlighted,
-  isWeekend,
-  name
+  isSameYear,
+  name,
 }) => {
   return (
     <div style={style}>
@@ -32,54 +29,56 @@ const CustomComponent = ({
 };
 
 <DatePicker
-  minPrecision="year"
   renderYearAs={CustomComponent}
+  minPrecision="year"
   startDate={new Date(1999, 0, 1)}
   endDate={new Date(2020, 1, 25)}
   title="Demo datepicker" />
 ```
 
-### Month Component example
+### Year Component example
 ```js static
+import useScrollIntoView from 'utils/useScrollIntoView';
 import classNames from 'classnames';
-import classes from './Month.module.css';
+import classes from './Year.module.css';
 
-const Month = ({
+const Year = ({
+  isHighlighted,
   onDateSet,
   date,
-  isDisabled,
-  isSameMonth,
   isSelected,
+  isSameYear,
   name,
-  isHighlighted,
 }) => {
   const handleClick = () => {
     onDateSet(date);
   };
+  const currentYear = useRef();
+  // hook which scrolls provided node into view
+  useScrollIntoView(currentYear, isSelected);
   return (
     <div
+      ref={currentYear}
       tabIndex="0"
       role="button"
       onClick={handleClick}
       onKeyPress={handleClick}
       className={classNames({
         [classes.wrapper]: true,
-        /** Conditional class to display, if month is selected */
+        /** Conditional class to display, if year belongs to same year as today */
+        [classes.isSameYear]: isSameYear,
+        /** Conditional class to display, if year is selected */
         [classes.isSelected]: isSelected,
-        /** Conditional class to display, if month is disabled */
-        [classes.isDisabled]: isDisabled,
-        /** Conditional class to display, if month belongs to same month as today */
-        [classes.isSameMonth]: isSameMonth,
-        /** Conditional class to display, if month is highlighted */
+        /** Conditional class to display, if year is highlighted */
         [classes.isHighlighted]: isHighlighted,
       })}>
-      {name.wide}
+      {name.numeric}
     </div>
   );
 };
 ```
 
-### Wrap Month Calendar with custom component
+### Wrap Year Calendar with custom component
 You can provide wrapper component to Month Calendar, which can be React Component or DOM node.
 
 ```js
@@ -92,8 +91,9 @@ const style = {
   flexWrap: 'wrap',
   padding: '0 8px 8px',
   margin: '0 8px 8px',
-  height: '247px',
+  height: '260px',
   border: '2px solid lightGray',
+  overflow: 'auto',
 };
 
 const CustomComponent = ({children}) => (
