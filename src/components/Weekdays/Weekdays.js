@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useLocaleEnumerators} from 'utils/localeContext';
 
-const WeekDays = ({wrapperComponent, visualComponent}) => {
-  const WeekDaysWrapper = wrapperComponent;
-  const VisualComponent = visualComponent;
+const WeekDays = ({wrapWith, renderAs}) => {
+  const WeekDaysWrapper = wrapWith;
+  const VisualComponent = renderAs;
   const {getWeekDayNames} = useLocaleEnumerators();
   return (
     <WeekDaysWrapper>
@@ -16,17 +16,8 @@ const WeekDays = ({wrapperComponent, visualComponent}) => {
 };
 
 WeekDays.propTypes = {
-  wrapperComponent: PropTypes.elementType.isRequired,
-  visualComponent: PropTypes.elementType.isRequired,
-  // items: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     short: PropTypes.string.isRequired,
-  //     narrow: PropTypes.string.isRequired,
-  //     abbreviated: PropTypes.string.isRequired,
-  //     wide: PropTypes.string.isRequired,
-  //     numeric: PropTypes.number.isRequired,
-  //   }).isRequired
-  // ).isRequired,
+  wrapWith: PropTypes.elementType.isRequired,
+  renderAs: PropTypes.elementType.isRequired,
 };
 
 export default WeekDays;

@@ -8,13 +8,13 @@ module.exports = {
   },
   sections: [
     {
-      name: 'React Calendar Toolkit',
-      content: 'Overview.md',
-    },
-    {
       name: 'Installation',
       content: 'Installation.md',
-      description: 'The description for the installation section',
+    },
+    {
+      name: 'Overview',
+      content: 'Overview.md',
+      description: 'Basic concepts',
     },
     {
       name: 'Available components',

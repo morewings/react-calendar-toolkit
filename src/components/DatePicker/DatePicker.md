@@ -82,21 +82,6 @@ import DatePicker from 'react-calendar-toolkit';
   title="Demo datepicker" />
 ```
 
-### Calendar views and precision
-
-``year > month > day``
-
-Datepicker toolkit architecture introduces concepts of __precision__ and __calendar__. 
-
-Precision defines accuracy of date being selected. E.g. if `props.precision === 'month'` user can select between only month entries. Also only year and month calendars are available with this setting. 
-
-Calendar is a collection of date entries (year, month or day). Each entry (can be React Component or DOM node)  receives corresponding `Date` object and ``onDateSet`` props. Each Calendar has corresponding precision.
-
-![Selector structure](selector-structure.png)
-
-User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ on Calendar. If target precision was met, e. g. user click year entry when `props.precision === 'year'` `onDateSet` callback is triggered.
-User can switch "downwards" and "upwards" by using Selector.
-
 ### Basic Customization
 
 #### No header

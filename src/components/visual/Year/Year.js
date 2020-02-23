@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
-import useScrollIntoView from 'utils/useScrollIntoView';
 import classNames from 'classnames';
 import classes from './Year.module.css';
 
@@ -16,8 +15,6 @@ const Year = ({
     onDateSet(date);
   };
   const currentYear = useRef();
-  // hook which scrolls provided node into view
-  useScrollIntoView(currentYear, isSelected);
   return (
     <div
       ref={currentYear}

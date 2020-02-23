@@ -13,9 +13,9 @@ const App = () => (
   <div className="app">
     <div className="container">
       <DatePicker
-        startDate={new Date(1999, 0, 1)}
+        startDate={new Date(1990, 0, 1)}
         endDate={new Date(2020, 1, 25)}
-        minPrecision="year"
+        minPrecision="day"
         highlightDate={highlightDate}
         onDateSet={date => {
           console.log('date set', date);
@@ -24,13 +24,15 @@ const App = () => (
       />
     </div>
     <div className="container">
-      <DatePickerFieldset
-        onDateSet={date => {
-          console.log('date set', date);
-        }}
-        minPrecision="day"
-        title="Demo datepicker"
-      />
+      {/*<DatePickerFieldset*/}
+      {/*  onDateSet={date => {*/}
+      {/*    console.log('date set', date);*/}
+      {/*  }}*/}
+      {/*  startDate={new Date(1979, 0, 1)}*/}
+      {/*  endDate={new Date(2030, 1, 25)}*/}
+      {/*  minPrecision="day"*/}
+      {/*  title="Demo datepicker"*/}
+      {/*/>*/}
     </div>
   </div>
 );

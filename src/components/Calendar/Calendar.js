@@ -12,11 +12,11 @@ import {useLocaleEnumerators} from 'utils/localeContext';
 
 export const Calendar = ({
   onDateSet,
-  wrapperComponent,
+  wrapWith,
   wrapperClassname,
   todayTimestamp,
   selectedTimestamp,
-  visualComponent,
+  renderAs,
   precision,
   startDate,
   endDate,
@@ -41,9 +41,7 @@ export const Calendar = ({
     date => {
       if (precision === 'year') return false; // we are not disabling years, just rendering the range
       if (precision === 'month') {
-        return (
-          !checkIsSameMonth(date, startDate) && !checkIsSameMonth(date, endDate)
-        );
+        return !checkIsWithinInterval({start: startDate, end: endDate}, date);
       }
       return (
         disableDate({date, isWeekend: checkIsWeekend(date), precision}) ||
@@ -79,8 +77,8 @@ export const Calendar = ({
   );
   const isWeekendHighlighted = date =>
     highlightWeekends && checkIsWeekend(date);
-  const Wrapper = wrapperComponent;
-  const VisualComponent = visualComponent;
+  const Wrapper = wrapWith;
+  const VisualComponent = renderAs;
   return (
     <Fragment>
       <Wrapper className={wrapperClassname}>
@@ -91,7 +89,7 @@ export const Calendar = ({
             isToday={checkIsSameDay(date, todayTimestamp)}
             isSelected={getIsSelected(date, selectedTimestamp)}
             isSameMonth={checkIsSameMonth(date, selectedTimestamp)}
-            isSameYear={checkIsSameMonth(date, selectedTimestamp)}
+            isSameYear={checkIsSameYear(date, selectedTimestamp)}
             isDisabled={getIsDisabled(date)}
             isHighlighted={getIsHighlighted(date)}
             name={name}
@@ -107,23 +105,11 @@ export const Calendar = ({
 Calendar.propTypes = {
   wrapperClassname: PropTypes.string,
   precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
-  wrapperComponent: PropTypes.elementType.isRequired,
-  visualComponent: PropTypes.elementType.isRequired,
+  wrapWith: PropTypes.elementType.isRequired,
+  renderAs: PropTypes.elementType.isRequired,
   onDateSet: PropTypes.func.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
   selectedTimestamp: PropTypes.number.isRequired,
-  // items: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     name: PropTypes.shape({
-  //       wide: PropTypes.string,
-  //       abbreviated: PropTypes.string,
-  //       narrow: PropTypes.string,
-  //       numeric: PropTypes.number,
-  //       short: PropTypes.string,
-  //     }).isRequired,
-  //     date: PropTypes.instanceOf(Date).isRequired,
-  //   }).isRequired
-  // ).isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
   disableDate: PropTypes.func.isRequired,

@@ -1,1 +1,91 @@
-hello world
+`react-datepicker-toolkit` is a set of React Components capable of rendering various calendars, datepickers etc. Each exposed component accepts date logic props, such as `startDate`, `today` and rendering props such as `wrapDaysWith` or `renderMonthAs` which allow to override how each entry looks like and provide wrapping element for collections (Calendars).
+
+### Calendar views and precision
+
+``year > month > day``
+
+```js noeditor
+import Calendar from './src/components/Calendar';
+import {withLocaleContext} from './src/utils/localeContext';
+import {convertToTimestamp} from './src/utils/dateUtils';
+import MonthGrid from './src/components/visual/Month/MonthGrid.js';
+import Month from './src/components/visual/Month/Month.js';
+import Year from './src/components/visual/Year/Year.js';
+import YearGrid from './src/components/visual/Year/YearGrid.js';
+import DayGrid from './src/components/visual/Day/DayGrid.js';
+import Day from './src/components/visual/Day/Day.js';
+
+
+const WrappedCalendar = withLocaleContext(Calendar);
+
+const props = {
+  todayTimestamp: convertToTimestamp(new Date()),
+  selectedTimestamp: convertToTimestamp(new Date(2020, 0, 6)),
+  highlightDate: () => false,
+  disableDate: () => false,
+  startDate: new Date(2009, 0, 1),
+  endDate: new Date(2029, 1, 25),
+  onDateSet: () => {},
+};
+
+const style = {
+  display: 'flex',
+  fontFamily: 'sans-serif'
+};
+
+<div style={style}>
+  <WrappedCalendar
+    {...props}
+    wrapperComponent={YearGrid}
+    visualComponent={Year}
+    precision="year" />
+
+  <WrappedCalendar
+    {...props}
+    wrapperComponent={MonthGrid}
+    visualComponent={Month}
+    precision="month" />
+  <div>
+    <WrappedCalendar
+      {...props}
+      wrapperComponent={DayGrid}
+      visualComponent={Day}
+      precision="day" />
+  </div>
+</div>
+```
+
+Datepicker toolkit architecture introduces concepts of __precision__ and __calendar__. 
+
+**Precision** defines accuracy of date being selected. E.g. if `props.precision === 'month'` user can select between only month entries. Also only year and month calendars are available with this setting. 
+
+**Calendar** is a collection of date entries (year, month or day). Each entry (can be React Component or DOM node)  receives corresponding `Date` object and ``onDateSet`` props. Each Calendar has corresponding precision. Calendar renders collection of date entries and wraps them with provived Component or DOM node.
+
+#### Changing precision
+
+User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ on Calendar. If target precision was met, e. g. user click year entry when `props.precision === 'year'` `onDateSet` callback is triggered.
+
+User also can switch "downwards" and "upwards" by using Selector.
+
+![Selector structure](selector-structure.png)
+
+### Visual components API
+
+Each date entry visual component (`Day`, `Month`, `Year`) receives `date` prop, which is `Date` object containing the date it has to render. Also such component receives `onDateSet` prop, function expecting `Date` object to set as selected date for the whole Calendar.
+
+```js static
+// date comes from the props
+const handleClick = () => {
+  onDateSet(date);
+};
+```
+
+Date entry components can be wrapped with provided React Component or DOM node, see `wrapWith` props.
+
+`Selector` visual component gets `incrementMonth` and `decrementMonth` props to set selected date plus or minus 1 month from selected. This props are bound to month stepper arrows. Also it gets `todayDate` and `selectedDate` props instead of just `date`, since it is not related to specific date.
+
+`Header` visual component gets `todayDate` and `selectedDate` props for the same reasons as above. Also it gets `title` prop with the custom name of Datepicker. 
+
+`Weekday` visual component gets just day name to render.
+
+

@@ -92,16 +92,8 @@ const DatePicker = ({
   const wrapperClassname = getWrapper(wrapWith).wrapperClassname
     ? getWrapper(wrapWith).wrapperClassname
     : '';
-  const DayVisual = renderDayAs;
-  const DayGridVisual = wrapDaysWith;
-  const MonthVisual = renderMonthAs;
-  const MonthGridVisual = wrapMonthWith;
-  const YearVisual = renderYearAs;
-  const YearGridVisual = wrapYearWith;
-  const WeekDayVisual = renderWeekDayAs;
-  const WeekDaysGridVisual = wrapWeekDaysWith;
+
   const HeaderVisual = renderHeaderAs;
-  const SelectorComponent = renderSelectorAs;
 
   return (
     <Wrapper className={wrapperClassname}>
@@ -113,23 +105,20 @@ const DatePicker = ({
         />
       )}
       <Selector
-        selectorComponent={SelectorComponent}
+        renderAs={renderSelectorAs}
         selectedTimestamp={selectedTimestamp}
         todayTimestamp={todayTimestamp}
       />
       {precision === 'day' && (
         <Fragment>
-          <WeekDays
-            visualComponent={WeekDayVisual}
-            wrapperComponent={WeekDaysGridVisual}
-          />
+          <WeekDays renderAs={renderWeekDayAs} wrapWith={wrapWeekDaysWith} />
           <Calendar
             precision="day"
             highlightWeekends={highlightWeekends}
-            wrapperComponent={DayGridVisual}
+            wrapWith={wrapDaysWith}
+            renderAs={renderDayAs}
             disableDate={disableDate}
             highlightDate={highlightDate}
-            visualComponent={DayVisual}
             selectedTimestamp={selectedTimestamp}
             todayTimestamp={todayTimestamp}
             onDateSet={handleDateSet}
@@ -143,8 +132,8 @@ const DatePicker = ({
           precision="month"
           disableDate={disableDate}
           highlightDate={highlightDate}
-          wrapperComponent={MonthGridVisual}
-          visualComponent={MonthVisual}
+          wrapWith={wrapMonthWith}
+          renderAs={renderMonthAs}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           onDateSet={handleDateSet}
@@ -157,8 +146,8 @@ const DatePicker = ({
           precision="year"
           disableDate={disableDate}
           highlightDate={highlightDate}
-          wrapperComponent={YearGridVisual}
-          visualComponent={YearVisual}
+          wrapWith={wrapYearWith}
+          renderAs={renderYearAs}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           onDateSet={handleDateSet}

@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {actionCreators} from 'features/datepicker';
 import {decrementMonth, incrementMonth, convertToDate} from 'utils/dateUtils';
 
-const Selector = ({todayTimestamp, selectedTimestamp, selectorComponent}) => {
+const Selector = ({todayTimestamp, selectedTimestamp, renderAs}) => {
   const dispatch = useDispatch();
   const setPrecision = useCallback(
     precision => {
@@ -24,7 +24,7 @@ const Selector = ({todayTimestamp, selectedTimestamp, selectorComponent}) => {
     },
     [dispatch]
   );
-  const SelectorVisual = selectorComponent;
+  const SelectorVisual = renderAs;
   return (
     <SelectorVisual
       incrementMonth={onIncrementMonth}
@@ -39,7 +39,7 @@ const Selector = ({todayTimestamp, selectedTimestamp, selectorComponent}) => {
 Selector.propTypes = {
   selectedTimestamp: PropTypes.number.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
-  selectorComponent: PropTypes.elementType.isRequired,
+  renderAs: PropTypes.elementType.isRequired,
 };
 
 export default Selector;
