@@ -53,12 +53,8 @@ const Year = ({
   const handleClick = () => {
     onDateSet(date);
   };
-  const currentYear = useRef();
-  // hook which scrolls provided node into view
-  useScrollIntoView(currentYear, isSelected);
   return (
     <div
-      ref={currentYear}
       tabIndex="0"
       role="button"
       onClick={handleClick}

@@ -14,10 +14,8 @@ const Year = ({
   const handleClick = () => {
     onDateSet(date);
   };
-  const currentYear = useRef();
   return (
     <div
-      ref={currentYear}
       tabIndex="0"
       role="button"
       onClick={handleClick}
