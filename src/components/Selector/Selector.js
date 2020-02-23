@@ -27,12 +27,11 @@ const Selector = ({todayTimestamp, selectedTimestamp, selectorComponent}) => {
   const SelectorVisual = selectorComponent;
   return (
     <SelectorVisual
-      selectedTimestamp={selectedTimestamp}
-      todayTimestamp={todayTimestamp}
       incrementMonth={onIncrementMonth}
       decrementMonth={onDecrementMonth}
       setPrecision={setPrecision}
-      date={convertToDate(selectedTimestamp)}
+      todayDate={convertToDate(todayTimestamp)}
+      selectedDate={convertToDate(selectedTimestamp)}
     />
   );
 };

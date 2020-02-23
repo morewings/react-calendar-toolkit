@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFormatDate} from 'utils/localeContext';
-import classes from './DateSelector.module.css';
+import classes from './Selector.module.css';
 
-const DateSelector = ({
-  selectedTimestamp,
-  todayTimestamp,
+const Selector = ({
+  selectedDate,
+  todayDate,
   setPrecision,
   decrementMonth,
-  date,
   incrementMonth,
 }) => {
   const formatDate = useFormatDate();
-  const year = formatDate('y', selectedTimestamp);
-  const month = formatDate('LLLL', selectedTimestamp);
+  const year = formatDate('y', selectedDate);
+  const month = formatDate('LLLL', selectedDate);
   return (
     <div className={classes.wrapper}>
+      {/** Renders precision selectors */}
       <div className={classes.buttons}>
         <button
           onClick={() => {
@@ -32,17 +32,18 @@ const DateSelector = ({
           {month}
         </button>
       </div>
+      {/** Renders month stepper */}
       <div className={classes.stepper}>
         <button
           onClick={() => {
-            decrementMonth(date);
+            decrementMonth(selectedDate);
           }}
           type="button">
           ⟨
         </button>
         <button
           onClick={() => {
-            incrementMonth(date);
+            incrementMonth(selectedDate);
           }}
           type="button">
           ⟩
@@ -52,13 +53,17 @@ const DateSelector = ({
   );
 };
 
-DateSelector.propTypes = {
-  selectedTimestamp: PropTypes.number.isRequired,
-  todayTimestamp: PropTypes.number.isRequired,
+Selector.propTypes = {
+  /** Method which sets precision for Calendar shown below, e.g. `setPrecision('month')`. */
   setPrecision: PropTypes.func.isRequired,
+  /** Method which __adds 1 month__ to selected date for Calendar and Header components, e.g. `incrementMonth(selectedDate)`. */
   incrementMonth: PropTypes.func.isRequired,
+  /** Method which __subtracts 1 month__ from selected date for Calendar and Header components, e.g. `incrementMonth(selectedDate)`. */
   decrementMonth: PropTypes.func.isRequired,
-  date: PropTypes.instanceOf(Date).isRequired,
+  /** Selected date of Calendar */
+  selectedDate: PropTypes.instanceOf(Date).isRequired,
+  /** Today date */
+  todayDate: PropTypes.instanceOf(Date).isRequired,
 };
 
-export default DateSelector;
+export default Selector;

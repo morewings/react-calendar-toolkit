@@ -36,11 +36,17 @@ const Year = ({
 };
 
 Year.propTypes = {
+  /** Flag, showing if this year entry is __selected__. */
   isSelected: PropTypes.bool.isRequired,
+  /** Flag, showing if this year entry is __highlighted__. */
   isHighlighted: PropTypes.bool.isRequired,
+  /** Function to set date for Calendar, e. g. `onDateSet(date)`. */
   onDateSet: PropTypes.func.isRequired,
+  /** Date for this year entry */
   date: PropTypes.instanceOf(Date).isRequired,
+  /** Flag, showing if this month entry and current date __belong to the same year__. */
   isSameYear: PropTypes.bool.isRequired,
+  /** Object, which has `numeric` property with current year number. */
   name: PropTypes.shape({
     numeric: PropTypes.number.isRequired,
   }).isRequired,

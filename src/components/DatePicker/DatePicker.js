@@ -1,19 +1,19 @@
 import React, {useCallback, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import {convertToTimestamp} from 'utils/dateUtils';
+import {convertToTimestamp, convertToDate} from 'utils/dateUtils';
 import config from 'utils/config';
 import {selectors, actionCreators} from 'features/datepicker';
 import DatepickerWrapper from 'components/visual/Datepicker';
 import Header from 'components/visual/Header';
 import Selector from 'components/Selector';
+import SelectorVisual from 'components/visual/Selector';
 import Calendar from 'components/Calendar';
 import WeekDays from 'components/Weekdays';
 import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
-import DateSelector from 'components/visual/DateSelector';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
   const currentIndex = precisionEnum.indexOf(currentPrecision);
@@ -40,13 +40,13 @@ const DatePicker = ({
   minPrecision,
   onDateSet,
   renderDayAs,
-  wrapDayWith,
+  wrapDaysWith,
   renderMonthAs,
   wrapMonthWith,
   renderYearAs,
   wrapYearWith,
   renderWeekDayAs,
-  wrapWeekDayWith,
+  wrapWeekDaysWith,
   startDate,
   endDate,
   disableDate,
@@ -93,13 +93,13 @@ const DatePicker = ({
     ? getWrapper(wrapWith).wrapperClassname
     : '';
   const DayVisual = renderDayAs;
-  const DayGridVisual = wrapDayWith;
+  const DayGridVisual = wrapDaysWith;
   const MonthVisual = renderMonthAs;
   const MonthGridVisual = wrapMonthWith;
   const YearVisual = renderYearAs;
   const YearGridVisual = wrapYearWith;
   const WeekDayVisual = renderWeekDayAs;
-  const WeekDayGridVisual = wrapWeekDayWith;
+  const WeekDaysGridVisual = wrapWeekDaysWith;
   const HeaderVisual = renderHeaderAs;
   const SelectorComponent = renderSelectorAs;
 
@@ -108,8 +108,8 @@ const DatePicker = ({
       {showHeader && (
         <HeaderVisual
           title={title}
-          todayTimestamp={todayTimestamp}
-          selectedTimestamp={selectedTimestamp}
+          todayDate={convertToDate(todayTimestamp)}
+          selectedDate={convertToDate(selectedTimestamp)}
         />
       )}
       <Selector
@@ -121,7 +121,7 @@ const DatePicker = ({
         <Fragment>
           <WeekDays
             visualComponent={WeekDayVisual}
-            wrapperComponent={WeekDayGridVisual}
+            wrapperComponent={WeekDaysGridVisual}
           />
           <Calendar
             precision="day"
@@ -192,7 +192,7 @@ DatePicker.propTypes = {
   /** Define component which renders __day__ entry. */
   renderDayAs: PropTypes.elementType,
   /** Define component which wraps __day__ entry. */
-  wrapDayWith: PropTypes.elementType,
+  wrapDaysWith: PropTypes.elementType,
   /** Define component which renders __month__ entry. */
   renderMonthAs: PropTypes.elementType,
   /** Define component which wraps __month__ entry. */
@@ -204,7 +204,7 @@ DatePicker.propTypes = {
   /** Define component which renders __week day__ entry. */
   renderWeekDayAs: PropTypes.elementType,
   /** Define component which wraps __week day__ entry. */
-  wrapWeekDayWith: PropTypes.elementType,
+  wrapWeekDaysWith: PropTypes.elementType,
   /** Define component which renders __Header__. */
   renderHeaderAs: PropTypes.elementType,
   /** Define component which renders __Precision selector__. */
@@ -220,7 +220,7 @@ DatePicker.propTypes = {
   /** Flag to enable __weekend highlight__ prop. */
   highlightWeekends: PropTypes.bool,
   /** date-fns locale object. Defaults to english */
-  dateFnsLocale: PropTypes.shape({}).isRequired,
+  dateFnsLocale: PropTypes.shape({}), // eslint-disable-line react/require-default-props
 };
 
 DatePicker.defaultProps = {
@@ -233,15 +233,15 @@ DatePicker.defaultProps = {
   minPrecision: 'day',
   wrapWith: DatepickerWrapper,
   renderDayAs: Day,
-  wrapDayWith: DayGrid,
+  wrapDaysWith: DayGrid,
   renderMonthAs: Month,
   wrapMonthWith: MonthGrid,
   renderYearAs: Year,
   wrapYearWith: YearGrid,
   renderWeekDayAs: WeekDay,
-  wrapWeekDayWith: WeekDayGrid,
+  wrapWeekDaysWith: WeekDayGrid,
   renderHeaderAs: Header,
-  renderSelectorAs: DateSelector,
+  renderSelectorAs: SelectorVisual,
   disableDate: ({isWeekend, precision, date}) => false,
   highlightDate: ({isWeekend, precision, date}) => false,
   highlightWeekends: true,

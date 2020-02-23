@@ -1,4 +1,68 @@
-![Datepicker structure](datepicker-structure.png)
+```js noeditor
+import DatePicker from 'react-calendar-toolkit';
+
+const style = {
+  color: 'black',
+  textAlign: 'center',
+  padding: '8px 0',
+  border: '2px solid lightGray',
+  margin: '2px'
+};
+
+const styleCalendar = {
+  ...style,
+  height: '245px'
+};
+
+const styleHeader = {
+  ...style,
+  height: '105px'
+};
+
+const styleSelector = {
+  ...style,
+  height: '26px'
+};
+
+const CustomComponent = props => {
+  return (
+    <div style={props.style}>
+      {props.title}
+    </div>
+  )
+};
+
+
+<div style={{display: 'flex'}}>
+  <DatePicker
+    renderHeaderAs={() => <CustomComponent style={styleHeader} title="<Header />" />}
+    renderSelectorAs={() => <CustomComponent style={styleSelector} title="<Selector />" />}
+    wrapDaysWith={() => <CustomComponent style={styleCalendar} title="<Calendar />" />}
+    wrapWeekDaysWith={() => <CustomComponent style={style} title="<Weekdays />" />}
+    minPrecision="month"
+    initialDate={new Date(2020, 1, 6)}
+    startDate={new Date(2019, 11, 6)}
+    endDate={new Date(2020, 1, 25)}
+    today={new Date()}
+    onDateSet={
+    date => {
+      console.log('date set', date);
+    }}
+    title="Demo datepicker" />
+  <div style={{marginLeft: '30px'}}>
+    <DatePicker
+      initialDate={new Date(2020, 1, 6)}
+      startDate={new Date(2019, 11, 6)}
+      endDate={new Date(2020, 1, 25)}
+      today={new Date()}
+      onDateSet={
+        date => {
+          console.log('date set', date);
+      }}
+      title="Demo datepicker" />
+  </div>
+</div>
+```
 
 Datepicker is a component which allows user to see and pick from Calendar of provided dates. It has Selector, which allows to switch between precisions and step between months. Also renders Header with selected date and Datepicker title. 
 
@@ -21,7 +85,11 @@ import DatePicker from 'react-calendar-toolkit';
 
 ``year > month > day``
 
-Datepicker toolkit architecture introduces concept of __precision__. Precision defines accuracy of date being selected. E.g. if `props.precision === 'month'` user can select between only month entries. Also only year and month calendars are available with this setting. 
+Datepicker toolkit architecture introduces concepts of __precision__ and __calendar__. 
+
+Precision defines accuracy of date being selected. E.g. if `props.precision === 'month'` user can select between only month entries. Also only year and month calendars are available with this setting. 
+
+Calendar is a collection of date entries (year, month or day). Each entry (can be React Component or DOM node)  receives corresponding `Date` object and ``onDateSet`` props. Each Calendar has corresponding precision.
 
 ![Selector structure](selector-structure.png)
 

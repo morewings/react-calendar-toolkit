@@ -23,16 +23,16 @@ module.exports = {
     },
     {
       name: 'Visual customization',
-      description: 'Exported components',
-      content: 'Visual_customization.md',
-    },
-    {
-      pagePerSection: true,
-      name: 'Visual Components',
-      content: 'Visual_Components.md',
-      components: 'src/components/visual/**/[A-Z]*.js',
-      exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      description:
+        'You can customize UI of each datepicker component by overriding default view component.',
+      components: [
+        'src/components/visual/Header/Header.js',
+        'src/components/visual/Selector/Selector.js',
+        'src/components/visual/Day/Day.js',
+        'src/components/visual/WeekDay/WeekDay.js',
+        'src/components/visual/Month/Month.js',
+        'src/components/visual/Year/Year.js',
+      ],
     },
   ],
 };
