@@ -26,26 +26,7 @@ const CustomComponent = ({selectedDate, title, todayDate}) => {
 ```
 
 ### Header Component example
-```js static
-import {useFormatDate} from 'utils/localeContext';
-import classes from './Header.module.css';
 
-const Header = ({selectedDate, title, todayDate}) => {
-   /**
-   * Returns formatted date
-   * @param {string} pattern - Formatting pattern
-   * @param {Date} date - Date object to apply format
-   * @return {string} Formatted date
-   */
-  const formatDate = useFormatDate();
-  return (
-    <div className={classes.wrapper}>
-      <div className={classes.title}>{title}</div>
-      <div className={classes.currentDate}>
-        {formatDate('MMM do', selectedDate)}
-      </div>
-    </div>
-  );
-};
+```js { "file": "../Header.js" }
 ```
 

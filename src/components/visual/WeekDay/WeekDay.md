@@ -28,12 +28,7 @@ const CustomComponent = ({name}) => {
 ```
 
 ### WeekDay Component example
-```js static
-import classes from './WeekDay.module.css';
-
-const WeekDay = props => (
-  <div className={classes.wrapper}>{props.name.short}</div>
-);
+```js { "file": "../WeekDay.js" }
 ```
 
 ### Wrap WeekDay Grid with custom component

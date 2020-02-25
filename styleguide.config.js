@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 module.exports = {
   pagePerSection: true,
@@ -8,8 +9,8 @@ module.exports = {
   },
   sections: [
     {
-      name: 'Installation',
-      content: 'Installation.md',
+      name: 'Quickstart',
+      content: 'Quickstart.md',
     },
     {
       name: 'Overview',
@@ -35,4 +36,23 @@ module.exports = {
       ],
     },
   ],
+  updateExample(props, exampleFilePath) {
+    // props.settings are passed by any fenced code block, in this case
+    const {settings, lang} = props;
+    // "../mySourceCode.js"
+    if (settings && typeof settings.file === 'string') {
+      // "absolute path to mySourceCode.js"
+      const filepath = path.resolve(exampleFilePath, settings.file);
+      // displays the block as static code
+      settings.static = true;
+      // no longer needed
+      delete settings.file;
+      return {
+        content: fs.readFileSync(filepath, 'utf8'),
+        settings,
+        lang,
+      };
+    }
+    return props;
+  },
 };

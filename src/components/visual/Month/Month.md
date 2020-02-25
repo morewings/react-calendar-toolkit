@@ -36,43 +36,8 @@ const CustomComponent = ({
 ```
 
 ### Month Component example
-```js static
-import classNames from 'classnames';
-import classes from './Month.module.css';
 
-const Month = ({
-  onDateSet,
-  date,
-  isDisabled,
-  isSameMonth,
-  isSelected,
-  name,
-  isHighlighted,
-}) => {
-  const handleClick = () => {
-    onDateSet(date);
-  };
-  return (
-    <div
-      tabIndex="0"
-      role="button"
-      onClick={handleClick}
-      onKeyPress={handleClick}
-      className={classNames({
-        [classes.wrapper]: true,
-        /** Conditional class to display, if month is selected */
-        [classes.isSelected]: isSelected,
-        /** Conditional class to display, if month is disabled */
-        [classes.isDisabled]: isDisabled,
-        /** Conditional class to display, if month belongs to same month as today */
-        [classes.isSameMonth]: isSameMonth,
-        /** Conditional class to display, if month is highlighted */
-        [classes.isHighlighted]: isHighlighted,
-      })}>
-      {name.wide}
-    </div>
-  );
-};
+```js { "file": "../Month.js" }
 ```
 
 ### Wrap Month Calendar with custom component

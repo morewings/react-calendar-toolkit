@@ -4,7 +4,7 @@
 
 ``year > month > day``
 
-```js
+```js noeditor
 import Calendar from './src/components/logic/Calendar';
 import {withLocaleContext} from './src/utils/localeContext';
 import {convertToTimestamp} from './src/utils/dateUtils';

@@ -37,41 +37,7 @@ const CustomComponent = ({
 ```
 
 ### Year Component example
-```js static
-import useScrollIntoView from 'utils/useScrollIntoView';
-import classNames from 'classnames';
-import classes from './Year.module.css';
-
-const Year = ({
-  isHighlighted,
-  onDateSet,
-  date,
-  isSelected,
-  isSameYear,
-  name,
-}) => {
-  const handleClick = () => {
-    onDateSet(date);
-  };
-  return (
-    <div
-      tabIndex="0"
-      role="button"
-      onClick={handleClick}
-      onKeyPress={handleClick}
-      className={classNames({
-        [classes.wrapper]: true,
-        /** Conditional class to display, if year belongs to same year as today */
-        [classes.isSameYear]: isSameYear,
-        /** Conditional class to display, if year is selected */
-        [classes.isSelected]: isSelected,
-        /** Conditional class to display, if year is highlighted */
-        [classes.isHighlighted]: isHighlighted,
-      })}>
-      {name.numeric}
-    </div>
-  );
-};
+```js { "file": "../Year.js" }
 ```
 
 ### Wrap Year Calendar with custom component
