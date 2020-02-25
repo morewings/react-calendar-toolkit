@@ -41,7 +41,7 @@ const CustomComponent = ({
 ```
 
 ### Wrap Year Calendar with custom component
-You can provide wrapper component to Month Calendar, which can be React Component or DOM node.
+You can provide wrapper component to Year Calendar, which can be React Component or DOM node.
 
 ```js
 import DatePicker from 'react-calendar-toolkit';

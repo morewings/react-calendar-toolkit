@@ -109,8 +109,9 @@ import DatePicker from 'react-calendar-toolkit';
 ```
 
 #### With custom locale
+
 ```js
-import locale from 'date-fns/esm/locale/en-US';
+import locale from 'date-fns/esm/locale/ru';
 import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker

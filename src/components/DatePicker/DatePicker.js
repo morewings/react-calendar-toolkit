@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {convertToTimestamp, convertToDate} from 'utils/dateUtils';
 import config from 'utils/config';
+import getWrapper from 'utils/getWrapper';
 import {selectors, actionCreators} from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
@@ -24,13 +25,6 @@ const limitPrecision = (precisionEnum, minPrecision) => {
   const currentIndex = precisionEnum.indexOf(minPrecision);
   return precisionEnum.slice(0, currentIndex + 1);
 };
-
-const getWrapper = wrapperProp =>
-  typeof wrapperProp === 'string'
-    ? {wrapperClassname: wrapperProp}
-    : {
-        wrapperElement: wrapperProp,
-      };
 
 const DatePicker = ({
   initialDate,
@@ -89,6 +83,7 @@ const DatePicker = ({
   const Wrapper = getWrapper(wrapWith).wrapperElement
     ? getWrapper(wrapWith).wrapperElement
     : DatepickerWrapper;
+
   const wrapperClassname = getWrapper(wrapWith).wrapperClassname
     ? getWrapper(wrapWith).wrapperClassname
     : '';

@@ -1,4 +1,23 @@
-`react-datepicker-toolkit` is a set of React Components capable of rendering various calendars, datepickers etc. Each exposed component accepts date logic props, such as `startDate`, `today` and rendering props such as `wrapDaysWith` or `renderMonthAs` which allow to override how each entry looks like and provide wrapping element for collections (Calendars).
+`react-calendar-toolkit` (RCT) is a set of React Components capable of rendering various calendars, datepickers etc. There are many good datepickers on the market. Unfortunately, most of them are _style-opinionated_, so if you like logic of chosen datepicker, you are subscribing to the visual style of it. But your website or application style may be completely different. With RCT you don't have hack third-party CSS, you can write your own styled UI components and RCT will render them.
+ 
+ Each UI component accepts date logic props, such as `startDate`, `today` and rendering props such as `wrapDaysWith` or `renderMonthAs` which allow to override how each entry looks like and provide wrapping element for collections (Calendars).
+
+### Localization
+
+You can use [any locale](https://date-fns.org/docs/I18n) from `date-fns` or [create custom one](https://date-fns.org/v2.10.0/docs/I18n-Contribution-Guide).
+
+```js
+import locale from 'date-fns/esm/locale/fr';
+import DatePicker from 'react-calendar-toolkit';
+
+<DatePicker
+  dateFnsLocale={locale}
+  title="Demo datepicker"
+  onDateSet={
+    date => {
+      console.log('date set', date);
+    }} />
+```
 
 ### Calendar views and precision
 

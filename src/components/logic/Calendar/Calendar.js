@@ -75,10 +75,13 @@ const Calendar = ({
     },
     [precision]
   );
+
   const isWeekendHighlighted = date =>
     highlightWeekends && checkIsWeekend(date);
+
   const Wrapper = wrapWith;
   const VisualComponent = renderAs;
+
   return (
     <Fragment>
       <Wrapper className={wrapperClassname}>
