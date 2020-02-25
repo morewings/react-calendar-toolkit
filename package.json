@@ -1,6 +1,30 @@
 {
   "name": "react-calendar-toolkit",
   "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "description": "React Calendar Toolkit is a set of React Components capable of rendering various calendars, datepickers etc.",
+  "keywords": [
+    "react",
+    "reactjs",
+    "calendar",
+    "datepicker",
+    "datepicker-component",
+    "date-fns",
+    "date-range-picker",
+    "datetimepicker"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morewings/react-calendar-toolkit",
+    "directory": "/"
+  },
+  "homepage": "https://morewings.github.io/react-calendar-toolkit",
+  "bugs": {
+    "url": "https://github.com/morewings/react-calendar-toolkit/issues"
+  },
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.js",

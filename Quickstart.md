@@ -8,7 +8,7 @@
     npm install --save react-calendar-toolkit date-fns@2
     ```
    
-2. Use `Datepicker` or any other export inside your component. Don't forget to import default styles.
+2. Use `Datepicker` or any other export inside your component. Don't forget to import default styles `react-calendar-toolkit/lib/default.css`. IE 11 compatible style is available at `react-calendar-toolkit/lib/ie.css`.
 
     ```js static
     import React from 'react';
