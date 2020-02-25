@@ -1,4 +1,4 @@
-import React, {Fragment, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import config from 'utils/config';
 import {
@@ -76,32 +76,29 @@ const Calendar = ({
     [precision]
   );
 
-  const isWeekendHighlighted = date =>
-    highlightWeekends && checkIsWeekend(date);
+  const getIsWeekend = date => highlightWeekends && checkIsWeekend(date);
 
   const Wrapper = wrapWith;
   const VisualComponent = renderAs;
 
   return (
-    <Fragment>
-      <Wrapper className={wrapperClassname}>
-        {getItems().map(({name, date}) => (
-          <VisualComponent
-            isWeekend={precision === 'day' ? isWeekendHighlighted(date) : false}
-            onDateSet={handleDateSet}
-            isToday={checkIsSameDay(date, todayTimestamp)}
-            isSelected={getIsSelected(date, selectedTimestamp)}
-            isSameMonth={checkIsSameMonth(date, selectedTimestamp)}
-            isSameYear={checkIsSameYear(date, selectedTimestamp)}
-            isDisabled={getIsDisabled(date)}
-            isHighlighted={getIsHighlighted(date)}
-            name={name}
-            date={date}
-            key={date}
-          />
-        ))}
-      </Wrapper>
-    </Fragment>
+    <Wrapper className={wrapperClassname}>
+      {getItems().map(({name, date}) => (
+        <VisualComponent
+          isWeekend={precision === 'day' ? getIsWeekend(date) : false}
+          onDateSet={handleDateSet}
+          isToday={checkIsSameDay(date, todayTimestamp)}
+          isSelected={getIsSelected(date, selectedTimestamp)}
+          isSameMonth={checkIsSameMonth(date, selectedTimestamp)}
+          isSameYear={checkIsSameYear(date, selectedTimestamp)}
+          isDisabled={getIsDisabled(date)}
+          isHighlighted={getIsHighlighted(date)}
+          name={name}
+          date={date}
+          key={date}
+        />
+      ))}
+    </Wrapper>
   );
 };
 
