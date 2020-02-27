@@ -30,8 +30,10 @@
   "browser": "lib/index.js",
   "style": "lib/default.css",
   "files": [
-    "lib"
+    "lib",
+    "types"
   ],
+  "types": "types/index.d.ts",
   "dependencies": {
     "classnames": "^2.2.6",
     "date-fns": "^2.9.0",
