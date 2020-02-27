@@ -44,7 +44,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     includePaths({
       include: {},
       paths: ['src'],
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'date-fns'],
       extensions: ['.js', '.json', '.html'],
     }),
     postcss({
