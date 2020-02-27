@@ -7,7 +7,7 @@ declare module 'react-calendar-toolkit' {
 
   export interface DatePickerDateFnsLocale {}
 
-  export interface DateMatcherInterface {
+  export type DateMatcherInterface = {
     isWeekend: boolean;
     precision: DatePickerMinPrecision;
     date: Date;
