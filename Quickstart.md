@@ -23,4 +23,4 @@
     
     export default Component;
     ``` 
-3. You can use `react-calendar-toolkit` with default theme or create custom one.
+3. You can use `react-calendar-toolkit` with default theme or use **custom UI components** to change look and feel to match your visual style.

@@ -168,7 +168,7 @@ DatePicker.propTypes = {
   /** Set title of calendar show in Header. */
   title: PropTypes.string,
   /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
-  minPrecision: PropTypes.oneOf(config.supportedPrecisions),
+  minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
   /** Callback when user clicks selected date */
   onDateSet: PropTypes.func.isRequired,
   /** Define wrapper for the calendar. Can be node, React element or className applied to wrapping div. */
