@@ -17,11 +17,15 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 - Has type definitions.
 - Disable date: 
     ```js
-    disableDate: ({isWeekend, precision, date}) => { // your logic }
+    disableDate: ({isWeekend, precision, date}) => { 
+      // your logic 
+    }
     ```
 - Highlight date:
     ```js
-    highlightDate: ({isWeekend, precision, date}) => { // your logic }
+    highlightDate: ({isWeekend, precision, date}) => { 
+      // your logic 
+    }
     ```  
 - Highlight weekends:
     ```js
