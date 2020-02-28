@@ -13,15 +13,15 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 - Has **default theme** in Material Design style.
 - Uses `date-fns` as logic provider.
 - Supports **localization** (month and weekday names, start of the week) in `date-fns` compatible format. 63 languages supported. And you can create custom one.
-- Lightweight: adds just **~7kb** to your bundle.
-- Has type definitions.
-- Disable date: 
+- Lightweight: adds just **~10kb** to your bundle.
+- Has **type definitions** and **typescript** compatible.
+- Disable any date: 
     ```js
     disableDate: ({isWeekend, precision, date}) => { 
       // your logic 
     }
     ```
-- Highlight date:
+- Highlight any date:
     ```js
     highlightDate: ({isWeekend, precision, date}) => { 
       // your logic 
