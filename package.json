@@ -86,9 +86,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-style": "npx styleguidist server --config styleguide.config.js",
+    "start:style": "npx styleguidist server --config styleguide.config.js",
+    "build:style": "npx styleguidist build --config styleguide.config.js",
     "build": "react-scripts build",
-    "build-rollup": "npx rollup -c",
+    "build:rollup": "npx rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix": "eslint --fix ./src/",
