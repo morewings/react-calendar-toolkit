@@ -1,5 +1,5 @@
 import React from 'react';
-import VariablesContainer from 'components/visual/VariablesContainer';
+import ThemeDefaults from 'components/visual/ThemeDefaults';
 
 // TODO: make real context
 //
@@ -8,9 +8,9 @@ import VariablesContainer from 'components/visual/VariablesContainer';
 
 export const withTheme = WrappedComponent => {
   const Component = props => (
-    <VariablesContainer>
+    <ThemeDefaults>
       <WrappedComponent {...props} />
-    </VariablesContainer>
+    </ThemeDefaults>
   );
   return Component;
 };
