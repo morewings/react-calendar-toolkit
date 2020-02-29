@@ -20,7 +20,7 @@ deploy:
     keep_history: true
     on:
       branch: master
-    local_dir: stylegudide
+    local_dir: styleguide
   - provider: npm
     edge: true
     email: "$NPM_EMAIL"
