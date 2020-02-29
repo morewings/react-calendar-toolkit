@@ -23,7 +23,7 @@ module.exports = {
       description: 'Exported components',
     },
     {
-      name: 'Visual customization',
+      name: 'Custom UI',
       description:
         'You can customize UI of each datepicker component by overriding default view component.',
       components: [

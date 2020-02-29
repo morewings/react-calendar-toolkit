@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/morewings/react-calendar-toolkit.svg?branch=master)](https://travis-ci.org/morewings/react-calendar-toolkit)
-[![npm version](https://badge.fury.io/js/react-calendar-toolkit.svg)](https://badge.fury.io/js/cra-template-quickstart-redux)
+[![npm version](https://badge.fury.io/js/react-calendar-toolkit.svg)](https://badge.fury.io/js/react-calendar-toolkit)
 
 # React calendar toolkit
 
@@ -20,19 +20,15 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 - Has **type definitions** and **typescript** compatible.
 - Disable any date: 
     ```js
-    disableDate: ({isWeekend, precision, date}) => { 
-      // your logic 
-    }
+    disableDate: ({isWeekend, precision, date}) => Boolean
     ```
 - Highlight any date:
     ```js
-    highlightDate: ({isWeekend, precision, date}) => { 
-      // your logic 
-    }
+    highlightDate: ({isWeekend, precision, date}) => Boolean
     ```  
 - Highlight weekends:
     ```js
-    highlightWeekends: true|false
+    highlightWeekends: Boolean
     ```
 
 ## Quickstart
@@ -64,8 +60,11 @@ See [full documentation](https://morewings.github.io/react-calendar-toolkit/)
 ### Available scripts
 
 - `start` - starts application in development mode;
-- `start-style` - starts `Styleguidist`;
-- `build-rollup` - builds package;
+- `start:style` - starts `Styleguidist`;
+- `build:style` - builds `Styleguidist`;
+- `build:rollup` - builds package;
+- `lint` - runs linter;
+- `fix` - runs linter with fix option enabled;
 - `test` - runs tests.
 
 

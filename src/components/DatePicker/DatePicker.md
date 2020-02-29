@@ -148,4 +148,31 @@ const highlightDate = ({date, precision}) => {
 You can disable (custom style and non-clickable) or highlight (custom style) any rendered date.
 
 ### UI customization
-You can override wrapping element or className of Datepicker with `wrapWith` prop, which expects React.Element, DOM node or className. See Visual customization section for more info.
+You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node. 
+
+#### Wrap Datepicker with custom component
+
+```js
+import DatePicker from 'react-calendar-toolkit';
+
+const style = {
+  fontFamily: 'sans-serif',
+  width: '312px',
+  border: '2px solid pink',
+};
+
+const CustomComponent = ({children}) => (
+  <div style={style}>{children}</div>
+);
+
+<DatePicker
+  minPrecision="day"
+  wrapWith={CustomComponent}
+  title="Demo datepicker" />
+```
+
+#### Default wrapper
+```js { "file": "./../../../../src/components/visual/Datepicker/DatepickerWrapper.js" }
+```
+
+See **Custom UI** section for more info.

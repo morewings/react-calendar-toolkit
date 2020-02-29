@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {convertToTimestamp, convertToDate} from 'utils/dateUtils';
 import config from 'utils/config';
-import getWrapper from 'utils/getWrapper';
 import {selectors, actionCreators} from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
@@ -80,18 +79,12 @@ const DatePicker = ({
     dispatch(actionCreators.setPrecision(minPrecision));
   }, [dispatch, minPrecision, today]);
 
-  const Wrapper = getWrapper(wrapWith).wrapperElement
-    ? getWrapper(wrapWith).wrapperElement
-    : DatepickerWrapper;
-
-  const wrapperClassname = getWrapper(wrapWith).wrapperClassname
-    ? getWrapper(wrapWith).wrapperClassname
-    : '';
+  const Wrapper = wrapWith;
 
   const HeaderVisual = renderHeaderAs;
 
   return (
-    <Wrapper className={wrapperClassname}>
+    <Wrapper>
       {showHeader && (
         <HeaderVisual
           title={title}
@@ -171,8 +164,8 @@ DatePicker.propTypes = {
   minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
   /** Callback when user clicks selected date */
   onDateSet: PropTypes.func.isRequired,
-  /** Define wrapper for the calendar. Can be node, React element or className applied to wrapping div. */
-  wrapWith: PropTypes.oneOfType([PropTypes.elementType, PropTypes.string]),
+  /** Define component which wraps __Datepicker__. */
+  wrapWith: PropTypes.elementType,
   /** Define component which renders __day__ entry. */
   renderDayAs: PropTypes.elementType,
   /** Define component which wraps __day__ entry. */

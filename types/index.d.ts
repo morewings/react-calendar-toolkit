@@ -47,9 +47,9 @@ declare module 'react-calendar-toolkit' {
      */
     onDateSet: (date: Date) => any;
     /**
-     * Define wrapper for the calendar. Can be node, React element or className applied to wrapping div.
+     * Define component which wraps __Datepicker__.
      */
-    wrapWith?: DatePickerWrapWith;
+    wrapWith?: React.ReactNode;
     /**
      * Define component which renders __day__ entry.
      */
