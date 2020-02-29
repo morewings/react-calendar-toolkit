@@ -52,6 +52,11 @@
   color: var(--weekendColor);
 }
 
+.isWeekend.isDisabled:hover{
+  opacity: 1;
+  color: var(--baseColor);
+}
+
 .isDisabled {
   color: var(--lightGray);
   cursor: not-allowed;
