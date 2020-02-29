@@ -1,6 +1,7 @@
 .scrollContainer{
   height: var(--gridHeight);
   overflow: auto;
+  padding: 0 0 var(--innerPadding);
 }
 
 .grid {
