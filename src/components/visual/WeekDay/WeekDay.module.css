@@ -15,4 +15,6 @@
   display: inline-block;
   vertical-align: middle;
   color: var(--gray);
+  user-select: none;
+  cursor: default;
 }

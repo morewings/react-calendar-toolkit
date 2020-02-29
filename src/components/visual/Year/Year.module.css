@@ -21,14 +21,18 @@
   cursor: pointer;
   border-radius: var(--borderRadius);
   margin: var(--innerPadding) 1px 0;
+  color: var(--baseColor);
+  user-select: none;
 }
 
-.wrapper:active{
+.wrapper:active,
+.wrapper:focus {
   outline: none;
 }
 
 .wrapper:hover{
   background-color: var(--lightGray);
+  color: var(--baseColor);
 }
 
 .isSelected {

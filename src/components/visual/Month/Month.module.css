@@ -17,14 +17,17 @@
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: var(--borderRadius);
+  user-select: none;
 }
 
-.wrapper:active{
+.wrapper:active,
+.wrapper:focus {
   outline: none;
 }
 
 .wrapper:hover{
   background-color: var(--lightGray);
+  color: var(--baseColor);
 }
 
 .isDisabled {
