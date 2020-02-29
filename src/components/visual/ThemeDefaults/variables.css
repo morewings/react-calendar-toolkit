@@ -13,6 +13,7 @@
   --lightGray: rgba(0, 0, 0, 0.08);
   --green: #43a047;
   --disabled: var(--gray);
+  --otherMonthColor: var(--lightGray);
   --active: #43a047;
   --hoverColor: var(--lightGray);
   --headerBgColor: var(--green);

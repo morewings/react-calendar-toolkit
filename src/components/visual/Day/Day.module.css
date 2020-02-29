@@ -31,15 +31,29 @@
 }
 
 .isOtherMonth {
-  color: var(--disabled);
+  color: var(--otherMonthColor);
 }
 
 .isWeekend {
   color: var(--weekendColor);
 }
 
+.isWeekend.isOtherMonth {
+  opacity: .2;
+}
+
 .isDisabled {
-  color: var(--disabled);
+  color: var(--lightGray);
+  cursor: not-allowed;
+}
+
+.isWeekend.isDisabled {
+  opacity: .2;
+  color: var(--weekendColor);
+}
+
+.isDisabled {
+  color: var(--lightGray);
   cursor: not-allowed;
 }
 
