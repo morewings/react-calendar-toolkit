@@ -55,7 +55,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
           ? [
               cssVariables({
                 importFrom:
-                  './src/components/visual/VariablesContainer/variables.css',
+                  './src/components/visual/ThemeDefaults/variables.css',
                 preserve: false,
               }),
               autoprefixer,
