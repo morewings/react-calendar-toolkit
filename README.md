@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/morewings/react-calendar-toolkit.svg?branch=master)](https://travis-ci.org/morewings/react-calendar-toolkit)
+
+[![npm version](https://badge.fury.io/js/react-calendar-toolkit.svg)](https://badge.fury.io/js/cra-template-quickstart-redux)
+
 # React calendar toolkit
 
 ![Datepicker screenshot](./doc-assets/datepicker-screenshot.png)
