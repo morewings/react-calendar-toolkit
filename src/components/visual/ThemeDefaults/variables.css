@@ -1,5 +1,5 @@
 :root {
-  --dayWidth: 40px;
+  --dayWidth: 38px;
   --dayHeight: var(--dayWidth);
   --basePadding: 6px;
   --innerPadding: 16px;

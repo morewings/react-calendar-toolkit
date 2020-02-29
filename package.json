@@ -42,7 +42,6 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.0",
-    "react-scripts": "3.4.0",
     "redux": "^4.0.5"
   },
   "devDependencies": {
@@ -67,6 +66,7 @@
     "node-sass": "^4.13.1",
     "postcss-custom-properties": "^9.1.1",
     "prettier": "1.19.1",
+    "react-scripts": "3.4.0",
     "react-styleguidist": "^10.6.2",
     "react-to-typescript-definitions": "^2.0.0",
     "redux-mock-store": "^1.5.4",

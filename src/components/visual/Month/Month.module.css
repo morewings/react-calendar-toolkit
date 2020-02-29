@@ -10,13 +10,13 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 3);
+  flex: 1 1 calc(100% / 3 - 2px);
+  margin: var(--innerPadding) 1px 0;
   height: var(--dayHeight);
   line-height: var(--dayHeight);
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: var(--borderRadius);
-  margin-top: var(--innerPadding);
 }
 
 .wrapper:active{

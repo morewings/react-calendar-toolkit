@@ -14,13 +14,13 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 5);
+  flex: 1 1 calc(100% / 5 - 2px);
   height: var(--dayHeight);
   line-height: var(--dayHeight);
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: var(--borderRadius);
-  margin-top: var(--innerPadding);
+  margin: var(--innerPadding) 1px 0;
 }
 
 .wrapper:active{

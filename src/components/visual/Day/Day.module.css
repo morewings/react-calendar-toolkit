@@ -10,9 +10,10 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 7);
+  flex: 1 1 calc(100% / 7 - 2px);
   height: var(--dayHeight);
   line-height: var(--dayHeight);
+  margin: 0 1px;
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 50%;
