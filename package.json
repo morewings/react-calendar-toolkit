@@ -1,6 +1,6 @@
 {
   "name": "react-calendar-toolkit",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "engines": {
     "node": ">=10"
