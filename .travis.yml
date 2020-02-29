@@ -12,6 +12,7 @@ script:
   - yarn lint
   - yarn test
   - yarn build:style
+  - yarn build:rollup
 
 deploy:
   - provider: pages
