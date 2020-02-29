@@ -2,9 +2,7 @@ declare module 'react-calendar-toolkit' {
   import * as React from 'react';
 
   export type DatePickerMinPrecision = 'year' | 'month' | 'day';
-
-  export type DatePickerWrapWith = React.ReactNode | string;
-
+  
   export interface DatePickerDateFnsLocale {}
 
   export interface DateMatcherInterface {
