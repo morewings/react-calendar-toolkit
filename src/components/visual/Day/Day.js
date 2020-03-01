@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {useFormatDate} from 'utils/localeContext';
+import getAriaLabel from 'utils/getAriaLabel';
 import classes from './Day.module.css';
 
 const Day = ({
@@ -25,10 +26,6 @@ const Day = ({
   const handleClick = () => {
     onDateSet(date);
   };
-  const getAriaLabel = () =>
-    `${formatDate('do EEEE LLLL', date)} ${isCurrent ? 'is today' : ''} ${
-      isSelected ? 'is selected' : ''
-    } ${isHighlighted ? 'is highlighted' : ''}`;
   return (
     <div
       tabIndex={isDisabled ? '-1' : '0'}
@@ -51,7 +48,12 @@ const Day = ({
         [classes.isHighlighted]: isHighlighted,
       })}
       aria-disabled={isDisabled}
-      aria-label={getAriaLabel()}>
+      aria-label={getAriaLabel(
+        formatDate('do LLLL EEEE', date),
+        isCurrent,
+        isSelected,
+        isHighlighted
+      )}>
       {name.numeric}
     </div>
   );
