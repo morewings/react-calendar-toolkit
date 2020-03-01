@@ -14,7 +14,7 @@ const Header = ({selectedDate, title}) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.title}>{title}</div>
-      <div className={classes.currentDate}>
+      <div aria-live="polite" className={classes.currentDate}>
         {formatDate('MMM do', selectedDate)}
       </div>
     </div>

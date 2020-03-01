@@ -25,6 +25,7 @@
   outline: none;
 }
 
+.wrapper:focus,
 .wrapper:hover{
   background-color: var(--lightGray);
   color: var(--baseColor);

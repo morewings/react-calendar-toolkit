@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import {useFormatDate} from 'utils/localeContext';
 import classes from './Day.module.css';
 
 const Day = ({
@@ -14,12 +15,23 @@ const Day = ({
   isWeekend,
   name,
 }) => {
+  /**
+   * Returns formatted date
+   * @param {string} pattern - Formatting pattern
+   * @param {Date} date - Date object to apply format
+   * @return {string} Formatted date
+   */
+  const formatDate = useFormatDate();
   const handleClick = () => {
     onDateSet(date);
   };
+  const getAriaLabel = () =>
+    `${formatDate('do EEEE LLLL', date)} ${isToday ? 'is today' : ''} ${
+      isSelected ? 'is selected' : ''
+    } ${isHighlighted ? 'is highlighted' : ''}`;
   return (
     <div
-      tabIndex="0"
+      tabIndex={isDisabled ? '-1' : '0'}
       role="button"
       onClick={handleClick}
       onKeyPress={handleClick}
@@ -37,7 +49,9 @@ const Day = ({
         [classes.isWeekend]: isWeekend,
         /** Conditional class to display, if day is highlighted */
         [classes.isHighlighted]: isHighlighted,
-      })}>
+      })}
+      aria-disabled={isDisabled}
+      aria-label={getAriaLabel()}>
       {name.numeric}
     </div>
   );

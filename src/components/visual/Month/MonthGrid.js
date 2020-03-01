@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classes from './Month.module.css';
 
 const MonthGrid = ({children, wrapperClassName}) => (
-  <div className={wrapperClassName}>{children}</div>
+  <div className={wrapperClassName} role="grid">
+    {children}
+  </div>
 );
 
 MonthGrid.propTypes = {

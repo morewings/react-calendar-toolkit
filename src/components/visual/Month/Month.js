@@ -15,9 +15,13 @@ const Month = ({
   const handleClick = () => {
     onDateSet(date);
   };
+  const getAriaLabel = () =>
+    `${name.wide} ${isSameMonth ? 'is current month' : ''} ${
+      isSelected ? 'is selected' : ''
+    } ${isHighlighted ? 'is highlighted' : ''}`;
   return (
     <div
-      tabIndex="0"
+      tabIndex={isDisabled ? '-1' : '0'}
       role="button"
       onClick={handleClick}
       onKeyPress={handleClick}
@@ -31,7 +35,9 @@ const Month = ({
         [classes.isSameMonth]: isSameMonth,
         /** Conditional class to display, if month is highlighted */
         [classes.isHighlighted]: isHighlighted,
-      })}>
+      })}
+      aria-label={getAriaLabel()}
+      aria-disabled={isDisabled}>
       {name.wide}
     </div>
   );

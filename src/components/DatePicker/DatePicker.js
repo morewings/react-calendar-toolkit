@@ -84,7 +84,7 @@ const DatePicker = ({
   const HeaderVisual = renderHeaderAs;
 
   return (
-    <Wrapper>
+    <Wrapper title={title}>
       {showHeader && (
         <HeaderVisual
           title={title}

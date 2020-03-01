@@ -14,6 +14,11 @@ const Year = ({
   const handleClick = () => {
     onDateSet(date);
   };
+  const getAriaLabel = () =>
+    `${name.numeric} year ${isSameYear ? 'is current year' : ''} ${
+      isSelected ? 'is selected' : ''
+    } ${isHighlighted ? 'is highlighted' : ''}`;
+
   return (
     <div
       tabIndex="0"
@@ -28,7 +33,8 @@ const Year = ({
         [classes.isSelected]: isSelected,
         /** Conditional class to display, if year is highlighted */
         [classes.isHighlighted]: isHighlighted,
-      })}>
+      })}
+      aria-label={getAriaLabel()}>
       {name.numeric}
     </div>
   );

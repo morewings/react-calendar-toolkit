@@ -16,6 +16,12 @@
   user-select: none;
 }
 
+.buttons button:active,
+.buttons button:focus{
+  outline: none;
+}
+
+.buttons button:focus,
 .buttons button:hover{
   background-color: var(--hoverColor);
 }
@@ -35,6 +41,12 @@
   user-select: none;
 }
 
+.stepper button:active,
+.stepper button:focus{
+  outline: none;
+}
+
+.stepper button:focus,
 .stepper button:hover{
   background-color: var(--hoverColor);
 }

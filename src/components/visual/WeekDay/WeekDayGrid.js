@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classes from './WeekDay.module.css';
 
 const WeekdayGrid = ({children, wrapperClassName}) => (
-  <div className={wrapperClassName}>{children}</div>
+  <div className={wrapperClassName} role="presentation">
+    {children}
+  </div>
 );
 
 WeekdayGrid.propTypes = {

@@ -21,6 +21,8 @@ const Selector = ({
           onClick={() => {
             setPrecision('year');
           }}
+          aria-live="polite"
+          aria-label="select year"
           type="button">
           {year}
         </button>
@@ -28,6 +30,8 @@ const Selector = ({
           onClick={() => {
             setPrecision('month');
           }}
+          aria-live="polite"
+          aria-label="select month"
           type="button">
           {month}
         </button>
@@ -38,6 +42,7 @@ const Selector = ({
           onClick={() => {
             decrementMonth(selectedDate);
           }}
+          aria-label="previous month"
           type="button">
           ⟨
         </button>
@@ -45,6 +50,7 @@ const Selector = ({
           onClick={() => {
             incrementMonth(selectedDate);
           }}
+          aria-label="next month"
           type="button">
           ⟩
         </button>

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classes from './Day.module.css';
 
 const DayGrid = ({children, wrapperClassName}) => (
-  <div className={wrapperClassName}>{children}</div>
+  <div className={wrapperClassName} role="grid">
+    {children}
+  </div>
 );
 
 DayGrid.propTypes = {

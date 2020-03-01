@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import classes from './WeekDay.module.css';
 
 const WeekDay = props => (
-  <div className={classes.wrapper}>{props.name.short}</div>
+  <div className={classes.wrapper} aria-label={props.name.wide}>
+    {props.name.short}
+  </div>
 );
 
 WeekDay.propTypes = {
