@@ -108,3 +108,17 @@ export const checkIsWithinInterval = (interval, date) =>
  * @return {boolean} Result of check
  */
 export const checkIsWeekend = date => isWeekend(date);
+
+/**
+ * Checks if dates are the same with given precision, eg belong to same day|month|year
+ * @param {string} precision - Date to check
+ * @param {DateUnion} dateLeft - Date to check
+ * @param {DateUnion} dateRight - Date to check
+ * @return {boolean} Result of check
+ */
+export const matchDatesWithPrecision = (precision, dateLeft, dateRight) =>
+  ({
+    day: checkIsSameDay,
+    month: checkIsSameMonth,
+    year: checkIsSameYear,
+  }[precision](dateLeft, dateRight));

@@ -7,7 +7,7 @@ const Month = ({
   onDateSet,
   date,
   isDisabled,
-  isSameMonth,
+  isCurrent,
   isSelected,
   name,
   isHighlighted,
@@ -16,7 +16,7 @@ const Month = ({
     onDateSet(date);
   };
   const getAriaLabel = () =>
-    `${name.wide} ${isSameMonth ? 'is current month' : ''} ${
+    `${name.wide} ${isCurrent ? 'is current month' : ''} ${
       isSelected ? 'is selected' : ''
     } ${isHighlighted ? 'is highlighted' : ''}`;
   return (
@@ -32,7 +32,7 @@ const Month = ({
         /** Conditional class to display, if month is disabled */
         [classes.isDisabled]: isDisabled,
         /** Conditional class to display, if month belongs to same month as today */
-        [classes.isSameMonth]: isSameMonth,
+        [classes.isCurrent]: isCurrent,
         /** Conditional class to display, if month is highlighted */
         [classes.isHighlighted]: isHighlighted,
       })}
@@ -55,7 +55,7 @@ Month.propTypes = {
   /** Date for this month entry */
   date: PropTypes.instanceOf(Date).isRequired,
   /** Flag, showing if this month entry and current date __belong to the same month__. */
-  isSameMonth: PropTypes.bool.isRequired,
+  isCurrent: PropTypes.bool.isRequired,
   /** Object containing month name localized in different forms */
   name: PropTypes.shape({
     /** 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre' */

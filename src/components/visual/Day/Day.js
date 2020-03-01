@@ -7,8 +7,8 @@ import classes from './Day.module.css';
 const Day = ({
   onDateSet,
   date,
-  isSameMonth,
-  isToday,
+  belongsToSameMonth,
+  isCurrent,
   isSelected,
   isDisabled,
   isHighlighted,
@@ -26,7 +26,7 @@ const Day = ({
     onDateSet(date);
   };
   const getAriaLabel = () =>
-    `${formatDate('do EEEE LLLL', date)} ${isToday ? 'is today' : ''} ${
+    `${formatDate('do EEEE LLLL', date)} ${isCurrent ? 'is today' : ''} ${
       isSelected ? 'is selected' : ''
     } ${isHighlighted ? 'is highlighted' : ''}`;
   return (
@@ -38,9 +38,9 @@ const Day = ({
       className={classNames({
         [classes.wrapper]: true,
         /** Conditional class to display, if day belongs to another month */
-        [classes.isOtherMonth]: !isSameMonth,
+        [classes.isOtherMonth]: !belongsToSameMonth,
         /** Conditional class to display, if day is today */
-        [classes.isToday]: isToday,
+        [classes.isCurrent]: isCurrent,
         /** Conditional class to display, if day is selected */
         [classes.isSelected]: isSelected,
         /** Conditional class to display, if day is disabled */
@@ -59,7 +59,7 @@ const Day = ({
 
 Day.propTypes = {
   /** Flag, showing if this day entry and selected date __belong to the same month__. */
-  isSameMonth: PropTypes.bool.isRequired,
+  belongsToSameMonth: PropTypes.bool.isRequired,
   /** Flag, showing if this day entry is __selected__. */
   isSelected: PropTypes.bool.isRequired,
   /** Flag, showing if this day entry is __disabled__. */
@@ -73,7 +73,7 @@ Day.propTypes = {
   /** Date for this day entry */
   date: PropTypes.instanceOf(Date).isRequired,
   /** Flag, showing if this day entry is __today__. */
-  isToday: PropTypes.bool.isRequired,
+  isCurrent: PropTypes.bool.isRequired,
   /** Object, which has `numeric` property with day number. */
   name: PropTypes.shape({
     numeric: PropTypes.number.isRequired,

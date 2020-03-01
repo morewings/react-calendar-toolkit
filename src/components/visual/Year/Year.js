@@ -8,14 +8,14 @@ const Year = ({
   onDateSet,
   date,
   isSelected,
-  isSameYear,
+  isCurrent,
   name,
 }) => {
   const handleClick = () => {
     onDateSet(date);
   };
   const getAriaLabel = () =>
-    `${name.numeric} year ${isSameYear ? 'is current year' : ''} ${
+    `${name.numeric} year ${isCurrent ? 'is current year' : ''} ${
       isSelected ? 'is selected' : ''
     } ${isHighlighted ? 'is highlighted' : ''}`;
 
@@ -28,7 +28,7 @@ const Year = ({
       className={classNames({
         [classes.wrapper]: true,
         /** Conditional class to display, if year belongs to same year as today */
-        [classes.isSameYear]: isSameYear,
+        [classes.isCurrent]: isCurrent,
         /** Conditional class to display, if year is selected */
         [classes.isSelected]: isSelected,
         /** Conditional class to display, if year is highlighted */
@@ -50,7 +50,7 @@ Year.propTypes = {
   /** Date for this year entry */
   date: PropTypes.instanceOf(Date).isRequired,
   /** Flag, showing if this month entry and current date __belong to the same year__. */
-  isSameYear: PropTypes.bool.isRequired,
+  isCurrent: PropTypes.bool.isRequired,
   /** Object, which has `numeric` property with current year number. */
   name: PropTypes.shape({
     numeric: PropTypes.number.isRequired,

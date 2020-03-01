@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import config from 'utils/config';
 import {
   checkIsSameMonth,
-  checkIsSameDay,
-  checkIsSameYear,
   checkIsWithinInterval,
   checkIsWeekend,
+  matchDatesWithPrecision,
 } from 'utils/dateUtils';
 import {useLocaleEnumerators} from 'utils/localeContext';
 
@@ -24,19 +23,12 @@ const Calendar = ({
   highlightDate,
   highlightWeekends,
 }) => {
-  const {getYears, getMonths, getDays} = useLocaleEnumerators();
-  const getItems = () => {
-    if (precision === 'day') {
-      return getDays(selectedTimestamp);
-    }
-    if (precision === 'month') {
-      return getMonths(selectedTimestamp);
-    }
-    if (precision === 'year') {
-      return getYears(startDate, endDate);
-    }
-    return null;
-  };
+  const getItems = useLocaleEnumerators(precision);
+  const items =
+    precision === 'year'
+      ? getItems(startDate, endDate)
+      : getItems(selectedTimestamp);
+
   const getIsDisabled = useCallback(
     date => {
       if (precision === 'year') return false; // we are not disabling years, just rendering the range
@@ -64,18 +56,6 @@ const Calendar = ({
     [getIsDisabled, onDateSet]
   );
 
-  const getIsSelected = useCallback(
-    (date, timestamp) => {
-      const matchers = {
-        day: checkIsSameDay,
-        month: checkIsSameMonth,
-        year: checkIsSameYear,
-      };
-      return matchers[precision](date, timestamp);
-    },
-    [precision]
-  );
-
   const getIsWeekend = date => highlightWeekends && checkIsWeekend(date);
 
   const Wrapper = wrapWith;
@@ -83,14 +63,19 @@ const Calendar = ({
 
   return (
     <Wrapper className={wrapperClassname}>
-      {getItems().map(({name, date}) => (
+      {items.map(({name, date}) => (
         <VisualComponent
-          isWeekend={precision === 'day' ? getIsWeekend(date) : false}
+          isWeekend={precision === 'day' && getIsWeekend(date)}
           onDateSet={handleDateSet}
-          isToday={checkIsSameDay(date, todayTimestamp)}
-          isSelected={getIsSelected(date, selectedTimestamp)}
-          isSameMonth={checkIsSameMonth(date, selectedTimestamp)}
-          isSameYear={checkIsSameYear(date, selectedTimestamp)}
+          isSelected={matchDatesWithPrecision(
+            precision,
+            date,
+            selectedTimestamp
+          )}
+          isCurrent={matchDatesWithPrecision(precision, date, todayTimestamp)}
+          belongsToSameMonth={
+            precision === 'day' && checkIsSameMonth(date, selectedTimestamp)
+          }
           isDisabled={getIsDisabled(date)}
           isHighlighted={getIsHighlighted(date)}
           name={name}

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useLocaleEnumerators} from 'utils/localeContext';
+import {useWeekDayNames} from 'utils/localeContext';
 
 const WeekDays = ({wrapWith, renderAs}) => {
   const WeekDaysWrapper = wrapWith;
   const VisualComponent = renderAs;
-  const {getWeekDayNames} = useLocaleEnumerators();
+  const getWeekDayNames = useWeekDayNames();
   return (
     <WeekDaysWrapper>
       {getWeekDayNames.map(name => (
