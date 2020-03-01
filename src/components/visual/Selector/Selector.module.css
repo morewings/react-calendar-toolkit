@@ -14,6 +14,7 @@
   border-radius: 4px;
   color: var(--baseColor);
   user-select: none;
+  margin-right: 2px;
 }
 
 .buttons button:active,

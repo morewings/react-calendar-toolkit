@@ -22,11 +22,11 @@ module.exports = {
       components: ['src/components/DatePicker/DatePicker.js'],
       description: 'Exported components',
     },
-    // {
-    //   name: 'Utilities and helpers',
-    //   content: 'Utilities.md',
-    //   description: 'Exported components',
-    // },
+    {
+      name: 'Utilities and helpers',
+      content: 'Utilities.md',
+      description: 'Exported components',
+    },
     {
       name: 'Custom UI',
       description:
