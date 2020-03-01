@@ -10,6 +10,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import replace from '@rollup/plugin-replace';
 // import visualizer from 'rollup-plugin-visualizer';
 import cssVariables from 'postcss-custom-properties';
+import postcssPresetEnv from 'postcss-preset-env';
 import pkg from './package.json';
 
 const OUTPUT_DATA = [
@@ -25,6 +26,14 @@ const OUTPUT_DATA = [
     file: pkg.module,
     format: 'es',
   },
+];
+
+const POSTCSS_PLUGINS = [
+  postcssPresetEnv({
+    browsers: pkg.browserslist.production,
+    stage: 3,
+  }),
+  autoprefixer(),
 ];
 
 const config = OUTPUT_DATA.map(({file, format}) => ({
@@ -58,9 +67,9 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
                   './src/components/visual/ThemeDefaults/variables.css',
                 preserve: false,
               }),
-              autoprefixer,
+              ...POSTCSS_PLUGINS,
             ]
-          : [autoprefixer],
+          : POSTCSS_PLUGINS,
     }),
     babel({
       runtimeHelpers: true,
