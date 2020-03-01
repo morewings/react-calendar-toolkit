@@ -12,7 +12,6 @@ import {useLocaleEnumerators} from 'utils/localeContext';
 const Calendar = ({
   onDateSet,
   wrapWith,
-  wrapperClassname,
   todayTimestamp,
   selectedTimestamp,
   renderAs,
@@ -62,7 +61,7 @@ const Calendar = ({
   const VisualComponent = renderAs;
 
   return (
-    <Wrapper className={wrapperClassname}>
+    <Wrapper>
       {items.map(({name, date}) => (
         <VisualComponent
           isWeekend={precision === 'day' && getIsWeekend(date)}
@@ -88,7 +87,6 @@ const Calendar = ({
 };
 
 Calendar.propTypes = {
-  wrapperClassname: PropTypes.string,
   precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
   wrapWith: PropTypes.elementType.isRequired,
   renderAs: PropTypes.elementType.isRequired,
@@ -103,7 +101,6 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
-  wrapperClassname: '',
   highlightWeekends: false,
 };
 
