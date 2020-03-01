@@ -6,10 +6,11 @@ import DatePicker from 'react-calendar-toolkit';
 const style = {
   boxSizing: 'border-box',
   flex: '1 1 calc(100% / 3 - 4px)',
-  color: 'red',
+  color: 'black',
+  lineHeight: '50px',
   textAlign: 'center',
   padding: '0',
-  border: '2px solid lightGray',
+  border: '2px dashed pink',
   margin: '2px',
 };
 
@@ -54,7 +55,7 @@ const style = {
   padding: '0 8px 8px',
   margin: '0 8px 8px',
   height: '247px',
-  border: '2px solid lightGray',
+  border: '2px dashed pink',
 };
 
 const CustomComponent = ({children}) => (

@@ -1,6 +1,5 @@
 `react-calendar-toolkit` (RCT) is a set of React Components capable of rendering various calendars, datepickers etc. There are many good datepickers on the market. Unfortunately, most of them are _style-opinionated_, so if you like logic of chosen datepicker, you are subscribing to the visual style of it. But your website or application style may be completely different. With RCT you don't have hack third-party CSS, you can write your own styled UI components and RCT will render them.
  
- Each UI component accepts date logic props, such as `startDate`, `today` and rendering props such as `wrapDaysWith` or `renderMonthAs` which allow to override how each entry looks like and provide wrapping element for collections (Calendars).
 
 ### Localization
 
@@ -88,7 +87,7 @@ User also can switch "downwards" and "upwards" by using Selector.
 
 ![Selector structure](selector-structure.png)
 
-### Visual components API
+### Custom UI components API
 
 Each date entry visual component (`Day`, `Month`, `Year`) receives `date` prop, which is `Date` object containing the date it has to render. Also such component receives `onDateSet` prop, function expecting `Date` object to set as selected date for the whole Calendar.
 

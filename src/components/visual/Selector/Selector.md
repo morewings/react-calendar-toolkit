@@ -4,17 +4,17 @@ Here is how `Datepicker` with custom `Header` looks like:
 import DatePicker from 'react-calendar-toolkit';
 
 const style = {
-  color: 'red',
+  color: 'black',
   textAlign: 'center',
   padding: '16px 0',
-  border: '2px solid lightGray',
+  border: '2px dashed pink',
   margin: '2px'
 };
 
 const CustomComponent = () => {
   return (
     <div style={style}>
-      Selector
+      {`<Selector />`}
     </div>
   )
 };

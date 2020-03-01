@@ -5,13 +5,13 @@ const style = {
   color: 'black',
   textAlign: 'center',
   padding: '8px 0',
-  border: '2px solid lightGray',
+  border: '2px dashed pink',
   margin: '2px'
 };
 
 const styleCalendar = {
   ...style,
-  height: '245px'
+  height: '230px'
 };
 
 const styleHeader = {
@@ -147,6 +147,30 @@ const highlightDate = ({date, precision}) => {
 ```
 You can disable (custom style and non-clickable) or highlight (custom style) any rendered date.
 
+#### Define minimal precision of `Calendar`
+
+Setting `minPrecision` prop allows to define what kind of date user is able to select. E. g. if `minPrecision === 'month''`, user can select only between _months_ and _years_. 
+
+```js
+import {Fragment} from 'react';
+import DatePicker from 'react-calendar-toolkit';
+
+<Fragment>
+    <DatePicker
+      minPrecision="month"
+      onDateSet={
+        date => {
+          console.log('date set', date);
+        }} />
+    <DatePicker
+          minPrecision="year"
+          onDateSet={
+            date => {
+              console.log('date set', date);
+            }} />
+</Fragment>
+```
+
 ### UI customization
 You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node. 
 
@@ -158,7 +182,7 @@ import DatePicker from 'react-calendar-toolkit';
 const style = {
   fontFamily: 'sans-serif',
   width: '312px',
-  border: '2px solid pink',
+  border: '2px dashed pink',
 };
 
 const CustomComponent = ({children}) => (
