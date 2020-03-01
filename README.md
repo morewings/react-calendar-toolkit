@@ -3,7 +3,7 @@
 
 # React calendar toolkit
 
-![Datepicker screenshot](./doc-assets/datepicker-screenshot.png)()
+[![Datepicker screenshot](./doc-assets/datepicker-screenshot.png)](#)
 
 ## Description
 `react-calendar-toolkit` (RCT) is a set of React Components capable of rendering various calendars, datepickers etc. See [full documentation](https://morewings.github.io/react-calendar-toolkit/).
@@ -60,8 +60,8 @@ See [full documentation](https://morewings.github.io/react-calendar-toolkit/)
 ### Available scripts
 
 - `start` - starts application in development mode;
-- `start:style` - starts `Styleguidist`;
-- `build:style` - builds `Styleguidist`;
+- `start:docs` - starts `Styleguidist`;
+- `build:docs` - builds `Styleguidist`;
 - `build:rollup` - builds package;
 - `lint` - runs linter;
 - `fix` - runs linter with fix option enabled;

@@ -11,7 +11,7 @@ cache:
 script:
   - yarn lint
   - yarn test
-  - yarn build:style
+  - yarn build:docs
   - yarn build:rollup
 
 deploy:
