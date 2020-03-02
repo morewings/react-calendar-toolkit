@@ -9,52 +9,57 @@ const Selector = ({
   setPrecision,
   decrementMonth,
   incrementMonth,
+  minPrecision,
+  monthStepperLabels,
 }) => {
   const formatDate = useFormatDate();
   const year = formatDate('y', selectedDate);
   const month = formatDate('LLLL', selectedDate);
   return (
     <div className={classes.wrapper}>
-      {/** Renders precision selectors */}
+      {/** Render precision selectors */}
       <div className={classes.buttons}>
         <button
           onClick={() => {
             setPrecision('year');
           }}
           aria-live="polite"
-          aria-label="select year"
           type="button">
           {year}
         </button>
-        <button
-          onClick={() => {
-            setPrecision('month');
-          }}
-          aria-live="polite"
-          aria-label="select month"
-          type="button">
-          {month}
-        </button>
+        {/** Don't show month selector if minPrecision is bigger then month */}
+        {minPrecision !== 'year' && (
+          <button
+            onClick={() => {
+              setPrecision('month');
+            }}
+            aria-live="polite"
+            type="button">
+            {month}
+          </button>
+        )}
       </div>
-      {/** Renders month stepper */}
-      <div className={classes.stepper}>
-        <button
-          onClick={() => {
-            decrementMonth(selectedDate);
-          }}
-          aria-label="previous month"
-          type="button">
-          ⟨
-        </button>
-        <button
-          onClick={() => {
-            incrementMonth(selectedDate);
-          }}
-          aria-label="next month"
-          type="button">
-          ⟩
-        </button>
-      </div>
+      {/** Render month stepper, only if minPrecision is bigger then month */}
+      {minPrecision !== 'year' && (
+        <div className={classes.stepper}>
+          <button
+            onClick={() => {
+              decrementMonth(selectedDate);
+            }}
+            aria-label={monthStepperLabels.decrementMonthLabel}
+            type="button">
+            ⟨
+          </button>
+          <button
+            onClick={() => {
+              incrementMonth(selectedDate);
+            }}
+            aria-label={monthStepperLabels.incrementMonthLabel}
+            type="button">
+            ⟩
+          </button>
+        </div>
+      )}
     </div>
   );
 };
@@ -70,6 +75,15 @@ Selector.propTypes = {
   selectedDate: PropTypes.instanceOf(Date).isRequired,
   /** Today date */
   todayDate: PropTypes.instanceOf(Date).isRequired,
+  /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
+  minPrecision: PropTypes.oneOf(['year', 'month', 'day']).isRequired,
+  /** Localized accessibility labels for __month stepper__ */
+  monthStepperLabels: PropTypes.shape({
+    /** +1 month */
+    incrementMonthLabel: PropTypes.string.isRequired,
+    /** -1 month */
+    decrementMonthLabel: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Selector;

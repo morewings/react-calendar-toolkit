@@ -112,7 +112,13 @@ declare module 'react-calendar-toolkit' {
 
   export function getAriaLabel(formattedDate: string, isCurrent: boolean, isSelected: boolean, isHighlighted: boolean): string;
 
-  export function useFormatDate(): (options: object, pattern: string, date: Date ) => string;
+  export function useFormatDate(): (pattern: string, date: Date ) => string;
+
+  export function useThemePostCSS(selector?: HTMLElement): void;
+
+  export function useThemeContext(): Object;
+
+  export function setCSSVariable(selector: HTMLElement, variableName: string, value: string): void;
 
   export default DatePicker;
 }

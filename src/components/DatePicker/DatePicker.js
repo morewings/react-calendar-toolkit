@@ -81,19 +81,22 @@ const DatePicker = ({
 
   const Wrapper = wrapWith;
 
-  const HeaderVisual = renderHeaderAs;
+  const HeaderUI = renderHeaderAs;
+  const SelectorUI = renderSelectorAs;
 
   return (
     <Wrapper title={title}>
       {showHeader && (
-        <HeaderVisual
+        <HeaderUI
           title={title}
           todayDate={convertToDate(todayTimestamp)}
           selectedDate={convertToDate(selectedTimestamp)}
         />
       )}
       <Selector
-        renderAs={renderSelectorAs}
+        renderAs={props => (
+          <SelectorUI minPrecision={minPrecision} {...props} />
+        )}
         selectedTimestamp={selectedTimestamp}
         todayTimestamp={todayTimestamp}
       />
@@ -198,6 +201,8 @@ DatePicker.propTypes = {
   highlightWeekends: PropTypes.bool,
   /** date-fns locale object. Defaults to english */
   dateFnsLocale: PropTypes.shape({}), // eslint-disable-line react/require-default-props
+  /** Theme object to customize style for UI components */
+  theme: PropTypes.shape({}), // eslint-disable-line react/require-default-props
 };
 
 DatePicker.defaultProps = {

@@ -81,9 +81,10 @@ Datepicker toolkit architecture introduces concepts of __precision__ and __calen
 
 #### Changing precision
 
-User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ entries on corresponding Calendar. If target precision was met, e. g. user click year entry when `props.precision === 'year'` `onDateSet` callback is triggered.
+User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ entries on corresponding Calendar. If target precision was met, e. g. user click year entry when `props.minPrecision === 'year'` `onDateSet` callback is triggered. The value callback receives `Date` of the beginning of specified datetime precision, e. g.  when `props.minPrecision === 'month'` `onDateSet` `Date` value is 1st day of the month, when `props.minPrecision === 'year'` - Janurary 1st.
 
 User also can switch "downwards" and "upwards" by using Selector.
+
 
 ![Selector structure](selector-structure.png)
 

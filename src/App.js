@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import {isSameDay} from 'date-fns'
-import DatePicker from 'components/DatePicker';
+import DatePicker from 'entryPoint';
 import DatePickerFieldset from 'components/DatePickerFieldset';
 import './App.scss';
 
@@ -21,6 +21,9 @@ const App = () => (
           console.log('date set', date);
         }}
         title="Demo datepicker"
+        theme={{
+          '--headerBgColor': 'purple'
+        }}
       />
     </div>
     <div className="container">

@@ -12,6 +12,7 @@ import replace from '@rollup/plugin-replace';
 import cssVariables from 'postcss-custom-properties';
 import postcssPresetEnv from 'postcss-preset-env';
 import pkg from './package.json';
+import defaultTheme from './src/utils/defaultTheme';
 
 const OUTPUT_DATA = [
   {
@@ -63,8 +64,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
         format === 'umd'
           ? [
               cssVariables({
-                importFrom:
-                  './src/components/visual/ThemeDefaults/variables.css',
+                importFrom: defaultTheme,
                 preserve: false,
               }),
               ...POSTCSS_PLUGINS,

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 import {actionCreators} from 'features/datepicker';
 import {decrementMonth, incrementMonth, convertToDate} from 'utils/dateUtils';
+import {useMonthStepperLabels} from 'utils/localeContext';
 
 const Selector = ({todayTimestamp, selectedTimestamp, renderAs}) => {
   const dispatch = useDispatch();
+  const monthStepperLabels = useMonthStepperLabels();
   const setPrecision = useCallback(
-    precision => {
-      dispatch(actionCreators.setPrecision(precision));
+    nextPrecision => {
+      dispatch(actionCreators.setPrecision(nextPrecision));
     },
     [dispatch]
   );
@@ -27,6 +29,7 @@ const Selector = ({todayTimestamp, selectedTimestamp, renderAs}) => {
   const SelectorVisual = renderAs;
   return (
     <SelectorVisual
+      monthStepperLabels={monthStepperLabels}
       incrementMonth={onIncrementMonth}
       decrementMonth={onDecrementMonth}
       setPrecision={setPrecision}

@@ -152,23 +152,25 @@ You can disable (custom style and non-clickable) or highlight (custom style) any
 Setting `minPrecision` prop allows to define what kind of date user is able to select. E. g. if `minPrecision === 'month''`, user can select only between _months_ and _years_. 
 
 ```js
-import {Fragment} from 'react';
 import DatePicker from 'react-calendar-toolkit';
 
-<Fragment>
-    <DatePicker
-      minPrecision="month"
+<DatePicker
+  minPrecision="month"
+  onDateSet={
+    date => {
+      console.log('date set', date);
+    }} />
+```
+
+```js
+import DatePicker from 'react-calendar-toolkit';
+
+<DatePicker
+      minPrecision="year"
       onDateSet={
         date => {
           console.log('date set', date);
         }} />
-    <DatePicker
-          minPrecision="year"
-          onDateSet={
-            date => {
-              console.log('date set', date);
-            }} />
-</Fragment>
 ```
 
 ### UI customization
@@ -176,8 +178,11 @@ You can override wrapping element or className of `Datepicker` with `wrapWith` p
 
 #### Wrap Datepicker with custom component
 
+`Datepicker` `wrapWith` component wraps it with provided `DOM node` or `React.Element`. ALso in Default UI it's used to set CSS variables with `useThemePostCSS` hook, otherwise CSS variables will be undefined.
+
 ```js
-import DatePicker from 'react-calendar-toolkit';
+import React, {useRef} from 'react';
+import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 
 const style = {
   fontFamily: 'sans-serif',
@@ -185,9 +190,20 @@ const style = {
   border: '2px dashed pink',
 };
 
-const CustomComponent = ({children}) => (
-  <div style={style}>{children}</div>
-);
+const CustomComponent = props => {
+  const ref = useRef();
+  /** Hook to set style variables from Theme Context */
+  useThemePostCSS(ref.current);
+  return (
+    <div
+      ref={ref}
+      style={style}
+      aria-label={props.title}
+      role="dialog">
+      {props.children}
+    </div>
+  );
+};
 
 <DatePicker
   minPrecision="day"
@@ -199,4 +215,4 @@ const CustomComponent = ({children}) => (
 ```js { "file": "./../../../../src/components/visual/Datepicker/DatepickerWrapper.js" }
 ```
 
-See **Custom UI** section for more info.
+See **Provide custom UI** section for more info.

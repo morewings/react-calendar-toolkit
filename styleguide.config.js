@@ -22,13 +22,18 @@ module.exports = {
       components: ['src/components/DatePicker/DatePicker.js'],
       description: 'Exported components',
     },
+    // {
+    //   name: 'Utilities and helpers',
+    //   content: 'Utilities.md',
+    //   description: 'Exported components',
+    // },
+    // {
+    //   name: 'Customize default UI',
+    //   content: 'Theming.md',
+    //   description: 'Exported components',
+    // },
     {
-      name: 'Utilities and helpers',
-      content: 'Utilities.md',
-      description: 'Exported components',
-    },
-    {
-      name: 'Custom UI',
+      name: 'Provide custom UI',
       description:
         'You can customize UI of each datepicker component by overriding default view component.',
       components: [

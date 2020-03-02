@@ -37,9 +37,11 @@ import curry from 'utils/curry';
  */
 
 /**
- * Returns array of weekday names
+ * @function
+ * @name getWeekDayNames
+ * @description Returns array of weekday names
  * @param {Object} locale - Locale object
- * @return {Array.<string>} Array of weekday names
+ * @return {Array.<ItemName>}
  */
 const getWeekDayNames = locale =>
   [...Array(7).keys()].map(i => {
@@ -61,10 +63,12 @@ const getWeekDayNamesCurried = curry(getWeekDayNames);
 export {getWeekDayNamesCurried as getWeekDayNames};
 
 /**
- * Returns collection year description objects in the provided range
+ * @function
+ * @name getYears
+ * @description Returns collection year description objects in the provided range
  * @param {DateUnion} startDate - Start date
  * @param {DateUnion} endDate - End date
- * @return {Array.<ItemDescription>} Array of year description objects
+ * @return {Array.<ItemDescription>}
  */
 const getYears = (startDate, endDate) => {
   const startYear = getYear(startDate);
@@ -83,10 +87,12 @@ const getYearsCurried = curry(getYears);
 export {getYearsCurried as getYears};
 
 /**
- * Returns collection of month description objects based on provided date
+ * @function
+ * @name getMonths
+ * @description Returns collection of month description objects based on provided date
  * @param {Object} locale - Locale object
  * @param {DateUnion} date - Date or Unix timestamp
- * @return {Array.<ItemDescription>} Array of month description objects
+ * @return {Array.<ItemDescription>}
  */
 const getMonths = (locale, date) => {
   const year = startOfYear(date);
@@ -107,10 +113,12 @@ const getMonthsCurried = curry(getMonths);
 export {getMonthsCurried as getMonths};
 
 /**
- * Returns collection of day description objects based on provided date
+ * @function
+ * @name getDays
+ * @description Returns collection of day description objects based on provided date
  * @param {Object} locale - Locale object
  * @param {DateUnion} timestamp - Unix timestamp or Date object
- * @return {Array.<ItemDescription>} Array of month description objects
+ * @return {Array.<ItemDescription>}
  */
 const getDays = (locale, timestamp) => {
   const monthStart = startOfMonth(timestamp);
