@@ -90,7 +90,7 @@ User also can switch "downwards" and "upwards" by using Selector.
 
 ### Custom UI components API
 
-Each date entry visual component (`Day`, `Month`, `Year`) receives `date` prop, which is `Date` object containing the date it has to render. Also such component receives `onDateSet` prop, function expecting `Date` object to set as selected date for the whole Calendar.
+RCT uses [render props](https://reactjs.org/docs/render-props.html), decoupled from Calendar logic, to display visual UI. Date entry components (`Day`, `Month`, `Year`) receive `date` prop, which is `Date` object, containing the date to render. Also these components receive `onDateSet` prop, function expecting `Date` object to set as selected date (e. g. on click event) for the whole Calendar.
 
 ```js static
 // date comes from the props
