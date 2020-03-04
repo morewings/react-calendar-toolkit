@@ -1,10 +1,10 @@
 .grid {
   display: flex;
-  width: var(--innerWidth);
+  width: var(--calendarWidth);
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 var(--innerPadding) var(--innerPadding);
-  height: var(--gridHeight);
+  padding: 0 var(--innerPadding) calc(var(--innerPadding)/2);
+  height: var(--calendarHeight);
 }
 
 .placeholder,
@@ -12,8 +12,8 @@
   text-align: center;
   box-sizing: border-box;
   flex: 1 1 calc(100% / 7 - 2px);
-  height: var(--dayHeight);
-  line-height: var(--dayHeight);
+  height: var(--entryHeight);
+  line-height: var(--entryHeight);
   margin: 0 1px;
   border: 1px solid transparent;
   cursor: pointer;
@@ -32,12 +32,12 @@
 
 .wrapper:focus:not(.isSelected):not(.isDisabled),
 .wrapper:hover:not(.isDisabled){
-  background-color: var(--lightGray);
+  background-color: var(--entryHoverColor);
   color: var(--baseColor);
 }
 
 .isWeekend {
-  color: var(--weekendColor);
+  color: var(--weekendTextColor);
 }
 
 .isDisabled {
@@ -48,13 +48,13 @@
 
 .isSelected {
   color: white;
-  background-color: var(--active);
+  background-color: var(--entrySelectedColor);
 }
 
 .isCurrent {
-  border-color: var(--gray);
+  border-color: var(--borderColor);
 }
 
 .isHighlighted{
-  background-color: var(--highlightColor);
+  background-color: var(--entryHighlightColor);
 }

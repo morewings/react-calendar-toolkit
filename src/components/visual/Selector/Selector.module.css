@@ -9,12 +9,12 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: 16px;
   padding: 8px;
   border-radius: 4px;
-  color: var(--baseColor);
+  color: var(--textColor);
   user-select: none;
   margin-right: 2px;
+  font-size: var(--fontSize);
 }
 
 .buttons button:active,
@@ -24,21 +24,21 @@
 
 .buttons button:focus,
 .buttons button:hover{
-  background-color: var(--hoverColor);
+  background-color: var(--entryHoverColor);
 }
 
 .stepper button{
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: 16px;
+  font-size: var(--fontSize);
   font-weight: bold;
   padding: 0;
   width: 36px;
   height: 36px;
   border-radius: 50%;
   text-align: center;
-  color: var(--baseColor);
+  color: var(--textColor);
   user-select: none;
 }
 
@@ -49,5 +49,5 @@
 
 .stepper button:focus,
 .stepper button:hover{
-  background-color: var(--hoverColor);
+  background-color: var(--entryHoverColor);
 }

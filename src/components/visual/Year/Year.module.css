@@ -1,12 +1,12 @@
 .scrollContainer{
-  height: var(--gridHeight);
+  height: var(--calendarHeight);
   overflow: auto;
   padding: 0 0 var(--innerPadding);
 }
 
 .grid {
   display: flex;
-  width: var(--innerWidth);
+  width: var(--calendarWidth);
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0 var(--innerPadding) var(--innerPadding);
@@ -16,13 +16,13 @@
   text-align: center;
   box-sizing: border-box;
   flex: 1 1 calc(100% / 5 - 2px);
-  height: var(--dayHeight);
-  line-height: var(--dayHeight);
+  height: var(--entryHeight);
+  line-height: var(--entryHeight);
   border: 1px solid transparent;
   cursor: pointer;
-  border-radius: var(--borderRadius);
+  border-radius: var(--entryBorderRadius);
   margin: var(--innerPadding) 1px 0;
-  color: var(--baseColor);
+  color: var(--textColor);
   user-select: none;
 }
 
@@ -33,15 +33,15 @@
 
 .wrapper:focus:not(.isSelected),
 .wrapper:hover{
-  background-color: var(--lightGray);
-  color: var(--baseColor);
+  background-color: var(--entryHoverColor);
+  color: var(--textColor);
 }
 
 .isSelected {
   color: white;
-  background-color: var(--active);
+  background-color: var(--entrySelectedColor);
 }
 
 .isCurrent {
-  border-color: var(--gray);
+  border-color: var(--borderColor);
 }

@@ -18,12 +18,29 @@ export const setCSSVariable = (selector, variableName, value) => {
   selector.style.setProperty(variableName, value);
 };
 
+/** @function
+ * @name setCSSVariable
+ * @description Set CSS variable
+ * @param {HTMLElement} selector - CSS selector to contain variable
+ * @param {string} variableName - variable name, should start with `--`
+ * @return {void}
+ */
+export const removeCSSVariable = (selector, variableName) => {
+  selector.style.removeProperty(variableName);
+};
+
+/** Default value prevents flash of unstyled elements on first render */
 export const useThemePostCSS = (selector = document.documentElement) => {
   const theme = useThemeContext();
   useLayoutEffect(() => {
     Object.entries(theme).forEach(([variableName, value]) => {
       setCSSVariable(selector, variableName, value);
     });
+    return () => {
+      Object.entries(theme).forEach(([variableName]) => {
+        removeCSSVariable(selector, variableName);
+      });
+    };
   }, [selector, theme]);
 };
 

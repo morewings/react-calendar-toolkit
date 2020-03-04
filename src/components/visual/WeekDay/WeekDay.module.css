@@ -1,7 +1,7 @@
 .grid{
   display: flex;
-  border-bottom: 1px solid var(--gray);
-  margin-bottom: var(--basePadding);
+  border-bottom: 1px solid var(--borderColor);
+  margin-bottom: calc(var(--innerPadding)/2);
   padding: 0 var(--innerPadding);
   box-sizing: border-box;
 }
@@ -10,11 +10,11 @@
   text-align: center;
   box-sizing: border-box;
   flex: 1 1 calc(100% / 7);
-  height: var(--dayHeight);
-  line-height: var(--dayHeight);
+  height: var(--entryHeight);
+  line-height: var(--entryHeight);
   display: inline-block;
   vertical-align: middle;
-  color: var(--gray);
+  color: var(--weekDayColor);
   user-select: none;
   cursor: default;
 }
