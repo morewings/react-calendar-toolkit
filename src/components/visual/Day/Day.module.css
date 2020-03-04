@@ -7,6 +7,7 @@
   height: var(--gridHeight);
 }
 
+.placeholder,
 .wrapper {
   text-align: center;
   box-sizing: border-box;
@@ -20,46 +21,28 @@
   user-select: none;
 }
 
+.placeholder {
+  cursor: default;
+}
+
 .wrapper:active,
 .wrapper:focus {
   outline: none;
 }
 
-.wrapper:focus:not(.isSelected),
-.wrapper:hover{
+.wrapper:focus:not(.isSelected):not(.isDisabled),
+.wrapper:hover:not(.isDisabled){
   background-color: var(--lightGray);
   color: var(--baseColor);
-}
-
-.isOtherMonth {
-  color: var(--otherMonthColor);
 }
 
 .isWeekend {
   color: var(--weekendColor);
 }
 
-.isWeekend.isOtherMonth {
-  opacity: .2;
-}
-
 .isDisabled {
-  color: var(--lightGray);
-  cursor: not-allowed;
-}
-
-.isWeekend.isDisabled {
-  opacity: .2;
-  color: var(--weekendColor);
-}
-
-.isWeekend.isDisabled:hover{
-  opacity: 1;
-  color: var(--baseColor);
-}
-
-.isDisabled {
-  color: var(--lightGray);
+  opacity: .3;
+  text-decoration: line-through;
   cursor: not-allowed;
 }
 

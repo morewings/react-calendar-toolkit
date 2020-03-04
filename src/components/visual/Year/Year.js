@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import getAriaLabel from 'utils/getAriaLabel';
 import classes from './Year.module.css';
 
 const Year = ({
@@ -31,12 +30,7 @@ const Year = ({
         /** Conditional class to display, if year is highlighted */
         [classes.isHighlighted]: isHighlighted,
       })}
-      aria-label={getAriaLabel(
-        name.numeric,
-        isCurrent,
-        isSelected,
-        isHighlighted
-      )}>
+      aria-label={name.numeric}>
       {name.numeric}
     </div>
   );

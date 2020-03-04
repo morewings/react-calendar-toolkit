@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {useFormatDate} from 'utils/localeContext';
-import getAriaLabel from 'utils/getAriaLabel';
 import classes from './Day.module.css';
 
 const Day = ({
@@ -26,7 +25,7 @@ const Day = ({
   const handleClick = () => {
     onDateSet(date);
   };
-  return (
+  return belongsToSameMonth ? (
     <div
       tabIndex={isDisabled ? '-1' : '0'}
       role="button"
@@ -34,8 +33,6 @@ const Day = ({
       onKeyPress={handleClick}
       className={classNames({
         [classes.wrapper]: true,
-        /** Conditional class to display, if day belongs to another month */
-        [classes.isOtherMonth]: !belongsToSameMonth,
         /** Conditional class to display, if day is today */
         [classes.isCurrent]: isCurrent,
         /** Conditional class to display, if day is selected */
@@ -48,14 +45,11 @@ const Day = ({
         [classes.isHighlighted]: isHighlighted,
       })}
       aria-disabled={isDisabled}
-      aria-label={getAriaLabel(
-        formatDate('do LLLL EEEE', date),
-        isCurrent,
-        isSelected,
-        isHighlighted
-      )}>
+      aria-label={formatDate('do LLLL EEEE', date)}>
       {name.numeric}
     </div>
+  ) : (
+    <div className={classes.placeholder} />
   );
 };
 

@@ -25,14 +25,15 @@
   outline: none;
 }
 
-.wrapper:focus:not(.isSelected),
-.wrapper:hover{
+.wrapper:focus:not(.isSelected):not(.isDisabled),
+.wrapper:hover:not(.isDisabled){
   background-color: var(--lightGray);
   color: var(--baseColor);
 }
 
 .isDisabled {
-  color: var(--disabled);
+  opacity: .3;
+  text-decoration: line-through;
   cursor: not-allowed;
 }
 

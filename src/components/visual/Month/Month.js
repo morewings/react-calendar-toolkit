@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import getAriaLabel from 'utils/getAriaLabel';
 import classes from './Month.module.css';
 
 const Month = ({
@@ -33,8 +32,8 @@ const Month = ({
         /** Conditional class to display, if month is highlighted */
         [classes.isHighlighted]: isHighlighted,
       })}
-      aria-label={getAriaLabel(name.wide, isCurrent, isSelected, isHighlighted)}
-      aria-disabled={isDisabled}>
+      aria-disabled={isDisabled}
+      aria-label={name.wide}>
       {name.wide}
     </div>
   );
