@@ -12,53 +12,55 @@ export const useThemeContext = () => {
 /** @function
  * @name setCSSVariable
  * @description Set CSS variable
- * @param {HTMLElement} selector - CSS selector to contain variable
+ * @param {HTMLElement} element - HTML element to contain variable
  * @param {string} variableName - variable name, should start with `--`
  * @param {string} value
  * @return {void}
  */
-export const setCSSVariable = (selector, variableName, value) => {
-  selector.style.setProperty(variableName, value);
+export const setCSSVariable = (element, variableName, value) => {
+  element.style.setProperty(variableName, value);
 };
 
 /** @function
  * @name removeCSSVariable
  * @description Remove CSS variable
- * @param {HTMLElement} selector - CSS selector to contain variable
+ * @param {HTMLElement} element - HTML element to contain variable
  * @param {string} variableName - variable name, should start with `--`
  * @return {void}
  */
-export const removeCSSVariable = (selector, variableName) => {
-  selector.style.removeProperty(variableName);
+export const removeCSSVariable = (element, variableName) => {
+  element.style.removeProperty(variableName);
 };
 
 /** @function
  * @name getCSSVariable
  * @description Get CSS variable value
- * @param {HTMLElement} selector - CSS selector to contain variable
+ * @param {HTMLElement} element - HTML element to contain variable
  * @param {string} variableName - variable name, should start with `--`
  * @return {string}
  */
-export const getCSSVariable = (selector, variableName) =>
-  selector.style.getPropertyValue(variableName);
+export const getCSSVariable = (element, variableName) =>
+  element.style.getPropertyValue(variableName);
 
 /** Default value prevents flash of unstyled elements on first render */
-export const useThemePostCSS = (selector = document.documentElement) => {
+export const useThemePostCSS = element => {
   const {customTheme, defaultTheme} = useContext(ThemeContext);
   useLayoutEffect(() => {
     const mergedTheme = {
       ...defaultTheme,
       ...customTheme,
     };
-    Object.entries(mergedTheme).forEach(([variableName, value]) => {
-      setCSSVariable(selector, variableName, value);
-    });
-    return () => {
-      Object.entries(mergedTheme).forEach(([variableName]) => {
-        removeCSSVariable(selector, variableName);
+    element &&
+      Object.entries(mergedTheme).forEach(([variableName, value]) => {
+        setCSSVariable(element, variableName, value);
       });
+    return () => {
+      element &&
+        Object.entries(mergedTheme).forEach(([variableName]) => {
+          removeCSSVariable(element, variableName);
+        });
     };
-  }, [selector, customTheme, defaultTheme]);
+  }, [element, customTheme, defaultTheme]);
 };
 
 export const withTheme = WrappedComponent => {

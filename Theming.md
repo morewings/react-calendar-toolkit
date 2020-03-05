@@ -1,8 +1,6 @@
-
 ## `useThemePostCSS`
+## CSS variables handling
 
-
-
-## `setCSSVariable`
-## `getCSSVariable`
-## `removeCSSVariable`
+### `setCSSVariable`
+### `getCSSVariable`
+### `removeCSSVariable`
