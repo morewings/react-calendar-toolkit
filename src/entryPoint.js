@@ -10,6 +10,7 @@ import {
   removeCSSVariable,
   getCSSVariable,
 } from 'utils/themeContext';
+import defaultTheme from 'utils/defaultTheme';
 
 export {
   useFormatDate,
@@ -18,6 +19,7 @@ export {
   setCSSVariable,
   getCSSVariable,
   removeCSSVariable,
+  defaultTheme,
 };
 
 export default compose(withProvider, withLocaleContext, withTheme)(DatePicker);

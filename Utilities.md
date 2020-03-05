@@ -11,7 +11,7 @@ const Component = () => {
    * @return {string} Formatted date
    */
   const formatDate = useFormatDate();
-  const date = formatDate('MMM do', new Date(2020, 0, 6))
+  const date = formatDate('MMM do', new Date(2020, 0, 6)) // Jan 6th
   // ...  
 }
 ```

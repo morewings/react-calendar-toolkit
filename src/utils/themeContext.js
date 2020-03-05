@@ -1,11 +1,11 @@
 import React, {useContext, useLayoutEffect} from 'react';
 import PropTypes from 'prop-types';
-import defaults from './defaultTheme';
+// import defaults from './defaultTheme';
 
 const ThemeContext = React.createContext({});
 
 export const useThemeContext = () => {
-  const {theme} = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   return theme;
 };
 
@@ -42,13 +42,12 @@ export const removeCSSVariable = (element, variableName) => {
 export const getCSSVariable = (element, variableName) =>
   element.style.getPropertyValue(variableName);
 
-/** Default value prevents flash of unstyled elements on first render */
-export const useThemePostCSS = element => {
-  const {customTheme, defaultTheme} = useContext(ThemeContext);
+export const useThemePostCSS = (defaultTheme, element) => {
+  const theme = useContext(ThemeContext);
   useLayoutEffect(() => {
     const mergedTheme = {
       ...defaultTheme,
-      ...customTheme,
+      ...theme,
     };
     element &&
       Object.entries(mergedTheme).forEach(([variableName, value]) => {
@@ -60,16 +59,12 @@ export const useThemePostCSS = element => {
           removeCSSVariable(element, variableName);
         });
     };
-  }, [element, customTheme, defaultTheme]);
+  }, [element, defaultTheme, theme]);
 };
 
 export const withTheme = WrappedComponent => {
   const Component = props => (
-    <ThemeContext.Provider
-      value={{
-        customTheme: props.theme,
-        defaultTheme: defaults,
-      }}>
+    <ThemeContext.Provider value={props.theme}>
       <WrappedComponent {...props} />
     </ThemeContext.Provider>
   );
