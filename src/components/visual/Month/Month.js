@@ -34,7 +34,7 @@ const Month = ({
       })}
       aria-disabled={isDisabled}
       aria-label={name.wide}>
-      {name.wide}
+      {name.abbreviated}
     </div>
   );
 };

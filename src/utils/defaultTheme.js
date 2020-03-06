@@ -10,7 +10,7 @@ export default {
   '--fontFallback': 'sans-serif',
   '--fontSize': '14px',
   /** Applied to the title */
-  '--fontSizeSmall': '12px',
+  '--fontSizeSmall': '10px',
   /** Applied to the header text */
   '--fontSizeBig': '24px',
   /** Set inner width */
@@ -21,7 +21,8 @@ export default {
   /** Set padding between elements */
   '--innerPadding': '12px',
   /** Day, month, year entries height */
-  '--entryHeight': '32px',
+  '--entryHeight': '30px',
+  '--entryMargin': '2px',
   '--datepickerBorderRadius': '4px',
   '--entryBorderRadius': '4px',
   /** Height of fieldset input */

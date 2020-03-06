@@ -15,13 +15,13 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 5 - 2px);
+  flex: 1 1 calc(100% / 5 - 4px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: var(--entryBorderRadius);
-  margin: var(--innerPadding) 1px 0;
+  margin: var(--innerPadding) var(--entryMargin) 0;
   color: var(--textColor);
   user-select: none;
 }

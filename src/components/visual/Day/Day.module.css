@@ -11,10 +11,10 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 7 - 2px);
+  flex: 1 1 calc(100% / 7 - 4px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
-  margin: 0 1px;
+  margin: 0 var(--entryMargin);
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 50%;

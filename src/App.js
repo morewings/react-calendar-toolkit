@@ -21,9 +21,9 @@ const App = () => (
           console.log('date set', date);
         }}
         title="Demo datepicker"
-        theme={{
-          '--headerBgColor': 'purple'
-        }}
+        // theme={{
+        //   '--headerBgColor': 'purple'
+        // }}
       />
     </div>
     <div className="container">

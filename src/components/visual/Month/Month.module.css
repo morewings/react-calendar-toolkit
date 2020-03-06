@@ -10,8 +10,8 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 3 - 2px);
-  margin: var(--innerPadding) 1px 0;
+  flex: 1 1 calc(100% / 3 - 4px);
+  margin: var(--innerPadding) var(--entryMargin) 0;
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   border: 1px solid transparent;
