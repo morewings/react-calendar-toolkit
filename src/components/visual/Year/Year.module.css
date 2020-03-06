@@ -1,5 +1,5 @@
 .scrollContainer{
-  height: var(--calendarHeight);
+  height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding)/2);;
   overflow: auto;
   padding: 0 0 var(--innerPadding);
 }

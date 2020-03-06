@@ -1,9 +1,10 @@
 .grid{
   display: flex;
   border-bottom: 1px solid var(--borderColor);
-  margin-bottom: calc(var(--innerPadding)/2);
+  margin-bottom: var(--innerPadding);
   padding: 0 var(--innerPadding);
   box-sizing: border-box;
+  height: var(--entryHeight);
 }
 
 .wrapper{

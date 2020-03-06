@@ -20,6 +20,7 @@ export default {
   '--calendarHeight': '210px',
   /** Set padding between elements */
   '--innerPadding': '12px',
+  '--weekdayHeight': '36px',
   /** Day, month, year entries height */
   '--entryHeight': '30px',
   '--entryMargin': '2px',

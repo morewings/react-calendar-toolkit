@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0 calc(var(--innerPadding)/2) var(--innerPadding);
-  height: var(--calendarHeight);
+  height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding)/2);
 }
 
 .wrapper {
