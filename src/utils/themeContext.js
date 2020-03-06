@@ -46,15 +46,15 @@ export const getCSSVariable = (element, variableName) =>
  * @name useThemePostCSS
  * @description React hook. Sets css variables from Context and defaultTheme
  * @param {HTMLElement} element - HTML element to contain set variables
- * @param {Object} [defaultTheme=defaults] Default theme to override with context values
+ * @param {Object.<string, string>} [defaultTheme=defaults] Default theme to override with context values
  * @return {Function}
  */
 export const useThemePostCSS = (element, defaultTheme = defaults) => {
-  const theme = useContext(ThemeContext);
+  const propsTheme = useContext(ThemeContext);
   useLayoutEffect(() => {
     const mergedTheme = {
       ...defaultTheme,
-      ...theme,
+      ...propsTheme,
     };
     element &&
       Object.entries(mergedTheme).forEach(([variableName, value]) => {
@@ -66,7 +66,7 @@ export const useThemePostCSS = (element, defaultTheme = defaults) => {
           removeCSSVariable(element, variableName);
         });
     };
-  }, [element, defaultTheme, theme]);
+  }, [element, defaultTheme, propsTheme]);
 };
 
 export const withTheme = WrappedComponent => {

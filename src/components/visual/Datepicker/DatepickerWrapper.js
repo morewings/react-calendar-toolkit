@@ -20,7 +20,7 @@ const DatepickerWrapper = props => {
       ref={ref}
       className={classNames({
         [classes.datepickerWrapper]: true,
-        /** We are hiding component, until ref is available */
+        /** We are hiding component, until ref is available to prevent flash of unstyled content on first render */
         [classes.hidden]: !hasRendered,
       })}
       aria-label={props.title}

@@ -23,9 +23,9 @@ module.exports = {
       description: 'Exported components',
     },
     {
-      name: 'Utilities and helpers',
+      name: 'Utilities',
       content: 'Utilities.md',
-      description: 'Exported components',
+      description: 'Useful React hooks for your custom UI',
     },
     {
       name: 'Customize default UI',

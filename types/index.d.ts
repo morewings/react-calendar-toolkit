@@ -2,6 +2,8 @@ declare module 'react-calendar-toolkit' {
   import * as React from 'react';
 
   export type DatePickerMinPrecision = 'year' | 'month' | 'day';
+
+  export type DefaultTheme = Record<string, string>
   
   export interface DatePickerDateFnsLocale {}
 
@@ -106,19 +108,25 @@ declare module 'react-calendar-toolkit' {
      * date-fns locale object. Defaults to english
      */
     dateFnsLocale?: DatePickerDateFnsLocale;
+    theme?: Object;
   }
 
   const DatePicker: React.FC<DatePickerProps>;
 
-  export function getAriaLabel(formattedDate: string, isCurrent: boolean, isSelected: boolean, isHighlighted: boolean): string;
 
   export function useFormatDate(): (pattern: string, date: Date ) => string;
 
-  export function useThemePostCSS(selector?: HTMLElement): void;
+  export function useThemePostCSS(element: HTMLElement, defaultTheme?: DefaultTheme): void;
 
   export function useThemeContext(): Object;
 
-  export function setCSSVariable(selector: HTMLElement, variableName: string, value: string): void;
+  export function setCSSVariable(element: HTMLElement, variableName: string, value: string): void;
+
+  export function getCSSVariable(element: HTMLElement, variableName: string): string;
+
+  export function removeCSSVariable(element: HTMLElement, variableName: string): void;
+
+  export const defaultTheme: DefaultTheme;
 
   export default DatePicker;
 }

@@ -26,6 +26,8 @@ export default {
   '--entryBorderRadius': '4px',
   /** Height of fieldset input */
   '--inputHeight': '25px',
+  /** Background color of Calendar */
+  '--bgColor': 'white',
   /** Base color for text */
   '--textColor': 'black',
   '--headerBgColor': baseColor,

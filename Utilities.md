@@ -18,7 +18,7 @@ const Component = () => {
 
 ## `useThemeContext`
 
-React hook, returns theme object from component props.
+React hook, returns theme object from component props. 
 
 ```js static
 import DatePicker, {useThemeContext} from 'react-calendar-toolkit';
@@ -34,4 +34,39 @@ const Component = () => {
    */
   const theme = useThemeContext(); // {foo: 'bar'}
 }
+```
+
+## `useThemePostCSS`
+React hook to inject your theme object as [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var) into provided HTML element. `theme` prop should be Record-like plain object structure `Object.<string, string>`.
+
+```js static
+import React, {useRef} from 'react';
+import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
+
+<DatePicker theme={{'--varName': 'value'}} />  
+
+// later
+
+const Component = () => {
+    const targetElement = useRef();
+    /** @function
+     * @name useThemePostCSS
+     * @description React hook. Sets css variables from Context and defaultTheme
+     * @param {HTMLElement} element - HTML element to contain set variables
+     * @param {Object.<string, string>} [defaultTheme=defaults] Default theme to override with context values
+     * @return {Function}
+     */
+    useThemePostCSS(targetElement.current)
+    return (
+      <div ref={targetElement}>
+        {/*...*/}
+      </div>
+    ) 
+}
+```
+
+By default `useThemePostCSS` applies theme object from props on the top of defaultTheme, if you don't need this behavior, call it like this.
+
+```js static
+useThemePostCSS(targetElement.current, {})
 ```
