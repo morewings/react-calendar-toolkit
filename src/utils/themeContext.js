@@ -1,6 +1,6 @@
 import React, {useContext, useLayoutEffect} from 'react';
 import PropTypes from 'prop-types';
-// import defaults from './defaultTheme';
+import defaults from './defaultTheme';
 
 const ThemeContext = React.createContext({});
 
@@ -42,7 +42,14 @@ export const removeCSSVariable = (element, variableName) => {
 export const getCSSVariable = (element, variableName) =>
   element.style.getPropertyValue(variableName);
 
-export const useThemePostCSS = (defaultTheme, element) => {
+/** @function
+ * @name useThemePostCSS
+ * @description React hook. Sets css variables from Context and defaultTheme
+ * @param {HTMLElement} element - HTML element to contain set variables
+ * @param {Object} [defaultTheme=defaults] Default theme to override with context values
+ * @return {Function}
+ */
+export const useThemePostCSS = (element, defaultTheme = defaults) => {
   const theme = useContext(ThemeContext);
   useLayoutEffect(() => {
     const mergedTheme = {

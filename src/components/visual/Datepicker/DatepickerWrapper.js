@@ -2,7 +2,6 @@ import React, {useRef, useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {useThemePostCSS} from 'utils/themeContext';
-import defaultTheme from 'utils/defaultTheme';
 import classes from './DatepickerWrapper.module.css';
 
 const DatepickerWrapper = props => {
@@ -15,7 +14,7 @@ const DatepickerWrapper = props => {
     };
   }, []);
   /** Hook to set style variables from Theme Context */
-  useThemePostCSS(defaultTheme, ref.current);
+  useThemePostCSS(ref.current);
   return (
     <div
       ref={ref}

@@ -1,5 +1,5 @@
 ## `useFormatDate`
-React hook, formats date using provided locale. Use [date-fns format strings](https://date-fns.org/docs/format).
+React hook. Returns function, which formats date using provided locale. Use [date-fns format strings](https://date-fns.org/docs/format).
 
 ```js static
 import {useFormatDate} from 'react-calendar-toolkit';
@@ -29,10 +29,8 @@ import DatePicker, {useThemeContext} from 'react-calendar-toolkit';
 
 const Component = () => {
 /**
-   * Returns formatted date
-   * @param {string} pattern - Formatting pattern
-   * @param {Date} date - Date object to apply format
-   * @return {string} Formatted date
+   * Returns theme object
+   * @return {Object} Formatted date
    */
   const theme = useThemeContext(); // {foo: 'bar'}
 }

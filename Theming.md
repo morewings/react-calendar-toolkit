@@ -1,23 +1,24 @@
 `Default UI` of RCT supports basic theming (colors, width, paddings and fonts). You can provide custom theme object, overriding default theme properties.
 
 ## `useThemePostCSS`
-React hook available to inject your theme object variables into containing element.
+React hook to inject your theme object as [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var) into containing element.
 
 ```js static
-import DatePicker, {useThemeContext} from 'react-calendar-toolkit';
+import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 
-<DatePicker theme={{foo: 'bar'}} />  
+<DatePicker theme={{'--varName': 'value'}} />  
 
 // later
 
 const Component = () => {
-/**
-   * Returns formatted date
-   * @param {string} pattern - Formatting pattern
-   * @param {Date} date - Date object to apply format
-   * @return {string} Formatted date
-   */
-  const theme = useThemeContext(); // {foo: 'bar'}
+    /** @function
+     * @name useThemePostCSS
+     * @description - React hook. Sets css variables from Context and defaultTheme
+     * @param {HTMLElement} element - HTML element to contain set variables
+     * @param {Object} [defaultTheme=defaults] - Default theme to override with context values
+     * @return {Function} - Clean up
+     */
+    useThemePostCSS()
 }
 ```
 
