@@ -30,7 +30,7 @@ module.exports = {
     {
       name: 'Customize default UI',
       content: 'Theming.md',
-      description: 'Exported components',
+      description: 'Apply custom theme on default UI',
     },
     {
       name: 'Provide custom UI',

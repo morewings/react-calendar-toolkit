@@ -8,20 +8,20 @@ export default {
   '--fontSecondary': 'Arial',
   /** Fallback font if two previous are unavailable */
   '--fontFallback': 'sans-serif',
-  '--fontSize': '16px',
+  '--fontSize': '14px',
   /** Applied to the title */
   '--fontSizeSmall': '12px',
   /** Applied to the header text */
-  '--fontSizeBig': '36px',
+  '--fontSizeBig': '24px',
   /** Set inner width */
-  '--calendarWidth': '280px',
+  '--calendarWidth': '240px',
   /** Calculate total width */
   '--datePickerWidth': 'calc(var(--calendarWidth) + var(--innerPadding) * 2)',
-  '--calendarHeight': '247px',
+  '--calendarHeight': '210px',
   /** Set padding between elements */
-  '--innerPadding': '16px',
+  '--innerPadding': '12px',
   /** Day, month, year entries height */
-  '--entryHeight': '38px',
+  '--entryHeight': '32px',
   '--datepickerBorderRadius': '4px',
   '--entryBorderRadius': '4px',
   /** Height of fieldset input */
