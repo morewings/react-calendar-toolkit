@@ -19,7 +19,7 @@
   flex: 0 1 calc(100% / 5 - 4px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
-  border: 1px solid transparent;
+  border: 1px solid var(--bgColor);
   cursor: pointer;
   border-radius: var(--entryBorderRadius);
   margin: var(--innerPadding) var(--entryMargin) 0;

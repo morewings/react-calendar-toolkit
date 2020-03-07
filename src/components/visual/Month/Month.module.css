@@ -14,7 +14,7 @@
   margin: var(--innerPadding) var(--entryMargin) 0;
   height: var(--entryHeight);
   line-height: var(--entryHeight);
-  border: 1px solid transparent;
+  border: 1px solid var(--bgColor);
   cursor: pointer;
   border-radius: var(--entryBorderRadius);
   user-select: none;

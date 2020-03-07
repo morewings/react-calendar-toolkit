@@ -15,7 +15,7 @@
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   margin: 0 var(--entryMargin);
-  border: 1px solid transparent;
+  border: 1px solid var(--bgColor);
   cursor: pointer;
   border-radius: 50%;
   user-select: none;
@@ -33,7 +33,7 @@
 .wrapper:focus:not(.isSelected):not(.isDisabled),
 .wrapper:hover:not(.isDisabled){
   background-color: var(--entryHoverColor);
-  color: var(--baseColor);
+  color: var(--textColor);
 }
 
 .isWeekend {
@@ -57,4 +57,8 @@
 
 .isHighlighted{
   background-color: var(--entryHighlightColor);
+}
+
+.isHighlighted.isSelected{
+  background: linear-gradient(135deg, var(--entryHighlightColor) 0%, var(--entryHighlightColor) 50%, var(--entrySelectedColor) 50%, var(--entrySelectedColor) 100%);
 }
