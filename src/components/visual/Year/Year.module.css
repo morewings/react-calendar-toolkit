@@ -9,7 +9,8 @@
   width: var(--calendarWidth);
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 var(--innerPadding) var(--innerPadding);
+  padding: 0 0 var(--innerPadding);
+  margin: 0 auto;
 }
 
 .wrapper {
