@@ -5,7 +5,6 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import includePaths from 'rollup-plugin-includepaths';
 import autoprefixer from 'autoprefixer';
-import localResolve from 'rollup-plugin-local-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import replace from '@rollup/plugin-replace';
 // import visualizer from 'rollup-plugin-visualizer';
@@ -54,7 +53,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     includePaths({
       include: {},
       paths: ['src'],
-      external: ['react', 'react-dom', 'date-fns'],
+      external: Object.keys(pkg.dependencies),
       extensions: ['.js', '.json', '.html'],
     }),
     postcss({
@@ -75,7 +74,6 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       runtimeHelpers: true,
       exclude: 'node_modules/**',
     }),
-    localResolve(),
     resolve({
       browser: true,
     }),
