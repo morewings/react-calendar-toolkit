@@ -99,6 +99,8 @@ const DatePicker = ({
         )}
         selectedTimestamp={selectedTimestamp}
         todayTimestamp={todayTimestamp}
+        startDate={startDate}
+        endDate={endDate}
       />
       {precision === 'day' && (
         <Fragment>
