@@ -14,9 +14,8 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 ### Features
 - Use your **custom UI components** to change look and feel to match your visual style.
 - Has **default theme** in Material Design style.
-- Default theme built with accessibility in mind.
 - Uses `date-fns` as logic provider.
-- Supports **localization** (month and weekday names, start of the week) in `date-fns` compatible format. 63 languages supported. And you can create custom one.
+- Supports **localization** (month and weekday names, start of the week) in `date-fns` compatible format. 69 languages supported. Also you can create custom one.
 - Lightweight: adds just **~10kb** to your bundle.
 - Has **type definitions** and **typescript** compatible.
 - Disable any date: 
