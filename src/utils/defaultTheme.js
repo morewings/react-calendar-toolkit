@@ -17,7 +17,7 @@ export default {
   '--calendarWidth': '240px',
   /** Calculate total width */
   '--datePickerWidth': 'calc(var(--calendarWidth) + var(--innerPadding) * 2)',
-  '--calendarHeight': '210px',
+  '--calendarHeight': '200px',
   /** Set padding between elements */
   '--innerPadding': '12px',
   /** Day, month, year entries height */
