@@ -11,6 +11,7 @@ import {
   getCSSVariable,
 } from 'utils/themeContext';
 import defaultTheme from 'utils/defaultTheme';
+import useScrollIntoView from 'utils/useScrollIntoView';
 
 export {
   useFormatDate,
@@ -20,6 +21,7 @@ export {
   getCSSVariable,
   removeCSSVariable,
   defaultTheme,
+  useScrollIntoView,
 };
 
 export default compose(withProvider, withLocaleContext, withTheme)(DatePicker);

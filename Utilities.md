@@ -70,3 +70,32 @@ By default `useThemePostCSS` applies theme object from props on the top of defau
 ```js static
 useThemePostCSS(targetElement.current, {})
 ```
+
+## `useScrollIntoView`
+
+React hook to scroll `ref` target into view if parent container is visible.
+
+```js static
+import React, {useRef} from 'react';
+import {useScrollIntoView} from 'react-calendar-toolkit';
+import classes from './Year.module.css';
+
+const Component = () => {
+    const targetElement = useRef();
+    /**
+     * @function
+     * @name useScrollIntoView
+     * @description React hook. Scrolls element into viewport if parent container is visible.
+     * @param {Object} ref - React ref
+     * @param {Boolean} condition - Condition flag
+     * @return {void}
+     */
+    useScrollIntoView(targetElement, `.${classes.scrollContainer}`, true)
+    return (
+      <div ref={targetElement}>
+        {/*...*/}
+      </div>
+    ) 
+}
+```
+

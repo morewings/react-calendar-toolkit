@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import useScrollIntoView from 'utils/useScrollIntoView';
 import classes from './Year.module.css';
 
 const Year = ({
@@ -11,12 +12,14 @@ const Year = ({
   isCurrent,
   name,
 }) => {
+  const ref = useRef();
   const handleClick = () => {
     onDateSet(date);
   };
-
+  useScrollIntoView(ref, `.${classes.scrollContainer}`, isSelected);
   return (
     <div
+      ref={ref}
       tabIndex="0"
       role="button"
       onClick={handleClick}

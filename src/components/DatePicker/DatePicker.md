@@ -167,6 +167,8 @@ import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker
       minPrecision="year"
+      startDate={new Date(1990, 0, 1)}
+      endDate={new Date(2020, 1, 25)}
       onDateSet={
         date => {
           console.log('date set', date);

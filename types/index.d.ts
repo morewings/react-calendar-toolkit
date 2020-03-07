@@ -108,7 +108,7 @@ declare module 'react-calendar-toolkit' {
      * date-fns locale object. Defaults to english
      */
     dateFnsLocale?: DatePickerDateFnsLocale;
-    theme?: Object;
+    theme?: object;
   }
 
   const DatePicker: React.FC<DatePickerProps>;
@@ -118,7 +118,9 @@ declare module 'react-calendar-toolkit' {
 
   export function useThemePostCSS(element: HTMLElement, defaultTheme?: DefaultTheme): void;
 
-  export function useThemeContext(): Object;
+  export function useScrollIntoView(ref: object, containerSelector: string, condition: boolean): void;
+
+  export function useThemeContext(): object;
 
   export function setCSSVariable(element: HTMLElement, variableName: string, value: string): void;
 
