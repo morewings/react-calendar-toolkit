@@ -3,7 +3,7 @@
   width: var(--calendarWidth);
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 calc(var(--innerPadding)/2) var(--innerPadding);
+  padding: 0 var(--innerPadding) var(--innerPadding);
   height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding)/2);
 }
 

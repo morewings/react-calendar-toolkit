@@ -11,12 +11,12 @@ const style = {
 
 const styleCalendar = {
   ...style,
-  height: '230px'
+  height: '225px'
 };
 
 const styleHeader = {
   ...style,
-  height: '105px'
+  height: '70px'
 };
 
 const styleSelector = {
@@ -188,7 +188,7 @@ import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 
 const style = {
   fontFamily: 'sans-serif',
-  width: '312px',
+  width: '260px',
   border: '2px dashed pink',
 };
 

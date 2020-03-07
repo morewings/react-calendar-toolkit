@@ -5,7 +5,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 const style = {
   boxSizing: 'border-box',
-  flex: '1 1 calc(100% / 5 - 4px)',
+  flex: '0 1 calc(100% / 5 - 4px)',
   color: 'black',
   textAlign: 'center',
   padding: '0',
@@ -50,7 +50,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 const style = {
   display: 'flex',
-  width: '276px',
+  width: 'auto',
   flexDirection: 'row',
   flexWrap: 'wrap',
   padding: '0 8px 8px',

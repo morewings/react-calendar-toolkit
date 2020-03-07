@@ -42,7 +42,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 const style = {
   display: 'flex',
-  width: '276px',
+  width: 'auto',
   flexDirection: 'row',
   flexWrap: 'wrap',
   padding: '0 8px 8px',

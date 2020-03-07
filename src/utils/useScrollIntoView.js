@@ -33,8 +33,8 @@ const noScroll = () => {
 const useScrollIntoView = (ref, containerSelector, condition) => {
   useEffect(() => {
     const element = ref.current;
-    if (element && condition) {
-      const container = element.closest(containerSelector);
+    const container = element.closest(containerSelector);
+    if (element && condition && container) {
       container.addEventListener(
         'scroll',
         event => {
