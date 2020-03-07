@@ -15,7 +15,7 @@
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  flex: 1 1 calc(100% / 5 - 4px);
+  flex: 0 1 calc(100% / 5 - 4px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   border: 1px solid transparent;
