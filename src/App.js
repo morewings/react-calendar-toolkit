@@ -13,7 +13,7 @@ const App = () => (
   <div className="app">
     <div className="container">
       <DatePicker
-        startDate={new Date(2019, 11, 1)}
+        startDate={new Date(2019, 11, 6)}
         endDate={new Date(2020, 1, 25)}
         minPrecision="day"
         highlightDate={highlightDate}

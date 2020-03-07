@@ -7,6 +7,8 @@ import {
   incrementMonth,
   convertToDate,
   checkIsWithinInterval,
+  ceilMonth,
+  floorMonth,
 } from 'utils/dateUtils';
 import {useMonthStepperLabels} from 'utils/localeContext';
 
@@ -20,7 +22,11 @@ const Selector = ({
   const dispatch = useDispatch();
   const monthStepperLabels = useMonthStepperLabels();
   const isDisabled = useCallback(
-    date => checkIsWithinInterval({start: startDate, end: endDate}, date),
+    date =>
+      checkIsWithinInterval(
+        {start: floorMonth(startDate), end: ceilMonth(endDate)},
+        date
+      ),
     [endDate, startDate]
   );
   const setPrecision = useCallback(

@@ -9,6 +9,8 @@ import {
   isWeekend,
   isSameDay,
   getDate,
+  startOfMonth,
+  endOfMonth,
 } from 'date-fns/fp';
 
 /**
@@ -151,3 +153,21 @@ export const matchDatesWithPrecision = (precision, dateLeft, dateRight) =>
     month: checkIsSameMonth,
     year: checkIsSameYear,
   }[precision](dateLeft, dateRight));
+
+/**
+ * @function
+ * @name ceilMonth
+ * @description Gets end of month date
+ * @param {DateUnion} date
+ * @return {Date}
+ */
+export const ceilMonth = endOfMonth;
+
+/**
+ * @function
+ * @name floorMonth
+ * @description Gets start of month date
+ * @param {DateUnion} date
+ * @return {Date}
+ */
+export const floorMonth = startOfMonth;

@@ -5,13 +5,11 @@ import {
   addDays,
   toDate,
   differenceInDays,
-  endOfMonth,
   endOfWeekWithOptions,
-  startOfMonth,
   startOfWeekWithOptions,
   getDate,
 } from 'date-fns/fp';
-import {incrementMonth} from 'utils/dateUtils';
+import {incrementMonth, ceilMonth, floorMonth} from 'utils/dateUtils';
 import curry from 'utils/curry';
 
 /**
@@ -121,8 +119,8 @@ export {getMonthsCurried as getMonths};
  * @return {Array.<ItemDescription>}
  */
 const getDays = (locale, timestamp) => {
-  const monthStart = startOfMonth(timestamp);
-  const monthEnd = endOfMonth(monthStart);
+  const monthStart = floorMonth(timestamp);
+  const monthEnd = ceilMonth(monthStart);
   const startDate = startOfWeekWithOptions({locale}, monthStart);
   const endDate = endOfWeekWithOptions({locale}, monthEnd);
   const cellLength = differenceInDays(startDate, endDate);
