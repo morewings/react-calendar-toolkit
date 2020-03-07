@@ -4,10 +4,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import includePaths from 'rollup-plugin-includepaths';
-import autoprefixer from 'autoprefixer';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import replace from '@rollup/plugin-replace';
 // import visualizer from 'rollup-plugin-visualizer';
+import autoprefixer from 'autoprefixer';
 import cssVariables from 'postcss-custom-properties';
 import postcssPresetEnv from 'postcss-preset-env';
 import pkg from './package.json';
@@ -41,7 +40,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
   output: {
     file,
     format,
-    name: 'Example',
+    name: 'ReactCalendarToolkit',
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',
@@ -49,7 +48,6 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
   },
   plugins: [
     peerDepsExternal(),
-    replace({'process.env.NODE_ENV': JSON.stringify('production')}), // we need this to reduce bundle size and silence prop-types
     includePaths({
       include: {},
       paths: ['src'],
@@ -77,14 +75,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     resolve({
       browser: true,
     }),
-    commonjs({
-      namedExports: {
-        'node_modules/react-is/index.js': [
-          'isValidElementType',
-          'isContextConsumer',
-        ], // TODO: check if it's still needed
-      },
-    }),
+    commonjs(),
     filesize(),
     // visualizer({open: true}),
   ],
