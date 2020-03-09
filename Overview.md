@@ -6,7 +6,7 @@
 You can use [any locale](https://date-fns.org/docs/I18n) from `date-fns` or [create custom one](https://date-fns.org/v2.10.0/docs/I18n-Contribution-Guide).
 
 ```js
-import locale from 'date-fns/esm/locale/fr';
+import locale from 'date-fns/locale/fr';
 import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker
