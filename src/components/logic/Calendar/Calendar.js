@@ -65,9 +65,6 @@ const Calendar = ({
 
   const Wrapper = wrapWith;
   const VisualComponent = renderAs;
-
-  console.log('tems', items);
-
   return (
     <Wrapper>
       {items.map(({name, date}) => (

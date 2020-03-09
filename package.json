@@ -85,7 +85,7 @@
     "react-dom": "^16.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HOST=localhost react-scripts start",
     "start:docs": "npx styleguidist server --config styleguide.config.js",
     "build:docs": "npx styleguidist build --config styleguide.config.js",
     "build": "react-scripts build",

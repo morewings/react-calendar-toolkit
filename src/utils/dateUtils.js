@@ -98,8 +98,8 @@ export const convertToDayOfMonth = timestamp => getDate(timestamp);
  * @function
  * @name incrementMonth
  * @description Adds months
- * @param {number} amount - Amount of months to add
  * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of months to add
  * @return {UnixTimestamp}
  */
 export const incrementMonth = (date, amount) =>

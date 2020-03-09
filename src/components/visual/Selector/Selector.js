@@ -28,7 +28,7 @@ const Selector = ({
           type="button">
           {year}
         </button>
-        {/** Don't show month selector if minPrecision is bigger then month */}
+        {/** Render month precision selector, only if minPrecision is not `year`  */}
         {minPrecision !== 'year' && (
           <button
             onClick={() => {
@@ -40,12 +40,12 @@ const Selector = ({
           </button>
         )}
       </div>
-      {/** Render month stepper, only if minPrecision is bigger then month */}
+      {/** Render month stepper, only if minPrecision is not `year` */}
       {minPrecision !== 'year' && (
         <div className={classes.stepper}>
           <button
             onClick={() => {
-              decrementMonth(visibleDate);
+              decrementMonth();
             }}
             aria-label={monthStepperLabels.decrementMonthLabel}
             type="button">
@@ -53,7 +53,7 @@ const Selector = ({
           </button>
           <button
             onClick={() => {
-              incrementMonth(visibleDate);
+              incrementMonth();
             }}
             aria-label={monthStepperLabels.incrementMonthLabel}
             type="button">

@@ -22,6 +22,7 @@ const Selector = ({
 }) => {
   const dispatch = useDispatch();
   const monthStepperLabels = useMonthStepperLabels();
+
   const isDisabled = useCallback(
     date =>
       checkIsWithinInterval(
@@ -30,26 +31,24 @@ const Selector = ({
       ),
     [endDate, startDate]
   );
+
   const setPrecision = useCallback(
     nextPrecision => {
       dispatch(actionCreators.setPrecision(nextPrecision));
     },
     [dispatch]
   );
-  const onIncrementMonth = useCallback(
-    date => {
-      const nextDate = incrementMonth(date, 1);
-      isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
-    },
-    [dispatch, isDisabled]
-  );
-  const onDecrementMonth = useCallback(
-    date => {
-      const nextDate = decrementMonth(date, 1);
-      isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
-    },
-    [dispatch, isDisabled]
-  );
+
+  const onIncrementMonth = useCallback(() => {
+    const nextDate = incrementMonth(visibleTimestamp, 1);
+    isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
+  }, [dispatch, isDisabled, visibleTimestamp]);
+
+  const onDecrementMonth = useCallback(() => {
+    const nextDate = decrementMonth(visibleTimestamp, 1);
+    isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
+  }, [dispatch, isDisabled, visibleTimestamp]);
+
   const SelectorVisual = renderAs;
   return (
     <SelectorVisual
