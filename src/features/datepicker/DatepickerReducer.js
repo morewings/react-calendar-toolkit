@@ -1,7 +1,14 @@
-import {SET_DATE, SET_TODAY, SET_PRECISION} from './actionTypes';
+import {convertToTimestamp, convertToDate} from 'utils/dateUtils';
+import {
+  SET_DATE,
+  SET_TODAY,
+  SET_PRECISION,
+  SET_VISIBILITY,
+} from './actionTypes';
 
 const initialState = {
   selectedTimestamp: 0,
+  visibleTimestamp: 0,
   todayTimestamp: 0,
   precision: 'day',
 };
@@ -14,6 +21,13 @@ export default (state = initialState, action) => {
         ...state,
         selectedTimestamp,
         precision: precision || state.precision,
+      };
+    }
+    case SET_VISIBILITY: {
+      const {visibleTimestamp} = action.payload;
+      return {
+        ...state,
+        visibleTimestamp,
       };
     }
     case SET_TODAY: {

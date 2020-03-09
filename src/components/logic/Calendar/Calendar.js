@@ -6,6 +6,8 @@ import {
   checkIsWithinInterval,
   checkIsWeekend,
   matchDatesWithPrecision,
+  floorMonth,
+  ceilMonth,
 } from 'utils/dateUtils';
 import {useLocaleEnumerators} from 'utils/localeContext';
 
@@ -14,6 +16,7 @@ const Calendar = ({
   wrapWith,
   todayTimestamp,
   selectedTimestamp,
+  visibleTimestamp,
   renderAs,
   precision,
   startDate,
@@ -26,13 +29,16 @@ const Calendar = ({
   const items =
     precision === 'year'
       ? getItems(startDate, endDate)
-      : getItems(selectedTimestamp);
+      : getItems(visibleTimestamp);
 
   const getIsDisabled = useCallback(
     date => {
       if (precision === 'year') return false; // we are not disabling years, just rendering the range
       if (precision === 'month') {
-        return !checkIsWithinInterval({start: startDate, end: endDate}, date);
+        return !checkIsWithinInterval(
+          {start: floorMonth(startDate), end: ceilMonth(endDate)},
+          date
+        );
       }
       return (
         disableDate({date, isWeekend: checkIsWeekend(date), precision}) ||
@@ -60,6 +66,8 @@ const Calendar = ({
   const Wrapper = wrapWith;
   const VisualComponent = renderAs;
 
+  console.log('tems', items);
+
   return (
     <Wrapper>
       {items.map(({name, date}) => (
@@ -73,7 +81,7 @@ const Calendar = ({
           )}
           isCurrent={matchDatesWithPrecision(precision, date, todayTimestamp)}
           belongsToSameMonth={
-            precision === 'day' && checkIsSameMonth(date, selectedTimestamp)
+            precision === 'day' && checkIsSameMonth(date, visibleTimestamp)
           }
           isDisabled={getIsDisabled(date)}
           isHighlighted={getIsHighlighted(date)}
@@ -93,6 +101,7 @@ Calendar.propTypes = {
   onDateSet: PropTypes.func.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
   selectedTimestamp: PropTypes.number.isRequired,
+  visibleTimestamp: PropTypes.number.isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
   disableDate: PropTypes.func.isRequired,

@@ -11,10 +11,11 @@ const Selector = ({
   incrementMonth,
   minPrecision,
   monthStepperLabels,
+  visibleDate,
 }) => {
   const formatDate = useFormatDate();
-  const year = formatDate('y', selectedDate);
-  const month = formatDate('LLLL', selectedDate);
+  const year = formatDate('y', visibleDate);
+  const month = formatDate('LLLL', visibleDate);
   return (
     <div className={classes.wrapper}>
       {/** Render precision selectors */}
@@ -44,7 +45,7 @@ const Selector = ({
         <div className={classes.stepper}>
           <button
             onClick={() => {
-              decrementMonth(selectedDate);
+              decrementMonth(visibleDate);
             }}
             aria-label={monthStepperLabels.decrementMonthLabel}
             type="button">
@@ -52,7 +53,7 @@ const Selector = ({
           </button>
           <button
             onClick={() => {
-              incrementMonth(selectedDate);
+              incrementMonth(visibleDate);
             }}
             aria-label={monthStepperLabels.incrementMonthLabel}
             type="button">
@@ -73,6 +74,8 @@ Selector.propTypes = {
   decrementMonth: PropTypes.func.isRequired,
   /** Selected date of Calendar */
   selectedDate: PropTypes.instanceOf(Date).isRequired,
+  /** Defines visibility of dates, displayed in current Calendar */
+  visibleDate: PropTypes.instanceOf(Date).isRequired,
   /** Today date */
   todayDate: PropTypes.instanceOf(Date).isRequired,
   /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */

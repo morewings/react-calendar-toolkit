@@ -52,6 +52,7 @@ const DatePicker = ({
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
+  const visibleTimestamp = useSelector(selectors.getVisibleTimestamp);
 
   const precision = useSelector(selectors.getPrecision);
   const datepickerPrecisions = limitPrecision(
@@ -64,18 +65,19 @@ const DatePicker = ({
   const handleDateSet = useCallback(
     date => {
       precision === minPrecision && onDateSet(date);
-      dispatch(actionCreators.setDate(convertToTimestamp(date)));
+      dispatch(actionCreators.setDate(date));
       nextPrecision && dispatch(actionCreators.setPrecision(nextPrecision));
     },
     [dispatch, minPrecision, nextPrecision, onDateSet, precision]
   );
 
   useEffect(() => {
-    dispatch(actionCreators.setDate(convertToTimestamp(initialDate)));
+    dispatch(actionCreators.setDate(initialDate));
+    dispatch(actionCreators.setVisibility(initialDate));
   }, [dispatch, initialDate]);
 
   useEffect(() => {
-    dispatch(actionCreators.setToday(convertToTimestamp(today)));
+    dispatch(actionCreators.setToday(today));
     dispatch(actionCreators.setPrecision(minPrecision));
   }, [dispatch, minPrecision, today]);
 
@@ -99,6 +101,7 @@ const DatePicker = ({
         )}
         selectedTimestamp={selectedTimestamp}
         todayTimestamp={todayTimestamp}
+        visibleTimestamp={visibleTimestamp}
         startDate={startDate}
         endDate={endDate}
       />
@@ -113,6 +116,7 @@ const DatePicker = ({
             disableDate={disableDate}
             highlightDate={highlightDate}
             selectedTimestamp={selectedTimestamp}
+            visibleTimestamp={visibleTimestamp}
             todayTimestamp={todayTimestamp}
             onDateSet={handleDateSet}
             startDate={startDate}

@@ -1,16 +1,29 @@
-import {SET_DATE, SET_PRECISION, SET_TODAY} from './actionTypes';
+import {convertToTimestamp} from 'utils/dateUtils';
+import {
+  SET_DATE,
+  SET_PRECISION,
+  SET_TODAY,
+  SET_VISIBILITY,
+} from './actionTypes';
 
 export const setDate = date => ({
   type: SET_DATE,
   payload: {
-    selectedTimestamp: date,
+    selectedTimestamp: convertToTimestamp(date),
+  },
+});
+
+export const setVisibility = date => ({
+  type: SET_VISIBILITY,
+  payload: {
+    visibleTimestamp: convertToTimestamp(date),
   },
 });
 
 export const setToday = date => ({
   type: SET_TODAY,
   payload: {
-    todayTimestamp: date,
+    todayTimestamp: convertToTimestamp(date),
   },
 });
 

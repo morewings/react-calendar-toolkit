@@ -18,6 +18,7 @@ const Selector = ({
   renderAs,
   startDate,
   endDate,
+  visibleTimestamp,
 }) => {
   const dispatch = useDispatch();
   const monthStepperLabels = useMonthStepperLabels();
@@ -38,14 +39,14 @@ const Selector = ({
   const onIncrementMonth = useCallback(
     date => {
       const nextDate = incrementMonth(date, 1);
-      isDisabled(nextDate) && dispatch(actionCreators.setDate(nextDate));
+      isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
     },
     [dispatch, isDisabled]
   );
   const onDecrementMonth = useCallback(
     date => {
       const nextDate = decrementMonth(date, 1);
-      isDisabled(nextDate) && dispatch(actionCreators.setDate(nextDate));
+      isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
     },
     [dispatch, isDisabled]
   );
@@ -58,6 +59,7 @@ const Selector = ({
       setPrecision={setPrecision}
       todayDate={convertToDate(todayTimestamp)}
       selectedDate={convertToDate(selectedTimestamp)}
+      visibleDate={convertToDate(visibleTimestamp)}
     />
   );
 };
@@ -65,6 +67,7 @@ const Selector = ({
 Selector.propTypes = {
   selectedTimestamp: PropTypes.number.isRequired,
   todayTimestamp: PropTypes.number.isRequired,
+  visibleTimestamp: PropTypes.number.isRequired,
   renderAs: PropTypes.elementType.isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,

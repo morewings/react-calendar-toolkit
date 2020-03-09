@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import {isSameDay} from 'date-fns'
-import DatePicker from 'entryPoint';
+import DatePicker from 'components/DatePicker';
 import DatePickerFieldset from 'components/DatePickerFieldset';
 import './App.scss';
 
