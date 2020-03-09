@@ -65,7 +65,8 @@ const DatePicker = ({
   const handleDateSet = useCallback(
     date => {
       precision === minPrecision && onDateSet(date);
-      dispatch(actionCreators.setDate(date));
+      precision === minPrecision && dispatch(actionCreators.setDate(date));
+      dispatch(actionCreators.setVisibility(date));
       nextPrecision && dispatch(actionCreators.setPrecision(nextPrecision));
     },
     [dispatch, minPrecision, nextPrecision, onDateSet, precision]
@@ -96,9 +97,7 @@ const DatePicker = ({
         />
       )}
       <Selector
-        renderAs={props => (
-          <SelectorUI minPrecision={minPrecision} {...props} />
-        )}
+        renderAs={props => <SelectorUI precision={precision} {...props} />}
         selectedTimestamp={selectedTimestamp}
         todayTimestamp={todayTimestamp}
         visibleTimestamp={visibleTimestamp}

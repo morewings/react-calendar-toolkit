@@ -9,7 +9,7 @@ const Selector = ({
   setPrecision,
   decrementMonth,
   incrementMonth,
-  minPrecision,
+  precision,
   monthStepperLabels,
   visibleDate,
 }) => {
@@ -29,7 +29,7 @@ const Selector = ({
           {year}
         </button>
         {/** Render month precision selector, only if minPrecision is not `year`  */}
-        {minPrecision !== 'year' && (
+        {precision !== 'year' && (
           <button
             onClick={() => {
               setPrecision('month');
@@ -41,7 +41,7 @@ const Selector = ({
         )}
       </div>
       {/** Render month stepper, only if minPrecision is not `year` */}
-      {minPrecision !== 'year' && (
+      {precision === 'day' && (
         <div className={classes.stepper}>
           <button
             onClick={() => {
@@ -79,7 +79,7 @@ Selector.propTypes = {
   /** Today date */
   todayDate: PropTypes.instanceOf(Date).isRequired,
   /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
-  minPrecision: PropTypes.oneOf(['year', 'month', 'day']).isRequired,
+  precision: PropTypes.oneOf(['year', 'month', 'day']).isRequired,
   /** Localized accessibility labels for __month stepper__ */
   monthStepperLabels: PropTypes.shape({
     /** +1 month */
