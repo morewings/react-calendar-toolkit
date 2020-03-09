@@ -44,10 +44,7 @@ const CustomComponent = props => {
     startDate={new Date(2019, 11, 6)}
     endDate={new Date(2020, 1, 25)}
     today={new Date()}
-    onDateSet={
-    date => {
-      console.log('date set', date);
-    }}
+    onDateSet={date => {console.log('date set', date);}}
     title="Demo datepicker" />
   <div style={{marginLeft: '30px'}}>
     <DatePicker
@@ -75,10 +72,7 @@ import DatePicker from 'react-calendar-toolkit';
   startDate={new Date(2019, 11, 6)}
   endDate={new Date(2020, 1, 25)}
   today={new Date()}
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }}
+  onDateSet={date => {console.log('date set', date);}}
   title="Demo datepicker" />
 ```
 
@@ -90,10 +84,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker
   showHeader={false}
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }} />
+  onDateSet={date => {console.log('date set', date);}} />
 ```
 
 #### Disable weekend highlight
@@ -102,10 +93,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker
   highlightWeekends={false}
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }} />
+  onDateSet={date => {console.log('date set', date);}}/>
 ```
 
 #### With custom locale
@@ -116,10 +104,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker
   dateFnsLocale={locale}
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }} />
+  onDateSet={date => {console.log('date set', date);}} />
 ```
 You can provided any included ``date-fns`` locale. Or create a [custom one](https://date-fns.org/v2.9.0/docs/I18n-Contribution-Guide#adding-a-new-locale). First day of the week is taken from locale object, `locale.options.weekStartsOn`.
 
@@ -140,10 +125,7 @@ const highlightDate = ({date, precision}) => {
 <DatePicker
   disableDate={disableWeekends}
   highlightDate={highlightDate}
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }} />
+  onDateSet={date => {console.log('date set', date);}} />
 ```
 You can disable (custom style and non-clickable) or highlight (custom style) any rendered date.
 
@@ -156,10 +138,7 @@ import DatePicker from 'react-calendar-toolkit';
 
 <DatePicker
   minPrecision="month"
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }} />
+  onDateSet={date => {console.log('date set', date);}} />
 ```
 
 ```js
@@ -169,10 +148,7 @@ import DatePicker from 'react-calendar-toolkit';
       minPrecision="year"
       startDate={new Date(1990, 0, 1)}
       endDate={new Date(2020, 1, 25)}
-      onDateSet={
-        date => {
-          console.log('date set', date);
-        }} />
+      onDateSet={date => {console.log('date set', date);}} />
 ```
 
 ### UI customization
@@ -208,6 +184,7 @@ const CustomComponent = props => {
 };
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   minPrecision="day"
   wrapWith={CustomComponent}
   title="Demo datepicker" />

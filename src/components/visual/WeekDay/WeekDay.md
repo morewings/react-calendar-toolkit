@@ -25,6 +25,7 @@ const CustomComponent = ({name}) => {
 };
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   minPrecision="day"
   renderWeekDayAs={CustomComponent}
   title="Demo datepicker" />
@@ -56,6 +57,7 @@ const CustomComponent = ({children}) => (
 );
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   minPrecision="day"
   wrapWeekDaysWith={CustomComponent}
   title="Demo datepicker" />

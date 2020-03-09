@@ -31,6 +31,7 @@ const CustomComponent = ({
 };
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   minPrecision="month"
   renderMonthAs={CustomComponent}
   title="Demo datepicker" />
@@ -63,6 +64,7 @@ const CustomComponent = ({children}) => (
 );
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   minPrecision="month"
   wrapMonthWith={CustomComponent}
   title="Demo datepicker" />

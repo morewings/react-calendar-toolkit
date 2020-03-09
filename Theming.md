@@ -17,10 +17,7 @@ const theme = {
 
 <DatePicker
   theme={theme}
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }}
+  onDateSet={date => {console.log('date set', date);}}
   title="Demo datepicker" />
 ```
 

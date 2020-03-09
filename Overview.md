@@ -12,10 +12,7 @@ import DatePicker from 'react-calendar-toolkit';
 <DatePicker
   dateFnsLocale={locale}
   title="Demo datepicker"
-  onDateSet={
-    date => {
-      console.log('date set', date);
-    }} />
+  onDateSet={date => {console.log('date set', date);}} />
 ```
 
 ### Calendar views and precision

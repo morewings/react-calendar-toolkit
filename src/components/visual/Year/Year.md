@@ -31,6 +31,7 @@ const CustomComponent = ({
 };
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   renderYearAs={CustomComponent}
   minPrecision="year"
   startDate={new Date(1999, 0, 1)}
@@ -65,6 +66,7 @@ const CustomComponent = ({children}) => (
 );
 
 <DatePicker
+  onDateSet={date => {console.log('date set', date);}}
   minPrecision="year"
   wrapYearWith={CustomComponent}
   startDate={new Date(1999, 0, 1)}
