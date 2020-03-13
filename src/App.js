@@ -27,15 +27,15 @@ const App = () => (
       />
     </div>
     <div className="container">
-      {/*<DatePickerFieldset*/}
-      {/*  onDateSet={date => {*/}
-      {/*    console.log('date set', date);*/}
-      {/*  }}*/}
-      {/*  startDate={new Date(1979, 0, 1)}*/}
-      {/*  endDate={new Date(2030, 1, 25)}*/}
-      {/*  minPrecision="day"*/}
-      {/*  title="Demo datepicker"*/}
-      {/*/>*/}
+      <DatePickerFieldset
+        onDateSet={date => {
+          console.log('date set', date);
+        }}
+        startDate={new Date(1979, 0, 1)}
+        endDate={new Date(2030, 1, 25)}
+        minPrecision="day"
+        title="Demo datepicker"
+      />
     </div>
   </div>
 );

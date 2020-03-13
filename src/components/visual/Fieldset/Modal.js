@@ -1,6 +1,8 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState, useLayoutEffect} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import {setCSSVariable, removeCSSVariable} from 'utils/themeContext';
+import defaults from 'utils/defaultTheme';
 import classes from './Modal.module.css';
 
 const Modal = ({
@@ -12,6 +14,7 @@ const Modal = ({
   const modalWrapperRef = useRef();
   const modalContentRef = useRef();
   const [isNodeAttached, setIsNodeAttached] = useState(false);
+  /** Create modal container node */
   useEffect(() => {
     if (!isNodeAttached) {
       modalWrapperRef.current = document.createElement('div');
@@ -23,6 +26,8 @@ const Modal = ({
       isNodeAttached && modalWrapperRef.current.remove();
     };
   }, [isNodeAttached, wrapperClassName]);
+
+  /** Add outside click handler */
   useEffect(() => {
     const handleClick = event => {
       const isModalContent = node => modalContentRef.current.contains(node);
@@ -35,6 +40,17 @@ const Modal = ({
       document.removeEventListener('mousedown', handleClick, false);
     };
   }, [isNodeAttached, toggleDatepicker]);
+
+  /** Set css variables */
+  useLayoutEffect(() => {
+    const varName = '--modalBgColor';
+    isNodeAttached &&
+      setCSSVariable(modalWrapperRef.current, varName, defaults[varName]);
+    return () => {
+      isNodeAttached && removeCSSVariable(modalWrapperRef.current, varName);
+    };
+  }, [isNodeAttached]);
+
   return isNodeAttached
     ? ReactDOM.createPortal(
         <div ref={modalContentRef} className={modalClassName}>
