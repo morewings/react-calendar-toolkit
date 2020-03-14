@@ -1,4 +1,3 @@
-import {convertToTimestamp, convertToDate} from 'utils/dateUtils';
 import {
   SET_DATE,
   SET_TODAY,
@@ -7,9 +6,9 @@ import {
 } from './actionTypes';
 
 const initialState = {
-  selectedTimestamp: 0,
-  visibleTimestamp: 0,
-  todayTimestamp: 0,
+  // selectedTimestamp: 0,
+  // visibleTimestamp: 0,
+  // todayTimestamp: 0,
   precision: 'day',
 };
 

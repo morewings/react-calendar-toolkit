@@ -16,6 +16,8 @@ import InputVisual, {
   Modal,
 } from 'components/visual/Fieldset';
 
+import useSetInitialValues from 'utils/useSetInitialValues';
+
 const DatePickerFieldset = ({
   renderInputAs,
   mode,
@@ -27,9 +29,10 @@ const DatePickerFieldset = ({
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const isVisible = useSelector(modalSelectors.getIsVisible);
+  const hasInitialValues =
+    !!selectedTimestamp && !!todayTimestamp && !!visibleTimestamp;
   const formatDate = useFormatDate();
   const PopoverWrapper = mode === 'popover' ? Popover : Fragment;
-  const ModalWrapper = mode === 'modal' ? Modal : Fragment;
   const toggleDatepicker = useCallback(
     isVisible =>
       dispatch({
@@ -47,7 +50,7 @@ const DatePickerFieldset = ({
       {...restProps}
     />
   }
-  return (
+  return hasInitialValues && (
     <PopoverWrapper isVisible={isVisible} toggleDatepicker={toggleDatepicker} renderDatePickerAs={DatePickerWithProps}>
       <Fieldset>
         <InputComponent

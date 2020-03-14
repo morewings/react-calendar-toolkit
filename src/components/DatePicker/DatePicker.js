@@ -14,6 +14,9 @@ import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
+import useHasInitialValues from 'utils/useHasInitialValues';
+
+import useSetInitialValues from 'utils/useSetInitialValues';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
   const currentIndex = precisionEnum.indexOf(currentPrecision);
@@ -53,8 +56,10 @@ const DatePicker = ({
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const visibleTimestamp = useSelector(selectors.getVisibleTimestamp);
-
   const precision = useSelector(selectors.getPrecision);
+
+  const hasInitialValues = useHasInitialValues();
+
   const datepickerPrecisions = limitPrecision(
     config.supportedPrecisions,
     minPrecision
@@ -72,48 +77,56 @@ const DatePicker = ({
     [dispatch, minPrecision, nextPrecision, onDateSet, precision]
   );
 
-  useEffect(() => {
-    dispatch(actionCreators.setDate(initialDate));
-    dispatch(actionCreators.setVisibility(initialDate));
-  }, [dispatch, initialDate]);
-
-  useEffect(() => {
-    dispatch(actionCreators.setToday(today));
-    dispatch(actionCreators.setPrecision(minPrecision));
-  }, [dispatch, minPrecision, today]);
+  useSetInitialValues({initialDate, today, minPrecision});
 
   const Wrapper = wrapWith;
-
   const HeaderUI = renderHeaderAs;
   const SelectorUI = renderSelectorAs;
 
   return (
-    <Wrapper title={title}>
-      {showHeader && (
-        <HeaderUI
-          title={title}
-          todayDate={convertToDate(todayTimestamp)}
-          selectedDate={convertToDate(selectedTimestamp)}
+    hasInitialValues && (
+      <Wrapper title={title}>
+        {showHeader && (
+          <HeaderUI
+            title={title}
+            todayDate={convertToDate(todayTimestamp)}
+            selectedDate={convertToDate(selectedTimestamp)}
+          />
+        )}
+        <Selector
+          renderAs={props => <SelectorUI precision={precision} {...props} />}
+          selectedTimestamp={selectedTimestamp}
+          todayTimestamp={todayTimestamp}
+          visibleTimestamp={visibleTimestamp}
+          startDate={startDate}
+          endDate={endDate}
         />
-      )}
-      <Selector
-        renderAs={props => <SelectorUI precision={precision} {...props} />}
-        selectedTimestamp={selectedTimestamp}
-        todayTimestamp={todayTimestamp}
-        visibleTimestamp={visibleTimestamp}
-        startDate={startDate}
-        endDate={endDate}
-      />
-      {precision === 'day' && (
-        <Fragment>
-          <WeekDays renderAs={renderWeekDayAs} wrapWith={wrapWeekDaysWith} />
+        {precision === 'day' && (
+          <Fragment>
+            <WeekDays renderAs={renderWeekDayAs} wrapWith={wrapWeekDaysWith} />
+            <Calendar
+              precision="day"
+              highlightWeekends={highlightWeekends}
+              wrapWith={wrapDaysWith}
+              renderAs={renderDayAs}
+              disableDate={disableDate}
+              highlightDate={highlightDate}
+              selectedTimestamp={selectedTimestamp}
+              visibleTimestamp={visibleTimestamp}
+              todayTimestamp={todayTimestamp}
+              onDateSet={handleDateSet}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          </Fragment>
+        )}
+        {precision === 'month' && (
           <Calendar
-            precision="day"
-            highlightWeekends={highlightWeekends}
-            wrapWith={wrapDaysWith}
-            renderAs={renderDayAs}
+            precision="month"
             disableDate={disableDate}
             highlightDate={highlightDate}
+            wrapWith={wrapMonthWith}
+            renderAs={renderMonthAs}
             selectedTimestamp={selectedTimestamp}
             visibleTimestamp={visibleTimestamp}
             todayTimestamp={todayTimestamp}
@@ -121,39 +134,24 @@ const DatePicker = ({
             startDate={startDate}
             endDate={endDate}
           />
-        </Fragment>
-      )}
-      {precision === 'month' && (
-        <Calendar
-          precision="month"
-          disableDate={disableDate}
-          highlightDate={highlightDate}
-          wrapWith={wrapMonthWith}
-          renderAs={renderMonthAs}
-          selectedTimestamp={selectedTimestamp}
-          visibleTimestamp={visibleTimestamp}
-          todayTimestamp={todayTimestamp}
-          onDateSet={handleDateSet}
-          startDate={startDate}
-          endDate={endDate}
-        />
-      )}
-      {precision === 'year' && (
-        <Calendar
-          precision="year"
-          disableDate={disableDate}
-          highlightDate={highlightDate}
-          wrapWith={wrapYearWith}
-          renderAs={renderYearAs}
-          selectedTimestamp={selectedTimestamp}
-          visibleTimestamp={visibleTimestamp}
-          todayTimestamp={todayTimestamp}
-          onDateSet={handleDateSet}
-          startDate={startDate}
-          endDate={endDate}
-        />
-      )}
-    </Wrapper>
+        )}
+        {precision === 'year' && (
+          <Calendar
+            precision="year"
+            disableDate={disableDate}
+            highlightDate={highlightDate}
+            wrapWith={wrapYearWith}
+            renderAs={renderYearAs}
+            selectedTimestamp={selectedTimestamp}
+            visibleTimestamp={visibleTimestamp}
+            todayTimestamp={todayTimestamp}
+            onDateSet={handleDateSet}
+            startDate={startDate}
+            endDate={endDate}
+          />
+        )}
+      </Wrapper>
+    )
   );
 };
 
