@@ -1,17 +1,17 @@
 import {TOGGLE_DATEPICKER} from './actionTypes';
 
 const initialState = {
-  showDatepicker: false,
+  isVisible: false,
   datepickerMode: 'popover',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_DATEPICKER: {
-      const showDatepicker = action.payload;
+      const isVisible = action.payload;
       return {
         ...state,
-        showDatepicker,
+        isVisible,
       };
     }
     default:

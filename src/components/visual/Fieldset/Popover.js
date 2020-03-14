@@ -1,36 +1,36 @@
-import React from 'react';
+/*eslint-disable*/
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import Popover, {ArrowContainer} from 'react-tiny-popover';
 import classNames from 'classnames';
 import classes from './Popover.module.css';
 
-const Popover = props => (
-  <div
-    className={classNames({
-      [props.className]: Boolean(props.className),
-      [props.placement]: Boolean(props.placement),
-      [classes.bottomLeft]: props.placement === 'bottom-left',
-      [classes.bottomRight]: props.placement === 'bottom-right',
-      [classes.topLeft]: props.placement === 'top-left',
-      [classes.topRight]: props.placement === 'top-right',
-    })}>
-    {props.children}
-  </div>
-);
+const PopoverContainer = props => {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const Datepicker = props.renderDatePickerAs
+  return (
+    <Popover
+      align="start"
+      isOpen={true}
+      position={['bottom', 'top']}
+      padding={0}
+      onClickOutside={() => {
+        setIsPopoverOpen(false);
+      }}
+      content={({position, targetRect, popoverRect}) => (
+        <div className={classes.wrapper}>
+          <Datepicker />
+        </div>
+      )}>
+      {props.children}
+    </Popover>
+  );
+};
 
-Popover.propTypes = {
-  className: PropTypes.string,
+PopoverContainer.propTypes = {
   children: PropTypes.node.isRequired,
-  placement: PropTypes.oneOf([
-    'bottom-left',
-    'bottom-right',
-    'top-left',
-    'top-right',
-  ]),
 };
 
-Popover.defaultProps = {
-  className: classes.container,
-  placement: classes.bottomLeft,
-};
+PopoverContainer.defaultProps = {};
 
-export default Popover;
+export default PopoverContainer;

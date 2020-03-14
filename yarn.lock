@@ -11826,6 +11826,11 @@ react-test-renderer@^16.0.0-0:
     react-is "^16.8.6"
     scheduler "^0.18.0"
 
+react-tiny-popover@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-4.0.0.tgz#648455bd8803434e0dcf04acc65ab6e3a4c42e75"
+  integrity sha512-9eTzEughY47VRZ7nNGfvvTLaBZfAIb+VGd+F/tmOCZE8Hi839fGC2P7UbCs+oz/e7xPfQzvB+Myq43C4Af80fQ==
+
 react-to-typescript-definitions@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-to-typescript-definitions/-/react-to-typescript-definitions-2.0.0.tgz#d4ab0e1279cdea9c436815aa119a0947ab6abfd7"

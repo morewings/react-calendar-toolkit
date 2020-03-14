@@ -1,1 +1,1 @@
-export const getShowDatepicker = state => state.modal.showDatepicker;
+export const getIsVisible = state => state.modal.isVisible;

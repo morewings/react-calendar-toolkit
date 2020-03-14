@@ -157,7 +157,7 @@ const DatePicker = ({
   );
 };
 
-DatePicker.propTypes = {
+export const propTypes = {
   /** Set initial selected date when component renders. */
   initialDate: PropTypes.instanceOf(Date),
   /** Set today date. */
@@ -211,6 +211,8 @@ DatePicker.propTypes = {
   /** Theme object to customize style for UI components */
   theme: PropTypes.shape({}), // eslint-disable-line react/require-default-props
 };
+
+DatePicker.propTypes = propTypes;
 
 DatePicker.defaultProps = {
   initialDate: new Date(2020, 0, 6),

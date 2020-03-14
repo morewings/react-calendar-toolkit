@@ -1,23 +1,7 @@
 .container{
-  position: absolute;
+  padding: 10px;
 }
 
-.bottomLeft {
-  left: 0;
-  top: var(--inputHeight);
-}
-
-.bottomRight {
-  right: 0;
-  top: var(--inputHeight);
-}
-
-.topLeft {
-  left: 0;
-  bottom: var(--inputHeight);
-}
-
-.topRight {
-  right: 0;
-  bottom: var(--inputHeight);
+.wrapper{
+  border: 1px solid rgba(0, 0, 0, 0.38);
 }

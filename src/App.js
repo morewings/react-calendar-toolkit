@@ -12,19 +12,19 @@ const highlightDate = ({date, precision}) => {
 const App = () => (
   <div className="app">
     <div className="container">
-      <DatePicker
-        startDate={new Date(2019, 11, 6)}
-        endDate={new Date(2020, 1, 25)}
-        minPrecision="day"
-        highlightDate={highlightDate}
-        onDateSet={date => {
-          console.log('date set', date);
-        }}
-        title="Demo datepicker"
-        // theme={{
-        //   '--headerBgColor': 'purple'
-        // }}
-      />
+      {/*<DatePicker*/}
+      {/*  startDate={new Date(2019, 11, 6)}*/}
+      {/*  endDate={new Date(2020, 1, 25)}*/}
+      {/*  minPrecision="day"*/}
+      {/*  highlightDate={highlightDate}*/}
+      {/*  onDateSet={date => {*/}
+      {/*    console.log('date set', date);*/}
+      {/*  }}*/}
+      {/*  title="Demo datepicker"*/}
+      {/*  // theme={{*/}
+      {/*  //   '--headerBgColor': 'purple'*/}
+      {/*  // }}*/}
+      {/*/>*/}
     </div>
     <div className="container">
       <DatePickerFieldset
