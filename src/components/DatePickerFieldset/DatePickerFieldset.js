@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React, {Fragment, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
@@ -17,64 +16,81 @@ import InputVisual, {
 } from 'components/visual/Fieldset';
 
 import useSetInitialValues from 'utils/useSetInitialValues';
+import useHasInitialValues from 'utils/useHasInitialValues';
 
 const DatePickerFieldset = ({
   renderInputAs,
   mode,
   formatPattern,
   renderDatePickerAs,
+  initialDate,
+  today,
+  minPrecision,
   ...restProps
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const isVisible = useSelector(modalSelectors.getIsVisible);
-  const hasInitialValues =
-    !!selectedTimestamp && !!todayTimestamp && !!visibleTimestamp;
+  const hasInitialValues = useHasInitialValues();
   const formatDate = useFormatDate();
   const PopoverWrapper = mode === 'popover' ? Popover : Fragment;
   const toggleDatepicker = useCallback(
-    isVisible =>
+    visibility =>
       dispatch({
         type: modalActionTypes.TOGGLE_DATEPICKER,
-        payload: isVisible,
+        payload: visibility,
       }),
     [dispatch]
   );
   const InputComponent = renderInputAs;
   const DatePickerComponent = renderDatePickerAs;
-  const DatePickerWithProps = () => {
-    return <DatePickerComponent
+  const DatePickerWithProps = () => (
+    <DatePickerComponent
       date={convertToDate(selectedTimestamp)}
       showHeader={false} // TODO: merge with restProps
       {...restProps}
     />
-  }
-  return hasInitialValues && (
-    <PopoverWrapper isVisible={isVisible} toggleDatepicker={toggleDatepicker} renderDatePickerAs={DatePickerWithProps}>
-      <Fieldset>
-        <InputComponent
-          date={convertToDate(todayTimestamp)}
-          value={formatDate('MM/dd/yyyy', convertToDate(selectedTimestamp))}
-          toggleDatepicker={toggleDatepicker}
-        />
-        {/*<DatePickerComponent*/}
-        {/*  date={convertToDate(selectedTimestamp)}*/}
-        {/*  showHeader={false} // TODO: merge with restProps*/}
-        {/*  {...restProps}*/}
-        {/*/>*/}
-      </Fieldset>
-    </PopoverWrapper>
+  );
+
+  useSetInitialValues({initialDate, today, minPrecision});
+
+  return (
+    hasInitialValues && (
+      <PopoverWrapper
+        isVisible={isVisible}
+        toggleDatepicker={toggleDatepicker}
+        renderDatePickerAs={DatePickerWithProps}>
+        <Fieldset>
+          <InputComponent
+            date={convertToDate(todayTimestamp)}
+            value={formatDate('MM/dd/yyyy', convertToDate(selectedTimestamp))}
+            toggleDatepicker={toggleDatepicker}
+          />
+          {/* <DatePickerComponent */}
+          {/*  date={convertToDate(selectedTimestamp)} */}
+          {/*  showHeader={false} // TODO: merge with restProps */}
+          {/*  {...restProps} */}
+          {/* /> */}
+        </Fieldset>
+      </PopoverWrapper>
+    )
   );
 };
 
 DatePickerFieldset.propTypes = {
+  ...propTypes,
   mode: PropTypes.oneOf(['popover', 'modal']),
   hideOnSelect: PropTypes.bool,
   renderInputAs: PropTypes.elementType,
   renderDatePickerAs: PropTypes.elementType,
   formatPattern: PropTypes.string,
-  ...propTypes,
+  /** Set initial selected date when component renders. */
+  initialDate: PropTypes.instanceOf(Date),
+  /** Set today date. */
+  today: PropTypes.instanceOf(Date),
+  /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
+  minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
 };
 
 DatePickerFieldset.defaultProps = {
@@ -83,6 +99,9 @@ DatePickerFieldset.defaultProps = {
   renderInputAs: InputVisual,
   renderDatePickerAs: DatePicker,
   formatPattern: 'MM/dd/yyyy',
+  initialDate: new Date(2020, 0, 6),
+  today: new Date(),
+  minPrecision: 'day',
 };
 
 export default DatePickerFieldset;
