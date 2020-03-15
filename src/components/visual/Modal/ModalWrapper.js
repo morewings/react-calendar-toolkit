@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState, Fragment} from 'react';
+import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
-import {useThemePostCSS} from 'utils/themeContext';
 import useOnClickOutside from 'utils/useOnClickOutside';
 import classes from './Modal.module.css';
 
@@ -9,7 +8,6 @@ const ModalWrapper = ({children, toggleDatepicker}) => {
   useOnClickOutside(ref, () => {
     toggleDatepicker(false);
   });
-  // useThemePostCSS(ref.current);
   return (
     <div ref={ref} className={classes.content}>
       {children}

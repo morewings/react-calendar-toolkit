@@ -62,7 +62,7 @@ const DatePickerFieldset = ({
   const DatePickerWithProps = () => (
     <DatePickerComponent
       date={convertToDate(selectedTimestamp)}
-      showHeader={false} // TODO: merge with restProps
+      showHeader={mode === 'modal'}
       onDateSet={handleDateSet}
       {...restProps}
     />
