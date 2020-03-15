@@ -11,7 +11,7 @@ import {selectors} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import InputVisual, {Fieldset} from 'components/visual/Fieldset';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
-import ModalProvider from 'components/visual/Modal';
+import ModalProvider, {ModalWrapper} from 'components/visual/Modal';
 
 import useSetInitialValues from 'utils/useSetInitialValues';
 import useHasInitialValues from 'utils/useHasInitialValues';
@@ -28,6 +28,7 @@ const DatePickerFieldset = ({
   popoverProvider,
   wrapPopoverWith,
   modalProvider,
+  wrapModalWith,
   ...restProps
 }) => {
   const dispatch = useDispatch();
@@ -74,7 +75,8 @@ const DatePickerFieldset = ({
       <Wrapper
         isVisible={isVisible}
         toggleDatepicker={toggleDatepicker}
-        wrapWith={wrapPopoverWith}
+        wrapPopoverWith={wrapPopoverWith}
+        wrapModalWith={wrapModalWith}
         renderDatePickerAs={DatePickerWithProps}>
         <Fieldset>
           <InputComponent
@@ -99,6 +101,7 @@ DatePickerFieldset.propTypes = {
   wrapPopoverWith: PropTypes.elementType,
   popoverProvider: PropTypes.elementType,
   modalProvider: PropTypes.elementType,
+  wrapModalWith: PropTypes.elementType,
   formatPattern: PropTypes.string,
   /** Set initial selected date when component renders. */
   initialDate: PropTypes.instanceOf(Date),
@@ -119,6 +122,7 @@ DatePickerFieldset.defaultProps = {
   minPrecision: 'day',
   popoverProvider: PopoverProvider,
   wrapPopoverWith: PopoverWrapper,
+  wrapModalWith: ModalWrapper,
   modalProvider: ModalProvider,
 };
 

@@ -1,38 +1,39 @@
 import React, {useEffect, useRef, useState, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import useOnClickOutside from 'utils/useOnClickOutside';
 import {setCSSVariable, useThemeContext} from 'utils/themeContext';
 import defaults from 'utils/defaultTheme';
 import classes from './Modal.module.css';
 
-const Modal = ({toggleDatepicker, children, isVisible, renderDatePickerAs}) => {
-  const modalWrapperRef = useRef();
-  const modalContentRef = useRef();
+const Modal = ({
+  toggleDatepicker,
+  children,
+  isVisible,
+  renderDatePickerAs,
+  wrapModalWith,
+}) => {
+  const modalContainerRef = useRef();
   const [isNodeAttached, setIsNodeAttached] = useState(false);
   const Datepicker = renderDatePickerAs;
+  const Wrapper = wrapModalWith;
   const theme = useThemeContext();
 
   /** Create modal container node */
   useEffect(() => {
-    const propName = '--modalBgColor';
-    const bgColor = theme[propName] || defaults[propName];
+    // const propName = '--modalBgColor';
+    // const bgColor = theme[propName] || defaults[propName];
     if (isVisible && !isNodeAttached) {
-      modalWrapperRef.current = document.createElement('div');
-      modalWrapperRef.current.classList.add(classes.container);
-      setCSSVariable(modalWrapperRef.current, propName, bgColor);
-      document.body.appendChild(modalWrapperRef.current);
+      modalContainerRef.current = document.createElement('div');
+      modalContainerRef.current.classList.add(classes.container);
+      // setCSSVariable(modalContainerRef.current, propName, bgColor);
+      document.body.appendChild(modalContainerRef.current);
       setIsNodeAttached(true);
     }
     return () => {
-      isNodeAttached && modalWrapperRef.current.remove();
+      isNodeAttached && modalContainerRef.current.remove();
       isNodeAttached && setIsNodeAttached(false);
     };
   }, [isNodeAttached, isVisible, theme]);
-
-  useOnClickOutside(modalContentRef, () => {
-    toggleDatepicker(false);
-  });
 
   return (
     <Fragment>
@@ -40,10 +41,10 @@ const Modal = ({toggleDatepicker, children, isVisible, renderDatePickerAs}) => {
       {isVisible &&
         isNodeAttached &&
         ReactDOM.createPortal(
-          <div ref={modalContentRef} className={classes.content}>
+          <Wrapper toggleDatepicker={toggleDatepicker}>
             <Datepicker />
-          </div>,
-          modalWrapperRef.current
+          </Wrapper>,
+          modalContainerRef.current
         )}
     </Fragment>
   );
@@ -53,6 +54,7 @@ Modal.propTypes = {
   children: PropTypes.node.isRequired,
   toggleDatepicker: PropTypes.func.isRequired,
   renderDatePickerAs: PropTypes.elementType.isRequired,
+  wrapModalWith: PropTypes.elementType.isRequired,
   isVisible: PropTypes.bool.isRequired,
 };
 

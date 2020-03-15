@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popover from 'react-tiny-popover';
-import PopoverWrapper from './PopoverWrapper';
 
 const PopoverProvider = ({
   renderDatePickerAs,
   isVisible,
   children,
   toggleDatepicker,
+  wrapPopoverWith,
 }) => {
   const Datepicker = renderDatePickerAs;
+  const Wrapper = wrapPopoverWith;
   return (
     <Popover
       align="start"
@@ -17,13 +18,13 @@ const PopoverProvider = ({
       position={['bottom', 'top']}
       padding={0}
       content={({position, targetRect, popoverRect}) => (
-        <PopoverWrapper
+        <Wrapper
           targetRect={targetRect}
           popoverRect={popoverRect}
           toggleDatepicker={toggleDatepicker}
           position={position}>
           <Datepicker />
-        </PopoverWrapper>
+        </Wrapper>
       )}>
       {children}
     </Popover>
@@ -33,6 +34,7 @@ const PopoverProvider = ({
 PopoverProvider.propTypes = {
   children: PropTypes.node.isRequired,
   renderDatePickerAs: PropTypes.elementType.isRequired,
+  wrapPopoverWith: PropTypes.elementType.isRequired,
   isVisible: PropTypes.bool.isRequired,
   toggleDatepicker: PropTypes.func.isRequired,
 };
