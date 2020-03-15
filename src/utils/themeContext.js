@@ -22,7 +22,6 @@ export const setCSSVariable = (element, variableName, value) => {
 };
 
 export const useSetCSSVariable = (ref, variableName, value) => {
-  console.log('hook', ref);
   useEffect(() => {
     const element = ref && ref.current;
     element && setCSSVariable(element, variableName, value);

@@ -1,4 +1,4 @@
-import React, {Fragment, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {convertToDate} from 'utils/dateUtils';
@@ -11,6 +11,7 @@ import {selectors} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import InputVisual, {Fieldset} from 'components/visual/Fieldset';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
+import ModalProvider from 'components/visual/Modal';
 
 import useSetInitialValues from 'utils/useSetInitialValues';
 import useHasInitialValues from 'utils/useHasInitialValues';
@@ -26,6 +27,7 @@ const DatePickerFieldset = ({
   onDateSet,
   popoverProvider,
   wrapPopoverWith,
+  modalProvider,
   ...restProps
 }) => {
   const dispatch = useDispatch();
@@ -42,7 +44,7 @@ const DatePickerFieldset = ({
 
   const formatDate = useFormatDate();
 
-  const Wrapper = mode === 'popover' ? popoverProvider : Fragment;
+  const Wrapper = mode === 'popover' ? popoverProvider : modalProvider;
 
   const toggleDatepicker = useCallback(
     visibility =>
@@ -96,6 +98,7 @@ DatePickerFieldset.propTypes = {
   renderDatePickerAs: PropTypes.elementType,
   wrapPopoverWith: PropTypes.elementType,
   popoverProvider: PropTypes.elementType,
+  modalProvider: PropTypes.elementType,
   formatPattern: PropTypes.string,
   /** Set initial selected date when component renders. */
   initialDate: PropTypes.instanceOf(Date),
@@ -106,7 +109,7 @@ DatePickerFieldset.propTypes = {
 };
 
 DatePickerFieldset.defaultProps = {
-  mode: 'popover',
+  mode: 'modal',
   hideOnSelect: true,
   renderInputAs: InputVisual,
   renderDatePickerAs: DatePicker,
@@ -116,6 +119,7 @@ DatePickerFieldset.defaultProps = {
   minPrecision: 'day',
   popoverProvider: PopoverProvider,
   wrapPopoverWith: PopoverWrapper,
+  modalProvider: ModalProvider,
 };
 
 export default DatePickerFieldset;
