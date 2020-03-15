@@ -10,7 +10,7 @@ import {
 import {selectors} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import InputVisual, {Fieldset} from 'components/visual/Fieldset';
-import Popover from 'components/visual/Popover';
+import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
 
 import useSetInitialValues from 'utils/useSetInitialValues';
 import useHasInitialValues from 'utils/useHasInitialValues';
@@ -24,6 +24,8 @@ const DatePickerFieldset = ({
   today,
   minPrecision,
   onDateSet,
+  popoverProvider,
+  wrapPopoverWith,
   ...restProps
 }) => {
   const dispatch = useDispatch();
@@ -40,7 +42,7 @@ const DatePickerFieldset = ({
 
   const formatDate = useFormatDate();
 
-  const PopoverWrapper = mode === 'popover' ? Popover : Fragment;
+  const Wrapper = mode === 'popover' ? popoverProvider : Fragment;
 
   const toggleDatepicker = useCallback(
     visibility =>
@@ -67,9 +69,10 @@ const DatePickerFieldset = ({
 
   return (
     hasInitialValues && (
-      <PopoverWrapper
+      <Wrapper
         isVisible={isVisible}
         toggleDatepicker={toggleDatepicker}
+        wrapWith={wrapPopoverWith}
         renderDatePickerAs={DatePickerWithProps}>
         <Fieldset>
           <InputComponent
@@ -78,7 +81,7 @@ const DatePickerFieldset = ({
             toggleDatepicker={toggleDatepicker}
           />
         </Fieldset>
-      </PopoverWrapper>
+      </Wrapper>
     )
   );
 };
@@ -91,6 +94,8 @@ DatePickerFieldset.propTypes = {
   hideOnSelect: PropTypes.bool,
   renderInputAs: PropTypes.elementType,
   renderDatePickerAs: PropTypes.elementType,
+  wrapPopoverWith: PropTypes.elementType,
+  popoverProvider: PropTypes.elementType,
   formatPattern: PropTypes.string,
   /** Set initial selected date when component renders. */
   initialDate: PropTypes.instanceOf(Date),
@@ -109,6 +114,8 @@ DatePickerFieldset.defaultProps = {
   initialDate: new Date(2020, 0, 6),
   today: new Date(),
   minPrecision: 'day',
+  popoverProvider: PopoverProvider,
+  wrapPopoverWith: PopoverWrapper,
 };
 
 export default DatePickerFieldset;

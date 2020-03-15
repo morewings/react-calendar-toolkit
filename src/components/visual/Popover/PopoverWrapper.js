@@ -1,46 +1,70 @@
-/*eslint-disable*/
-import React, {useRef, useEffect, Fragment, useLayoutEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {
-  useThemePostCSS,
-} from 'utils/themeContext';
-import defaults from 'utils/defaultTheme';
-import classes from './Popover.module.css';
+import {useThemePostCSS} from 'utils/themeContext';
+import useOnClickOutside from 'utils/useOnClickOutside';
+import classes from './PopoverWrapper.module.css';
 
-const PopoverWrapper = ({position, targetRect, popoverRect, children}) => {
+const PopoverWrapper = ({
+  position,
+  targetRect,
+  popoverRect,
+  children,
+  toggleDatepicker,
+}) => {
   const ref = useRef();
+
   useThemePostCSS(ref.current);
+
+  useOnClickOutside(ref, () => {
+    toggleDatepicker(false);
+  });
+
+  useEffect(() => {
+    const listener = () => {
+      toggleDatepicker(false);
+    };
+    document.addEventListener('scroll', listener);
+    return () => {
+      document.removeEventListener('scroll', listener);
+    };
+  }, [toggleDatepicker]);
+
   return (
+    <div
+      ref={ref}
+      className={classnames({
+        [classes.wrapper]: true,
+        [classes.bottom]: position === 'bottom',
+        [classes.top]: position === 'top',
+        [classes.right]: position === 'right',
+        [classes.left]: position === 'left',
+      })}>
       <div
-        ref={ref}
         className={classnames({
-          [classes.wrapper]: true,
+          [classes.triangle]: true,
           [classes.bottom]: position === 'bottom',
           [classes.top]: position === 'top',
           [classes.right]: position === 'right',
           [classes.left]: position === 'left',
-        })}>
-        <div
-          className={classnames({
-            [classes.triangle]: true,
-            [classes.bottom]: position === 'bottom',
-            [classes.top]: position === 'top',
-            [classes.right]: position === 'right',
-            [classes.left]: position === 'left',
-          })}
-        />
-        {children}
-      </div>
-  )
+        })}
+      />
+      {children}
+    </div>
+  );
 };
-
 
 PopoverWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  targetRect: PropTypes.instanceOf(DOMRect).isRequired,
+  popoverRect: PropTypes.oneOfType([
+    PropTypes.shape({}),
+    PropTypes.instanceOf(DOMRect),
+  ]).isRequired,
+  toggleDatepicker: PropTypes.func.isRequired,
   position: PropTypes.oneOf(['bottom', 'top', 'left', 'right']).isRequired,
 };
 
 PopoverWrapper.defaultProps = {};
 
-export default PopoverWrapper
+export default PopoverWrapper;
