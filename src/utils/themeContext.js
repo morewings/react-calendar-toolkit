@@ -1,4 +1,4 @@
-import React, {useContext, useLayoutEffect} from 'react';
+import React, {useContext, useLayoutEffect, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import defaults from './defaultTheme';
 
@@ -19,6 +19,14 @@ export const useThemeContext = () => {
  */
 export const setCSSVariable = (element, variableName, value) => {
   element.style.setProperty(variableName, value);
+};
+
+export const useSetCSSVariable = (ref, variableName, value) => {
+  console.log('hook', ref);
+  useEffect(() => {
+    const element = ref && ref.current;
+    element && setCSSVariable(element, variableName, value);
+  }, [ref, value, variableName]);
 };
 
 /** @function

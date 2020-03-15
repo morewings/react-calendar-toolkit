@@ -1,0 +1,76 @@
+:global(.react-tiny-popover-container){
+  overflow: visible !important;
+}
+
+.container{
+  padding: 10px;
+}
+
+.wrapper{
+  position: relative;
+  overflow: visible;
+}
+
+.wrapper.bottom {
+  padding-top: 20px;
+}
+
+.wrapper.top {
+  padding-bottom: 20px;
+}
+
+.wrapper.right {
+  padding-left: 20px;
+  margin-top: -20px;
+}
+
+.wrapper.left {
+  padding-right: 20px;
+  margin-top: -20px;
+}
+
+.wrapper > *:not(.triangle){
+  position: relative;
+  z-index: 1;
+}
+
+.triangle{
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.triangle.bottom{
+  top: 5px;
+  left: 30px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid var(--bgColor);
+}
+
+.triangle.top{
+  bottom: 5px;
+  left: 30px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--bgColor);
+  border-bottom: none;
+}
+
+.triangle.right{
+  top: 15px;
+  left: 5px;
+  border-left: none;
+  border-right: 15px solid var(--bgColor);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.triangle.left{
+  top: 15px;
+  left: var(--datePickerWidth);
+  border-left: 15px solid var(--bgColor);
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}

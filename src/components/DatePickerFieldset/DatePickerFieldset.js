@@ -9,11 +9,8 @@ import {
 } from 'features/modal';
 import {selectors} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
-import InputVisual, {
-  Fieldset,
-  Popover,
-  Modal,
-} from 'components/visual/Fieldset';
+import InputVisual, {Fieldset} from 'components/visual/Fieldset';
+import Popover from 'components/visual/Popover';
 
 import useSetInitialValues from 'utils/useSetInitialValues';
 import useHasInitialValues from 'utils/useHasInitialValues';
@@ -26,15 +23,25 @@ const DatePickerFieldset = ({
   initialDate,
   today,
   minPrecision,
+  onDateSet,
   ...restProps
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const isVisible = useSelector(modalSelectors.getIsVisible);
+
   const hasInitialValues = useHasInitialValues();
+
+  const handleDateSet = date => {
+    onDateSet(date);
+    toggleDatepicker(false);
+  };
+
   const formatDate = useFormatDate();
+
   const PopoverWrapper = mode === 'popover' ? Popover : Fragment;
+
   const toggleDatepicker = useCallback(
     visibility =>
       dispatch({
@@ -43,12 +50,15 @@ const DatePickerFieldset = ({
       }),
     [dispatch]
   );
+
   const InputComponent = renderInputAs;
   const DatePickerComponent = renderDatePickerAs;
+
   const DatePickerWithProps = () => (
     <DatePickerComponent
       date={convertToDate(selectedTimestamp)}
       showHeader={false} // TODO: merge with restProps
+      onDateSet={handleDateSet}
       {...restProps}
     />
   );
@@ -67,11 +77,6 @@ const DatePickerFieldset = ({
             value={formatDate('MM/dd/yyyy', convertToDate(selectedTimestamp))}
             toggleDatepicker={toggleDatepicker}
           />
-          {/* <DatePickerComponent */}
-          {/*  date={convertToDate(selectedTimestamp)} */}
-          {/*  showHeader={false} // TODO: merge with restProps */}
-          {/*  {...restProps} */}
-          {/* /> */}
         </Fieldset>
       </PopoverWrapper>
     )
@@ -80,6 +85,8 @@ const DatePickerFieldset = ({
 
 DatePickerFieldset.propTypes = {
   ...propTypes,
+  /** Callback when user clicks selected date */
+  onDateSet: PropTypes.func.isRequired,
   mode: PropTypes.oneOf(['popover', 'modal']),
   hideOnSelect: PropTypes.bool,
   renderInputAs: PropTypes.elementType,
