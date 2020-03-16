@@ -3,6 +3,7 @@
   --fontSecondary: Arial;
   --fontFallback: 'sans-serif';
   --fontSize: 16px;
+  --fontWeight: 400;
   --fontSizeSmall: 12px;
   --fontSizeBig: 34px;
   --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2);
@@ -26,4 +27,9 @@
   --entrySelectedColor: #43a047;
   --entryHighlightColor: lightblue;
   --headerBgColor: #43a047;
+  --inputWidth: 90px;
+  --inputPadding: 4px;
+  --inputBorderRadius: 4px;
+  --inputBorderColor: rgba(0, 0, 0, 0.38);
+  --inputHighlightColor: lightblue;
 }

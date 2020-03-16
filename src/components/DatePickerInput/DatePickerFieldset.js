@@ -30,6 +30,7 @@ const DatePickerFieldset = ({
   modalProvider,
   wrapModalWith,
   wrapInputWith,
+  hideOnSelect,
   ...restProps
 }) => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const DatePickerFieldset = ({
 
   const handleDateSet = date => {
     onDateSet(date);
-    toggleDatepicker(false);
+    hideOnSelect && toggleDatepicker(false);
   };
 
   const formatDate = useFormatDate();
@@ -92,16 +93,34 @@ const DatePickerFieldset = ({
 
 DatePickerFieldset.propTypes = {
   ...propTypes,
-  /** Callback when user clicks selected date */
+  /** Callback when user selects date */
   onDateSet: PropTypes.func.isRequired,
+  /** __Rendering__ mode of attached Datepicker */
   mode: PropTypes.oneOf(['popover', 'modal']),
+  /** Flag to __show or hide__ Datepicker when date is selected */
   hideOnSelect: PropTypes.bool,
+  /** Define component which renders __Input__. */
   renderInputAs: PropTypes.elementType,
+  /** Define component which renders __DatePicker__ entry. */
   renderDatePickerAs: PropTypes.elementType,
+  /** Define component which wraps __Popover__. */
   wrapPopoverWith: PropTypes.elementType,
+  /**
+   * Define rendering logic provider for __Popover__.
+   * @ignore
+   */
   popoverProvider: PropTypes.elementType,
+  /**
+   * Define rendering logic provider for __Modal__.
+   * @ignore
+   */
   modalProvider: PropTypes.elementType,
+  /** Define component which wraps __Modal__. */
   wrapModalWith: PropTypes.elementType,
+  /**
+   * date-fns format pattern to format date value inside input
+   * @see {@link https://date-fns.org/docs/format|docs}
+   */
   formatPattern: PropTypes.string,
   /** Set initial selected date when component renders. */
   initialDate: PropTypes.instanceOf(Date),

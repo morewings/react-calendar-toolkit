@@ -1,5 +1,6 @@
 const baseColor = '#43a047';
 const gray = 'rgba(0, 0, 0, 0.38)';
+const borderRadius = '4px';
 
 export default {
   /** Set font for datepicker */
@@ -9,6 +10,7 @@ export default {
   /** Fallback font if two previous are unavailable */
   '--fontFallback': 'sans-serif',
   '--fontSize': '14px',
+  '--fontWeight': 400,
   /** Applied to the title */
   '--fontSizeSmall': '10px',
   /** Applied to the header text */
@@ -24,10 +26,8 @@ export default {
   /** Day, month, year entries height */
   '--entryHeight': '30px',
   '--entryMargin': '2px',
-  '--datepickerBorderRadius': '4px',
-  '--entryBorderRadius': '4px',
-  /** Height of fieldset input */
-  '--inputHeight': '25px',
+  '--datepickerBorderRadius': borderRadius,
+  '--entryBorderRadius': borderRadius,
   /** Background color of Calendar */
   '--bgColor': 'white',
   /** Base color for text */
@@ -41,4 +41,9 @@ export default {
   '--entryHoverColor': 'rgba(0, 0, 0, 0.08)',
   '--entrySelectedColor': baseColor,
   '--entryHighlightColor': 'lightblue',
+  '--inputWidth': '90px',
+  '--inputPadding': '8px',
+  '--inputBorderRadius': borderRadius,
+  '--inputBorderColor': gray,
+  '--inputHighlightColor': 'lightblue',
 };

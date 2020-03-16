@@ -1,11 +1,14 @@
 .input{
-  padding: 6px 12px;
-  border: 1px solid lightgray;
-  border-radius: 4px;
-  font-size: 14px;
-  width: 90px;
+  font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
+  font-weight: var(--fontWeight);
+  padding: var(--inputPadding) calc(var(--inputPadding) * 2);
+  border: 1px solid var(--inputBorderColor);
+  border-radius: var(--inputBorderRadius);
+  font-size: var(--fontSize);
+  width: var(--inputWidth);
+  color: var(--textColor);
 }
 
 .input:focus{
-  border-color: lightblue;
+  border-color: var(--inputHighlightColor);
 }

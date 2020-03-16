@@ -2,7 +2,7 @@
 import React from 'react';
 import {isSameDay} from 'date-fns'
 import DatePicker from 'components/DatePicker';
-import DatePickerFieldset from 'components/DatePickerFieldset';
+import {DatePickerInput} from 'entryPoint';
 import './App.scss';
 
 const highlightDate = ({date, precision}) => {
@@ -27,13 +27,10 @@ const App = () => (
     {/*  />*/}
     {/*</div>*/}
     <div className="container">
-      <DatePickerFieldset
+      <DatePickerInput
         onDateSet={date => {
           // console.log('date set', date);
         }}
-        startDate={new Date(1979, 0, 1)}
-        endDate={new Date(2030, 1, 25)}
-        minPrecision="day"
         title="Demo datepicker"
       />
     </div>

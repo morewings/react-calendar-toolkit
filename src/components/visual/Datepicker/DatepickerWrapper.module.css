@@ -1,6 +1,6 @@
 .datepickerWrapper{
   font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
-  font-weight: 400;
+  font-weight: var(--fontWeight);
   width: var(--datePickerWidth);
   border-radius: var(--datepickerBorderRadius);
   overflow: hidden;
