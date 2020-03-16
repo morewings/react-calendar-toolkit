@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popover from 'react-tiny-popover';
+import classes from './PopoverProvider.module.css';
 
 const PopoverProvider = ({
   renderDatePickerAs,
@@ -17,6 +18,7 @@ const PopoverProvider = ({
       isOpen={isVisible}
       position={['bottom', 'top']}
       padding={0}
+      containerClassName={classes.container}
       content={({position, targetRect, popoverRect}) => (
         <Wrapper
           targetRect={targetRect}
