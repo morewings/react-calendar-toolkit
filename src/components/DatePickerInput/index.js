@@ -1,6 +1,6 @@
 import {compose} from 'redux';
 import {withLocaleContext} from 'utils/localeContext';
-import DatePickerFieldset from './DatePickerFieldset';
-import {withTheme} from '../../utils/themeContext';
+import {withTheme} from 'utils/themeContext';
+import DatePickerInput from './DatePickerInput';
 
-export default compose(withLocaleContext, withTheme)(DatePickerFieldset);
+export default compose(withLocaleContext, withTheme)(DatePickerInput);

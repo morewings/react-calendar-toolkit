@@ -16,7 +16,7 @@ import ModalProvider, {ModalWrapper} from 'components/visual/Modal';
 import useSetInitialValues from 'utils/useSetInitialValues';
 import useHasInitialValues from 'utils/useHasInitialValues';
 
-const DatePickerFieldset = ({
+const DatePickerInput = ({
   renderInputAs,
   mode,
   formatPattern,
@@ -91,7 +91,7 @@ const DatePickerFieldset = ({
   );
 };
 
-DatePickerFieldset.propTypes = {
+DatePickerInput.propTypes = {
   ...propTypes,
   /** Callback when user selects date */
   onDateSet: PropTypes.func.isRequired,
@@ -122,15 +122,24 @@ DatePickerFieldset.propTypes = {
    * @see {@link https://date-fns.org/docs/format|docs}
    */
   formatPattern: PropTypes.string,
-  /** Set initial selected date when component renders. */
+  /**
+   * Set initial selected date when component renders.
+   * @ignore
+   */
   initialDate: PropTypes.instanceOf(Date),
-  /** Set today date. */
+  /**
+   * Set today date.
+   * @ignore
+   */
   today: PropTypes.instanceOf(Date),
-  /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
+  /**
+   * Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'.
+   * @ignore
+   */
   minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
 };
 
-DatePickerFieldset.defaultProps = {
+DatePickerInput.defaultProps = {
   mode: 'popover',
   hideOnSelect: true,
   renderInputAs: Input,
@@ -145,4 +154,4 @@ DatePickerFieldset.defaultProps = {
   modalProvider: ModalProvider,
 };
 
-export default DatePickerFieldset;
+export default DatePickerInput;
