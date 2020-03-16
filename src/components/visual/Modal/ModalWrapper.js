@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import useOnClickOutside from 'utils/useOnClickOutside';
-import classes from './Modal.module.css';
+import classes from './ModalWrapper.module.css';
 
 const ModalWrapper = ({children, toggleDatepicker}) => {
   const ref = useRef();

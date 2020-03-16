@@ -120,6 +120,8 @@ declare module 'react-calendar-toolkit' {
 
   export function useScrollIntoView(ref: object, containerSelector: string, condition: boolean): void;
 
+  export function useOnClickOutside(ref: object, handler: Function): void;
+
   export function useThemeContext(): object;
 
   export function setCSSVariable(element: HTMLElement, variableName: string, value: string): void;

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import {useThemePostCSS} from 'utils/themeContext';

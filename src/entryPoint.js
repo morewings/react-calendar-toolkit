@@ -10,6 +10,7 @@ import {
   removeCSSVariable,
   getCSSVariable,
 } from 'utils/themeContext';
+import useOnClickOutside from 'utils/useOnClickOutside';
 import defaultTheme from 'utils/defaultTheme';
 import useScrollIntoView from 'utils/useScrollIntoView';
 
@@ -22,6 +23,7 @@ export {
   removeCSSVariable,
   defaultTheme,
   useScrollIntoView,
+  useOnClickOutside,
 };
 
 export default compose(withProvider, withLocaleContext, withTheme)(DatePicker);

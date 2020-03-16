@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {setCSSVariable, useThemeContext} from 'utils/themeContext';
 import defaults from 'utils/defaultTheme';
-import classes from './Modal.module.css';
+import classes from './ModalProvider.module.css';
 
 const Modal = ({
   toggleDatepicker,

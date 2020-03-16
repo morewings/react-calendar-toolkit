@@ -9,7 +9,3 @@
   color: var(--textColor);
   font-size: var(--fontSize);
 }
-
-.hidden{
-  visibility: hidden;
-}

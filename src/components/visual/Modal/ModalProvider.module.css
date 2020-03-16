@@ -7,10 +7,3 @@
   background: var(--modalBgColor);
   z-index: 9999;
 }
-
-.content{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
