@@ -1,7 +1,7 @@
-import React, {useCallback, useEffect, Fragment} from 'react';
+import React, {useCallback, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import {convertToTimestamp, convertToDate} from 'utils/dateUtils';
+import {convertToDate} from 'utils/dateUtils';
 import config from 'utils/config';
 import {selectors, actionCreators} from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';

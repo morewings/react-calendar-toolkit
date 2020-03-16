@@ -1,19 +1,10 @@
-import React, {
-  useContext,
-  useLayoutEffect,
-  useEffect,
-  useRef,
-  useCallback,
-} from 'react';
+import React, {useContext, useEffect, useRef, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import defaults from './defaultTheme';
 
 const ThemeContext = React.createContext({});
 
-export const useThemeContext = () => {
-  const theme = useContext(ThemeContext);
-  return theme;
-};
+export const useThemeContext = () => useContext(ThemeContext);
 
 /** @function
  * @name setCSSVariable

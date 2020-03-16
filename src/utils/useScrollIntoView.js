@@ -7,6 +7,7 @@ const scrollStop = callback => {
     'scroll',
     () => {
       window.clearTimeout(isScrolling);
+      // eslint-disable-next-line fp/no-mutation
       isScrolling = setTimeout(() => {
         callback();
       }, 66);

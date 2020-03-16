@@ -1,6 +1,5 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import {useThemePostCSS} from 'utils/themeContext';
 import classes from './DatepickerWrapper.module.css';
 

@@ -9,7 +9,7 @@ import {
 } from 'features/modal';
 import {selectors} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
-import InputVisual, {Fieldset} from 'components/visual/Fieldset';
+import Input from 'components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
 import ModalProvider, {ModalWrapper} from 'components/visual/Modal';
 
@@ -29,6 +29,7 @@ const DatePickerFieldset = ({
   wrapPopoverWith,
   modalProvider,
   wrapModalWith,
+  wrapInputWith,
   ...restProps
 }) => {
   const dispatch = useDispatch();
@@ -45,7 +46,8 @@ const DatePickerFieldset = ({
 
   const formatDate = useFormatDate();
 
-  const Wrapper = mode === 'popover' ? popoverProvider : modalProvider;
+  const RenderingLogicProvider =
+    mode === 'popover' ? popoverProvider : modalProvider;
 
   const toggleDatepicker = useCallback(
     visibility =>
@@ -72,20 +74,18 @@ const DatePickerFieldset = ({
 
   return (
     hasInitialValues && (
-      <Wrapper
+      <RenderingLogicProvider
         isVisible={isVisible}
         toggleDatepicker={toggleDatepicker}
         wrapPopoverWith={wrapPopoverWith}
         wrapModalWith={wrapModalWith}
         renderDatePickerAs={DatePickerWithProps}>
-        <Fieldset>
-          <InputComponent
-            date={convertToDate(todayTimestamp)}
-            value={formatDate('MM/dd/yyyy', convertToDate(selectedTimestamp))}
-            toggleDatepicker={toggleDatepicker}
-          />
-        </Fieldset>
-      </Wrapper>
+        <InputComponent
+          date={convertToDate(todayTimestamp)}
+          value={formatDate(formatPattern, convertToDate(selectedTimestamp))}
+          toggleDatepicker={toggleDatepicker}
+        />
+      </RenderingLogicProvider>
     )
   );
 };
@@ -114,7 +114,7 @@ DatePickerFieldset.propTypes = {
 DatePickerFieldset.defaultProps = {
   mode: 'popover',
   hideOnSelect: true,
-  renderInputAs: InputVisual,
+  renderInputAs: Input,
   renderDatePickerAs: DatePicker,
   formatPattern: 'MM/dd/yyyy',
   initialDate: new Date(2020, 0, 6),
