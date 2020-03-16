@@ -112,7 +112,7 @@ DatePickerFieldset.propTypes = {
 };
 
 DatePickerFieldset.defaultProps = {
-  mode: 'modal',
+  mode: 'popover',
   hideOnSelect: true,
   renderInputAs: InputVisual,
   renderDatePickerAs: DatePicker,

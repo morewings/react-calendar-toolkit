@@ -169,9 +169,9 @@ const style = {
 };
 
 const CustomComponent = props => {
-  const ref = useRef();
+
   /** Hook to set style variables from Theme Context */
-  useThemePostCSS(ref.current);
+  const [ref] = useThemePostCSS();
   return (
     <div
       ref={ref}

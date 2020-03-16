@@ -5,10 +5,10 @@ import {useThemePostCSS} from 'utils/themeContext';
 import classes from './DatepickerWrapper.module.css';
 
 const DatepickerWrapper = props => {
-  const ref = useThemePostCSS();
+  const [, setRef] = useThemePostCSS();
   return (
     <div
-      ref={ref}
+      ref={setRef}
       className={classes.datepickerWrapper}
       aria-label={props.title}
       role="dialog">

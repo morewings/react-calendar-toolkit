@@ -40,7 +40,7 @@ const Component = () => {
 React hook, based on [callback ref](https://medium.com/@teh_builder/ref-objects-inside-useeffect-hooks-eb7c15198780), to inject your theme object as [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var) into HTML element it makes reference to. `theme` prop should be Record-like plain object structure `Object.<string, string>`.
 
 ```js static
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 
 <DatePicker theme={{'--varName': 'value'}} />  
@@ -48,9 +48,15 @@ import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 // later
 
 const Component = () => {
-    const targetElementRef = useThemePostCSS();
+    const [targetElementRef, setRef] = useThemePostCSS();
+    /* Do something with ref */
+    useEffect(() => {
+      /* Note: we are using first member of returned tuple */
+      targetElementRef.current.focus()
+    });
     return (
-      <div ref={targetElementRef}>
+      /* Note: we are using second member of tuple*/
+      <div ref={setRef}>
         {/*...*/}
       </div>
     ) 

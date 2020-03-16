@@ -12,9 +12,7 @@ const PopoverWrapper = ({
   children,
   toggleDatepicker,
 }) => {
-  const ref = useRef();
-
-  useThemePostCSS(ref.current);
+  const [ref, setRef] = useThemePostCSS();
 
   useOnClickOutside(ref, () => {
     toggleDatepicker(false);
@@ -32,7 +30,7 @@ const PopoverWrapper = ({
 
   return (
     <div
-      ref={ref}
+      ref={setRef}
       className={classnames({
         [classes.wrapper]: true,
         [classes.bottom]: position === 'bottom',

@@ -79,7 +79,7 @@ export const getCSSVariable = (element, variableName) =>
  * @name useThemePostCSS
  * @description React hook. Sets css variables from Context and defaultTheme
  * @param {Object.<string, string>} [defaultTheme=defaults] Default theme to override with context values
- * @return {Function}
+ * @return {[Object, Function]}
  */
 export const useThemePostCSS = (defaultTheme = defaults) => {
   const ref = useRef(null);
@@ -106,7 +106,7 @@ export const useThemePostCSS = (defaultTheme = defaults) => {
     [mergedTheme]
   );
 
-  return setRef;
+  return [ref, setRef];
 };
 
 export const withTheme = WrappedComponent => {

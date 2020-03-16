@@ -116,7 +116,7 @@ declare module 'react-calendar-toolkit' {
 
   export function useFormatDate(): (pattern: string, date: Date ) => string;
 
-  export function useThemePostCSS(defaultTheme?: DefaultTheme): Function;
+  export function useThemePostCSS(defaultTheme?: DefaultTheme): [Object, Function];
 
   export function useScrollIntoView(ref: object, containerSelector: string, condition: boolean): void;
 
