@@ -1,4 +1,10 @@
-import React, {useContext, useLayoutEffect, useEffect} from 'react';
+import React, {
+  useContext,
+  useLayoutEffect,
+  useEffect,
+  useRef,
+  useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import defaults from './defaultTheme';
 
@@ -49,31 +55,58 @@ export const removeCSSVariable = (element, variableName) => {
 export const getCSSVariable = (element, variableName) =>
   element.style.getPropertyValue(variableName);
 
+// export const useThemePostCSS = (element, defaultTheme = defaults) => {
+//   const propsTheme = useContext(ThemeContext);
+//   useLayoutEffect(() => {
+//     const mergedTheme = {
+//       ...defaultTheme,
+//       ...propsTheme,
+//     };
+//     element &&
+//       Object.entries(mergedTheme).forEach(([variableName, value]) => {
+//         setCSSVariable(element, variableName, value);
+//       });
+//     return () => {
+//       element &&
+//         Object.entries(mergedTheme).forEach(([variableName]) => {
+//           removeCSSVariable(element, variableName);
+//         });
+//     };
+//   }, [element, defaultTheme, propsTheme]);
+// };
+
 /** @function
  * @name useThemePostCSS
  * @description React hook. Sets css variables from Context and defaultTheme
- * @param {HTMLElement} element - HTML element to contain set variables
  * @param {Object.<string, string>} [defaultTheme=defaults] Default theme to override with context values
  * @return {Function}
  */
-export const useThemePostCSS = (element, defaultTheme = defaults) => {
+export const useThemePostCSS = (defaultTheme = defaults) => {
+  const ref = useRef(null);
   const propsTheme = useContext(ThemeContext);
-  useLayoutEffect(() => {
-    const mergedTheme = {
-      ...defaultTheme,
-      ...propsTheme,
-    };
-    element &&
-      Object.entries(mergedTheme).forEach(([variableName, value]) => {
-        setCSSVariable(element, variableName, value);
-      });
-    return () => {
-      element &&
-        Object.entries(mergedTheme).forEach(([variableName]) => {
-          removeCSSVariable(element, variableName);
+  const mergedTheme = {
+    ...defaultTheme,
+    ...propsTheme,
+  };
+  const setRef = useCallback(
+    element => {
+      if (ref.current) {
+        element &&
+          Object.entries(mergedTheme).forEach(([variableName]) => {
+            removeCSSVariable(element, variableName);
+          });
+      }
+      if (element) {
+        Object.entries(mergedTheme).forEach(([variableName, value]) => {
+          setCSSVariable(element, variableName, value);
         });
-    };
-  }, [element, defaultTheme, propsTheme]);
+      }
+      ref.current = element;
+    },
+    [mergedTheme]
+  );
+
+  return setRef;
 };
 
 export const withTheme = WrappedComponent => {
