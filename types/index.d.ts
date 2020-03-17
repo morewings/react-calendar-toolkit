@@ -1,15 +1,15 @@
 declare module 'react-calendar-toolkit' {
   import * as React from 'react';
 
-  export type DatePickerMinPrecision = 'year' | 'month' | 'day';
+  type DatePickerMinPrecision = 'year' | 'month' | 'day';
 
-  export type InputModes = 'popover' | 'modal';
+  type InputModes = 'popover' | 'modal';
 
-  export type DefaultTheme = Record<string, string>
+  type DefaultTheme = Record<string, string>
   
-  export interface DatePickerDateFnsLocale {}
+  interface DatePickerDateFnsLocale {}
 
-  export interface DateMatcherInterface {
+  interface DateMatcherInterface {
     isWeekend: boolean;
     precision: DatePickerMinPrecision;
     date: Date;
@@ -39,7 +39,7 @@ declare module 'react-calendar-toolkit' {
     highlightWeekends?: boolean;
   }
 
-  export interface DatePickerProps implements DatePickerPropsShared{
+  interface DatePickerProps extends DatePickerPropsShared{
     onDateSet: (date: Date) => any;
     dateFnsLocale?: DatePickerDateFnsLocale;
     theme?: object;
