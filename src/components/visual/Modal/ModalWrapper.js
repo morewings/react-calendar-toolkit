@@ -5,6 +5,8 @@ import classes from './ModalWrapper.module.css';
 
 const ModalWrapper = ({children, toggleDatepicker}) => {
   const ref = useRef();
+
+  /* React hook to trigger provided callback, when user clicks outside modal content area */
   useOnClickOutside(ref, () => {
     toggleDatepicker(false);
   });
@@ -17,6 +19,7 @@ const ModalWrapper = ({children, toggleDatepicker}) => {
 
 ModalWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  /** Method to toggle Datepicker visibility */
   toggleDatepicker: PropTypes.func.isRequired,
 };
 

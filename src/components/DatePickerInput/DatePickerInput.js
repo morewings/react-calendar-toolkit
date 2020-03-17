@@ -82,6 +82,7 @@ const DatePickerInput = ({
         wrapModalWith={wrapModalWith}
         renderDatePickerAs={DatePickerWithProps}>
         <InputComponent
+          onChange={onDateSet}
           date={convertToDate(todayTimestamp)}
           value={formatDate(formatPattern, convertToDate(selectedTimestamp))}
           toggleDatepicker={toggleDatepicker}

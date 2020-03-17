@@ -6,12 +6,15 @@ import useOnClickOutside from 'utils/useOnClickOutside';
 import classes from './PopoverWrapper.module.css';
 
 const PopoverWrapper = ({position, children, toggleDatepicker}) => {
+  /* Apply postcss theme to containing div */
   const [ref, setRef] = useThemePostCSS();
 
+  /* Close popover on click outside */
   useOnClickOutside(ref, () => {
     toggleDatepicker(false);
   });
 
+  /* Close popover when user is scrolling page */
   useEffect(() => {
     const listener = () => {
       toggleDatepicker(false);
@@ -27,18 +30,14 @@ const PopoverWrapper = ({position, children, toggleDatepicker}) => {
       ref={setRef}
       className={classnames({
         [classes.wrapper]: true,
-        [classes.bottom]: position === 'bottom',
-        [classes.top]: position === 'top',
-        [classes.right]: position === 'right',
-        [classes.left]: position === 'left',
+        /* Conditional class to position Popover relative to Input */
+        [classes[position]]: true,
       })}>
       <div
         className={classnames({
           [classes.triangle]: true,
-          [classes.bottom]: position === 'bottom',
-          [classes.top]: position === 'top',
-          [classes.right]: position === 'right',
-          [classes.left]: position === 'left',
+          /* Conditional class to position triangle attachment relative to Input */
+          [classes[position]]: true,
         })}
       />
       {children}
@@ -48,7 +47,9 @@ const PopoverWrapper = ({position, children, toggleDatepicker}) => {
 
 PopoverWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  /** Method to toggle Datepicker visibility */
   toggleDatepicker: PropTypes.func.isRequired,
+  /** Calculated position of Popover to fit into viewport */
   position: PropTypes.oneOf(['bottom', 'top', 'left', 'right']).isRequired,
 };
 

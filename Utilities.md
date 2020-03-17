@@ -104,3 +104,33 @@ const Component = () => {
 }
 ```
 
+## `useOnClickOutside`
+
+React hook to trigger provided callback, when user clicks outside provided node.
+
+```js static
+import React, {useRef} from 'react';
+import {useOnClickOutside} from 'react-calendar-toolkit';
+
+const Component = () => {
+    const ref = useRef();
+    
+      /**
+       * @function
+       * @name useScrollIntoView
+       * @description React hook. Scrolls element into viewport if parent container is visible.
+       * @param {Object} ref - React ref
+       * @param {Function} callback - Runs when users clicks
+       * @return {void}
+       */
+      useOnClickOutside(ref, () => {
+        toggleDatepicker(false);
+      });
+      return (
+        <div ref={ref}>
+          {/*...*/}
+        </div>
+      );
+}
+```
+
