@@ -21,24 +21,19 @@ const DatePickerInput = ({
   mode,
   formatPattern,
   renderDatePickerAs,
-  initialDate,
-  today,
-  minPrecision,
   onDateSet,
   popoverProvider,
   wrapPopoverWith,
   modalProvider,
   wrapModalWith,
-  wrapInputWith,
   hideOnSelect,
-  ...restProps
+  datePickerProps,
+  datePickerDefaultProps,
 }) => {
   const dispatch = useDispatch();
   const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
   const todayTimestamp = useSelector(selectors.getTodayTimestamp);
   const isVisible = useSelector(modalSelectors.getIsVisible);
-
-  const hasInitialValues = useHasInitialValues();
 
   const handleDateSet = date => {
     onDateSet(date);
@@ -64,14 +59,19 @@ const DatePickerInput = ({
 
   const DatePickerWithProps = () => (
     <DatePickerComponent
-      date={convertToDate(selectedTimestamp)}
       showHeader={mode === 'modal'}
       onDateSet={handleDateSet}
-      {...restProps}
+      {...datePickerProps}
     />
   );
 
+  const {initialDate, today, minPrecision} = {
+    ...datePickerDefaultProps,
+    ...datePickerProps,
+  };
+
   useSetInitialValues({initialDate, today, minPrecision});
+  const hasInitialValues = useHasInitialValues();
 
   return (
     hasInitialValues && (
@@ -101,7 +101,10 @@ DatePickerInput.propTypes = {
   hideOnSelect: PropTypes.bool,
   /** Define component which renders __Input__. */
   renderInputAs: PropTypes.elementType,
-  /** Define component which renders __DatePicker__ entry. */
+  /**
+   * Define component which renders __DatePicker__ entry.
+   * @ignore
+   */
   renderDatePickerAs: PropTypes.elementType,
   /** Define component which wraps __Popover__. */
   wrapPopoverWith: PropTypes.elementType,
@@ -119,24 +122,32 @@ DatePickerInput.propTypes = {
   wrapModalWith: PropTypes.elementType,
   /**
    * date-fns format pattern to format date value inside input
-   * @see {@link https://date-fns.org/docs/format|docs}
+   * @see https://date-fns.org/docs/format
    */
   formatPattern: PropTypes.string,
   /**
-   * Set initial selected date when component renders.
-   * @ignore
+   * Set props for __Datepicker__ component.
+   * @see https://morewings.github.io/react-calendar-toolkit/#!/Available%20components/DatePicker
    */
-  initialDate: PropTypes.instanceOf(Date),
+  datePickerProps: PropTypes.shape({
+    ...propTypes,
+    onDateSet: undefined,
+    theme: undefined,
+    dateFnsLocale: undefined,
+  }),
   /**
-   * Set today date.
+   * Default values for __Datepicker__ component.
    * @ignore
    */
-  today: PropTypes.instanceOf(Date),
-  /**
-   * Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'.
-   * @ignore
-   */
-  minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
+  datePickerDefaultProps: PropTypes.shape({
+    initialDate: PropTypes.instanceOf(Date),
+    today: PropTypes.instanceOf(Date),
+    minPrecision: PropTypes.string,
+  }),
+  /** Theme object to customize style for UI components */
+  theme: PropTypes.shape({}), // eslint-disable-line react/require-default-props
+  /** date-fns locale object. Defaults to english */
+  dateFnsLocale: PropTypes.shape({}), // eslint-disable-line react/require-default-props
 };
 
 DatePickerInput.defaultProps = {
@@ -145,13 +156,16 @@ DatePickerInput.defaultProps = {
   renderInputAs: Input,
   renderDatePickerAs: DatePicker,
   formatPattern: 'MM/dd/yyyy',
-  initialDate: new Date(2020, 0, 6),
-  today: new Date(),
-  minPrecision: 'day',
   popoverProvider: PopoverProvider,
   wrapPopoverWith: PopoverWrapper,
   wrapModalWith: ModalWrapper,
   modalProvider: ModalProvider,
+  datePickerProps: {},
+  datePickerDefaultProps: {
+    initialDate: new Date(2020, 0, 8),
+    today: new Date(),
+    minPrecision: 'day',
+  },
 };
 
 export default DatePickerInput;

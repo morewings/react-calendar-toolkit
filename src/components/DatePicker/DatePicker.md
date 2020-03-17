@@ -171,10 +171,10 @@ const style = {
 const CustomComponent = props => {
 
   /** Hook to set style variables from Theme Context */
-  const [ref] = useThemePostCSS();
+  const [, setRef] = useThemePostCSS();
   return (
     <div
-      ref={ref}
+      ref={setRef}
       style={style}
       aria-label={props.title}
       role="dialog">
@@ -194,4 +194,4 @@ const CustomComponent = props => {
 ```js { "file": "./../../../../src/components/visual/Datepicker/DatepickerWrapper.js" }
 ```
 
-See **Provide custom UI** section for more info.
+See [Datepicker custom UI](/#/Datepicker%20custom%20UI) section for more info.

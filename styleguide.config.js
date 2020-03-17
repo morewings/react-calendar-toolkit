@@ -19,7 +19,10 @@ module.exports = {
     },
     {
       name: 'Available components',
-      components: ['src/components/DatePicker/DatePicker.js'],
+      components: [
+        'src/components/DatePicker/DatePicker.js',
+        'src/components/DatePickerInput/DatePickerInput.js',
+      ],
       description: 'Exported components',
     },
     {
@@ -33,7 +36,7 @@ module.exports = {
       description: 'Apply custom theme on default UI',
     },
     {
-      name: 'Provide custom UI',
+      name: 'Datepicker custom UI',
       description:
         'You can customize UI of each datepicker component by overriding default view component.',
       components: [
@@ -43,6 +46,16 @@ module.exports = {
         'src/components/visual/WeekDay/WeekDay.js',
         'src/components/visual/Month/Month.js',
         'src/components/visual/Year/Year.js',
+      ],
+    },
+    {
+      name: 'Input custom UI',
+      description:
+        'You can customize UI of each Datepicker Input component by overriding default view component.',
+      components: [
+        'src/components/visual/Input/Input.js',
+        'src/components/visual/Modal/ModalWrapper.js',
+        'src/components/visual/Popover/PopoverWrapper.js',
       ],
     },
   ],
