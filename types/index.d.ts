@@ -46,6 +46,9 @@ declare module 'react-calendar-toolkit' {
   }
 
   interface InputProps {
+    onDateSet: (date: Date) => any;
+    dateFnsLocale?: DatePickerDateFnsLocale;
+    theme?: object;
     mode?: InputModes,
     hideOnSelect?: boolean,
     renderInputAs?: React.ReactNode;
