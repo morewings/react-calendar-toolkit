@@ -3,7 +3,7 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {rootReducer} from '../store';
 
-const withTheme = WrappedComponent => props => {
+const withProvider = WrappedComponent => props => {
   const store = createStore(rootReducer);
   return (
     <Provider store={store}>
@@ -12,4 +12,4 @@ const withTheme = WrappedComponent => props => {
   );
 };
 
-export default withTheme;
+export default withProvider;

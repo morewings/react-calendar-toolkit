@@ -20,55 +20,33 @@ import DatePicker from 'react-calendar-toolkit';
 ``year > month > day``
 
 ```js noeditor
-import Calendar from './src/components/logic/Calendar';
-import {withLocaleContext} from './src/utils/localeContext';
-import {convertToTimestamp} from './src/utils/dateUtils';
-import MonthGrid from './src/components/visual/Month/MonthGrid.js';
-import Month from './src/components/visual/Month/Month.js';
-import Year from './src/components/visual/Year/Year.js';
-import YearGrid from './src/components/visual/Year/YearGrid.js';
-import DayGrid from './src/components/visual/Day/DayGrid.js';
-import Day from './src/components/visual/Day/Day.js';
-
-
-const WrappedCalendar = withLocaleContext(Calendar);
-
-const props = {
-  todayTimestamp: convertToTimestamp(new Date()),
-  selectedTimestamp: convertToTimestamp(new Date(2020, 0, 6)),
-  highlightDate: () => false,
-  disableDate: () => false,
-  startDate: new Date(2009, 0, 1),
-  endDate: new Date(2029, 1, 25),
-  onDateSet: () => {},
-};
+import {Fragment} from 'react';
+import DatePicker from 'react-calendar-toolkit';
 
 const style = {
   display: 'flex',
-  fontFamily: 'sans-serif'
+  justifyContent: 'space-between',
 };
 
 <div style={style}>
-  <WrappedCalendar
-    {...props}
-    wrapWith={YearGrid}
-    renderAs={Year}
-    precision="year" />
-
-  <WrappedCalendar
-    {...props}
-    wrapWith={MonthGrid}
-    renderAs={Month}
-    precision="month" />
-  <div>
-    <WrappedCalendar
-      {...props}
-      wrapWith={DayGrid}
-      renderAs={Day}
-      precision="day" />
-  </div>
+    <DatePicker
+        minPrecision="year"
+        renderSelectorAs={Fragment}
+        showHeader={false}
+        onDateSet={date => {console.log('date set', date);}} />
+    <DatePicker
+        minPrecision="month"
+        renderSelectorAs={Fragment}
+        showHeader={false}
+        onDateSet={date => {console.log('date set', date);}} />
+    <DatePicker
+        minPrecision="day"
+        renderSelectorAs={Fragment}
+        showHeader={false}
+        onDateSet={date => {console.log('date set', date);}} />
 </div>
 ```
+
 
 Datepicker toolkit architecture introduces concepts of __precision__ and __calendar__. 
 
