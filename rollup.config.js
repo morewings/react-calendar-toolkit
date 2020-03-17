@@ -44,7 +44,9 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',
+      'date-fns': 'DateFns',
     },
+    exports: 'named',
   },
   plugins: [
     peerDepsExternal(),
