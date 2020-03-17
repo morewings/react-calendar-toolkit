@@ -15,7 +15,7 @@ declare module 'react-calendar-toolkit' {
     date: Date;
   }
 
-  export interface DatePickerProps {
+  interface DatePickerPropsShared {
     initialDate?: Date;
     today?: Date;
     startDate?: Date;
@@ -23,7 +23,6 @@ declare module 'react-calendar-toolkit' {
     showHeader?: boolean;
     title?: string;
     minPrecision?: DatePickerMinPrecision;
-    onDateSet: (date: Date) => any;
     wrapWith?: React.ReactNode;
     renderDayAs?: React.ReactNode;
     wrapDaysWith?: React.ReactNode;
@@ -38,18 +37,23 @@ declare module 'react-calendar-toolkit' {
     disableDate?: (param: DateMatcherInterface) => boolean;
     highlightDate?: (param: DateMatcherInterface) => boolean;
     highlightWeekends?: boolean;
+  }
+
+  export interface DatePickerProps implements DatePickerPropsShared{
+    onDateSet: (date: Date) => any;
     dateFnsLocale?: DatePickerDateFnsLocale;
     theme?: object;
   }
 
-  interface InputProps implements DatePickerProps {
+  interface InputProps {
     mode?: InputModes,
     hideOnSelect?: boolean,
     renderInputAs?: React.ReactNode;
     renderDatePickerAs?: React.ReactNode;
     wrapPopoverWith?: React.ReactNode;
-    wrapModalWith: React.ReactNode;
-    formatPattern: string;
+    wrapModalWith?: React.ReactNode;
+    formatPattern?: string;
+    datePickerProps?: DatePickerProps
   }
 
   const DatePicker: React.FC<DatePickerProps>;
