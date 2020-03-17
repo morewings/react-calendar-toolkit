@@ -56,7 +56,7 @@ declare module 'react-calendar-toolkit' {
     wrapPopoverWith?: React.ReactNode;
     wrapModalWith?: React.ReactNode;
     formatPattern?: string;
-    datePickerProps?: DatePickerProps
+    datePickerProps?: DatePickerPropsShared
   }
 
   const DatePicker: React.FC<DatePickerProps>;
