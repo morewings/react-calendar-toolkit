@@ -159,7 +159,6 @@ You can override wrapping element or className of `Datepicker` with `wrapWith` p
 `Datepicker` `wrapWith` component wraps it with provided `DOM node` or `React.Element`. ALso in Default UI it's used to set CSS variables with `useThemePostCSS` hook, otherwise CSS variables will be undefined.
 
 ```js
-import React, {useRef} from 'react';
 import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 
 const style = {
@@ -194,4 +193,4 @@ const CustomComponent = props => {
 ```js { "file": "./../../../../src/components/visual/Datepicker/DatepickerWrapper.js" }
 ```
 
-See [Datepicker custom UI](/#/Datepicker%20custom%20UI) section for more info.
+See [Datepicker custom UI](/#!/Available%20components/DatePicker) section for more info.

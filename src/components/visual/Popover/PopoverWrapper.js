@@ -5,13 +5,7 @@ import {useThemePostCSS} from 'utils/themeContext';
 import useOnClickOutside from 'utils/useOnClickOutside';
 import classes from './PopoverWrapper.module.css';
 
-const PopoverWrapper = ({
-  position,
-  targetRect,
-  popoverRect,
-  children,
-  toggleDatepicker,
-}) => {
+const PopoverWrapper = ({position, children, toggleDatepicker}) => {
   const [ref, setRef] = useThemePostCSS();
 
   useOnClickOutside(ref, () => {
@@ -54,11 +48,6 @@ const PopoverWrapper = ({
 
 PopoverWrapper.propTypes = {
   children: PropTypes.node.isRequired,
-  targetRect: PropTypes.instanceOf(DOMRect).isRequired,
-  popoverRect: PropTypes.oneOfType([
-    PropTypes.shape({}),
-    PropTypes.instanceOf(DOMRect),
-  ]).isRequired,
   toggleDatepicker: PropTypes.func.isRequired,
   position: PropTypes.oneOf(['bottom', 'top', 'left', 'right']).isRequired,
 };

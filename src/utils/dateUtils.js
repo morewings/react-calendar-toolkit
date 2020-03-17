@@ -123,7 +123,7 @@ export const decrementMonth = (date, amount) => incrementMonth(date, -amount);
  * @property {Date} start - Start of interval
  * @property {Date} end - End of interval
  * @param {DateUnion} date - Date to check
- * @param {Interval} interval - Time rang to check
+ * @param {Interval} interval - Time range to check
  * @return {boolean}
  */
 export const checkIsWithinInterval = (interval, date) =>

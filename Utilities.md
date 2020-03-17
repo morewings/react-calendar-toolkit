@@ -2,7 +2,13 @@
 React hook. Returns function, which formats date using provided locale. Use [date-fns format strings](https://date-fns.org/docs/format).
 
 ```js static
-import {useFormatDate} from 'react-calendar-toolkit';
+import locale from 'date-fns/esm/locale/ru';
+import DatePicker, {useFormatDate} from 'react-calendar-toolkit';
+
+<DatePicker dateFnsLocale={locale} /> 
+
+// later
+
 const Component = () => {
 /**
    * Returns formatted date
@@ -11,7 +17,7 @@ const Component = () => {
    * @return {string} Formatted date
    */
   const formatDate = useFormatDate();
-  const date = formatDate('MMM do', new Date(2020, 0, 6)) // Jan 6th
+  const date = formatDate('MMM do', new Date(2020, 0, 6)) // Янв. 6-е
   // ...  
 }
 ```
@@ -48,11 +54,11 @@ import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
 // later
 
 const Component = () => {
-    const [targetElementRef, setRef] = useThemePostCSS();
+    const [getRef, setRef] = useThemePostCSS();
     /* Do something with ref */
     useEffect(() => {
       /* Note: we are using first member of returned tuple */
-      targetElementRef.current.focus()
+      getRef.current.focus()
     });
     return (
       /* Note: we are using second member of tuple*/
@@ -63,10 +69,10 @@ const Component = () => {
 }
 ```
 
-By default `useThemePostCSS` applies theme object from props on the top of defaultTheme, if you don't need default theme, call it with theme object parameter.
+By default `useThemePostCSS` applies theme object from props on the top of defaultTheme. If you don't need default theme, call it with empty (or custom theme) object parameter.
 
 ```js static
-useThemePostCSS(targetElement.current, {})
+const [getRef, setRef] = useThemePostCSS({})
 ```
 
 ## `useScrollIntoView`
@@ -85,6 +91,7 @@ const Component = () => {
      * @name useScrollIntoView
      * @description React hook. Scrolls element into viewport if parent container is visible.
      * @param {Object} ref - React ref
+     * @param {string} containerSelector - Selector of containing element: '.className'
      * @param {Boolean} condition - Condition flag
      * @return {void}
      */

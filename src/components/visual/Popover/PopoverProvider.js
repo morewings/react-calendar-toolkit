@@ -19,12 +19,8 @@ const PopoverProvider = ({
       position={['bottom', 'top']}
       padding={0}
       containerClassName={classes.container}
-      content={({position, targetRect, popoverRect}) => (
-        <Wrapper
-          targetRect={targetRect}
-          popoverRect={popoverRect}
-          toggleDatepicker={toggleDatepicker}
-          position={position}>
+      content={({position}) => (
+        <Wrapper toggleDatepicker={toggleDatepicker} position={position}>
           <Datepicker />
         </Wrapper>
       )}>

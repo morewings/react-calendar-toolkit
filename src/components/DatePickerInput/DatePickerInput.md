@@ -100,3 +100,5 @@ const theme = {
     />
 </div>
 ```
+
+See [Input custom UI](/#!/Input%20custom%20UI/Input%20custom%20UI) section for more info.
