@@ -1,13 +1,9 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {useDispatch, useSelector} from 'react-redux';
 import {convertToDate} from 'utils/dateUtils';
 import {useFormatDate} from 'utils/localeContext';
-import {
-  selectors as modalSelectors,
-  actionTypes as modalActionTypes,
-} from 'features/modal';
-import {selectors} from 'features/datepicker';
+import {useModalContext, useModalActions} from 'features/modal';
+import {useDatePickerContext} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import Input from 'components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
@@ -30,29 +26,25 @@ const DatePickerInput = ({
   datePickerProps,
   datePickerDefaultProps,
 }) => {
-  const dispatch = useDispatch();
-  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
-  const todayTimestamp = useSelector(selectors.getTodayTimestamp);
-  const isVisible = useSelector(modalSelectors.getIsVisible);
+  const {
+    state: {selectedTimestamp, todayTimestamp},
+  } = useDatePickerContext();
+
+  const {
+    state: {isVisible},
+  } = useModalContext();
+
+  const {toggleDatePicker} = useModalActions();
 
   const handleDateSet = date => {
     onDateSet(date);
-    hideOnSelect && toggleDatepicker(false);
+    hideOnSelect && toggleDatePicker(false);
   };
 
   const formatDate = useFormatDate();
 
   const RenderingLogicProvider =
     mode === 'popover' ? popoverProvider : modalProvider;
-
-  const toggleDatepicker = useCallback(
-    visibility =>
-      dispatch({
-        type: modalActionTypes.TOGGLE_DATEPICKER,
-        payload: visibility,
-      }),
-    [dispatch]
-  );
 
   const InputComponent = renderInputAs;
   const DatePickerComponent = renderDatePickerAs;
@@ -77,7 +69,7 @@ const DatePickerInput = ({
     hasInitialValues && (
       <RenderingLogicProvider
         isVisible={isVisible}
-        toggleDatepicker={toggleDatepicker}
+        toggleDatepicker={toggleDatePicker}
         wrapPopoverWith={wrapPopoverWith}
         wrapModalWith={wrapModalWith}
         renderDatePickerAs={DatePickerWithProps}>
@@ -85,7 +77,7 @@ const DatePickerInput = ({
           onChange={onDateSet}
           date={convertToDate(todayTimestamp)}
           value={formatDate(formatPattern, convertToDate(selectedTimestamp))}
-          toggleDatepicker={toggleDatepicker}
+          toggleDatepicker={toggleDatePicker}
         />
       </RenderingLogicProvider>
     )

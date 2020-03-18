@@ -5,7 +5,9 @@ import {
   SET_VISIBILITY,
 } from './actionTypes';
 
-export default (state = {}, action) => {
+export const initialState = {};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case SET_DATE: {
       const {selectedTimestamp, precision} = action.payload;

@@ -1,5 +1,5 @@
 import compose from 'utils/compose';
-import {withProvider, withDatepickerProvider} from 'store';
+import {withDatepickerProvider, withModalProvider} from 'store';
 import DatePicker from 'components/DatePicker';
 import DatePickerInput from 'components/DatePickerInput';
 import {useFormatDate, withLocaleContext} from 'utils/localeContext';
@@ -16,7 +16,8 @@ import defaultTheme from 'utils/defaultTheme';
 import useScrollIntoView from 'utils/useScrollIntoView';
 
 const WrappedDatePickerInput = compose(
-  withProvider,
+  withDatepickerProvider,
+  withModalProvider,
   withLocaleContext,
   withTheme
 )(DatePickerInput);

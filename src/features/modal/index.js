@@ -1,6 +1,3 @@
-import * as actionTypes from './actionTypes';
-import * as selectors from './selectors';
-
-export {default as ModalReducer} from './ModalReducer';
-export {actionTypes};
-export {selectors};
+export {default as ModalReducer, initialState} from './ModalReducer';
+export {default as ModalContext, useModalContext} from './context';
+export {default as useModalActions} from './actionCreators';

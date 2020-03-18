@@ -1,9 +1,13 @@
 import React from 'react';
-import {DatepickerReducer, DatepickerContext} from 'features/datepicker';
+import {
+  DatepickerReducer,
+  DatepickerContext,
+  initialState,
+} from 'features/datepicker';
 import {createStoreProvider} from './createStoreProvider';
 
 const Provider = createStoreProvider({
-  initialState: {},
+  initialState,
   reducer: DatepickerReducer,
   context: DatepickerContext,
 });
