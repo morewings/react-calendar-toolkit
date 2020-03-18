@@ -1,8 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import {isSameDay} from 'date-fns'
-import DatePicker from 'components/DatePicker';
-import {DatePickerInput} from 'entryPoint';
+import DatePicker, {DatePickerInput} from 'entryPoint';
 import './App.scss';
 
 const highlightDate = ({date, precision}) => {

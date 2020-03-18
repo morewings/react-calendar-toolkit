@@ -1,4 +1,4 @@
-import {compose} from 'redux';
+import compose from 'utils/compose';
 import {withProvider} from 'store';
 import DatePicker from 'components/DatePicker';
 import DatePickerInput from 'components/DatePickerInput';
