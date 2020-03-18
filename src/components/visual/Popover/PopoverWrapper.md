@@ -1,4 +1,4 @@
-`Input` component renders field to attach `Datepicker`.
+`PopoverWrapper` used to attach triangle and position `Datepicker` relative to `Input`.
 
 ### PopoverWrapper example
 

@@ -29,6 +29,8 @@ import {DatePickerInput} from 'react-calendar-toolkit';
 
 #### `modal`
 
+Renders `Datepicker` as modal window. More convenient for a small screen devices. 
+
 ```js
 import {DatePickerInput} from 'react-calendar-toolkit';
 
