@@ -1,10 +1,9 @@
-import {useSelector} from 'react-redux';
-import {selectors} from 'features/datepicker';
+import {useDatePickerContext} from 'features/datepicker';
 
 const useHasInitialValues = () => {
-  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
-  const todayTimestamp = useSelector(selectors.getTodayTimestamp);
-  const visibleTimestamp = useSelector(selectors.getVisibleTimestamp);
+  const {
+    state: {selectedTimestamp, todayTimestamp, visibleTimestamp},
+  } = useDatePickerContext();
   return !!selectedTimestamp && !!todayTimestamp && !!visibleTimestamp;
 };
 

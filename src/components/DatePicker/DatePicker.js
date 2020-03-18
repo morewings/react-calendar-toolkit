@@ -1,9 +1,8 @@
-import React, {useCallback, Fragment} from 'react';
+import React, {useCallback, Fragment, useContext} from 'react';
 import PropTypes from 'prop-types';
-import {useDispatch, useSelector} from 'react-redux';
 import {convertToDate} from 'utils/dateUtils';
 import config from 'utils/config';
-import {selectors, actionCreators} from 'features/datepicker';
+import {useDatePickerContext, useDatePickerActions} from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
 import Selector from 'components/logic/Selector';
@@ -15,7 +14,6 @@ import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
 import useHasInitialValues from 'utils/useHasInitialValues';
-
 import useSetInitialValues from 'utils/useSetInitialValues';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
@@ -52,11 +50,11 @@ const DatePicker = ({
   highlightDate,
   wrapWith,
 }) => {
-  const dispatch = useDispatch();
-  const selectedTimestamp = useSelector(selectors.getSelectedTimestamp);
-  const todayTimestamp = useSelector(selectors.getTodayTimestamp);
-  const visibleTimestamp = useSelector(selectors.getVisibleTimestamp);
-  const precision = useSelector(selectors.getPrecision);
+  const {
+    state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
+  } = useDatePickerContext();
+
+  const {setPrecision, setVisibility, setDate} = useDatePickerActions();
 
   const hasInitialValues = useHasInitialValues();
 
@@ -70,11 +68,19 @@ const DatePicker = ({
   const handleDateSet = useCallback(
     date => {
       precision === minPrecision && onDateSet(date);
-      precision === minPrecision && dispatch(actionCreators.setDate(date));
-      dispatch(actionCreators.setVisibility(date));
-      nextPrecision && dispatch(actionCreators.setPrecision(nextPrecision));
+      precision === minPrecision && setDate(date);
+      setVisibility(date);
+      nextPrecision && setPrecision(nextPrecision);
     },
-    [dispatch, minPrecision, nextPrecision, onDateSet, precision]
+    [
+      minPrecision,
+      nextPrecision,
+      onDateSet,
+      precision,
+      setDate,
+      setPrecision,
+      setVisibility,
+    ]
   );
 
   useSetInitialValues({initialDate, today, minPrecision});

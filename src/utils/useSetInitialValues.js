@@ -1,19 +1,33 @@
 import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {actionCreators} from 'features/datepicker';
+import {useDatePickerActions} from 'features/datepicker';
 import useHasInitialValues from 'utils/useHasInitialValues';
 
 const useSetInitialValues = ({initialDate, today, minPrecision}) => {
-  const dispatch = useDispatch();
+  const {
+    setPrecision,
+    setVisibility,
+    setDate,
+    setToday,
+  } = useDatePickerActions();
+
   const hasInitialValues = useHasInitialValues();
   useEffect(() => {
     if (!hasInitialValues) {
-      dispatch(actionCreators.setDate(initialDate));
-      dispatch(actionCreators.setVisibility(initialDate));
-      dispatch(actionCreators.setToday(today));
-      dispatch(actionCreators.setPrecision(minPrecision));
+      setDate(initialDate);
+      setVisibility(initialDate);
+      setToday(today);
+      setPrecision(minPrecision);
     }
-  }, [dispatch, hasInitialValues, initialDate, minPrecision, today]);
+  }, [
+    hasInitialValues,
+    initialDate,
+    minPrecision,
+    setDate,
+    setPrecision,
+    setToday,
+    setVisibility,
+    today,
+  ]);
 };
 
 export default useSetInitialValues;

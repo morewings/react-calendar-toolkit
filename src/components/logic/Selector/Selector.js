@@ -1,7 +1,6 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import {useDispatch} from 'react-redux';
-import {actionCreators} from 'features/datepicker';
+import {useDatePickerActions} from 'features/datepicker';
 import {
   decrementMonth,
   incrementMonth,
@@ -20,7 +19,8 @@ const Selector = ({
   endDate,
   visibleTimestamp,
 }) => {
-  const dispatch = useDispatch();
+  const {setVisibility, setPrecision} = useDatePickerActions();
+
   const monthStepperLabels = useMonthStepperLabels();
 
   const isDisabled = useCallback(
@@ -32,22 +32,22 @@ const Selector = ({
     [endDate, startDate]
   );
 
-  const setPrecision = useCallback(
+  const onSetPrecision = useCallback(
     nextPrecision => {
-      dispatch(actionCreators.setPrecision(nextPrecision));
+      setPrecision(nextPrecision);
     },
-    [dispatch]
+    [setPrecision]
   );
 
   const onIncrementMonth = useCallback(() => {
     const nextDate = incrementMonth(visibleTimestamp, 1);
-    isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
-  }, [dispatch, isDisabled, visibleTimestamp]);
+    isDisabled(nextDate) && setVisibility(nextDate);
+  }, [isDisabled, setVisibility, visibleTimestamp]);
 
   const onDecrementMonth = useCallback(() => {
     const nextDate = decrementMonth(visibleTimestamp, 1);
-    isDisabled(nextDate) && dispatch(actionCreators.setVisibility(nextDate));
-  }, [dispatch, isDisabled, visibleTimestamp]);
+    isDisabled(nextDate) && setVisibility(nextDate);
+  }, [isDisabled, setVisibility, visibleTimestamp]);
 
   const SelectorVisual = renderAs;
   return (
@@ -55,7 +55,7 @@ const Selector = ({
       monthStepperLabels={monthStepperLabels}
       incrementMonth={onIncrementMonth}
       decrementMonth={onDecrementMonth}
-      setPrecision={setPrecision}
+      setPrecision={onSetPrecision}
       todayDate={convertToDate(todayTimestamp)}
       selectedDate={convertToDate(selectedTimestamp)}
       visibleDate={convertToDate(visibleTimestamp)}

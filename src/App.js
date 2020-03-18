@@ -26,12 +26,12 @@ const App = () => (
       />
     </div>
     <div className="container">
-      <DatePickerInput
-        onDateSet={date => {
-          // console.log('date set', date);
-        }}
-        title="Demo datepicker"
-      />
+      {/*<DatePickerInput*/}
+      {/*  onDateSet={date => {*/}
+      {/*    // console.log('date set', date);*/}
+      {/*  }}*/}
+      {/*  title="Demo datepicker"*/}
+      {/*/>*/}
     </div>
   </div>
 );

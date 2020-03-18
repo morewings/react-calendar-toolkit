@@ -5,29 +5,50 @@ import {
   SET_TODAY,
   SET_VISIBILITY,
 } from './actionTypes';
+import {useDatePickerContext} from './context';
 
-export const setDate = date => ({
+const setDate = date => ({
   type: SET_DATE,
   payload: {
     selectedTimestamp: convertToTimestamp(date),
   },
 });
 
-export const setVisibility = date => ({
+const setVisibility = date => ({
   type: SET_VISIBILITY,
   payload: {
     visibleTimestamp: convertToTimestamp(date),
   },
 });
 
-export const setToday = date => ({
+const setToday = date => ({
   type: SET_TODAY,
   payload: {
     todayTimestamp: convertToTimestamp(date),
   },
 });
 
-export const setPrecision = precision => ({
+const setPrecision = precision => ({
   type: SET_PRECISION,
   payload: precision,
 });
+
+const useDatePickerActions = () => {
+  const {dispatch} = useDatePickerContext();
+  return {
+    setDate: date => {
+      dispatch(setDate(date));
+    },
+    setToday: date => {
+      dispatch(setToday(date));
+    },
+    setVisibility: date => {
+      dispatch(setVisibility(date));
+    },
+    setPrecision: precision => {
+      dispatch(setPrecision(precision));
+    },
+  };
+};
+
+export default useDatePickerActions;

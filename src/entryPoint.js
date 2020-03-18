@@ -1,5 +1,5 @@
 import compose from 'utils/compose';
-import {withProvider} from 'store';
+import {withProvider, withDatepickerProvider} from 'store';
 import DatePicker from 'components/DatePicker';
 import DatePickerInput from 'components/DatePickerInput';
 import {useFormatDate, withLocaleContext} from 'utils/localeContext';
@@ -34,4 +34,8 @@ export {
   WrappedDatePickerInput as DatePickerInput,
 };
 
-export default compose(withProvider, withLocaleContext, withTheme)(DatePicker);
+export default compose(
+  withDatepickerProvider,
+  withLocaleContext,
+  withTheme
+)(DatePicker);
