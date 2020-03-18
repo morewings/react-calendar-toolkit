@@ -1,5 +1,5 @@
 import {compose} from 'redux';
-import withProvider from 'utils/withProvider';
+import {withProvider} from 'store';
 import DatePicker from 'components/DatePicker';
 import DatePickerInput from 'components/DatePickerInput';
 import {useFormatDate, withLocaleContext} from 'utils/localeContext';
