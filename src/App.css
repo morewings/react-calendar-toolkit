@@ -1,8 +1,8 @@
 .app {
-  width: 500px;
-  margin: 50px auto;
   display: flex;
   justify-content: space-between;
+  margin: 50px auto;
+  width: 500px;
 }
 
 .app .container {

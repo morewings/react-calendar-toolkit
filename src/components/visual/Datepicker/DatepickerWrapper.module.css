@@ -1,11 +1,11 @@
 .datepickerWrapper {
-  font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
-  font-weight: var(--fontWeight);
-  width: var(--datePickerWidth);
-  border-radius: var(--datepickerBorderRadius);
-  overflow: hidden;
-  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
   background: var(--bgColor);
+  border-radius: var(--datepickerBorderRadius);
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
   color: var(--textColor);
+  font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
   font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  overflow: hidden;
+  width: var(--datePickerWidth);
 }

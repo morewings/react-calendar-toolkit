@@ -1,21 +1,21 @@
 .grid {
-  display: flex;
   border-bottom: 1px solid var(--borderColor);
+  box-sizing: border-box;
+  display: flex;
+  height: var(--entryHeight);
   margin-bottom: var(--innerPadding);
   padding: 0 var(--innerPadding);
-  box-sizing: border-box;
-  height: var(--entryHeight);
 }
 
 .wrapper {
-  text-align: center;
   box-sizing: border-box;
+  color: var(--weekDayColor);
+  cursor: default;
+  display: inline-block;
   flex: 1 1 calc(100% / 7);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
-  display: inline-block;
-  vertical-align: middle;
-  color: var(--weekDayColor);
+  text-align: center;
   user-select: none;
-  cursor: default;
+  vertical-align: middle;
 }

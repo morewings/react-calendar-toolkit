@@ -1,6 +1,6 @@
 .wrapper {
-  position: relative;
   overflow: visible;
+  position: relative;
 }
 
 .wrapper.bottom {
@@ -12,13 +12,13 @@
 }
 
 .wrapper.right {
-  padding-left: 20px;
   margin-top: -20px;
+  padding-left: 20px;
 }
 
 .wrapper.left {
-  padding-right: 20px;
   margin-top: -20px;
+  padding-right: 20px;
 }
 
 .wrapper > *:not(.triangle) {
@@ -27,42 +27,42 @@
 }
 
 .triangle {
-  width: 0;
   height: 0;
   position: absolute;
+  width: 0;
   z-index: 2;
 }
 
 .triangle.bottom {
-  top: 5px;
-  left: 30px;
+  border-bottom: 15px solid var(--bgColor);
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 15px solid var(--bgColor);
+  left: 30px;
+  top: 5px;
 }
 
 .triangle.top {
-  bottom: 5px;
-  left: 30px;
+  border-bottom: none;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-top: 15px solid var(--bgColor);
-  border-bottom: none;
+  bottom: 5px;
+  left: 30px;
 }
 
 .triangle.right {
-  top: 15px;
-  left: 5px;
+  border-bottom: 15px solid transparent;
   border-left: none;
   border-right: 15px solid var(--bgColor);
   border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  left: 5px;
+  top: 15px;
 }
 
 .triangle.left {
-  top: 15px;
-  left: var(--datePickerWidth);
+  border-bottom: 15px solid transparent;
   border-left: 15px solid var(--bgColor);
   border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  left: var(--datePickerWidth);
+  top: 15px;
 }

@@ -1,22 +1,22 @@
 .grid {
   display: flex;
-  width: var(--calendarWidth);
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 var(--innerPadding) var(--innerPadding);
   height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding) / 2);
+  padding: 0 var(--innerPadding) var(--innerPadding);
+  width: var(--calendarWidth);
 }
 
 .wrapper {
-  text-align: center;
+  border: 1px solid var(--bgColor);
+  border-radius: var(--entryBorderRadius);
   box-sizing: border-box;
+  cursor: pointer;
   flex: 1 1 calc(100% / 3 - 4px);
-  margin: var(--innerPadding) var(--entryMargin) 0;
   height: var(--entryHeight);
   line-height: var(--entryHeight);
-  border: 1px solid var(--bgColor);
-  cursor: pointer;
-  border-radius: var(--entryBorderRadius);
+  margin: var(--innerPadding) var(--entryMargin) 0;
+  text-align: center;
   user-select: none;
 }
 
@@ -32,14 +32,14 @@
 }
 
 .isDisabled {
+  cursor: not-allowed;
   opacity: 0.3;
   text-decoration: line-through;
-  cursor: not-allowed;
 }
 
 .isSelected {
-  color: white;
   background-color: var(--entrySelectedColor);
+  color: white;
 }
 
 .isCurrent {

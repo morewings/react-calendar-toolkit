@@ -7,15 +7,15 @@
   color: var(--headerTextColor);
   font-size: var(--fontSizeBig);
   font-weight: 300;
-  text-align: left;
   letter-spacing: 1.6px;
+  text-align: left;
 }
 
 .title {
-  text-transform: uppercase;
-  font-size: var(--fontSizeSmall);
-  margin-bottom: calc(var(--innerPadding) * 1.5);
   color: var(--headerTextColor);
+  font-size: var(--fontSizeSmall);
   letter-spacing: 1.6px;
+  margin-bottom: calc(var(--innerPadding) * 1.5);
   text-align: left;
+  text-transform: uppercase;
 }

@@ -1,12 +1,12 @@
 .input {
-  font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
-  font-weight: var(--fontWeight);
-  padding: var(--inputPadding) calc(var(--inputPadding) * 2);
   border: 1px solid var(--inputBorderColor);
   border-radius: var(--inputBorderRadius);
-  font-size: var(--fontSize);
-  width: var(--inputWidth);
   color: var(--textColor);
+  font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  padding: var(--inputPadding) calc(var(--inputPadding) * 2);
+  width: var(--inputWidth);
 }
 
 .input:focus {

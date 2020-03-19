@@ -1,23 +1,23 @@
 .grid {
   display: flex;
-  width: var(--calendarWidth);
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 var(--innerPadding) calc(var(--innerPadding) / 2);
   height: var(--calendarHeight);
+  padding: 0 var(--innerPadding) calc(var(--innerPadding) / 2);
+  width: var(--calendarWidth);
 }
 
 .placeholder,
 .wrapper {
-  text-align: center;
+  border: 1px solid var(--bgColor);
+  border-radius: 50%;
   box-sizing: border-box;
+  cursor: pointer;
   flex: 1 1 calc(100% / 7 - 4px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   margin: 0 var(--entryMargin);
-  border: 1px solid var(--bgColor);
-  cursor: pointer;
-  border-radius: 50%;
+  text-align: center;
   user-select: none;
 }
 
@@ -41,14 +41,14 @@
 }
 
 .isDisabled {
+  cursor: not-allowed;
   opacity: 0.3;
   text-decoration: line-through;
-  cursor: not-allowed;
 }
 
 .isSelected {
-  color: white;
   background-color: var(--entrySelectedColor);
+  color: white;
 }
 
 .isCurrent {
