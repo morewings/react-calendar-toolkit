@@ -72,6 +72,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
                     customProperties: defaultTheme,
                   },
                 ],
+                // preserve: false,
               }),
               ...POSTCSS_PLUGINS,
             ]

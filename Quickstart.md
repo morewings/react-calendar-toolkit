@@ -53,4 +53,5 @@ To make `RCT` work in IE11 you need to
     ```js static
     import 'react-calendar-toolkit/lib/ie.css';
     ```
+   Note: IE11 doesn't support css variables, so default UI theming will not work, use Custom UI instead. 
 4. Assuming you are using `create-react-app` or anything with `babel-present-env`, you will need to add `"IE 11"` to `browerslist` config.

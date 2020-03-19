@@ -13,7 +13,7 @@
   border-radius: 50%;
   box-sizing: border-box;
   cursor: pointer;
-  flex: 1 1 calc(100% / 7 - 4px);
+  flex: 0 0 calc(100% / 7 - 4px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   margin: 0 var(--entryMargin);
