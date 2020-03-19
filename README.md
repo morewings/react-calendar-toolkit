@@ -40,7 +40,7 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 | --------- | --------- | --------- | --------- | --------- |
 | IE11*, Edge| last 2 versions, ESR| last 2 versions| last 2 versions| last 2 versions
 
-/* needs polyfills.
+/* needs polyfills, [see docs](https://morewings.github.io/react-calendar-toolkit/#/Quickstart)
 
 ## Quickstart
 
@@ -64,8 +64,6 @@ const Component = () => (
 export default Component;
 ``` 
 
-See [full documentation](https://morewings.github.io/react-calendar-toolkit/)
-
 ## Development
 
 ### Available scripts
@@ -74,8 +72,10 @@ See [full documentation](https://morewings.github.io/react-calendar-toolkit/)
 - `start:docs` - starts `Styleguidist`;
 - `build:docs` - builds `Styleguidist`;
 - `build:rollup` - builds package;
-- `lint` - runs linter;
-- `fix` - runs linter with fix option enabled;
+- `lint` - runs eslint;
+- `fix` - runs eslint with fix option enabled;
 - `test` - runs tests.
+- `stylelint`": runs stylelint;
+- `stylelint:fix`: runs stylelint with fix option enabled.
 
 
