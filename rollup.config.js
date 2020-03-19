@@ -9,6 +9,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import autoprefixer from 'autoprefixer';
 import cssVariables from 'postcss-custom-properties';
 import postcssPresetEnv from 'postcss-preset-env';
+import {terser} from 'rollup-plugin-terser';
 import pkg from './package.json';
 import defaultTheme from './src/utils/defaultTheme';
 
@@ -78,6 +79,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       browser: true,
     }),
     commonjs(),
+    terser(),
     filesize(),
     // visualizer({open: true}),
   ],
