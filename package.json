@@ -62,7 +62,6 @@
     "eslint-plugin-prettier": "3.1.2",
     "husky": "4.2.3",
     "lint-staged": "10.0.8",
-    "node-sass": "^4.13.1",
     "postcss-custom-properties": "^9.1.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "1.19.1",
@@ -84,7 +83,7 @@
     "react-dom": ">=16.8.0"
   },
   "scripts": {
-    "start": "HOST=localhost react-scripts start",
+    "start": "react-scripts start",
     "start:docs": "npx styleguidist server --config styleguide.config.js",
     "build:docs": "npx styleguidist build --config styleguide.config.js",
     "build": "react-scripts build",

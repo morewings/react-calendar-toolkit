@@ -3,7 +3,8 @@
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
-  .container {
-    padding-top: 50px;
-  }
+}
+
+.app .container {
+  padding-top: 50px;
 }

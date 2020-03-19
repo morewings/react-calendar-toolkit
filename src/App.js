@@ -2,7 +2,7 @@
 import React from 'react';
 import {isSameDay} from 'date-fns'
 import DatePicker, {DatePickerInput} from 'entryPoint';
-import './App.scss';
+import './App.css';
 
 const highlightDate = ({date, precision}) => {
   return isSameDay(date, new Date(2020, 0, 7))
