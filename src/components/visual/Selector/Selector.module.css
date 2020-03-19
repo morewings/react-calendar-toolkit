@@ -1,12 +1,12 @@
-.wrapper{
-  padding: calc(var(--innerPadding)/2) var(--innerPadding);
+.wrapper {
+  padding: calc(var(--innerPadding) / 2) var(--innerPadding);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: var(--selectorHeight);
 }
 
-.buttons button{
+.buttons button {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -18,17 +18,7 @@
   font-size: var(--fontSize);
 }
 
-.buttons button:active,
-.buttons button:focus{
-  outline: none;
-}
-
-.buttons button:focus,
-.buttons button:hover{
-  background-color: var(--entryHoverColor);
-}
-
-.stepper button{
+.stepper button {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -44,11 +34,21 @@
 }
 
 .stepper button:active,
-.stepper button:focus{
+.stepper button:focus {
   outline: none;
 }
 
 .stepper button:focus,
-.stepper button:hover{
+.stepper button:hover {
+  background-color: var(--entryHoverColor);
+}
+
+.buttons button:active,
+.buttons button:focus {
+  outline: none;
+}
+
+.buttons button:focus,
+.buttons button:hover {
   background-color: var(--entryHoverColor);
 }

@@ -63,8 +63,11 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
         format === 'umd'
           ? [
               cssVariables({
-                importFrom: defaultTheme,
-                preserve: false,
+                importFrom: [
+                  {
+                    customProperties: defaultTheme,
+                  },
+                ],
               }),
               ...POSTCSS_PLUGINS,
             ]

@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "function-calc-no-unspaced-operator": true
+  },
+  "ignoreFiles": ["lib/**/*.css", "node_modules/**/*.css", "styleguide/**/*.css"]
+}

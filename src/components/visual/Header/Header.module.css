@@ -1,9 +1,9 @@
-.wrapper{
+.wrapper {
   background: var(--headerBgColor);
   padding: var(--innerPadding);
 }
 
-.currentDate{
+.currentDate {
   color: var(--headerTextColor);
   font-size: var(--fontSizeBig);
   font-weight: 300;
@@ -11,7 +11,7 @@
   letter-spacing: 1.6px;
 }
 
-.title{
+.title {
   text-transform: uppercase;
   font-size: var(--fontSizeSmall);
   margin-bottom: calc(var(--innerPadding) * 1.5);

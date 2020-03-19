@@ -34,6 +34,8 @@ There are many good datepickers on the market. Unfortunately, most of them are _
     highlightWeekends: Boolean
     ```
 
+## Browser support
+
 ## Quickstart
 
  ```shell script

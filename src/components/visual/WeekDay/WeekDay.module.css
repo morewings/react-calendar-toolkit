@@ -1,4 +1,4 @@
-.grid{
+.grid {
   display: flex;
   border-bottom: 1px solid var(--borderColor);
   margin-bottom: var(--innerPadding);
@@ -7,7 +7,7 @@
   height: var(--entryHeight);
 }
 
-.wrapper{
+.wrapper {
   text-align: center;
   box-sizing: border-box;
   flex: 1 1 calc(100% / 7);

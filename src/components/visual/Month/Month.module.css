@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0 var(--innerPadding) var(--innerPadding);
-  height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding)/2);
+  height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding) / 2);
 }
 
 .wrapper {
@@ -25,14 +25,14 @@
   outline: none;
 }
 
-.wrapper:focus:not(.isSelected):not(.isDisabled),
-.wrapper:hover:not(.isDisabled){
+.wrapper:hover:not(.isDisabled),
+.wrapper:focus:not(.isSelected):not(.isDisabled) {
   background-color: var(--entryHoverColor);
   color: var(--textColor);
 }
 
 .isDisabled {
-  opacity: .3;
+  opacity: 0.3;
   text-decoration: line-through;
   cursor: not-allowed;
 }

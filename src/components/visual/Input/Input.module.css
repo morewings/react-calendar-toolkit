@@ -1,4 +1,4 @@
-.input{
+.input {
   font-family: var(--fontPrimary), var(--fontSecondary), var(--fontFallback);
   font-weight: var(--fontWeight);
   padding: var(--inputPadding) calc(var(--inputPadding) * 2);
@@ -9,6 +9,6 @@
   color: var(--textColor);
 }
 
-.input:focus{
+.input:focus {
   border-color: var(--inputHighlightColor);
 }

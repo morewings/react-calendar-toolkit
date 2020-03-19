@@ -1,5 +1,5 @@
-.scrollContainer{
-  height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding)/2);;
+.scrollContainer {
+  height: calc(var(--calendarHeight) + var(--entryHeight) + var(--innerPadding) / 2);
   overflow: auto;
   padding: 0 0 var(--innerPadding);
 }
@@ -32,8 +32,8 @@
   outline: none;
 }
 
-.wrapper:focus:not(.isSelected),
-.wrapper:hover{
+.wrapper:hover,
+.wrapper:focus:not(.isSelected) {
   background-color: var(--entryHoverColor);
   color: var(--textColor);
 }
