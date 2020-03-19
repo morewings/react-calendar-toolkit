@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {convertToTimestamp} from 'utils/dateUtils';
 import {
   SET_DATE,
@@ -7,48 +8,75 @@ import {
 } from './actionTypes';
 import {useDatePickerContext} from './context';
 
-const setDate = date => ({
-  type: SET_DATE,
-  payload: {
-    selectedTimestamp: convertToTimestamp(date),
-  },
-});
-
-const setVisibility = date => ({
-  type: SET_VISIBILITY,
-  payload: {
-    visibleTimestamp: convertToTimestamp(date),
-  },
-});
-
-const setToday = date => ({
-  type: SET_TODAY,
-  payload: {
-    todayTimestamp: convertToTimestamp(date),
-  },
-});
-
-const setPrecision = precision => ({
-  type: SET_PRECISION,
-  payload: precision,
-});
-
 const useDatePickerActions = () => {
   const {dispatch} = useDatePickerContext();
   return {
     setDate: date => {
-      dispatch(setDate(date));
+      dispatch({
+        type: SET_DATE,
+        payload: {
+          selectedTimestamp: convertToTimestamp(date),
+        },
+      });
     },
     setToday: date => {
-      dispatch(setToday(date));
+      dispatch({
+        type: SET_TODAY,
+        payload: {
+          todayTimestamp: convertToTimestamp(date),
+        },
+      });
     },
     setVisibility: date => {
-      dispatch(setVisibility(date));
+      dispatch({
+        type: SET_VISIBILITY,
+        payload: {
+          visibleTimestamp: convertToTimestamp(date),
+        },
+      });
     },
     setPrecision: precision => {
-      dispatch(setPrecision(precision));
+      dispatch({
+        type: SET_PRECISION,
+        payload: precision,
+      });
     },
   };
+};
+
+export const useHasInitialValues = () => {
+  const {
+    state: {selectedTimestamp, todayTimestamp, visibleTimestamp},
+  } = useDatePickerContext();
+  return !!selectedTimestamp && !!todayTimestamp && !!visibleTimestamp;
+};
+
+export const useSetInitialValues = ({initialDate, today, minPrecision}) => {
+  const {
+    setPrecision,
+    setVisibility,
+    setDate,
+    setToday,
+  } = useDatePickerActions();
+
+  const hasInitialValues = useHasInitialValues();
+  useEffect(() => {
+    if (!hasInitialValues) {
+      setDate(initialDate);
+      setVisibility(initialDate);
+      setToday(today);
+      setPrecision(minPrecision);
+    }
+  }, [
+    hasInitialValues,
+    initialDate,
+    minPrecision,
+    setDate,
+    setPrecision,
+    setToday,
+    setVisibility,
+    today,
+  ]);
 };
 
 export default useDatePickerActions;

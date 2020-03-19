@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
-import {useDatePickerActions} from 'features/datepicker';
-import useHasInitialValues from 'utils/useHasInitialValues';
+import useDatePickerActions from './actionCreators';
+import useHasInitialValues from './useHasInitialValues';
 
 const useSetInitialValues = ({initialDate, today, minPrecision}) => {
   const {

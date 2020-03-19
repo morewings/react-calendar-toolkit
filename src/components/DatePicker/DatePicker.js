@@ -2,7 +2,12 @@ import React, {useCallback, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {convertToDate} from 'utils/dateUtils';
 import config from 'utils/config';
-import {useDatePickerContext, useDatePickerActions} from 'features/datepicker';
+import {
+  useDatePickerContext,
+  useDatePickerActions,
+  useHasInitialValues,
+  useSetInitialValues,
+} from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
 import Selector from 'components/logic/Selector';
@@ -13,8 +18,6 @@ import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
-import useHasInitialValues from 'utils/useHasInitialValues';
-import useSetInitialValues from 'utils/useSetInitialValues';
 
 const getNextPrecision = (precisionEnum, currentPrecision) => {
   const currentIndex = precisionEnum.indexOf(currentPrecision);

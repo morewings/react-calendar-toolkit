@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import {convertToDate} from 'utils/dateUtils';
 import {useFormatDate} from 'utils/localeContext';
 import {useModalContext, useModalActions} from 'features/modal';
-import {useDatePickerContext} from 'features/datepicker';
+import {
+  useDatePickerContext,
+  useHasInitialValues,
+  useSetInitialValues,
+} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import Input from 'components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
 import ModalProvider, {ModalWrapper} from 'components/visual/Modal';
-// TODO: move to features
-import useSetInitialValues from 'utils/useSetInitialValues';
-import useHasInitialValues from 'utils/useHasInitialValues';
 
 const DatePickerInput = ({
   renderInputAs,
