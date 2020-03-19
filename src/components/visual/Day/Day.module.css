@@ -73,5 +73,5 @@ _:-ms-fullscreen, :root .placeholder {
 }
 
 .isHighlighted.isSelected {
-  background: linear-gradient(135deg, var(--entryHighlightColor) 0%, var(--entryHighlightColor) 50%, var(--entrySelectedColor) 50%, var(--entrySelectedColor) 100%);
+  background: padding-box linear-gradient(135deg, var(--entryHighlightColor) 0%, var(--entryHighlightColor) 50%, var(--entrySelectedColor) 50%, var(--entrySelectedColor) 100%);
 }
