@@ -7,6 +7,7 @@ import includePaths from 'rollup-plugin-includepaths';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import autoprefixer from 'autoprefixer';
 import cssVariables from 'postcss-custom-properties';
+import stylelint from 'rollup-plugin-stylelint';
 import postcssPresetEnv from 'postcss-preset-env';
 import {terser} from 'rollup-plugin-terser';
 import pkg from './package.json';
@@ -55,6 +56,9 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       paths: ['src'],
       external: Object.keys(pkg.dependencies),
       extensions: ['.js', '.json', '.html'],
+    }),
+    stylelint({
+      throwOnError: true,
     }),
     postcss({
       extract: format === 'umd' ? 'lib/ie.css' : pkg.style,

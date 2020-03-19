@@ -75,6 +75,7 @@
     "rollup-plugin-includepaths": "^0.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-postcss": "^2.4.1",
+    "rollup-plugin-stylelint": "^1.0.0",
     "rollup-plugin-terser": "^5.3.0",
     "stylelint": "^13.2.1",
     "stylelint-config-standard": "^20.0.0"
@@ -94,8 +95,8 @@
     "eject": "react-scripts eject",
     "fix": "eslint --fix ./src/",
     "lint": "eslint ./src/",
-    "stylelint": "npx stylelint **/*.css",
-    "stylelint:fix": "npx stylelint **/*.css --fix"
+    "stylelint": "npx stylelint ./src/",
+    "stylelint:fix": "npx stylelint ./src/ --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
