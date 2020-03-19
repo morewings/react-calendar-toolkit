@@ -93,7 +93,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "fix": "eslint --fix ./src/",
-    "lint": "eslint ./src/"
+    "lint": "eslint ./src/",
+    "stylelint": "npx stylelint **/*.css",
+    "stylelint:fix": "npx stylelint **/*.css --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
