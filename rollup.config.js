@@ -5,7 +5,6 @@ import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
 import includePaths from 'rollup-plugin-includepaths';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-// import visualizer from 'rollup-plugin-visualizer';
 import autoprefixer from 'autoprefixer';
 import cssVariables from 'postcss-custom-properties';
 import postcssPresetEnv from 'postcss-preset-env';
@@ -81,7 +80,6 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     commonjs(),
     terser(),
     filesize(),
-    // visualizer({open: true}),
   ],
 }));
 
