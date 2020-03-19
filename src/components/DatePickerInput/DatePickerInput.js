@@ -85,7 +85,6 @@ const DatePickerInput = ({
 };
 
 DatePickerInput.propTypes = {
-  ...propTypes,
   /** Callback when user selects date */
   onDateSet: PropTypes.func.isRequired,
   /** __Rendering__ mode of attached Datepicker */
