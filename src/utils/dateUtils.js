@@ -88,7 +88,7 @@ export const convertToDate = timestamp => toDate(timestamp);
 /**
  * @function
  * @name convertToDayOfMonth
- * @description Converts provided Unix timestamp or to day of month number
+ * @description Converts provided Unix timestamp or Date to day of month number
  * @param {DateUnion} timestamp - Timestamp or Date to convert
  * @return {number} Day of the month
  */

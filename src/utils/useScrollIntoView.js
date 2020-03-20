@@ -1,5 +1,4 @@
 import {useEffect} from 'react';
-import isInViewport from 'utils/isInViewport';
 
 const scrollStop = callback => {
   let isScrolling;
@@ -13,6 +12,18 @@ const scrollStop = callback => {
       }, 66);
     },
     false
+  );
+};
+
+const isInViewport = elem => {
+  const distance = elem.getBoundingClientRect();
+  return (
+    distance.top >= 0 &&
+    distance.left >= 0 &&
+    distance.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    distance.right <=
+      (window.innerWidth || document.documentElement.clientWidth)
   );
 };
 
