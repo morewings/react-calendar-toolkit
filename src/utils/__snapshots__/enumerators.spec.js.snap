@@ -1,0 +1,1779 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDays returns collection of day dates and numeric values for calendar month (starting from specified week start) of provided date 1`] = `
+Array [
+  Object {
+    "date": 1998-12-26T23:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1998-12-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1998-12-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1998-12-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1998-12-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-01-01T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-01-02T23:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-01-03T23:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-01-04T23:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-01-05T23:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+  Object {
+    "date": 1999-01-06T23:00:00.000Z,
+    "name": Object {
+      "numeric": 7,
+    },
+  },
+  Object {
+    "date": 1999-01-07T23:00:00.000Z,
+    "name": Object {
+      "numeric": 8,
+    },
+  },
+  Object {
+    "date": 1999-01-08T23:00:00.000Z,
+    "name": Object {
+      "numeric": 9,
+    },
+  },
+  Object {
+    "date": 1999-01-09T23:00:00.000Z,
+    "name": Object {
+      "numeric": 10,
+    },
+  },
+  Object {
+    "date": 1999-01-10T23:00:00.000Z,
+    "name": Object {
+      "numeric": 11,
+    },
+  },
+  Object {
+    "date": 1999-01-11T23:00:00.000Z,
+    "name": Object {
+      "numeric": 12,
+    },
+  },
+  Object {
+    "date": 1999-01-12T23:00:00.000Z,
+    "name": Object {
+      "numeric": 13,
+    },
+  },
+  Object {
+    "date": 1999-01-13T23:00:00.000Z,
+    "name": Object {
+      "numeric": 14,
+    },
+  },
+  Object {
+    "date": 1999-01-14T23:00:00.000Z,
+    "name": Object {
+      "numeric": 15,
+    },
+  },
+  Object {
+    "date": 1999-01-15T23:00:00.000Z,
+    "name": Object {
+      "numeric": 16,
+    },
+  },
+  Object {
+    "date": 1999-01-16T23:00:00.000Z,
+    "name": Object {
+      "numeric": 17,
+    },
+  },
+  Object {
+    "date": 1999-01-17T23:00:00.000Z,
+    "name": Object {
+      "numeric": 18,
+    },
+  },
+  Object {
+    "date": 1999-01-18T23:00:00.000Z,
+    "name": Object {
+      "numeric": 19,
+    },
+  },
+  Object {
+    "date": 1999-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 20,
+    },
+  },
+  Object {
+    "date": 1999-01-20T23:00:00.000Z,
+    "name": Object {
+      "numeric": 21,
+    },
+  },
+  Object {
+    "date": 1999-01-21T23:00:00.000Z,
+    "name": Object {
+      "numeric": 22,
+    },
+  },
+  Object {
+    "date": 1999-01-22T23:00:00.000Z,
+    "name": Object {
+      "numeric": 23,
+    },
+  },
+  Object {
+    "date": 1999-01-23T23:00:00.000Z,
+    "name": Object {
+      "numeric": 24,
+    },
+  },
+  Object {
+    "date": 1999-01-24T23:00:00.000Z,
+    "name": Object {
+      "numeric": 25,
+    },
+  },
+  Object {
+    "date": 1999-01-25T23:00:00.000Z,
+    "name": Object {
+      "numeric": 26,
+    },
+  },
+  Object {
+    "date": 1999-01-26T23:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1999-01-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1999-01-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1999-01-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1999-01-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1999-01-31T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-02-01T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-02-02T23:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-02-03T23:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-02-04T23:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-02-05T23:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+]
+`;
+
+exports[`getDays returns collection of day dates and numeric values for calendar month (starting from specified week start) of provided date 2`] = `
+Array [
+  Object {
+    "date": 1998-12-26T23:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1998-12-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1998-12-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1998-12-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1998-12-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-01-01T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-01-02T23:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-01-03T23:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-01-04T23:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-01-05T23:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+  Object {
+    "date": 1999-01-06T23:00:00.000Z,
+    "name": Object {
+      "numeric": 7,
+    },
+  },
+  Object {
+    "date": 1999-01-07T23:00:00.000Z,
+    "name": Object {
+      "numeric": 8,
+    },
+  },
+  Object {
+    "date": 1999-01-08T23:00:00.000Z,
+    "name": Object {
+      "numeric": 9,
+    },
+  },
+  Object {
+    "date": 1999-01-09T23:00:00.000Z,
+    "name": Object {
+      "numeric": 10,
+    },
+  },
+  Object {
+    "date": 1999-01-10T23:00:00.000Z,
+    "name": Object {
+      "numeric": 11,
+    },
+  },
+  Object {
+    "date": 1999-01-11T23:00:00.000Z,
+    "name": Object {
+      "numeric": 12,
+    },
+  },
+  Object {
+    "date": 1999-01-12T23:00:00.000Z,
+    "name": Object {
+      "numeric": 13,
+    },
+  },
+  Object {
+    "date": 1999-01-13T23:00:00.000Z,
+    "name": Object {
+      "numeric": 14,
+    },
+  },
+  Object {
+    "date": 1999-01-14T23:00:00.000Z,
+    "name": Object {
+      "numeric": 15,
+    },
+  },
+  Object {
+    "date": 1999-01-15T23:00:00.000Z,
+    "name": Object {
+      "numeric": 16,
+    },
+  },
+  Object {
+    "date": 1999-01-16T23:00:00.000Z,
+    "name": Object {
+      "numeric": 17,
+    },
+  },
+  Object {
+    "date": 1999-01-17T23:00:00.000Z,
+    "name": Object {
+      "numeric": 18,
+    },
+  },
+  Object {
+    "date": 1999-01-18T23:00:00.000Z,
+    "name": Object {
+      "numeric": 19,
+    },
+  },
+  Object {
+    "date": 1999-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 20,
+    },
+  },
+  Object {
+    "date": 1999-01-20T23:00:00.000Z,
+    "name": Object {
+      "numeric": 21,
+    },
+  },
+  Object {
+    "date": 1999-01-21T23:00:00.000Z,
+    "name": Object {
+      "numeric": 22,
+    },
+  },
+  Object {
+    "date": 1999-01-22T23:00:00.000Z,
+    "name": Object {
+      "numeric": 23,
+    },
+  },
+  Object {
+    "date": 1999-01-23T23:00:00.000Z,
+    "name": Object {
+      "numeric": 24,
+    },
+  },
+  Object {
+    "date": 1999-01-24T23:00:00.000Z,
+    "name": Object {
+      "numeric": 25,
+    },
+  },
+  Object {
+    "date": 1999-01-25T23:00:00.000Z,
+    "name": Object {
+      "numeric": 26,
+    },
+  },
+  Object {
+    "date": 1999-01-26T23:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1999-01-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1999-01-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1999-01-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1999-01-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1999-01-31T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-02-01T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-02-02T23:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-02-03T23:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-02-04T23:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-02-05T23:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+]
+`;
+
+exports[`getDays returns collection of day dates and numeric values for calendar month (starting from specified week start) of provided date 3`] = `
+Array [
+  Object {
+    "date": 1998-12-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1998-12-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1998-12-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1998-12-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-01-01T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-01-02T23:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-01-03T23:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-01-04T23:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-01-05T23:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+  Object {
+    "date": 1999-01-06T23:00:00.000Z,
+    "name": Object {
+      "numeric": 7,
+    },
+  },
+  Object {
+    "date": 1999-01-07T23:00:00.000Z,
+    "name": Object {
+      "numeric": 8,
+    },
+  },
+  Object {
+    "date": 1999-01-08T23:00:00.000Z,
+    "name": Object {
+      "numeric": 9,
+    },
+  },
+  Object {
+    "date": 1999-01-09T23:00:00.000Z,
+    "name": Object {
+      "numeric": 10,
+    },
+  },
+  Object {
+    "date": 1999-01-10T23:00:00.000Z,
+    "name": Object {
+      "numeric": 11,
+    },
+  },
+  Object {
+    "date": 1999-01-11T23:00:00.000Z,
+    "name": Object {
+      "numeric": 12,
+    },
+  },
+  Object {
+    "date": 1999-01-12T23:00:00.000Z,
+    "name": Object {
+      "numeric": 13,
+    },
+  },
+  Object {
+    "date": 1999-01-13T23:00:00.000Z,
+    "name": Object {
+      "numeric": 14,
+    },
+  },
+  Object {
+    "date": 1999-01-14T23:00:00.000Z,
+    "name": Object {
+      "numeric": 15,
+    },
+  },
+  Object {
+    "date": 1999-01-15T23:00:00.000Z,
+    "name": Object {
+      "numeric": 16,
+    },
+  },
+  Object {
+    "date": 1999-01-16T23:00:00.000Z,
+    "name": Object {
+      "numeric": 17,
+    },
+  },
+  Object {
+    "date": 1999-01-17T23:00:00.000Z,
+    "name": Object {
+      "numeric": 18,
+    },
+  },
+  Object {
+    "date": 1999-01-18T23:00:00.000Z,
+    "name": Object {
+      "numeric": 19,
+    },
+  },
+  Object {
+    "date": 1999-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 20,
+    },
+  },
+  Object {
+    "date": 1999-01-20T23:00:00.000Z,
+    "name": Object {
+      "numeric": 21,
+    },
+  },
+  Object {
+    "date": 1999-01-21T23:00:00.000Z,
+    "name": Object {
+      "numeric": 22,
+    },
+  },
+  Object {
+    "date": 1999-01-22T23:00:00.000Z,
+    "name": Object {
+      "numeric": 23,
+    },
+  },
+  Object {
+    "date": 1999-01-23T23:00:00.000Z,
+    "name": Object {
+      "numeric": 24,
+    },
+  },
+  Object {
+    "date": 1999-01-24T23:00:00.000Z,
+    "name": Object {
+      "numeric": 25,
+    },
+  },
+  Object {
+    "date": 1999-01-25T23:00:00.000Z,
+    "name": Object {
+      "numeric": 26,
+    },
+  },
+  Object {
+    "date": 1999-01-26T23:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1999-01-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1999-01-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1999-01-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1999-01-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+]
+`;
+
+exports[`getDays returns collection of day dates and numeric values for calendar month (starting from specified week start) of provided date 4`] = `
+Array [
+  Object {
+    "date": 1998-12-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1998-12-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1998-12-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1998-12-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-01-01T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-01-02T23:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-01-03T23:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-01-04T23:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-01-05T23:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+  Object {
+    "date": 1999-01-06T23:00:00.000Z,
+    "name": Object {
+      "numeric": 7,
+    },
+  },
+  Object {
+    "date": 1999-01-07T23:00:00.000Z,
+    "name": Object {
+      "numeric": 8,
+    },
+  },
+  Object {
+    "date": 1999-01-08T23:00:00.000Z,
+    "name": Object {
+      "numeric": 9,
+    },
+  },
+  Object {
+    "date": 1999-01-09T23:00:00.000Z,
+    "name": Object {
+      "numeric": 10,
+    },
+  },
+  Object {
+    "date": 1999-01-10T23:00:00.000Z,
+    "name": Object {
+      "numeric": 11,
+    },
+  },
+  Object {
+    "date": 1999-01-11T23:00:00.000Z,
+    "name": Object {
+      "numeric": 12,
+    },
+  },
+  Object {
+    "date": 1999-01-12T23:00:00.000Z,
+    "name": Object {
+      "numeric": 13,
+    },
+  },
+  Object {
+    "date": 1999-01-13T23:00:00.000Z,
+    "name": Object {
+      "numeric": 14,
+    },
+  },
+  Object {
+    "date": 1999-01-14T23:00:00.000Z,
+    "name": Object {
+      "numeric": 15,
+    },
+  },
+  Object {
+    "date": 1999-01-15T23:00:00.000Z,
+    "name": Object {
+      "numeric": 16,
+    },
+  },
+  Object {
+    "date": 1999-01-16T23:00:00.000Z,
+    "name": Object {
+      "numeric": 17,
+    },
+  },
+  Object {
+    "date": 1999-01-17T23:00:00.000Z,
+    "name": Object {
+      "numeric": 18,
+    },
+  },
+  Object {
+    "date": 1999-01-18T23:00:00.000Z,
+    "name": Object {
+      "numeric": 19,
+    },
+  },
+  Object {
+    "date": 1999-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 20,
+    },
+  },
+  Object {
+    "date": 1999-01-20T23:00:00.000Z,
+    "name": Object {
+      "numeric": 21,
+    },
+  },
+  Object {
+    "date": 1999-01-21T23:00:00.000Z,
+    "name": Object {
+      "numeric": 22,
+    },
+  },
+  Object {
+    "date": 1999-01-22T23:00:00.000Z,
+    "name": Object {
+      "numeric": 23,
+    },
+  },
+  Object {
+    "date": 1999-01-23T23:00:00.000Z,
+    "name": Object {
+      "numeric": 24,
+    },
+  },
+  Object {
+    "date": 1999-01-24T23:00:00.000Z,
+    "name": Object {
+      "numeric": 25,
+    },
+  },
+  Object {
+    "date": 1999-01-25T23:00:00.000Z,
+    "name": Object {
+      "numeric": 26,
+    },
+  },
+  Object {
+    "date": 1999-01-26T23:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1999-01-27T23:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1999-01-28T23:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1999-01-29T23:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1999-01-30T23:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+]
+`;
+
+exports[`getMonths returns collection of month names and date from locale 1`] = `
+Array [
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jan",
+      "narrow": "J",
+      "numeric": 0,
+      "wide": "January",
+    },
+  },
+  Object {
+    "date": 1999-01-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Feb",
+      "narrow": "F",
+      "numeric": 1,
+      "wide": "February",
+    },
+  },
+  Object {
+    "date": 1999-02-28T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Mar",
+      "narrow": "M",
+      "numeric": 2,
+      "wide": "March",
+    },
+  },
+  Object {
+    "date": 1999-03-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Apr",
+      "narrow": "A",
+      "numeric": 3,
+      "wide": "April",
+    },
+  },
+  Object {
+    "date": 1999-04-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "May",
+      "narrow": "M",
+      "numeric": 4,
+      "wide": "May",
+    },
+  },
+  Object {
+    "date": 1999-05-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jun",
+      "narrow": "J",
+      "numeric": 5,
+      "wide": "June",
+    },
+  },
+  Object {
+    "date": 1999-06-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jul",
+      "narrow": "J",
+      "numeric": 6,
+      "wide": "July",
+    },
+  },
+  Object {
+    "date": 1999-07-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Aug",
+      "narrow": "A",
+      "numeric": 7,
+      "wide": "August",
+    },
+  },
+  Object {
+    "date": 1999-08-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Sep",
+      "narrow": "S",
+      "numeric": 8,
+      "wide": "September",
+    },
+  },
+  Object {
+    "date": 1999-09-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Oct",
+      "narrow": "O",
+      "numeric": 9,
+      "wide": "October",
+    },
+  },
+  Object {
+    "date": 1999-10-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Nov",
+      "narrow": "N",
+      "numeric": 10,
+      "wide": "November",
+    },
+  },
+  Object {
+    "date": 1999-11-30T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Dec",
+      "narrow": "D",
+      "numeric": 11,
+      "wide": "December",
+    },
+  },
+]
+`;
+
+exports[`getMonths returns collection of month names and date from locale 2`] = `
+Array [
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jan",
+      "narrow": "J",
+      "numeric": 0,
+      "wide": "January",
+    },
+  },
+  Object {
+    "date": 1999-01-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Feb",
+      "narrow": "F",
+      "numeric": 1,
+      "wide": "February",
+    },
+  },
+  Object {
+    "date": 1999-02-28T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Mar",
+      "narrow": "M",
+      "numeric": 2,
+      "wide": "March",
+    },
+  },
+  Object {
+    "date": 1999-03-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Apr",
+      "narrow": "A",
+      "numeric": 3,
+      "wide": "April",
+    },
+  },
+  Object {
+    "date": 1999-04-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "May",
+      "narrow": "M",
+      "numeric": 4,
+      "wide": "May",
+    },
+  },
+  Object {
+    "date": 1999-05-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jun",
+      "narrow": "J",
+      "numeric": 5,
+      "wide": "June",
+    },
+  },
+  Object {
+    "date": 1999-06-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jul",
+      "narrow": "J",
+      "numeric": 6,
+      "wide": "July",
+    },
+  },
+  Object {
+    "date": 1999-07-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Aug",
+      "narrow": "A",
+      "numeric": 7,
+      "wide": "August",
+    },
+  },
+  Object {
+    "date": 1999-08-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Sep",
+      "narrow": "S",
+      "numeric": 8,
+      "wide": "September",
+    },
+  },
+  Object {
+    "date": 1999-09-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Oct",
+      "narrow": "O",
+      "numeric": 9,
+      "wide": "October",
+    },
+  },
+  Object {
+    "date": 1999-10-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Nov",
+      "narrow": "N",
+      "numeric": 10,
+      "wide": "November",
+    },
+  },
+  Object {
+    "date": 1999-11-30T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Dec",
+      "narrow": "D",
+      "numeric": 11,
+      "wide": "December",
+    },
+  },
+]
+`;
+
+exports[`getMonths returns collection of month names and date from locale 3`] = `
+Array [
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "янв.",
+      "narrow": "Я",
+      "numeric": 0,
+      "wide": "январь",
+    },
+  },
+  Object {
+    "date": 1999-01-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "фев.",
+      "narrow": "Ф",
+      "numeric": 1,
+      "wide": "февраль",
+    },
+  },
+  Object {
+    "date": 1999-02-28T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "март",
+      "narrow": "М",
+      "numeric": 2,
+      "wide": "март",
+    },
+  },
+  Object {
+    "date": 1999-03-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "апр.",
+      "narrow": "А",
+      "numeric": 3,
+      "wide": "апрель",
+    },
+  },
+  Object {
+    "date": 1999-04-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "май",
+      "narrow": "М",
+      "numeric": 4,
+      "wide": "май",
+    },
+  },
+  Object {
+    "date": 1999-05-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "июнь",
+      "narrow": "И",
+      "numeric": 5,
+      "wide": "июнь",
+    },
+  },
+  Object {
+    "date": 1999-06-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "июль",
+      "narrow": "И",
+      "numeric": 6,
+      "wide": "июль",
+    },
+  },
+  Object {
+    "date": 1999-07-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "авг.",
+      "narrow": "А",
+      "numeric": 7,
+      "wide": "август",
+    },
+  },
+  Object {
+    "date": 1999-08-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "сент.",
+      "narrow": "С",
+      "numeric": 8,
+      "wide": "сентябрь",
+    },
+  },
+  Object {
+    "date": 1999-09-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "окт.",
+      "narrow": "О",
+      "numeric": 9,
+      "wide": "октябрь",
+    },
+  },
+  Object {
+    "date": 1999-10-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "нояб.",
+      "narrow": "Н",
+      "numeric": 10,
+      "wide": "ноябрь",
+    },
+  },
+  Object {
+    "date": 1999-11-30T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "дек.",
+      "narrow": "Д",
+      "numeric": 11,
+      "wide": "декабрь",
+    },
+  },
+]
+`;
+
+exports[`getMonths returns collection of month names and date from locale 4`] = `
+Array [
+  Object {
+    "date": 1998-12-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "янв.",
+      "narrow": "Я",
+      "numeric": 0,
+      "wide": "январь",
+    },
+  },
+  Object {
+    "date": 1999-01-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "фев.",
+      "narrow": "Ф",
+      "numeric": 1,
+      "wide": "февраль",
+    },
+  },
+  Object {
+    "date": 1999-02-28T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "март",
+      "narrow": "М",
+      "numeric": 2,
+      "wide": "март",
+    },
+  },
+  Object {
+    "date": 1999-03-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "апр.",
+      "narrow": "А",
+      "numeric": 3,
+      "wide": "апрель",
+    },
+  },
+  Object {
+    "date": 1999-04-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "май",
+      "narrow": "М",
+      "numeric": 4,
+      "wide": "май",
+    },
+  },
+  Object {
+    "date": 1999-05-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "июнь",
+      "narrow": "И",
+      "numeric": 5,
+      "wide": "июнь",
+    },
+  },
+  Object {
+    "date": 1999-06-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "июль",
+      "narrow": "И",
+      "numeric": 6,
+      "wide": "июль",
+    },
+  },
+  Object {
+    "date": 1999-07-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "авг.",
+      "narrow": "А",
+      "numeric": 7,
+      "wide": "август",
+    },
+  },
+  Object {
+    "date": 1999-08-31T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "сент.",
+      "narrow": "С",
+      "numeric": 8,
+      "wide": "сентябрь",
+    },
+  },
+  Object {
+    "date": 1999-09-30T22:00:00.000Z,
+    "name": Object {
+      "abbreviated": "окт.",
+      "narrow": "О",
+      "numeric": 9,
+      "wide": "октябрь",
+    },
+  },
+  Object {
+    "date": 1999-10-31T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "нояб.",
+      "narrow": "Н",
+      "numeric": 10,
+      "wide": "ноябрь",
+    },
+  },
+  Object {
+    "date": 1999-11-30T23:00:00.000Z,
+    "name": Object {
+      "abbreviated": "дек.",
+      "narrow": "Д",
+      "numeric": 11,
+      "wide": "декабрь",
+    },
+  },
+]
+`;
+
+exports[`getWeekDayNames returns collection of weekday names from locale 1`] = `
+Array [
+  Object {
+    "abbreviated": "Sun",
+    "narrow": "S",
+    "numeric": 0,
+    "short": "Su",
+    "wide": "Sunday",
+  },
+  Object {
+    "abbreviated": "Mon",
+    "narrow": "M",
+    "numeric": 1,
+    "short": "Mo",
+    "wide": "Monday",
+  },
+  Object {
+    "abbreviated": "Tue",
+    "narrow": "T",
+    "numeric": 2,
+    "short": "Tu",
+    "wide": "Tuesday",
+  },
+  Object {
+    "abbreviated": "Wed",
+    "narrow": "W",
+    "numeric": 3,
+    "short": "We",
+    "wide": "Wednesday",
+  },
+  Object {
+    "abbreviated": "Thu",
+    "narrow": "T",
+    "numeric": 4,
+    "short": "Th",
+    "wide": "Thursday",
+  },
+  Object {
+    "abbreviated": "Fri",
+    "narrow": "F",
+    "numeric": 5,
+    "short": "Fr",
+    "wide": "Friday",
+  },
+  Object {
+    "abbreviated": "Sat",
+    "narrow": "S",
+    "numeric": 6,
+    "short": "Sa",
+    "wide": "Saturday",
+  },
+]
+`;
+
+exports[`getWeekDayNames returns collection of weekday names from locale 2`] = `
+Array [
+  Object {
+    "abbreviated": "пнд",
+    "narrow": "П",
+    "numeric": 0,
+    "short": "пн",
+    "wide": "понедельник",
+  },
+  Object {
+    "abbreviated": "втр",
+    "narrow": "В",
+    "numeric": 1,
+    "short": "вт",
+    "wide": "вторник",
+  },
+  Object {
+    "abbreviated": "срд",
+    "narrow": "С",
+    "numeric": 2,
+    "short": "ср",
+    "wide": "среда",
+  },
+  Object {
+    "abbreviated": "чтв",
+    "narrow": "Ч",
+    "numeric": 3,
+    "short": "чт",
+    "wide": "четверг",
+  },
+  Object {
+    "abbreviated": "птн",
+    "narrow": "П",
+    "numeric": 4,
+    "short": "пт",
+    "wide": "пятница",
+  },
+  Object {
+    "abbreviated": "суб",
+    "narrow": "С",
+    "numeric": 5,
+    "short": "сб",
+    "wide": "суббота",
+  },
+  Object {
+    "abbreviated": "вск",
+    "narrow": "В",
+    "numeric": 6,
+    "short": "вс",
+    "wide": "воскресенье",
+  },
+]
+`;
+
+exports[`getYears returns collection of year dates and numeric \`1999\` values 1`] = `
+Array [
+  Object {
+    "date": 1999-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1999,
+    },
+  },
+  Object {
+    "date": 2000-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2000,
+    },
+  },
+  Object {
+    "date": 2001-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2001,
+    },
+  },
+  Object {
+    "date": 2002-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2002,
+    },
+  },
+  Object {
+    "date": 2003-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2003,
+    },
+  },
+  Object {
+    "date": 2004-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2004,
+    },
+  },
+  Object {
+    "date": 2005-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2005,
+    },
+  },
+  Object {
+    "date": 2006-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2006,
+    },
+  },
+  Object {
+    "date": 2007-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2007,
+    },
+  },
+  Object {
+    "date": 2008-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2008,
+    },
+  },
+  Object {
+    "date": 2009-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2009,
+    },
+  },
+  Object {
+    "date": 2010-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2010,
+    },
+  },
+  Object {
+    "date": 2011-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2011,
+    },
+  },
+  Object {
+    "date": 2012-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2012,
+    },
+  },
+  Object {
+    "date": 2013-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2013,
+    },
+  },
+  Object {
+    "date": 2014-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2014,
+    },
+  },
+  Object {
+    "date": 2015-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2015,
+    },
+  },
+  Object {
+    "date": 2016-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2016,
+    },
+  },
+  Object {
+    "date": 2017-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2017,
+    },
+  },
+  Object {
+    "date": 2018-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2018,
+    },
+  },
+  Object {
+    "date": 2019-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2019,
+    },
+  },
+  Object {
+    "date": 2020-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2020,
+    },
+  },
+]
+`;
+
+exports[`getYears returns collection of year dates and numeric \`1999\` values 2`] = `
+Array [
+  Object {
+    "date": 1999-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 1999,
+    },
+  },
+  Object {
+    "date": 2000-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2000,
+    },
+  },
+  Object {
+    "date": 2001-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2001,
+    },
+  },
+  Object {
+    "date": 2002-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2002,
+    },
+  },
+  Object {
+    "date": 2003-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2003,
+    },
+  },
+  Object {
+    "date": 2004-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2004,
+    },
+  },
+  Object {
+    "date": 2005-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2005,
+    },
+  },
+  Object {
+    "date": 2006-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2006,
+    },
+  },
+  Object {
+    "date": 2007-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2007,
+    },
+  },
+  Object {
+    "date": 2008-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2008,
+    },
+  },
+  Object {
+    "date": 2009-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2009,
+    },
+  },
+  Object {
+    "date": 2010-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2010,
+    },
+  },
+  Object {
+    "date": 2011-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2011,
+    },
+  },
+  Object {
+    "date": 2012-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2012,
+    },
+  },
+  Object {
+    "date": 2013-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2013,
+    },
+  },
+  Object {
+    "date": 2014-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2014,
+    },
+  },
+  Object {
+    "date": 2015-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2015,
+    },
+  },
+  Object {
+    "date": 2016-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2016,
+    },
+  },
+  Object {
+    "date": 2017-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2017,
+    },
+  },
+  Object {
+    "date": 2018-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2018,
+    },
+  },
+  Object {
+    "date": 2019-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2019,
+    },
+  },
+  Object {
+    "date": 2020-01-19T23:00:00.000Z,
+    "name": Object {
+      "numeric": 2020,
+    },
+  },
+]
+`;

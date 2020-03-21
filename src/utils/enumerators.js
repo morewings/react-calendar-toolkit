@@ -41,7 +41,7 @@ import curry from 'utils/curry';
  * @param {Object} locale - Locale object
  * @return {Array.<ItemName>}
  */
-const getWeekDayNames = locale =>
+export const getWeekDayNames = locale =>
   [...Array(7).keys()].map(i => {
     const dayNumber =
       i + locale.options.weekStartsOn === 7
@@ -55,10 +55,6 @@ const getWeekDayNames = locale =>
       numeric: i,
     };
   });
-
-const getWeekDayNamesCurried = curry(getWeekDayNames);
-
-export {getWeekDayNamesCurried as getWeekDayNames};
 
 /**
  * @function
