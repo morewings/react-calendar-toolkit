@@ -11,9 +11,12 @@ cache:
 script:
   - yarn lint
   - yarn stylelint
-  - yarn test
+  - yarn test --coverage
   - yarn build:docs
   - yarn build:rollup
+
+after_success:
+  - bash < (curl -s https://codecov.io/bash)
 
 deploy:
   - provider: pages

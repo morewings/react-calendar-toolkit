@@ -233,7 +233,7 @@ describe('ceilMonth', () => {
 describe('floorMonth', () => {
   it('returns first Date of month provided value belongs', () => {
     const value = new Date('2020-01-12T00:00:00.000+01:00'); // 12.01.2020
-    const expected = new Date('2019-12-31T23:00:00.000Z'); // 31.01.2020
+    const expected = new Date('2019-12-31T23:00:00.000Z'); // 1.01.2020
     expect(floorMonth(value)).toStrictEqual(expected);
     expect(floorMonth(value.getTime())).toStrictEqual(expected);
   });
