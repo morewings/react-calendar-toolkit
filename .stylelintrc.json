@@ -10,5 +10,6 @@
   },
   "plugins": [
     "stylelint-order"
-  ]
+  ],
+  "ignoreFiles": ["**/*.snap"]
 }
