@@ -16,60 +16,60 @@ import {
   floorMonth,
 } from './dateUtils';
 
-const date = new Date('2020-01-20T00:00:00.000+01:00'); // 20.01.2020
+const date = new Date('2020-01-20T00:00:00.000'); // 20.01.2020
 
-const saturday = new Date('2020-01-11T00:00:00.000+01:00'); // 11.01.2020
-const sunday = new Date('2020-01-12T00:00:00.000+01:00'); // 12.01.2020
-const monday = new Date('2020-01-13T00:00:00.000+01:00'); // 13.01.2020
-const tuesday = new Date('2020-01-14T00:00:00.000+01:00'); // 14.01.2020
-const wednesday = new Date('2020-01-15T00:00:00.000+01:00'); // 15.01.2020
-const thursday = new Date('2020-01-16T00:00:00.000+01:00'); // 16.01.2020
-const friday = new Date('2020-01-17T00:00:00.000+01:00'); // 17.01.2020
+const saturday = new Date('2020-01-11T00:00:00.000'); // 11.01.2020
+const sunday = new Date('2020-01-12T00:00:00.000'); // 12.01.2020
+const monday = new Date('2020-01-13T00:00:00.000'); // 13.01.2020
+const tuesday = new Date('2020-01-14T00:00:00.000'); // 14.01.2020
+const wednesday = new Date('2020-01-15T00:00:00.000'); // 15.01.2020
+const thursday = new Date('2020-01-16T00:00:00.000'); // 16.01.2020
+const friday = new Date('2020-01-17T00:00:00.000'); // 17.01.2020
 
 const sameDay = [
-  new Date('2020-01-20T00:00:00.000+01:00'),
-  new Date('2020-01-20T11:00:00.000+01:00'),
+  new Date('2020-01-20T00:00:00.000'),
+  new Date('2020-01-20T11:00:00.000'),
 ];
 
 const notSameDay = [
-  new Date('2020-01-20T00:00:00.000+01:00'),
-  new Date('2020-01-21T00:00:00.000+01:00'),
+  new Date('2020-01-20T00:00:00.000'),
+  new Date('2020-01-21T00:00:00.000'),
 ];
 
 const sameMonth = [
-  new Date('2020-01-01T00:00:00.000+01:00'),
-  new Date('2020-01-20T00:00:00.000+01:00'),
+  new Date('2020-01-01T00:00:00.000'),
+  new Date('2020-01-20T00:00:00.000'),
 ];
 
 const notSameMonth = [
-  new Date('2020-01-20T00:00:00.000+01:00'),
-  new Date('2020-02-20T00:00:00.000+01:00'),
+  new Date('2020-01-20T00:00:00.000'),
+  new Date('2020-02-20T00:00:00.000'),
 ];
 
 const sameYear = [
-  new Date('2020-01-01T00:00:00.000+01:00'),
-  new Date('2020-11-20T00:00:00.000+01:00'),
+  new Date('2020-01-01T00:00:00.000'),
+  new Date('2020-11-20T00:00:00.000'),
 ];
 
 const notSameYear = [
-  new Date('2020-01-20T00:00:00.000+01:00'),
-  new Date('2021-02-20T00:00:00.000+01:00'),
+  new Date('2020-01-20T00:00:00.000'),
+  new Date('2021-02-20T00:00:00.000'),
 ];
 
 const validInterval = {
-  start: new Date('2019-01-20T00:00:00.000+01:00'),
-  end: new Date('2021-01-20T00:00:00.000+01:00'),
+  start: new Date('2019-01-20T00:00:00.000'),
+  end: new Date('2021-01-20T00:00:00.000'),
 };
 
 const invalidInterval = {
-  start: new Date('2021-01-20T00:00:00.000+01:00'),
-  end: new Date('2022-01-20T00:00:00.000+01:00'),
+  start: new Date('2021-01-20T00:00:00.000'),
+  end: new Date('2022-01-20T00:00:00.000'),
 };
 
 describe('formatDateWithLocale', () => {
   const locale = {locale: enLocale};
   const pattern = `yyyy-MM-dd'T'HH:mm:ss.SSSxxx`;
-  const expected = '2020-01-20T00:00:00.000+01:00';
+  const expected = '2020-01-20T00:00:00.000+00:00';
 
   it('returns formatted date', () => {
     expect(formatDateWithLocale(locale, pattern, date)).toBe(expected);
@@ -147,8 +147,8 @@ describe('convertToDayOfMonth', () => {
 describe('incrementMonth', () => {
   it('adds specified amount of months to provided date or timestamp and returns timestamp', () => {
     const timestamp = date.getTime();
-    const firstExpected = 1582153200000;
-    const secondExpected = 1587333600000;
+    const firstExpected = 1582156800000;
+    const secondExpected = 1587340800000;
     expect(incrementMonth(date, 1)).toBe(firstExpected);
     expect(incrementMonth(timestamp, 1)).toBe(firstExpected);
     expect(incrementMonth(date, 3)).toBe(secondExpected);
@@ -159,8 +159,8 @@ describe('incrementMonth', () => {
 describe('decrementMonth', () => {
   it('adds specified amount of months to provided date or timestamp and returns timestamp', () => {
     const timestamp = date.getTime();
-    const firstExpected = 1576796400000;
-    const secondExpected = 1571522400000;
+    const firstExpected = 1576800000000;
+    const secondExpected = 1571529600000;
     expect(decrementMonth(date, 1)).toBe(firstExpected);
     expect(decrementMonth(timestamp, 1)).toBe(firstExpected);
     expect(decrementMonth(date, 3)).toBe(secondExpected);
@@ -223,8 +223,8 @@ describe.each`
 
 describe('ceilMonth', () => {
   it('returns last Date of month provided value belongs', () => {
-    const value = new Date('2020-01-12T00:00:00.000+01:00'); // 12.01.2020
-    const expected = new Date('2020-01-31T22:59:59.999Z'); // 31.01.2020
+    const value = new Date('2020-01-12T00:00:00.000'); // 12.01.2020
+    const expected = new Date('2020-01-31T23:59:59.999Z'); // 31.01.2020
     expect(ceilMonth(value)).toStrictEqual(expected);
     expect(ceilMonth(value.getTime())).toStrictEqual(expected);
   });
@@ -232,8 +232,8 @@ describe('ceilMonth', () => {
 
 describe('floorMonth', () => {
   it('returns first Date of month provided value belongs', () => {
-    const value = new Date('2020-01-12T00:00:00.000+01:00'); // 12.01.2020
-    const expected = new Date('2019-12-31T23:00:00.000Z'); // 1.01.2020
+    const value = new Date('2020-01-12T00:00:00.000'); // 12.01.2020
+    const expected = new Date('2020-01-01T00:00:00.000Z'); // 1.01.2020
     expect(floorMonth(value)).toStrictEqual(expected);
     expect(floorMonth(value.getTime())).toStrictEqual(expected);
   });

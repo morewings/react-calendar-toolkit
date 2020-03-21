@@ -119,6 +119,7 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "globalSetup": "<rootDir>/globalSetup.js"
   }
 }
