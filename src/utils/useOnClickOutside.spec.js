@@ -2,11 +2,11 @@ import React, {useRef} from 'react';
 import {mount} from 'enzyme';
 import useOnClickOutside from './useOnClickOutside';
 
-const callback = () => {};
+// TODO: add '@testing-library/react'
 
 const Component = () => {
   const ref = useRef();
-  useOnClickOutside(ref, callback);
+  useOnClickOutside(ref, () => {});
   return <div ref={ref} />;
 };
 
