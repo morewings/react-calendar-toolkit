@@ -1,7 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`useOnClickOutside renders 1`] = `
-<Component>
-  <div />
-</Component>
+<DocumentFragment>
+  <div
+    data-testid="parent"
+  >
+    Parent
+    <div
+      data-testid="sibling"
+    >
+      Sibling
+    </div>
+    <button
+      data-testid="clickable"
+      id="child"
+      type="button"
+    >
+      Child
+    </button>
+  </div>
+</DocumentFragment>
 `;
