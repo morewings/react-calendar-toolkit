@@ -26,17 +26,18 @@ describe('withLocaleContext', () => {
     const props = {
       hello: 'world',
     };
-    render(<Wrapped {...props} />);
+    const customLocale = {
+      foo: 'bar',
+    };
+    render(<Wrapped {...props} dateFnsLocale={customLocale} />);
     expect(Mock.mock.calls[0][0]).toEqual(props);
   });
 });
 
 describe('useLocaleContext', () => {
   it('returns en-US locale by default', () => {
-    const wrapper = ({children}) => <Provider>{children}</Provider>;
-
     const {result} = renderHook(() => useLocaleContext(), {
-      wrapper,
+      wrapper: ({children}) => <Provider>{children}</Provider>,
     });
 
     expect(result.current).toBe(defaultLocale);
@@ -47,12 +48,10 @@ describe('useLocaleContext', () => {
       foo: 'bar',
     };
 
-    const wrapper = ({children}) => (
-      <Provider value={customLocale}>{children}</Provider>
-    );
-
     const {result} = renderHook(() => useLocaleContext(), {
-      wrapper,
+      wrapper: ({children}) => (
+        <Provider value={customLocale}>{children}</Provider>
+      ),
     });
 
     expect(result.current).toBe(customLocale);

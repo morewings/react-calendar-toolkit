@@ -1,0 +1,703 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useLocaleEnumerators returns day enumerator with locale set 1`] = `
+Array [
+  Object {
+    "date": 1998-12-27T00:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1998-12-28T00:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1998-12-29T00:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1998-12-30T00:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1998-12-31T00:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1999-01-01T00:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-01-02T00:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-01-03T00:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-01-04T00:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-01-05T00:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-01-06T00:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+  Object {
+    "date": 1999-01-07T00:00:00.000Z,
+    "name": Object {
+      "numeric": 7,
+    },
+  },
+  Object {
+    "date": 1999-01-08T00:00:00.000Z,
+    "name": Object {
+      "numeric": 8,
+    },
+  },
+  Object {
+    "date": 1999-01-09T00:00:00.000Z,
+    "name": Object {
+      "numeric": 9,
+    },
+  },
+  Object {
+    "date": 1999-01-10T00:00:00.000Z,
+    "name": Object {
+      "numeric": 10,
+    },
+  },
+  Object {
+    "date": 1999-01-11T00:00:00.000Z,
+    "name": Object {
+      "numeric": 11,
+    },
+  },
+  Object {
+    "date": 1999-01-12T00:00:00.000Z,
+    "name": Object {
+      "numeric": 12,
+    },
+  },
+  Object {
+    "date": 1999-01-13T00:00:00.000Z,
+    "name": Object {
+      "numeric": 13,
+    },
+  },
+  Object {
+    "date": 1999-01-14T00:00:00.000Z,
+    "name": Object {
+      "numeric": 14,
+    },
+  },
+  Object {
+    "date": 1999-01-15T00:00:00.000Z,
+    "name": Object {
+      "numeric": 15,
+    },
+  },
+  Object {
+    "date": 1999-01-16T00:00:00.000Z,
+    "name": Object {
+      "numeric": 16,
+    },
+  },
+  Object {
+    "date": 1999-01-17T00:00:00.000Z,
+    "name": Object {
+      "numeric": 17,
+    },
+  },
+  Object {
+    "date": 1999-01-18T00:00:00.000Z,
+    "name": Object {
+      "numeric": 18,
+    },
+  },
+  Object {
+    "date": 1999-01-19T00:00:00.000Z,
+    "name": Object {
+      "numeric": 19,
+    },
+  },
+  Object {
+    "date": 1999-01-20T00:00:00.000Z,
+    "name": Object {
+      "numeric": 20,
+    },
+  },
+  Object {
+    "date": 1999-01-21T00:00:00.000Z,
+    "name": Object {
+      "numeric": 21,
+    },
+  },
+  Object {
+    "date": 1999-01-22T00:00:00.000Z,
+    "name": Object {
+      "numeric": 22,
+    },
+  },
+  Object {
+    "date": 1999-01-23T00:00:00.000Z,
+    "name": Object {
+      "numeric": 23,
+    },
+  },
+  Object {
+    "date": 1999-01-24T00:00:00.000Z,
+    "name": Object {
+      "numeric": 24,
+    },
+  },
+  Object {
+    "date": 1999-01-25T00:00:00.000Z,
+    "name": Object {
+      "numeric": 25,
+    },
+  },
+  Object {
+    "date": 1999-01-26T00:00:00.000Z,
+    "name": Object {
+      "numeric": 26,
+    },
+  },
+  Object {
+    "date": 1999-01-27T00:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1999-01-28T00:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1999-01-29T00:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1999-01-30T00:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1999-01-31T00:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1999-02-01T00:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-02-02T00:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-02-03T00:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-02-04T00:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-02-05T00:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-02-06T00:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+]
+`;
+
+exports[`useLocaleEnumerators returns day enumerator with locale set 2`] = `
+Array [
+  Object {
+    "date": 1998-12-28T00:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1998-12-29T00:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1998-12-30T00:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1998-12-31T00:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+  Object {
+    "date": 1999-01-01T00:00:00.000Z,
+    "name": Object {
+      "numeric": 1,
+    },
+  },
+  Object {
+    "date": 1999-01-02T00:00:00.000Z,
+    "name": Object {
+      "numeric": 2,
+    },
+  },
+  Object {
+    "date": 1999-01-03T00:00:00.000Z,
+    "name": Object {
+      "numeric": 3,
+    },
+  },
+  Object {
+    "date": 1999-01-04T00:00:00.000Z,
+    "name": Object {
+      "numeric": 4,
+    },
+  },
+  Object {
+    "date": 1999-01-05T00:00:00.000Z,
+    "name": Object {
+      "numeric": 5,
+    },
+  },
+  Object {
+    "date": 1999-01-06T00:00:00.000Z,
+    "name": Object {
+      "numeric": 6,
+    },
+  },
+  Object {
+    "date": 1999-01-07T00:00:00.000Z,
+    "name": Object {
+      "numeric": 7,
+    },
+  },
+  Object {
+    "date": 1999-01-08T00:00:00.000Z,
+    "name": Object {
+      "numeric": 8,
+    },
+  },
+  Object {
+    "date": 1999-01-09T00:00:00.000Z,
+    "name": Object {
+      "numeric": 9,
+    },
+  },
+  Object {
+    "date": 1999-01-10T00:00:00.000Z,
+    "name": Object {
+      "numeric": 10,
+    },
+  },
+  Object {
+    "date": 1999-01-11T00:00:00.000Z,
+    "name": Object {
+      "numeric": 11,
+    },
+  },
+  Object {
+    "date": 1999-01-12T00:00:00.000Z,
+    "name": Object {
+      "numeric": 12,
+    },
+  },
+  Object {
+    "date": 1999-01-13T00:00:00.000Z,
+    "name": Object {
+      "numeric": 13,
+    },
+  },
+  Object {
+    "date": 1999-01-14T00:00:00.000Z,
+    "name": Object {
+      "numeric": 14,
+    },
+  },
+  Object {
+    "date": 1999-01-15T00:00:00.000Z,
+    "name": Object {
+      "numeric": 15,
+    },
+  },
+  Object {
+    "date": 1999-01-16T00:00:00.000Z,
+    "name": Object {
+      "numeric": 16,
+    },
+  },
+  Object {
+    "date": 1999-01-17T00:00:00.000Z,
+    "name": Object {
+      "numeric": 17,
+    },
+  },
+  Object {
+    "date": 1999-01-18T00:00:00.000Z,
+    "name": Object {
+      "numeric": 18,
+    },
+  },
+  Object {
+    "date": 1999-01-19T00:00:00.000Z,
+    "name": Object {
+      "numeric": 19,
+    },
+  },
+  Object {
+    "date": 1999-01-20T00:00:00.000Z,
+    "name": Object {
+      "numeric": 20,
+    },
+  },
+  Object {
+    "date": 1999-01-21T00:00:00.000Z,
+    "name": Object {
+      "numeric": 21,
+    },
+  },
+  Object {
+    "date": 1999-01-22T00:00:00.000Z,
+    "name": Object {
+      "numeric": 22,
+    },
+  },
+  Object {
+    "date": 1999-01-23T00:00:00.000Z,
+    "name": Object {
+      "numeric": 23,
+    },
+  },
+  Object {
+    "date": 1999-01-24T00:00:00.000Z,
+    "name": Object {
+      "numeric": 24,
+    },
+  },
+  Object {
+    "date": 1999-01-25T00:00:00.000Z,
+    "name": Object {
+      "numeric": 25,
+    },
+  },
+  Object {
+    "date": 1999-01-26T00:00:00.000Z,
+    "name": Object {
+      "numeric": 26,
+    },
+  },
+  Object {
+    "date": 1999-01-27T00:00:00.000Z,
+    "name": Object {
+      "numeric": 27,
+    },
+  },
+  Object {
+    "date": 1999-01-28T00:00:00.000Z,
+    "name": Object {
+      "numeric": 28,
+    },
+  },
+  Object {
+    "date": 1999-01-29T00:00:00.000Z,
+    "name": Object {
+      "numeric": 29,
+    },
+  },
+  Object {
+    "date": 1999-01-30T00:00:00.000Z,
+    "name": Object {
+      "numeric": 30,
+    },
+  },
+  Object {
+    "date": 1999-01-31T00:00:00.000Z,
+    "name": Object {
+      "numeric": 31,
+    },
+  },
+]
+`;
+
+exports[`useLocaleEnumerators returns month enumerator with locale set 1`] = `
+Array [
+  Object {
+    "date": 1999-01-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jan",
+      "narrow": "J",
+      "numeric": 0,
+      "wide": "January",
+    },
+  },
+  Object {
+    "date": 1999-02-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Feb",
+      "narrow": "F",
+      "numeric": 1,
+      "wide": "February",
+    },
+  },
+  Object {
+    "date": 1999-03-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Mar",
+      "narrow": "M",
+      "numeric": 2,
+      "wide": "March",
+    },
+  },
+  Object {
+    "date": 1999-04-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Apr",
+      "narrow": "A",
+      "numeric": 3,
+      "wide": "April",
+    },
+  },
+  Object {
+    "date": 1999-05-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "May",
+      "narrow": "M",
+      "numeric": 4,
+      "wide": "May",
+    },
+  },
+  Object {
+    "date": 1999-06-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jun",
+      "narrow": "J",
+      "numeric": 5,
+      "wide": "June",
+    },
+  },
+  Object {
+    "date": 1999-07-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Jul",
+      "narrow": "J",
+      "numeric": 6,
+      "wide": "July",
+    },
+  },
+  Object {
+    "date": 1999-08-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Aug",
+      "narrow": "A",
+      "numeric": 7,
+      "wide": "August",
+    },
+  },
+  Object {
+    "date": 1999-09-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Sep",
+      "narrow": "S",
+      "numeric": 8,
+      "wide": "September",
+    },
+  },
+  Object {
+    "date": 1999-10-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Oct",
+      "narrow": "O",
+      "numeric": 9,
+      "wide": "October",
+    },
+  },
+  Object {
+    "date": 1999-11-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Nov",
+      "narrow": "N",
+      "numeric": 10,
+      "wide": "November",
+    },
+  },
+  Object {
+    "date": 1999-12-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "Dec",
+      "narrow": "D",
+      "numeric": 11,
+      "wide": "December",
+    },
+  },
+]
+`;
+
+exports[`useLocaleEnumerators returns month enumerator with locale set 2`] = `
+Array [
+  Object {
+    "date": 1999-01-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "студз.",
+      "narrow": "С",
+      "numeric": 0,
+      "wide": "студзень",
+    },
+  },
+  Object {
+    "date": 1999-02-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "лют.",
+      "narrow": "Л",
+      "numeric": 1,
+      "wide": "люты",
+    },
+  },
+  Object {
+    "date": 1999-03-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "сак.",
+      "narrow": "С",
+      "numeric": 2,
+      "wide": "сакавік",
+    },
+  },
+  Object {
+    "date": 1999-04-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "крас.",
+      "narrow": "К",
+      "numeric": 3,
+      "wide": "красавік",
+    },
+  },
+  Object {
+    "date": 1999-05-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "май",
+      "narrow": "М",
+      "numeric": 4,
+      "wide": "май",
+    },
+  },
+  Object {
+    "date": 1999-06-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "чэрв.",
+      "narrow": "Ч",
+      "numeric": 5,
+      "wide": "чэрвень",
+    },
+  },
+  Object {
+    "date": 1999-07-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "ліп.",
+      "narrow": "Л",
+      "numeric": 6,
+      "wide": "ліпень",
+    },
+  },
+  Object {
+    "date": 1999-08-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "жн.",
+      "narrow": "Ж",
+      "numeric": 7,
+      "wide": "жнівень",
+    },
+  },
+  Object {
+    "date": 1999-09-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "вер.",
+      "narrow": "В",
+      "numeric": 8,
+      "wide": "верасень",
+    },
+  },
+  Object {
+    "date": 1999-10-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "кастр.",
+      "narrow": "К",
+      "numeric": 9,
+      "wide": "кастрычнік",
+    },
+  },
+  Object {
+    "date": 1999-11-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "ліст.",
+      "narrow": "Л",
+      "numeric": 10,
+      "wide": "лістапад",
+    },
+  },
+  Object {
+    "date": 1999-12-01T00:00:00.000Z,
+    "name": Object {
+      "abbreviated": "снеж.",
+      "narrow": "С",
+      "numeric": 11,
+      "wide": "снежань",
+    },
+  },
+]
+`;
+
+exports[`useLocaleEnumerators returns year enumerator with locale set 1`] = `[Function]`;
+
+exports[`useLocaleEnumerators returns year enumerator with locale set 2`] = `[Function]`;

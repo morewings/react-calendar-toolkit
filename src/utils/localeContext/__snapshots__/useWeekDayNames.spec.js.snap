@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useWeekDayNames returns custom locale formatted weekday names 1`] = `
+Array [
+  Object {
+    "abbreviated": "пан",
+    "narrow": "П",
+    "numeric": 0,
+    "short": "пн",
+    "wide": "панядзелак",
+  },
+  Object {
+    "abbreviated": "аўт",
+    "narrow": "А",
+    "numeric": 1,
+    "short": "аў",
+    "wide": "аўторак",
+  },
+  Object {
+    "abbreviated": "сер",
+    "narrow": "С",
+    "numeric": 2,
+    "short": "ср",
+    "wide": "серада",
+  },
+  Object {
+    "abbreviated": "чац",
+    "narrow": "Ч",
+    "numeric": 3,
+    "short": "чц",
+    "wide": "чацвер",
+  },
+  Object {
+    "abbreviated": "пят",
+    "narrow": "П",
+    "numeric": 4,
+    "short": "пт",
+    "wide": "пятніца",
+  },
+  Object {
+    "abbreviated": "суб",
+    "narrow": "С",
+    "numeric": 5,
+    "short": "сб",
+    "wide": "субота",
+  },
+  Object {
+    "abbreviated": "нядз",
+    "narrow": "Н",
+    "numeric": 6,
+    "short": "нд",
+    "wide": "нядзеля",
+  },
+]
+`;
+
+exports[`useWeekDayNames returns en-US locale formatted weekday names by default 1`] = `
+Array [
+  Object {
+    "abbreviated": "Sun",
+    "narrow": "S",
+    "numeric": 0,
+    "short": "Su",
+    "wide": "Sunday",
+  },
+  Object {
+    "abbreviated": "Mon",
+    "narrow": "M",
+    "numeric": 1,
+    "short": "Mo",
+    "wide": "Monday",
+  },
+  Object {
+    "abbreviated": "Tue",
+    "narrow": "T",
+    "numeric": 2,
+    "short": "Tu",
+    "wide": "Tuesday",
+  },
+  Object {
+    "abbreviated": "Wed",
+    "narrow": "W",
+    "numeric": 3,
+    "short": "We",
+    "wide": "Wednesday",
+  },
+  Object {
+    "abbreviated": "Thu",
+    "narrow": "T",
+    "numeric": 4,
+    "short": "Th",
+    "wide": "Thursday",
+  },
+  Object {
+    "abbreviated": "Fri",
+    "narrow": "F",
+    "numeric": 5,
+    "short": "Fr",
+    "wide": "Friday",
+  },
+  Object {
+    "abbreviated": "Sat",
+    "narrow": "S",
+    "numeric": 6,
+    "short": "Sa",
+    "wide": "Saturday",
+  },
+]
+`;

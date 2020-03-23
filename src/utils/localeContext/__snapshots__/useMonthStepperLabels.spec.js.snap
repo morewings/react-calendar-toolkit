@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useMonthStepperLabels returns custom locale formatted weekday names 1`] = `
+Object {
+  "decrementMonthLabel": "1 месяц таму",
+  "incrementMonthLabel": "праз 1 месяц",
+}
+`;
+
+exports[`useMonthStepperLabels returns en-US locale formatted weekday names by default 1`] = `
+Object {
+  "decrementMonthLabel": "1 month ago",
+  "incrementMonthLabel": "in 1 month",
+}
+`;
