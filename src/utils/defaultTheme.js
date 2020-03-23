@@ -10,7 +10,7 @@ export default {
   /** Fallback font if two previous are unavailable */
   '--fontFallback': 'sans-serif',
   '--fontSize': '14px',
-  '--fontWeight': 400,
+  '--fontWeight': '400',
   /** Applied to the title */
   '--fontSizeSmall': '10px',
   /** Applied to the header text */
