@@ -13,7 +13,7 @@ import {
 } from 'utils/themeContext';
 import useOnClickOutside from 'utils/useOnClickOutside';
 import defaultTheme from 'utils/defaultTheme';
-import useScrollIntoView from 'utils/useScrollIntoView';
+import useScrollIntoView from 'utils/scrollIntoView';
 
 const WrappedDatePickerInput = compose(
   withDatepickerProvider,

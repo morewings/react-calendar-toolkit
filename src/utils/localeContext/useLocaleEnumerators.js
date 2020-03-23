@@ -1,5 +1,5 @@
 import {getYears, getMonths, getDays} from 'utils/enumerators';
-import {useLocaleContext} from './Context';
+import {useLocaleContext} from './withLocaleContext';
 
 const useLocaleEnumerators = precision => {
   const locale = useLocaleContext();

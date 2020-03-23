@@ -1,5 +1,5 @@
 import {formatDateWithLocale} from 'utils/dateUtils';
-import {useLocaleContext} from './Context';
+import {useLocaleContext} from './withLocaleContext';
 
 const useFormatDate = () => {
   const locale = useLocaleContext();

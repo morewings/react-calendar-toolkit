@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import useScrollIntoView from 'utils/useScrollIntoView';
+import useScrollIntoView from 'utils/scrollIntoView';
 import classes from './Year.module.css';
 
 const Year = ({

@@ -1,5 +1,5 @@
 import {formatDistanceStrictWithOptions} from 'date-fns/fp';
-import {useLocaleContext} from './Context';
+import {useLocaleContext} from './withLocaleContext';
 
 const useMonthStepperLabels = () => {
   const locale = useLocaleContext();
