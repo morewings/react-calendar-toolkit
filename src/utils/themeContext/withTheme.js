@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
-import ThemeContext from './Context';
 
-const withTheme = WrappedComponent => {
-  const Component = props => (
-    <ThemeContext.Provider value={props.theme}>
-      <WrappedComponent {...props} />
-    </ThemeContext.Provider>
-  );
-  Component.propTypes = {
-    theme: PropTypes.shape({}),
-  };
-  Component.defaultProps = {
-    theme: {},
-  };
-  return Component;
+const ThemeContext = React.createContext({});
+
+export const useThemeContext = () => useContext(ThemeContext);
+
+export const Provider = ({children, value}) => (
+  <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+);
+
+Provider.propTypes = {
+  value: PropTypes.shape({}),
+  children: PropTypes.element.isRequired,
+};
+Provider.defaultProps = {
+  value: {},
 };
 
-export default withTheme;
+export default WrappedComponent => ({theme, ...restProps}) => (
+  <Provider value={theme}>
+    <WrappedComponent {...restProps} />
+  </Provider>
+);

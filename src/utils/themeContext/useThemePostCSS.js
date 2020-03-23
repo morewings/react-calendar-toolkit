@@ -1,6 +1,6 @@
-import {useContext, useRef, useCallback} from 'react';
+import {useRef, useCallback} from 'react';
 import defaults from 'utils/defaultTheme';
-import ThemeContext from './Context';
+import {useThemeContext} from './withTheme';
 import {removeCSSVariable, setCSSVariable} from './cssVariables';
 
 /** @function
@@ -11,7 +11,7 @@ import {removeCSSVariable, setCSSVariable} from './cssVariables';
  */
 const useThemePostCSS = (defaultTheme = defaults) => {
   const ref = useRef(null);
-  const propsTheme = useContext(ThemeContext);
+  const propsTheme = useThemeContext();
   const mergedTheme = {
     ...defaultTheme,
     ...propsTheme,

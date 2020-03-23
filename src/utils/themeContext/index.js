@@ -1,5 +1,4 @@
 export {default as useThemePostCSS} from './useThemePostCSS';
-export {useThemeContext} from './Context';
 
 export {
   removeCSSVariable,
@@ -7,4 +6,4 @@ export {
   getCSSVariable,
 } from './cssVariables';
 
-export {default as withTheme} from './withTheme';
+export {default as withTheme, useThemeContext} from './withTheme';
