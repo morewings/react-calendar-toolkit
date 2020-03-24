@@ -13,6 +13,10 @@ module.exports = {
       content: 'Quickstart.md',
     },
     {
+      name: 'IE11 support',
+      content: 'IE11.md',
+    },
+    {
       name: 'Overview',
       content: 'Overview.md',
       description: 'How it works?',

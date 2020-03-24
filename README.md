@@ -41,7 +41,7 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 | --------- | --------- | --------- | --------- | --------- |
 | IE11*, Edge| last 2 versions, ESR| last 2 versions| last 2 versions| last 2 versions
 
-/* needs polyfills, [see docs](https://morewings.github.io/react-calendar-toolkit/#/Quickstart)
+/* needs polyfills, [see docs](https://morewings.github.io/react-calendar-toolkit/#/IE11%20support)
 
 ## Quickstart
 
