@@ -30,6 +30,7 @@ const App = () => (
         onDateSet={date => {
           // console.log('date set', date);
         }}
+        mode="modal"
         title="Demo datepicker"
       />
     </div>

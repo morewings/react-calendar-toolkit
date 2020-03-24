@@ -1,3 +1,4 @@
-export {default as ModalReducer, initialState} from './ModalReducer';
-export {default as ModalContext, useModalContext} from './context';
+export {initialState} from './ModalReducer';
+export {useModalContext} from './context';
 export {default as useModalActions} from './actionCreators';
+export {default as withModalProvider} from './withModalProvider';

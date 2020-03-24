@@ -1,5 +1,6 @@
 import compose from 'utils/compose';
-import {withDatepickerProvider, withModalProvider} from 'store';
+import {withDatepickerProvider} from 'store';
+import {withModalProvider} from 'features/modal';
 import DatePicker from 'components/DatePicker';
 import DatePickerInput from 'components/DatePickerInput';
 import {useFormatDate, withLocaleContext} from 'utils/localeContext';
