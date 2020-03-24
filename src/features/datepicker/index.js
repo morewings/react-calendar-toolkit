@@ -5,3 +5,4 @@ export {
   useSetInitialValues,
 } from './actionCreators';
 export {default as DatepickerContext, useDatePickerContext} from './context';
+export {default as withDatepickerProvider} from './withDatepickerProvider';

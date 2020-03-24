@@ -1,10 +1,7 @@
 import React from 'react';
-import {
-  DatepickerReducer,
-  DatepickerContext,
-  initialState,
-} from 'features/datepicker';
-import createStoreProvider from './createStoreProvider';
+import createStoreProvider from 'store';
+import DatepickerContext from './context';
+import DatepickerReducer, {initialState} from './DatepickerReducer';
 
 const Provider = createStoreProvider({
   initialState,
