@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createStoreProvider attaches \`state\` and \`dispatch\` to Provider \`value\` prop 1`] = `
+Object {
+  "dispatch": [Function],
+  "state": Object {},
+}
+`;
+
+exports[`createStoreProvider creates Store Provider HOC 1`] = `
+<DocumentFragment>
+  Child
+</DocumentFragment>
+`;

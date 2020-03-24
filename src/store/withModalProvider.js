@@ -1,6 +1,6 @@
 import React from 'react';
 import {ModalReducer, ModalContext, initialState} from 'features/modal';
-import {createStoreProvider} from './createStoreProvider';
+import createStoreProvider from './createStoreProvider';
 
 const Provider = createStoreProvider({
   initialState,

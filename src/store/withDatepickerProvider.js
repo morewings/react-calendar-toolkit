@@ -4,7 +4,7 @@ import {
   DatepickerContext,
   initialState,
 } from 'features/datepicker';
-import {createStoreProvider} from './createStoreProvider';
+import createStoreProvider from './createStoreProvider';
 
 const Provider = createStoreProvider({
   initialState,
