@@ -1,9 +1,6 @@
 import React from 'react';
 import {renderHook, act} from '@testing-library/react-hooks';
 import createStoreProvider from 'store';
-import useModalActions from 'features/modal/actionCreators';
-import {TOGGLE_DATEPICKER} from 'features/modal/actionTypes';
-import {matchDatesWithPrecision} from 'utils/dateUtils';
 import {
   SET_DATE,
   SET_PRECISION,
@@ -56,7 +53,7 @@ describe('useModalActions', () => {
     ${'setToday'}      | ${SET_TODAY}      | ${date}             | ${setTodayPayload}
     ${'setVisibility'} | ${SET_VISIBILITY} | ${date}             | ${setVisibilityPayload}
     ${'setPrecision'}  | ${SET_PRECISION}  | ${precisionPayload} | ${precisionPayload}
-  `('matchDatesWithPrecision', ({action, type, value, expectedPayload}) => {
+  `('actions', ({action, type, value, expectedPayload}) => {
     it(`${action} creator dispatches to reducer`, () => {
       const {result} = renderHook(() => useDatePickerActions(), {
         wrapper: ({children}) => <Provider>{children}</Provider>,
