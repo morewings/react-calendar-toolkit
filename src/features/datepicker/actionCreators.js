@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import {convertToTimestamp} from 'utils/dateUtils';
 import {
   SET_DATE,
@@ -42,41 +41,6 @@ const useDatePickerActions = () => {
       });
     },
   };
-};
-
-export const useHasInitialValues = () => {
-  const {
-    state: {selectedTimestamp, todayTimestamp, visibleTimestamp},
-  } = useDatePickerContext();
-  return !!selectedTimestamp && !!todayTimestamp && !!visibleTimestamp;
-};
-
-export const useSetInitialValues = ({initialDate, today, minPrecision}) => {
-  const {
-    setPrecision,
-    setVisibility,
-    setDate,
-    setToday,
-  } = useDatePickerActions();
-
-  const hasInitialValues = useHasInitialValues();
-  useEffect(() => {
-    if (!hasInitialValues) {
-      setDate(initialDate);
-      setVisibility(initialDate);
-      setToday(today);
-      setPrecision(minPrecision);
-    }
-  }, [
-    hasInitialValues,
-    initialDate,
-    minPrecision,
-    setDate,
-    setPrecision,
-    setToday,
-    setVisibility,
-    today,
-  ]);
 };
 
 export default useDatePickerActions;

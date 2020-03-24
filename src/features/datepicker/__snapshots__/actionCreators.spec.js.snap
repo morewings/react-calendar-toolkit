@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useModalActions returns action creators 1`] = `
+Object {
+  "setDate": [Function],
+  "setPrecision": [Function],
+  "setToday": [Function],
+  "setVisibility": [Function],
+}
+`;
