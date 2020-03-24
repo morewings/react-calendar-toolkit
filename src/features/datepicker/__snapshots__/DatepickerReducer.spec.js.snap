@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatepickerReducer handles SET_DATE action 1`] = `
+Object {
+  "precision": "precision",
+  "selectedTimestamp": "selectedTimestamp",
+}
+`;
+
+exports[`DatepickerReducer handles SET_DATE action 2`] = `
+Object {
+  "precision": undefined,
+  "selectedTimestamp": "selectedTimestamp",
+}
+`;
+
+exports[`DatepickerReducer handles SET_PRECISION action 1`] = `
+Object {
+  "precision": "precision",
+}
+`;
+
+exports[`DatepickerReducer handles SET_TODAY action 1`] = `
+Object {
+  "todayTimestamp": "todayTimestamp",
+}
+`;
+
+exports[`DatepickerReducer handles SET_VISIBILITY action 1`] = `
+Object {
+  "visibleTimestamp": "visibleTimestamp",
+}
+`;
+
+exports[`DatepickerReducer has default state 1`] = `Object {}`;
