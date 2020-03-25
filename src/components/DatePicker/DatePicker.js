@@ -1,12 +1,12 @@
 import React, {useCallback, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {convertToDate} from 'utils/dateUtils';
-import config from 'utils/config';
 import {
   useDatePickerContext,
   useDatePickerActions,
   useHasInitialValues,
   useSetInitialValues,
+  useIncrementPrecision,
 } from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
@@ -18,16 +18,6 @@ import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
-
-const getNextPrecision = (precisionEnum, currentPrecision) => {
-  const currentIndex = precisionEnum.indexOf(currentPrecision);
-  return precisionEnum[currentIndex + 1];
-};
-
-const limitPrecision = (precisionEnum, minPrecision) => {
-  const currentIndex = precisionEnum.indexOf(minPrecision);
-  return precisionEnum.slice(0, currentIndex + 1);
-};
 
 const DatePicker = ({
   initialDate,
@@ -57,31 +47,28 @@ const DatePicker = ({
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
   } = useDatePickerContext();
 
-  const {setPrecision, setVisibility, setDate} = useDatePickerActions();
+  const {setDate, setVisibility} = useDatePickerActions();
+
+  const incrementPrecision = useIncrementPrecision(minPrecision);
 
   const hasInitialValues = useHasInitialValues();
 
-  const datepickerPrecisions = limitPrecision(
-    config.supportedPrecisions,
-    minPrecision
-  );
-  const nextPrecision = getNextPrecision(datepickerPrecisions, precision);
-
-  // TODO: refactor to hook
   const handleDateSet = useCallback(
     date => {
-      precision === minPrecision && onDateSet(date);
-      precision === minPrecision && setDate(date);
-      setVisibility(date);
-      nextPrecision && setPrecision(nextPrecision);
+      if (precision === minPrecision) {
+        onDateSet(date);
+        setDate(date);
+      } else {
+        setVisibility(date);
+        incrementPrecision();
+      }
     },
     [
+      incrementPrecision,
       minPrecision,
-      nextPrecision,
       onDateSet,
       precision,
       setDate,
-      setPrecision,
       setVisibility,
     ]
   );

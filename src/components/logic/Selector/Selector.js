@@ -23,6 +23,7 @@ const Selector = ({
 
   const monthStepperLabels = useMonthStepperLabels();
 
+  // TODO: wrong name
   const isDisabled = useCallback(
     date =>
       checkIsWithinInterval(
