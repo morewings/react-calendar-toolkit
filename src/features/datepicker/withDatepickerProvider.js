@@ -3,7 +3,7 @@ import createStoreProvider from 'store';
 import DatepickerContext from './context';
 import DatepickerReducer, {initialState} from './DatepickerReducer';
 
-const Provider = createStoreProvider({
+export const Provider = createStoreProvider({
   initialState,
   reducer: DatepickerReducer,
   context: DatepickerContext,
