@@ -1,3 +1,7 @@
 import DatePicker from './DatePicker';
 
-describe('DatePicker', () => {});
+const onDateSet = jest.fn();
+
+describe('DatePicker', () => {
+  it('renders', () => {});
+});

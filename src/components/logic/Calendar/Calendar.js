@@ -9,7 +9,7 @@ import {
   floorMonth,
   ceilMonth,
 } from 'utils/dateUtils';
-import {useLocaleEnumerators} from 'utils/localeContext';
+import {useLocaleEnumerators} from 'features/locale';
 
 const Calendar = ({
   onDateSet,

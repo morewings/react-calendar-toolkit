@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useThemePostCSS} from 'utils/themeContext';
+import {useThemePostCSS} from 'entryPoint';
 import classes from './DatepickerWrapper.module.css';
 
 const DatepickerWrapper = props => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useWeekDayNames} from 'utils/localeContext';
+import {useWeekDayNames} from 'features/locale';
 
 const WeekDays = ({wrapWith, renderAs}) => {
   const WeekDaysWrapper = wrapWith;

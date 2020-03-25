@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import {setCSSVariable, useThemeContext} from 'utils/themeContext';
+import {setCSSVariable, useThemeContext} from 'entryPoint';
 import defaults from 'utils/defaultTheme';
 import classes from './ModalProvider.module.css';
 

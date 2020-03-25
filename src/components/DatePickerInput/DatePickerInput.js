@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {convertToDate} from 'utils/dateUtils';
-import {useFormatDate} from 'utils/localeContext';
+import {useFormatDate} from 'features/locale';
 import {useModalContext, useModalActions} from 'features/modal';
 import {
   useDatePickerContext,

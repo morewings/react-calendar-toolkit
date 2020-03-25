@@ -53,14 +53,14 @@ const DatePicker = ({
   useSetInitialValues({initialDate, today, minPrecision});
 
   const Wrapper = wrapWith;
-  const SelectorUI = renderSelectorAs;
 
   return (
     hasInitialValues && (
       <Wrapper title={title}>
         {showHeader && <Header renderAs={renderHeaderAs} title={title} />}
         <Selector
-          renderAs={props => <SelectorUI precision={precision} {...props} />}
+          precision={precision}
+          renderAs={renderSelectorAs}
           selectedTimestamp={selectedTimestamp}
           todayTimestamp={todayTimestamp}
           visibleTimestamp={visibleTimestamp}

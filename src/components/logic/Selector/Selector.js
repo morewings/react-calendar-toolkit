@@ -9,7 +9,7 @@ import {
   ceilMonth,
   floorMonth,
 } from 'utils/dateUtils';
-import {useMonthStepperLabels} from 'utils/localeContext';
+import {useMonthStepperLabels} from 'features/locale';
 
 const Selector = ({
   todayTimestamp,
@@ -18,6 +18,7 @@ const Selector = ({
   startDate,
   endDate,
   visibleTimestamp,
+  precision,
 }) => {
   const {setVisibility, setPrecision} = useDatePickerActions();
 
@@ -53,6 +54,7 @@ const Selector = ({
   const SelectorVisual = renderAs;
   return (
     <SelectorVisual
+      precision={precision}
       monthStepperLabels={monthStepperLabels}
       incrementMonth={onIncrementMonth}
       decrementMonth={onDecrementMonth}
@@ -71,6 +73,7 @@ Selector.propTypes = {
   renderAs: PropTypes.elementType.isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
+  precision: PropTypes.oneOf(['year', 'month', 'day']).isRequired,
 };
 
 export default Selector;
