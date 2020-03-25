@@ -1,6 +1,5 @@
 import React, {useCallback, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import {convertToDate} from 'utils/dateUtils';
 import {
   useDatePickerContext,
   useDatePickerActions,
@@ -11,8 +10,9 @@ import {
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
 import Selector from 'components/logic/Selector';
+import Header from 'components/logic/Header';
 import DatepickerWrapper from 'components/visual/Datepicker';
-import Header from 'components/visual/Header';
+import HeaderUI from 'components/visual/Header';
 import SelectorVisual from 'components/visual/Selector';
 import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
@@ -76,19 +76,12 @@ const DatePicker = ({
   useSetInitialValues({initialDate, today, minPrecision});
 
   const Wrapper = wrapWith;
-  const HeaderUI = renderHeaderAs;
   const SelectorUI = renderSelectorAs;
 
   return (
     hasInitialValues && (
       <Wrapper title={title}>
-        {showHeader && (
-          <HeaderUI
-            title={title}
-            todayDate={convertToDate(todayTimestamp)}
-            selectedDate={convertToDate(selectedTimestamp)}
-          />
-        )}
+        {showHeader && <Header renderAs={renderHeaderAs} title={title} />}
         <Selector
           renderAs={props => <SelectorUI precision={precision} {...props} />}
           selectedTimestamp={selectedTimestamp}
@@ -225,7 +218,7 @@ DatePicker.defaultProps = {
   wrapYearWith: YearGrid,
   renderWeekDayAs: WeekDay,
   wrapWeekDaysWith: WeekDayGrid,
-  renderHeaderAs: Header,
+  renderHeaderAs: HeaderUI,
   renderSelectorAs: SelectorVisual,
   disableDate: ({isWeekend, precision, date}) => false,
   highlightDate: ({isWeekend, precision, date}) => false,
