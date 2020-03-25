@@ -28,7 +28,7 @@ const DatePickerInput = ({
   datePickerDefaultProps,
 }) => {
   const {
-    state: {selectedTimestamp, todayTimestamp},
+    state: {selectedTimestamp},
   } = useDatePickerContext();
 
   const {

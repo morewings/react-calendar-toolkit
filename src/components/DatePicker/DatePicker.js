@@ -1,11 +1,9 @@
-import React, {useCallback, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {
   useDatePickerContext,
-  useDatePickerActions,
   useHasInitialValues,
   useSetInitialValues,
-  useIncrementPrecision,
 } from 'features/datepicker';
 import Calendar from 'components/logic/Calendar';
 import WeekDays from 'components/logic/Weekdays';
@@ -18,6 +16,7 @@ import Day, {DayGrid} from 'components/visual/Day';
 import Month, {MonthGrid} from 'components/visual/Month';
 import Year, {YearGrid} from 'components/visual/Year';
 import WeekDay, {WeekDayGrid} from 'components/visual/WeekDay';
+import useLogic from './useLogic';
 
 const DatePicker = ({
   initialDate,
@@ -47,31 +46,9 @@ const DatePicker = ({
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
   } = useDatePickerContext();
 
-  const {setDate, setVisibility} = useDatePickerActions();
-
-  const incrementPrecision = useIncrementPrecision(minPrecision);
-
   const hasInitialValues = useHasInitialValues();
 
-  const handleDateSet = useCallback(
-    date => {
-      if (precision === minPrecision) {
-        onDateSet(date);
-        setDate(date);
-      } else {
-        setVisibility(date);
-        incrementPrecision();
-      }
-    },
-    [
-      incrementPrecision,
-      minPrecision,
-      onDateSet,
-      precision,
-      setDate,
-      setVisibility,
-    ]
-  );
+  const {handleDateSet} = useLogic(onDateSet, minPrecision);
 
   useSetInitialValues({initialDate, today, minPrecision});
 
