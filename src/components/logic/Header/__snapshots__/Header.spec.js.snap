@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders 1`] = `
+<DocumentFragment>
+  <div>
+    MockComponent
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Header transforms props 1`] = `
+Object {
+  "selectedDate": 2020-01-12T00:00:00.000Z,
+  "title": "Title",
+  "todayDate": 2020-01-11T00:00:00.000Z,
+}
+`;

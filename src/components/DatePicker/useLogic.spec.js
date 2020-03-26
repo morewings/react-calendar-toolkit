@@ -1,10 +1,7 @@
 import React from 'react';
 import {renderHook, act} from '@testing-library/react-hooks';
-// import {DatepickerMockProvider as Provider} from 'utils/testProvider';
 import createStoreProvider from 'store';
-import DatePickerContext, {
-  useDatePickerContext,
-} from 'features/datepicker/context';
+import DatePickerContext from 'features/datepicker/context';
 import DatepickerReducer from 'features/datepicker/DatepickerReducer';
 import useLogic from './useLogic';
 
