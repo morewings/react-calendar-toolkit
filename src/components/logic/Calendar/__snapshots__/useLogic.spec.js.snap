@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar > useLogic  getIsDisabled checks if date is within provided range,  if precision === day 1`] = `
+Array [
+  Object {
+    "date": 1320883200000,
+    "isWeekend": false,
+    "precision": "day",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  getIsDisabled checks if date is within provided range,  if precision === day 2`] = `
+Array [
+  Object {
+    "date": 1323561600000,
+    "isWeekend": true,
+    "precision": "day",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  getIsDisabled checks if date is within provided range,  if precision === day 3`] = `
+Array [
+  Object {
+    "date": 1318291200000,
+    "isWeekend": false,
+    "precision": "day",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 1`] = `
+Array [
+  Object {
+    "date": 1320969600000,
+    "isWeekend": false,
+    "precision": "year",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 2`] = `
+Array [
+  Object {
+    "date": 1320969600000,
+    "isWeekend": false,
+    "precision": "month",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 3`] = `
+Array [
+  Object {
+    "date": 1320969600000,
+    "isWeekend": false,
+    "precision": "day",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 4`] = `
+Array [
+  Object {
+    "date": 1321056000000,
+    "isWeekend": true,
+    "precision": "day",
+  },
+]
+`;
+
+exports[`Calendar > useLogic  returns functions 1`] = `
+Object {
+  "getBelongsToSameMonth": [Function],
+  "getIsCurrent": [Function],
+  "getIsDisabled": [Function],
+  "getIsHighlighted": [Function],
+  "getIsSelected": [Function],
+  "getIsWeekend": [Function],
+  "handleDateSet": [Function],
+}
+`;
