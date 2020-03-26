@@ -5,20 +5,20 @@ const ThemeContext = React.createContext({});
 
 export const useThemeContext = () => useContext(ThemeContext);
 
-export const Provider = ({children, value}) => (
-  <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+export const Provider = ({children, theme}) => (
+  <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
 );
 
 Provider.propTypes = {
-  value: PropTypes.shape({}),
+  theme: PropTypes.shape({}),
   children: PropTypes.element.isRequired,
 };
 Provider.defaultProps = {
-  value: {},
+  theme: {},
 };
 
 export default WrappedComponent => ({theme, ...restProps}) => (
-  <Provider value={theme}>
+  <Provider theme={theme}>
     <WrappedComponent {...restProps} />
   </Provider>
 );

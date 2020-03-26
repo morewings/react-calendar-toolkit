@@ -46,7 +46,7 @@ describe('useLocaleContext', () => {
 
     const {result} = renderHook(() => useThemeContext(), {
       wrapper: ({children}) => (
-        <Provider value={customTheme}>{children}</Provider>
+        <Provider theme={customTheme}>{children}</Provider>
       ),
     });
 

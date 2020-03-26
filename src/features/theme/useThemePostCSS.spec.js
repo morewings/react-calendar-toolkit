@@ -70,7 +70,7 @@ describe('useThemePostCSS', () => {
       <Component themeOverride={themeOverride} />,
       {
         wrapper: ({children}) => (
-          <Provider value={propsOverride}>{children}</Provider>
+          <Provider theme={propsOverride}>{children}</Provider>
         ),
       }
     );
