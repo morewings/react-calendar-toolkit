@@ -1,0 +1,4873 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar basic date rendering creates date entries grid 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 2`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 3`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-30T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 30,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 4`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-31T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 31,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 5`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 1,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 6`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-02T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 7`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-03T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 3,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 8`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-04T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 4,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 9`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-05T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 5,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 10`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-06T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 6,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 11`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-07T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 7,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 12`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-08T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 8,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 13`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-09T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 9,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 14`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-10T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 10,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 15`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-11T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 11,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 16`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 12,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 17`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-13T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 13,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 18`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-14T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 14,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 19`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-15T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 15,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 20`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-16T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 16,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 21`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-17T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 17,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 22`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-18T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 18,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 23`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-19T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 19,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 24`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-20T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 20,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 25`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-21T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 21,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 26`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-22T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 22,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 27`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-23T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 23,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 28`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-24T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 24,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 29`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-25T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 25,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 30`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-26T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 26,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 31`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-27T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 27,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 32`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-28T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 28,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 33`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-29T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 29,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 34`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-30T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 30,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 35`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 1,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 36`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-02T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 37`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-03T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 3,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 38`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 39`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 40`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-31T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 31,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 41`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 1,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 42`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-02T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 43`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-03T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 3,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 44`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-04T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 4,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 45`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-05T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 5,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 46`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-06T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 6,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 47`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-07T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 7,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 48`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-08T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 8,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 49`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-09T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 9,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 50`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-10T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 10,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 51`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-11T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 11,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 52`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 12,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 53`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-13T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 13,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 54`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-14T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 14,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 55`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-15T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 15,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 56`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-16T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 16,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 57`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-17T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 17,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 58`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-18T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 18,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 59`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-19T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 19,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 60`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-20T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 20,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 61`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-21T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 21,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 62`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-22T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 22,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 63`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-23T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 23,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 64`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-24T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 24,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 65`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-25T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 25,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 66`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-26T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 26,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 67`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-27T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 27,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 68`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-28T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 28,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 69`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-29T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 29,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 70`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-30T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 30,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 71`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 1,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 72`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-02T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 73`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-03T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 3,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 74`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-04T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 4,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 75`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 76`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 77`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-01-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Jan",
+    "narrow": "J",
+    "numeric": 0,
+    "wide": "January",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 78`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-02-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Feb",
+    "narrow": "F",
+    "numeric": 1,
+    "wide": "February",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 79`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-03-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Mar",
+    "narrow": "M",
+    "numeric": 2,
+    "wide": "March",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 80`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-04-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Apr",
+    "narrow": "A",
+    "numeric": 3,
+    "wide": "April",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 81`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-05-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "May",
+    "narrow": "M",
+    "numeric": 4,
+    "wide": "May",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 82`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-06-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Jun",
+    "narrow": "J",
+    "numeric": 5,
+    "wide": "June",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 83`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-07-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Jul",
+    "narrow": "J",
+    "numeric": 6,
+    "wide": "July",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 84`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-08-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Aug",
+    "narrow": "A",
+    "numeric": 7,
+    "wide": "August",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 85`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-09-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Sep",
+    "narrow": "S",
+    "numeric": 8,
+    "wide": "September",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 86`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Oct",
+    "narrow": "O",
+    "numeric": 9,
+    "wide": "October",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 87`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-11-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Nov",
+    "narrow": "N",
+    "numeric": 10,
+    "wide": "November",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 88`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Dec",
+    "narrow": "D",
+    "numeric": 11,
+    "wide": "December",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 89`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 90`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 91`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-01-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "янв.",
+    "narrow": "Я",
+    "numeric": 0,
+    "wide": "январь",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 92`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-02-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "фев.",
+    "narrow": "Ф",
+    "numeric": 1,
+    "wide": "февраль",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 93`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-03-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "март",
+    "narrow": "М",
+    "numeric": 2,
+    "wide": "март",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 94`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-04-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "апр.",
+    "narrow": "А",
+    "numeric": 3,
+    "wide": "апрель",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 95`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-05-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "май",
+    "narrow": "М",
+    "numeric": 4,
+    "wide": "май",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 96`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-06-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "июнь",
+    "narrow": "И",
+    "numeric": 5,
+    "wide": "июнь",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 97`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-07-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "июль",
+    "narrow": "И",
+    "numeric": 6,
+    "wide": "июль",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 98`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-08-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "авг.",
+    "narrow": "А",
+    "numeric": 7,
+    "wide": "август",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 99`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-09-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "сент.",
+    "narrow": "С",
+    "numeric": 8,
+    "wide": "сентябрь",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 100`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "окт.",
+    "narrow": "О",
+    "numeric": 9,
+    "wide": "октябрь",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 101`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-11-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "нояб.",
+    "narrow": "Н",
+    "numeric": 10,
+    "wide": "ноябрь",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 102`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "дек.",
+    "narrow": "Д",
+    "numeric": 11,
+    "wide": "декабрь",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 103`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 104`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 105`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2000-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2000,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 106`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2001-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2001,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 107`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2002-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2002,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 108`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2003-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2003,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 109`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2004-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2004,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 110`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2005-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2005,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 111`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2006-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2006,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 112`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2007-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2007,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 113`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2008-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2008,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 114`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2009-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2009,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 115`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2010-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2010,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 116`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2011,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 117`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2012-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2012,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 118`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2013-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2013,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 119`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2014-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2014,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 120`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2015-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2015,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 121`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2016-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2016,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 122`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2017-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2017,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 123`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2018-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2018,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 124`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2019-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2019,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 125`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2020-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2020,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 126`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2021-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2021,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 127`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2022-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2022,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 128`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 129`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 130`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2000-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2000,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 131`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2001-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2001,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 132`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2002-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2002,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 133`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2003-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2003,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 134`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2004-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2004,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 135`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2005-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2005,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 136`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2006-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2006,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 137`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2007-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2007,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 138`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2008-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2008,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 139`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2009-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2009,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 140`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2010-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2010,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 141`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2011,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 142`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2012-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2012,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 143`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2013-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2013,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 144`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2014-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2014,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 145`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2015-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2015,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 146`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2016-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2016,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 147`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2017-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2017,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 148`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2018-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2018,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 149`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2019-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2019,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 150`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2020-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2020,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 151`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2021-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2021,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar basic date rendering creates date entries grid 152`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2022-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2022,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 2`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 3`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-30T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 30,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 4`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-31T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 31,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 5`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 1,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 6`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-02T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 7`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-03T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 3,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 8`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-04T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 4,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 9`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-05T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 5,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 10`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-06T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 6,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 11`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-07T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 7,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 12`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-08T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 8,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 13`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-09T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 9,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 14`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-10T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 10,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 15`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-11T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 11,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 16`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 12,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 17`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-13T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 13,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 18`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-14T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 14,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 19`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-15T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 15,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 20`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-16T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 16,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 21`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-17T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 17,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 22`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-18T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 18,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 23`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-19T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 19,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 24`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-20T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 20,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 25`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-21T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 21,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 26`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-22T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 22,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 27`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-23T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 23,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 28`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-24T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 24,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 29`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-25T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 25,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 30`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-26T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 26,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 31`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-27T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 27,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 32`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-28T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 28,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 33`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-29T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 29,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 34`] = `
+Object {
+  "belongsToSameMonth": true,
+  "date": 2011-11-30T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 30,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 35`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 1,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 36`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-02T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 37`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-03T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": true,
+  "name": Object {
+    "numeric": 3,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 38`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 39`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 40`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-01-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Jan",
+    "narrow": "J",
+    "numeric": 0,
+    "wide": "January",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 41`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-02-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Feb",
+    "narrow": "F",
+    "numeric": 1,
+    "wide": "February",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 42`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-03-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Mar",
+    "narrow": "M",
+    "numeric": 2,
+    "wide": "March",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 43`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-04-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Apr",
+    "narrow": "A",
+    "numeric": 3,
+    "wide": "April",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 44`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-05-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "May",
+    "narrow": "M",
+    "numeric": 4,
+    "wide": "May",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 45`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-06-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Jun",
+    "narrow": "J",
+    "numeric": 5,
+    "wide": "June",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 46`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-07-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Jul",
+    "narrow": "J",
+    "numeric": 6,
+    "wide": "July",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 47`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-08-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Aug",
+    "narrow": "A",
+    "numeric": 7,
+    "wide": "August",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 48`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-09-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Sep",
+    "narrow": "S",
+    "numeric": 8,
+    "wide": "September",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 49`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-10-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Oct",
+    "narrow": "O",
+    "numeric": 9,
+    "wide": "October",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 50`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-11-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Nov",
+    "narrow": "N",
+    "numeric": 10,
+    "wide": "November",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 51`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-01T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "abbreviated": "Dec",
+    "narrow": "D",
+    "numeric": 11,
+    "wide": "December",
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 52`] = `
+<DocumentFragment>
+  <div
+    data-testid="wrapper"
+  >
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 53`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+  <div>
+    MockComponent
+  </div>
+</div>
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 54`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2000-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2000,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 55`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2001-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2001,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 56`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2002-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2002,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 57`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2003-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2003,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 58`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2004-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2004,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 59`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2005-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2005,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 60`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2006-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2006,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 61`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2007-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2007,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 62`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2008-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2008,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 63`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2009-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2009,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 64`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2010-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2010,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 65`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2011-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": true,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2011,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 66`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2012-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2012,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 67`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2013-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2013,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 68`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2014-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2014,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 69`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2015-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2015,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 70`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2016-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2016,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 71`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2017-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2017,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 72`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2018-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2018,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 73`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2019-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2019,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 74`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2020-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2020,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 75`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2021-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2021,
+  },
+  "onDateSet": [Function],
+}
+`;
+
+exports[`Calendar renders with en-US locale (1st day Sunday) 76`] = `
+Object {
+  "belongsToSameMonth": false,
+  "date": 2022-12-12T00:00:00.000Z,
+  "isCurrent": false,
+  "isDisabled": false,
+  "isHighlighted": undefined,
+  "isSelected": false,
+  "isWeekend": false,
+  "name": Object {
+    "numeric": 2022,
+  },
+  "onDateSet": [Function],
+}
+`;

@@ -1,15 +1,8 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import config from 'utils/config';
-import {
-  checkIsSameMonth,
-  checkIsWithinInterval,
-  checkIsWeekend,
-  matchDatesWithPrecision,
-  floorMonth,
-  ceilMonth,
-} from 'utils/dateUtils';
 import {useLocaleEnumerators} from 'features/locale';
+import useLogic from './useLogic';
 
 const Calendar = ({
   onDateSet,
@@ -31,37 +24,26 @@ const Calendar = ({
       ? getItems(startDate, endDate)
       : getItems(visibleTimestamp);
 
-  const getIsDisabled = useCallback(
-    date => {
-      if (precision === 'year') return false; // we are not disabling years, just rendering the range
-      if (precision === 'month') {
-        return !checkIsWithinInterval(
-          {start: floorMonth(startDate), end: ceilMonth(endDate)},
-          date
-        );
-      }
-      return (
-        disableDate({date, isWeekend: checkIsWeekend(date), precision}) ||
-        !checkIsWithinInterval({start: startDate, end: endDate}, date)
-      );
-    },
-    [disableDate, endDate, precision, startDate]
-  );
-
-  const getIsHighlighted = useCallback(
-    date => highlightDate({date, isWeekend: checkIsWeekend(date), precision}),
-    [highlightDate, precision]
-  );
-
-  const handleDateSet = useCallback(
-    date => {
-      const isDisabled = getIsDisabled(date);
-      !isDisabled && onDateSet(date);
-    },
-    [getIsDisabled, onDateSet]
-  );
-
-  const getIsWeekend = date => highlightWeekends && checkIsWeekend(date);
+  const {
+    getIsDisabled,
+    getIsHighlighted,
+    handleDateSet,
+    getIsWeekend,
+    getBelongsToSameMonth,
+    getIsSelected,
+    getIsCurrent,
+  } = useLogic({
+    disableDate,
+    endDate,
+    precision,
+    startDate,
+    highlightDate,
+    onDateSet,
+    highlightWeekends,
+    visibleTimestamp,
+    selectedTimestamp,
+    todayTimestamp,
+  });
 
   const Wrapper = wrapWith;
   const VisualComponent = renderAs;
@@ -69,17 +51,11 @@ const Calendar = ({
     <Wrapper>
       {items.map(({name, date}) => (
         <VisualComponent
-          isWeekend={precision === 'day' && getIsWeekend(date)}
+          isWeekend={getIsWeekend(date)}
           onDateSet={handleDateSet}
-          isSelected={matchDatesWithPrecision(
-            precision,
-            date,
-            selectedTimestamp
-          )}
-          isCurrent={matchDatesWithPrecision(precision, date, todayTimestamp)}
-          belongsToSameMonth={
-            precision === 'day' && checkIsSameMonth(date, visibleTimestamp)
-          }
+          isSelected={getIsSelected(date)}
+          isCurrent={getIsCurrent()}
+          belongsToSameMonth={getBelongsToSameMonth(date)}
           isDisabled={getIsDisabled(date)}
           isHighlighted={getIsHighlighted(date)}
           name={name}

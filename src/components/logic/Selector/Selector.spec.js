@@ -11,7 +11,7 @@ const renderWithProviderProps = (Component, props = {}) =>
     wrapper: ({children}) => <Provider {...props}>{children}</Provider>,
   });
 
-const date = new Date(2012, 11, 12); //
+const date = new Date(2012, 11, 12); // 12.12.2012
 
 describe('Selector', () => {
   beforeEach(() => {
