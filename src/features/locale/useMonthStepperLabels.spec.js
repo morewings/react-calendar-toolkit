@@ -15,7 +15,7 @@ describe('useMonthStepperLabels', () => {
   it('returns custom locale formatted weekday names', () => {
     const {result} = renderHook(() => useMonthStepperLabels(), {
       wrapper: ({children}) => (
-        <Provider value={customLocale}>{children}</Provider>
+        <Provider dateFnsLocale={customLocale}>{children}</Provider>
       ),
     });
     expect(result.current).toMatchSnapshot();

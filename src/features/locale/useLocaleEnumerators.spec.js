@@ -18,7 +18,9 @@ describe.each`
 `('useLocaleEnumerators', ({locale, precision, parameter}) => {
   test(`returns ${precision} enumerator with locale set`, () => {
     const {result} = renderHook(() => useLocaleEnumerators(precision), {
-      wrapper: ({children}) => <Provider value={locale}>{children}</Provider>,
+      wrapper: ({children}) => (
+        <Provider dateFnsLocale={locale}>{children}</Provider>
+      ),
     });
     expect(result.current(parameter)).toMatchSnapshot();
   });

@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekDays renders with custom locale 1`] = `
+Object {
+  "name": Object {
+    "abbreviated": "пнд",
+    "narrow": "П",
+    "numeric": 0,
+    "short": "пн",
+    "wide": "понедельник",
+  },
+}
+`;
+
+exports[`WeekDays renders with custom locale 2`] = `
+Object {
+  "name": Object {
+    "abbreviated": "втр",
+    "narrow": "В",
+    "numeric": 1,
+    "short": "вт",
+    "wide": "вторник",
+  },
+}
+`;
+
+exports[`WeekDays renders with custom locale 3`] = `
+Object {
+  "name": Object {
+    "abbreviated": "срд",
+    "narrow": "С",
+    "numeric": 2,
+    "short": "ср",
+    "wide": "среда",
+  },
+}
+`;
+
+exports[`WeekDays renders with custom locale 4`] = `
+Object {
+  "name": Object {
+    "abbreviated": "чтв",
+    "narrow": "Ч",
+    "numeric": 3,
+    "short": "чт",
+    "wide": "четверг",
+  },
+}
+`;
+
+exports[`WeekDays renders with custom locale 5`] = `
+Object {
+  "name": Object {
+    "abbreviated": "птн",
+    "narrow": "П",
+    "numeric": 4,
+    "short": "пт",
+    "wide": "пятница",
+  },
+}
+`;
+
+exports[`WeekDays renders with custom locale 6`] = `
+Object {
+  "name": Object {
+    "abbreviated": "суб",
+    "narrow": "С",
+    "numeric": 5,
+    "short": "сб",
+    "wide": "суббота",
+  },
+}
+`;
+
+exports[`WeekDays renders with custom locale 7`] = `
+Object {
+  "name": Object {
+    "abbreviated": "вск",
+    "narrow": "В",
+    "numeric": 6,
+    "short": "вс",
+    "wide": "воскресенье",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+    <div>
+      MockComponent
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`WeekDays renders with default locale 2`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Sun",
+    "narrow": "S",
+    "numeric": 0,
+    "short": "Su",
+    "wide": "Sunday",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 3`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Mon",
+    "narrow": "M",
+    "numeric": 1,
+    "short": "Mo",
+    "wide": "Monday",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 4`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Tue",
+    "narrow": "T",
+    "numeric": 2,
+    "short": "Tu",
+    "wide": "Tuesday",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 5`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Wed",
+    "narrow": "W",
+    "numeric": 3,
+    "short": "We",
+    "wide": "Wednesday",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 6`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Thu",
+    "narrow": "T",
+    "numeric": 4,
+    "short": "Th",
+    "wide": "Thursday",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 7`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Fri",
+    "narrow": "F",
+    "numeric": 5,
+    "short": "Fr",
+    "wide": "Friday",
+  },
+}
+`;
+
+exports[`WeekDays renders with default locale 8`] = `
+Object {
+  "name": Object {
+    "abbreviated": "Sat",
+    "narrow": "S",
+    "numeric": 6,
+    "short": "Sa",
+    "wide": "Saturday",
+  },
+}
+`;

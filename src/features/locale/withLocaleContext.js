@@ -6,20 +6,22 @@ const LocaleContext = React.createContext({});
 
 export const useLocaleContext = () => useContext(LocaleContext);
 
-export const Provider = ({children, value}) => (
-  <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
+export const Provider = ({children, dateFnsLocale}) => (
+  <LocaleContext.Provider value={dateFnsLocale}>
+    {children}
+  </LocaleContext.Provider>
 );
 
 Provider.propTypes = {
-  value: PropTypes.shape({}),
+  dateFnsLocale: PropTypes.shape({}),
   children: PropTypes.element.isRequired,
 };
 Provider.defaultProps = {
-  value: defaultLocale,
+  dateFnsLocale: defaultLocale,
 };
 
 export default WrappedComponent => ({dateFnsLocale, ...restProps}) => (
-  <Provider value={dateFnsLocale}>
+  <Provider dateFnsLocale={dateFnsLocale}>
     <WrappedComponent {...restProps} />
   </Provider>
 );

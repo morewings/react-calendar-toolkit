@@ -50,7 +50,7 @@ describe('useLocaleContext', () => {
 
     const {result} = renderHook(() => useLocaleContext(), {
       wrapper: ({children}) => (
-        <Provider value={customLocale}>{children}</Provider>
+        <Provider dateFnsLocale={customLocale}>{children}</Provider>
       ),
     });
 

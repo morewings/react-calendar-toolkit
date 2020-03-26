@@ -17,7 +17,9 @@ describe.each`
 `('useFormatDate', ({locale, pattern, date, expected}) => {
   test(`returns formatted (${pattern}) ${date} with locale set`, () => {
     const {result} = renderHook(() => useFormatDate(), {
-      wrapper: ({children}) => <Provider value={locale}>{children}</Provider>,
+      wrapper: ({children}) => (
+        <Provider dateFnsLocale={locale}>{children}</Provider>
+      ),
     });
     expect(result.current(pattern, date)).toBe(expected);
   });
