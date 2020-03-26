@@ -19,10 +19,10 @@ jest.mock('./isInViewport', () => ({
 }));
 
 const parent = document.createElement('div');
-parent.dataset.testid = 'parent';
+parent.dataset.testid = 'parent'; // eslint-disable-line fp/no-mutation
 parent.setAttribute('id', 'parent');
 const child = document.createElement('div');
-child.dataset.testid = 'child';
+child.dataset.testid = 'child'; // eslint-disable-line fp/no-mutation
 parent.appendChild(child);
 document.body.appendChild(parent);
 
@@ -46,11 +46,11 @@ describe('useOnClickOutside', () => {
   });
 
   beforeAll(() => {
-    window.HTMLElement.prototype.scrollIntoView = scrollIntoView;
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoView; // eslint-disable-line fp/no-mutation
   });
 
   afterAll(() => {
-    window.HTMLElement.prototype.scrollIntoView = undefined;
+    window.HTMLElement.prototype.scrollIntoView = undefined; // eslint-disable-line fp/no-mutation
   });
 
   it('renders', () => {

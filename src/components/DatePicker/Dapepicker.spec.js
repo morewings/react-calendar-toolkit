@@ -68,10 +68,12 @@ describe('DatePicker', () => {
   });
 
   beforeAll(() => {
+    // eslint-disable-next-line fp/no-mutation
     window.HTMLElement.prototype.scrollIntoView = scrollIntoView;
   });
 
   afterAll(() => {
+    // eslint-disable-next-line fp/no-mutation
     window.HTMLElement.prototype.scrollIntoView = undefined;
   });
 

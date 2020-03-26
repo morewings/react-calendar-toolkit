@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useFormatDate} from 'entryPoint';
+import {useFormatDate} from 'features/locale';
 import classes from './Header.module.css';
 
 const Header = ({selectedDate, title}) => {

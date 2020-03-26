@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {useThemePostCSS} from 'entryPoint';
+import {useThemePostCSS} from 'features/theme';
 import useOnClickOutside from 'utils/useOnClickOutside';
 import classes from './PopoverWrapper.module.css';
 

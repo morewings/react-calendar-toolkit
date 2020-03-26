@@ -1,13 +1,7 @@
 import React from 'react';
 import {renderHook, act} from '@testing-library/react-hooks';
 import createStoreProvider from 'store';
-import {useSetInitialValues} from 'features/datepicker/useSetInitialValues';
-import {
-  SET_DATE,
-  SET_PRECISION,
-  SET_TODAY,
-  SET_VISIBILITY,
-} from 'features/datepicker/actionTypes';
+import {SET_PRECISION} from 'features/datepicker/actionTypes';
 import useIncrementPrecision from './useIncrementPrecision';
 import DatePickerContext from './context';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {useFormatDate} from 'entryPoint';
+import {useFormatDate} from 'features/locale';
 import classes from './Day.module.css';
 
 const Day = ({

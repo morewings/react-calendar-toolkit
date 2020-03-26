@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useThemePostCSS} from 'entryPoint';
+import {useThemePostCSS} from 'features/theme';
 import classes from './Input.module.css';
 
 const Input = ({toggleDatepicker, value, date, onChange}) => {
