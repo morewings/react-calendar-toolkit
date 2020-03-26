@@ -27,10 +27,6 @@ const DatePickerInput = ({
   datePickerDefaultProps,
 }) => {
   const {
-    state: {selectedTimestamp},
-  } = useDatePickerContext();
-
-  const {
     state: {isVisible},
   } = useModalContext();
 
