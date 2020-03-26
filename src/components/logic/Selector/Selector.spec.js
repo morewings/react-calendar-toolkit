@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {DatepickerMockProvider as Provider} from 'utils/testProvider';
-import {convertToDate} from 'utils/dateUtils';
 import Selector from './Selector';
 
 const MockComponent = jest.fn(() => <div>MockComponent</div>);

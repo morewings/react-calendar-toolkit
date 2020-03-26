@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {convertToDate} from 'utils/dateUtils';
-import {useFormatDate} from 'features/locale';
 import {useModalContext, useModalActions} from 'features/modal';
 import {
   useDatePickerContext,
@@ -12,6 +10,7 @@ import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import Input from 'components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
 import ModalProvider, {ModalWrapper} from 'components/visual/Modal';
+import useLogic from './useLogic';
 
 const DatePickerInput = ({
   renderInputAs,
@@ -37,12 +36,10 @@ const DatePickerInput = ({
 
   const {toggleDatePicker} = useModalActions();
 
-  const handleDateSet = date => {
-    onDateSet(date);
-    hideOnSelect && toggleDatePicker(false);
-  };
-
-  const formatDate = useFormatDate();
+  const {handleDateSet, formatValue, getDate} = useLogic({
+    onDateSet,
+    hideOnSelect,
+  });
 
   const RenderingLogicProvider =
     mode === 'popover' ? popoverProvider : modalProvider;
@@ -76,8 +73,8 @@ const DatePickerInput = ({
         renderDatePickerAs={DatePickerWithProps}>
         <InputComponent
           onChange={onDateSet}
-          date={convertToDate(selectedTimestamp)}
-          value={formatDate(formatPattern, convertToDate(selectedTimestamp))}
+          date={getDate()}
+          value={formatValue(formatPattern)}
           toggleDatepicker={toggleDatePicker}
         />
       </RenderingLogicProvider>

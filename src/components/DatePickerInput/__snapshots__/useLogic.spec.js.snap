@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePicker > useLogic > handleDateSet handleDateSet toggles visibility, if hideOnSelect === true 1`] = `
+Object {
+  "payload": false,
+  "type": "TOGGLE_DATEPICKER",
+}
+`;
+
+exports[`DatePicker > useLogic > handleDateSet returns functions 1`] = `
+Object {
+  "formatValue": [Function],
+  "getDate": [Function],
+  "handleDateSet": [Function],
+}
+`;
