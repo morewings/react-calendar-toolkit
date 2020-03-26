@@ -14,7 +14,7 @@ const App = () => (
       <DatePicker
         startDate={new Date(1999, 11, 6)}
         endDate={new Date(2020, 1, 25)}
-        minPrecision="year"
+        minPrecision="day"
         highlightDate={highlightDate}
         onDateSet={date => {
           console.log('date set', date);

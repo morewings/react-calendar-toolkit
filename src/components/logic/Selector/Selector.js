@@ -1,15 +1,8 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {useDatePickerActions} from 'features/datepicker';
-import {
-  decrementMonth,
-  incrementMonth,
-  convertToDate,
-  checkIsWithinInterval,
-  ceilMonth,
-  floorMonth,
-} from 'utils/dateUtils';
+import {convertToDate} from 'utils/dateUtils';
 import {useMonthStepperLabels} from 'features/locale';
+import useLogic from './useLogic';
 
 const Selector = ({
   todayTimestamp,
@@ -20,36 +13,13 @@ const Selector = ({
   visibleTimestamp,
   precision,
 }) => {
-  const {setVisibility, setPrecision} = useDatePickerActions();
-
   const monthStepperLabels = useMonthStepperLabels();
 
-  // TODO: wrong name
-  const isDisabled = useCallback(
-    date =>
-      checkIsWithinInterval(
-        {start: floorMonth(startDate), end: ceilMonth(endDate)},
-        date
-      ),
-    [endDate, startDate]
-  );
-
-  const onSetPrecision = useCallback(
-    nextPrecision => {
-      setPrecision(nextPrecision);
-    },
-    [setPrecision]
-  );
-
-  const onIncrementMonth = useCallback(() => {
-    const nextDate = incrementMonth(visibleTimestamp, 1);
-    isDisabled(nextDate) && setVisibility(nextDate);
-  }, [isDisabled, setVisibility, visibleTimestamp]);
-
-  const onDecrementMonth = useCallback(() => {
-    const nextDate = decrementMonth(visibleTimestamp, 1);
-    isDisabled(nextDate) && setVisibility(nextDate);
-  }, [isDisabled, setVisibility, visibleTimestamp]);
+  const {onSetPrecision, onIncrementMonth, onDecrementMonth} = useLogic({
+    startDate,
+    endDate,
+    visibleTimestamp,
+  });
 
   const SelectorVisual = renderAs;
   return (

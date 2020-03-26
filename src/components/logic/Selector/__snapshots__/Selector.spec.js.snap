@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selector renders 1`] = `
+<DocumentFragment>
+  <div>
+    MockComponent
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Selector renders 2`] = `
+Object {
+  "decrementMonth": [Function],
+  "incrementMonth": [Function],
+  "monthStepperLabels": Object {
+    "decrementMonthLabel": "1 month ago",
+    "incrementMonthLabel": "in 1 month",
+  },
+  "precision": "day",
+  "selectedDate": 2012-12-12T00:00:00.000Z,
+  "setPrecision": [Function],
+  "todayDate": 2012-12-12T00:00:00.000Z,
+  "visibleDate": 2012-12-12T00:00:00.000Z,
+}
+`;
