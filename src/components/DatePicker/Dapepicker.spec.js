@@ -35,7 +35,7 @@ const MockWrapper = jest.fn(({children}) => (
 
 const onDateSet = jest.fn();
 const date = {
-  base: new Date(2020, 0, 12), // 12.12.2012
+  base: new Date(2020, 0, 12), // 12.01.2020
   plusOneDay: new Date(2020, 0, 13),
   minusOneDay: new Date(2020, 0, 11),
   minusOneMonth: new Date(2019, 11, 12),

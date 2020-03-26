@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selector > useLogic  onDecrementMonth sets next visible date by subtracting 1 from current, if next date is within provided range 1`] = `
+Object {
+  "payload": Object {
+    "visibleTimestamp": 1576108800000,
+  },
+  "type": "SET_VISIBILITY",
+}
+`;
+
+exports[`Selector > useLogic  onIncrementMonth sets next visible date by adding 1 to current, if next date is within provided range 1`] = `
+Object {
+  "payload": Object {
+    "visibleTimestamp": 1581465600000,
+  },
+  "type": "SET_VISIBILITY",
+}
+`;
+
+exports[`Selector > useLogic  onSetPrecision sets precision 1`] = `
+Object {
+  "payload": "month",
+  "type": "SET_PRECISION",
+}
+`;
+
+exports[`Selector > useLogic  returns functions 1`] = `
+Object {
+  "onDecrementMonth": [Function],
+  "onIncrementMonth": [Function],
+  "onSetPrecision": [Function],
+}
+`;

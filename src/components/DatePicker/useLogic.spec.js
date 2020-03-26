@@ -11,7 +11,7 @@ const mockReducer = jest.fn((...args) => {
 
 const onDateSet = jest.fn();
 
-const date = new Date(2020, 0, 12); // 12.12.2012
+const date = new Date(2020, 0, 12); // 12.01.2020
 
 const createStoreProviderWithState = state =>
   createStoreProvider({
