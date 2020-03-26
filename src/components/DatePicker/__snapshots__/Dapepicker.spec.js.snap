@@ -1,5 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DatePicker disables weekend highlight 1`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": false,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker passes \`disableDate\` 1`] = `
+Object {
+  "disableDate": [MockFunction],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker passes \`highlightDate\` 1`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [MockFunction],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker passes Day(s) Calendar custom UI 1`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": "MockComponent",
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": "MockWrapper",
+}
+`;
+
+exports[`DatePicker passes Month(s) Calendar custom UI 1`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker passes Weekday(s) Row custom UI 1`] = `
+Object {
+  "renderAs": "MockComponent",
+  "wrapWith": "MockWrapper",
+}
+`;
+
+exports[`DatePicker passes Year(s) Calendar custom UI 1`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": [Function],
+}
+`;
+
 exports[`DatePicker renders 1`] = `
 <DocumentFragment>
   <div
@@ -8,396 +117,327 @@ exports[`DatePicker renders 1`] = `
     role="dialog"
     style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
   >
-    <div
-      class="wrapper"
-    >
-      <div
-        class="title"
-      />
-      <div
-        aria-live="polite"
-        class="currentDate"
-      >
-        Jan 6th
-      </div>
+    <div>
+      Header
     </div>
-    <div
-      class="wrapper"
-    >
-      <div
-        class="buttons"
-      >
-        <button
-          aria-live="polite"
-          type="button"
-        >
-          2020
-        </button>
-        <button
-          aria-live="polite"
-          type="button"
-        >
-          January
-        </button>
-      </div>
-      <div
-        class="stepper"
-      >
-        <button
-          aria-label="1 month ago"
-          type="button"
-        >
-          ⟨
-        </button>
-        <button
-          aria-label="in 1 month"
-          type="button"
-        >
-          ⟩
-        </button>
-      </div>
+    <div>
+      Selector
     </div>
-    <div
-      class="grid"
-      role="presentation"
-    >
-      <div
-        aria-label="Sunday"
-        class="wrapper"
-      >
-        Su
-      </div>
-      <div
-        aria-label="Monday"
-        class="wrapper"
-      >
-        Mo
-      </div>
-      <div
-        aria-label="Tuesday"
-        class="wrapper"
-      >
-        Tu
-      </div>
-      <div
-        aria-label="Wednesday"
-        class="wrapper"
-      >
-        We
-      </div>
-      <div
-        aria-label="Thursday"
-        class="wrapper"
-      >
-        Th
-      </div>
-      <div
-        aria-label="Friday"
-        class="wrapper"
-      >
-        Fr
-      </div>
-      <div
-        aria-label="Saturday"
-        class="wrapper"
-      >
-        Sa
-      </div>
+    <div>
+      Weekdays
     </div>
-    <div
-      class="grid"
-    >
-      <div
-        class="placeholder"
-      />
-      <div
-        class="placeholder"
-      />
-      <div
-        class="placeholder"
-      />
-      <div
-        aria-disabled="false"
-        aria-label="1st January Wednesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        1
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="2nd January Thursday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        2
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="3rd January Friday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        3
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="4th January Saturday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        4
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="5th January Sunday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        5
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="6th January Monday"
-        class="wrapper isSelected"
-        role="button"
-        tabindex="0"
-      >
-        6
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="7th January Tuesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        7
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="8th January Wednesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        8
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="9th January Thursday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        9
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="10th January Friday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        10
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="11th January Saturday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        11
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="12th January Sunday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        12
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="13th January Monday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        13
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="14th January Tuesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        14
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="15th January Wednesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        15
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="16th January Thursday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        16
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="17th January Friday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        17
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="18th January Saturday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        18
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="19th January Sunday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        19
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="20th January Monday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        20
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="21st January Tuesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        21
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="22nd January Wednesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        22
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="23rd January Thursday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        23
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="24th January Friday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        24
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="25th January Saturday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        25
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="26th January Sunday"
-        class="wrapper isWeekend"
-        role="button"
-        tabindex="0"
-      >
-        26
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="27th January Monday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        27
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="28th January Tuesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        28
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="29th January Wednesday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        29
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="30th January Thursday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        30
-      </div>
-      <div
-        aria-disabled="false"
-        aria-label="31st January Friday"
-        class="wrapper"
-        role="button"
-        tabindex="0"
-      >
-        31
-      </div>
-      <div
-        class="placeholder"
-      />
+    <div>
+      Calendar
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DatePicker renders 2`] = `
+Object {
+  "renderAs": [Function],
+  "title": "",
+}
+`;
+
+exports[`DatePicker renders 3`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker renders 4`] = `
+Object {
+  "endDate": 2020-02-25T00:00:00.000Z,
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578268800000,
+  "startDate": 2020-01-01T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578268800000,
+}
+`;
+
+exports[`DatePicker renders Header custom UI 1`] = `
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="datepickerWrapper"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Header
+    </div>
+    <div>
+      Selector
+    </div>
+    <div>
+      Weekdays
+    </div>
+    <div>
+      Calendar
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DatePicker renders Selector custom UI 1`] = `
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="datepickerWrapper"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Header
+    </div>
+    <div>
+      Selector
+    </div>
+    <div>
+      Weekdays
+    </div>
+    <div>
+      Calendar
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DatePicker renders custom Wrapper 1`] = `
+<div
+  data-testid="wrapper"
+>
+  <div>
+    Header
+  </div>
+  <div>
+    Selector
+  </div>
+  <div>
+    Weekdays
+  </div>
+  <div>
+    Calendar
+  </div>
+</div>
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  1`] = `
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="datepickerWrapper"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Header
+    </div>
+    <div>
+      Selector
+    </div>
+    <div>
+      Weekdays
+    </div>
+    <div>
+      Calendar
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  2`] = `
+Object {
+  "renderAs": [Function],
+  "title": "",
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  3`] = `
+Object {
+  "endDate": 2021-02-12T00:00:00.000Z,
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578787200000,
+  "startDate": 2019-02-12T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578787200000,
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  4`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2021-02-12T00:00:00.000Z,
+  "highlightDate": [Function],
+  "highlightWeekends": true,
+  "onDateSet": [Function],
+  "precision": "day",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578787200000,
+  "startDate": 2019-02-12T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578787200000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  5`] = `
+Object {
+  "renderAs": [Function],
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  1`] = `
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="datepickerWrapper"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Header
+    </div>
+    <div>
+      Selector
+    </div>
+    <div>
+      Calendar
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  2`] = `
+Object {
+  "renderAs": [Function],
+  "title": "",
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  3`] = `
+Object {
+  "endDate": 2021-02-12T00:00:00.000Z,
+  "precision": "month",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578787200000,
+  "startDate": 2019-02-12T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578787200000,
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  4`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2021-02-12T00:00:00.000Z,
+  "highlightDate": [Function],
+  "onDateSet": [Function],
+  "precision": "month",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578787200000,
+  "startDate": 2019-02-12T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578787200000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  1`] = `
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="datepickerWrapper"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Header
+    </div>
+    <div>
+      Selector
+    </div>
+    <div>
+      Calendar
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  2`] = `
+Object {
+  "renderAs": [Function],
+  "title": "",
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  3`] = `
+Object {
+  "endDate": 2021-02-12T00:00:00.000Z,
+  "precision": "year",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578787200000,
+  "startDate": 2019-02-12T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578787200000,
+}
+`;
+
+exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  4`] = `
+Object {
+  "disableDate": [Function],
+  "endDate": 2021-02-12T00:00:00.000Z,
+  "highlightDate": [Function],
+  "onDateSet": [Function],
+  "precision": "year",
+  "renderAs": [Function],
+  "selectedTimestamp": 1578787200000,
+  "startDate": 2019-02-12T00:00:00.000Z,
+  "todayTimestamp": 1578614400000,
+  "visibleTimestamp": 1578787200000,
+  "wrapWith": [Function],
+}
+`;
+
+exports[`DatePicker renders title 1`] = `
+Object {
+  "renderAs": [Function],
+  "title": "Title",
+}
+`;
+
+exports[`DatePicker renders without header 1`] = `
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="datepickerWrapper"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Selector
+    </div>
+    <div>
+      Weekdays
+    </div>
+    <div>
+      Calendar
     </div>
   </div>
 </DocumentFragment>

@@ -182,7 +182,7 @@ DatePicker.defaultProps = {
   initialDate: new Date(2020, 0, 6),
   startDate: new Date(2020, 0, 1),
   endDate: new Date(2020, 1, 25),
-  today: new Date(),
+  today: new Date(Date.now()),
   showHeader: true,
   title: '',
   minPrecision: 'day',
