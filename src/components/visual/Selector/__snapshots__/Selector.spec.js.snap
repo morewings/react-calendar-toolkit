@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selector renders 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="buttons"
+    >
+      <button
+        aria-live="polite"
+        type="button"
+      >
+        2012
+      </button>
+      <button
+        aria-live="polite"
+        type="button"
+      >
+        December
+      </button>
+    </div>
+    <div
+      class="stepper"
+    >
+      <button
+        aria-label="decrementMonthLabel"
+        type="button"
+      >
+        ⟨
+      </button>
+      <button
+        aria-label="incrementMonthLabel"
+        type="button"
+      >
+        ⟩
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Selector renders 2`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="buttons"
+    >
+      <button
+        aria-live="polite"
+        type="button"
+      >
+        2012
+      </button>
+      <button
+        aria-live="polite"
+        type="button"
+      >
+        December
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Selector renders 3`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="buttons"
+    >
+      <button
+        aria-live="polite"
+        type="button"
+      >
+        2012
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
