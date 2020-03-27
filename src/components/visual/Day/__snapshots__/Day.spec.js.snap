@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Day display props it renders 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="true"
+    aria-label="12th January Sunday"
+    class="wrapper isCurrent isSelected isDisabled isWeekend isHighlighted"
+    role="button"
+    tabindex="-1"
+  >
+    1
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Day display props it renders 2`] = `
+<DocumentFragment>
+  <div
+    class="placeholder"
+  />
+</DocumentFragment>
+`;
+
+exports[`Day display props it renders 3`] = `
+<DocumentFragment>
+  <div
+    class="placeholder"
+  />
+</DocumentFragment>
+`;

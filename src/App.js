@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import {isSameDay} from 'date-fns'
+import customLocale from 'date-fns/locale/es';
 import DatePicker, {DatePickerInput} from 'entryPoint';
 import './App.css';
 
@@ -27,10 +28,11 @@ const App = () => (
     </div>
     <div className="container">
       <DatePickerInput
+        minPrecision="month"
         onDateSet={date => {
           // console.log('date set', date);
         }}
-        mode="modal"
+        dateFnsLocale={customLocale}
         title="Demo datepicker"
       />
     </div>

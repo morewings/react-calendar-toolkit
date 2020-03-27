@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopoverProvider renders with popover 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="input"
+    >
+      Input
+    </div>
+  </div>
+  <div
+    class="container"
+    style="overflow: hidden; position: absolute; top: 6px; left: 6px; opacity: 1; transition: opacity 0.35s;"
+  >
+    <div
+      data-testid="wrapper"
+    >
+      <div
+        data-testid="datepicker"
+      >
+        Datepicker
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`PopoverProvider renders without popover 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="input"
+    >
+      Input
+    </div>
+  </div>
+</body>
+`;

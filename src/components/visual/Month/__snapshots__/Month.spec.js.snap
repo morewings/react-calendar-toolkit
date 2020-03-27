@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Month display props it renders 1`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="true"
+    aria-label="wide"
+    class="wrapper isSelected isDisabled isCurrent isHighlighted"
+    role="button"
+    tabindex="-1"
+  >
+    abbreviated
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Month display props it renders 2`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="true"
+    aria-label="wide"
+    class="wrapper isSelected isDisabled isCurrent isHighlighted"
+    role="button"
+    tabindex="-1"
+  >
+    abbreviated
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Month display props it renders 3`] = `
+<DocumentFragment>
+  <div
+    aria-disabled="false"
+    aria-label="wide"
+    class="wrapper"
+    role="button"
+    tabindex="0"
+  >
+    abbreviated
+  </div>
+</DocumentFragment>
+`;

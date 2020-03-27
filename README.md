@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/morewings/react-calendar-toolkit.svg?branch=master)](https://travis-ci.org/morewings/react-calendar-toolkit)
+[![Build Status](https://travis-ci.com/morewings/react-calendar-toolkit.svg?branch=master)](https://travis-ci.com/morewings/react-calendar-toolkit)
 [![codecov](https://codecov.io/gh/morewings/react-calendar-toolkit/branch/master/graph/badge.svg)](https://codecov.io/gh/morewings/react-calendar-toolkit)
 [![npm version](https://badge.fury.io/js/react-calendar-toolkit.svg)](https://www.npmjs.com/package/react-calendar-toolkit)
 [![types included](https://badgen.net/npm/types/tslib)](https://github.com/morewings/react-calendar-toolkit/blob/master/types/index.d.ts)

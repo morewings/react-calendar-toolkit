@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalProvider renders with modal 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="input"
+    >
+      Input
+    </div>
+  </div>
+  <div
+    class="container"
+    style="--modalBgColor: rgba(0, 0, 0, 0.38);"
+  >
+    <div
+      data-testid="wrapper"
+    >
+      <div
+        data-testid="datepicker"
+      >
+        Datepicker
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ModalProvider renders without modal 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="input"
+    >
+      Input
+    </div>
+  </div>
+</body>
+`;

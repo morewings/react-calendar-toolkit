@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalWrapper renders 1`] = `
+<div
+  id="wrapper"
+>
+  <div
+    class="content"
+  >
+    <div
+      data-testid="modalContent"
+    >
+      Mock
+    </div>
+  </div>
+</div>
+`;
