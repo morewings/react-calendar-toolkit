@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalProvider renders with modal 1`] = `
+exports[`PopoverProvider renders with popover 1`] = `
 <body>
   <div>
     <div
@@ -11,7 +11,7 @@ exports[`ModalProvider renders with modal 1`] = `
   </div>
   <div
     class="container"
-    style="--modalBgColor: rgba(0, 0, 0, 0.38);"
+    style="overflow: hidden; position: absolute; top: 6px; left: 6px; opacity: 1; transition: opacity 0.35s;"
   >
     <div
       data-testid="wrapper"
@@ -26,7 +26,7 @@ exports[`ModalProvider renders with modal 1`] = `
 </body>
 `;
 
-exports[`ModalProvider renders without modal 1`] = `
+exports[`PopoverProvider renders without popover 1`] = `
 <body>
   <div>
     <div

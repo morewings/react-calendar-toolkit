@@ -53,6 +53,4 @@ PopoverWrapper.propTypes = {
   position: PropTypes.oneOf(['bottom', 'top', 'left', 'right']).isRequired,
 };
 
-PopoverWrapper.defaultProps = {};
-
 export default PopoverWrapper;

@@ -1,7 +1,8 @@
 import React from 'react';
 import {InputMockProvider as Provider} from 'utils/testProvider';
 import {render} from '@testing-library/react';
-import ModalProvider from './ModalProvider';
+import ModalProvider from 'components/visual/Modal/ModalProvider';
+import PopoverProvider from './PopoverProvider';
 
 const Datepicker = () => <div data-testid="datepicker">Datepicker</div>;
 const Input = () => <div data-testid="input">Input</div>;
@@ -13,15 +14,15 @@ const defaultProps = {
   toggleDatepicker,
   isVisible: false,
   renderDatePickerAs: Datepicker,
-  wrapModalWith: Wrapper,
+  wrapPopoverWith: Wrapper,
 };
 
-describe('ModalProvider', () => {
-  it('renders without modal', () => {
+describe('PopoverProvider', () => {
+  it('renders without popover', () => {
     render(
-      <ModalProvider {...defaultProps}>
+      <PopoverProvider {...defaultProps}>
         <Input />
-      </ModalProvider>,
+      </PopoverProvider>,
       {
         wrapper: ({children}) => <Provider>{children}</Provider>,
       }
@@ -29,15 +30,15 @@ describe('ModalProvider', () => {
     expect(document.body).toMatchSnapshot();
   });
 
-  it('renders with modal', () => {
+  it('renders with popover', () => {
     const props = {
       ...defaultProps,
       isVisible: true,
     };
     render(
-      <ModalProvider {...props}>
+      <PopoverProvider {...props}>
         <Input />
-      </ModalProvider>,
+      </PopoverProvider>,
       {
         wrapper: ({children}) => <Provider>{children}</Provider>,
       }

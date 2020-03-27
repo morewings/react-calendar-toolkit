@@ -5,6 +5,8 @@ exports[`WeekDay it renders 1`] = `
   <div
     aria-label="wide"
     class="wrapper"
-  />
+  >
+    short
+  </div>
 </DocumentFragment>
 `;

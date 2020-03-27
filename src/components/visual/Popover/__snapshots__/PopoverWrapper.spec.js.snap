@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopoverWrapper renders 1`] = `
+<div
+  id="wrapper"
+>
+  <div
+    class="wrapper bottom"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div
+      class="triangle bottom"
+    />
+    <div
+      data-testid="modalContent"
+    >
+      Mock
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PopoverWrapper renders 2`] = `
+<div
+  id="wrapper"
+>
+  <div
+    class="wrapper top"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div
+      class="triangle top"
+    />
+    <div
+      data-testid="modalContent"
+    >
+      Mock
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PopoverWrapper renders 3`] = `
+<div
+  id="wrapper"
+>
+  <div
+    class="wrapper left"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div
+      class="triangle left"
+    />
+    <div
+      data-testid="modalContent"
+    >
+      Mock
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PopoverWrapper renders 4`] = `
+<div
+  id="wrapper"
+>
+  <div
+    class="wrapper right"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 30px; --entryMargin: 2px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div
+      class="triangle right"
+    />
+    <div
+      data-testid="modalContent"
+    >
+      Mock
+    </div>
+  </div>
+</div>
+`;
