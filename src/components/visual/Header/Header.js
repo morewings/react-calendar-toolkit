@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {useFormatDate} from 'features/locale';
 import classes from './Header.module.css';
 
-const Header = ({selectedDate, title}) => {
+const Header = ({selectedDate, title, todayDate}) => {
   /**
    * Returns formatted date
    * @param {string} pattern - Formatting pattern

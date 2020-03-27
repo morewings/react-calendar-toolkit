@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekDayGrid renders 1`] = `
+<DocumentFragment>
+  <div
+    class="grid"
+    role="presentation"
+  >
+    <div>
+      Mock
+    </div>
+  </div>
+</DocumentFragment>
+`;

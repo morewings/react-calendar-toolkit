@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Year display props it renders 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="1"
+    class="wrapper isCurrent isSelected isHighlighted"
+    role="button"
+    tabindex="0"
+  >
+    1
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Year display props it renders 2`] = `
+<DocumentFragment>
+  <div
+    aria-label="1"
+    class="wrapper isCurrent isSelected isHighlighted"
+    role="button"
+    tabindex="0"
+  >
+    1
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Year display props it renders 3`] = `
+<DocumentFragment>
+  <div
+    aria-label="1"
+    class="wrapper"
+    role="button"
+    tabindex="0"
+  >
+    1
+  </div>
+</DocumentFragment>
+`;
