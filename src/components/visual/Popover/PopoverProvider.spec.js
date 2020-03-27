@@ -1,7 +1,6 @@
 import React from 'react';
 import {InputMockProvider as Provider} from 'utils/testProvider';
 import {render} from '@testing-library/react';
-import ModalProvider from 'components/visual/Modal/ModalProvider';
 import PopoverProvider from './PopoverProvider';
 
 const Datepicker = () => <div data-testid="datepicker">Datepicker</div>;
