@@ -1,6 +1,6 @@
 import React from 'react';
 import {DatepickerMockProvider as Provider} from 'utils/testProvider';
-import {render, fireEvent} from '@testing-library/react';
+import {render} from '@testing-library/react';
 import WeekDay from './WeekDay';
 
 const defaultProps = {
@@ -9,6 +9,7 @@ const defaultProps = {
     wide: 'wide',
     abbreviated: 'abbreviated',
     narrow: 'narrow',
+    short: 'short',
   },
 };
 
