@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useModalContext, useModalActions} from 'features/modal';
-import {
-  useDatePickerContext,
-  useHasInitialValues,
-  useSetInitialValues,
-} from 'features/datepicker';
+import {useHasInitialValues, useSetInitialValues} from 'features/datepicker';
 import DatePicker, {propTypes} from 'components/DatePicker/DatePicker';
 import Input from 'components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'components/visual/Popover';
