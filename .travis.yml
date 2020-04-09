@@ -34,6 +34,15 @@ deploy:
     on:
       tags: true
       branch: master
+  - provider: netlify
+    site: react-calendar-toolkit.netlify.com
+    auth: "$NETLIFY_TOKEN"
+    dir: styleguide
+    prod: true
+    cleanup: false
+    edge: true
+    on:
+      branch: master
 
 notifications:
   email: false

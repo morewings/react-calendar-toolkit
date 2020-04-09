@@ -7,6 +7,10 @@ module.exports = {
   moduleAliases: {
     'react-calendar-toolkit': path.resolve(__dirname, 'src/entryPoint.js'), // custom resolver path
   },
+  ribbon: {
+    url: 'https://github.com/morewings/react-calendar-toolkit/',
+    text: 'Fork me on GitHub',
+  },
   sections: [
     {
       name: 'Quickstart',
@@ -28,6 +32,7 @@ module.exports = {
         'src/components/DatePickerInput/DatePickerInput.js',
       ],
       description: 'Exported components',
+      sectionDepth: 1,
     },
     {
       name: 'Utilities',
@@ -51,6 +56,7 @@ module.exports = {
         'src/components/visual/Month/Month.js',
         'src/components/visual/Year/Year.js',
       ],
+      sectionDepth: 1,
     },
     {
       name: 'Input custom UI',
@@ -61,6 +67,7 @@ module.exports = {
         'src/components/visual/Modal/ModalWrapper.js',
         'src/components/visual/Popover/PopoverWrapper.js',
       ],
+      sectionDepth: 1,
     },
   ],
   updateExample(props, exampleFilePath) {
