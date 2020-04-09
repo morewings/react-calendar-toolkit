@@ -12,8 +12,9 @@ script:
   - yarn lint
   - yarn stylelint
   - yarn test --coverage
+  - yarn build
   - yarn build:docs
-  - yarn build:rollup
+  - yarn build:lib
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
@@ -23,9 +24,9 @@ deploy:
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     keep_history: false
+    local_dir: build
     on:
       branch: master
-    local_dir: styleguide
   - provider: npm
     edge: true
     email: "$NPM_EMAIL"
