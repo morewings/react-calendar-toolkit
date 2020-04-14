@@ -24,8 +24,8 @@ export default {
   /** Set padding between elements */
   '--innerPadding': '12px',
   /** Day, month, year entries height */
-  '--entryHeight': '30px',
-  '--entryMargin': '2px',
+  '--entryHeight': '32px',
+  '--entryMargin': '1px',
   '--datepickerBorderRadius': borderRadius,
   '--entryBorderRadius': borderRadius,
   /** Background color of Calendar */

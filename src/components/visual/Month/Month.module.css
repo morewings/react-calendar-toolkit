@@ -8,11 +8,12 @@
 }
 
 .wrapper {
+  background-clip: padding-box;
   border: 1px solid var(--bgColor);
   border-radius: var(--entryBorderRadius);
   box-sizing: border-box;
   cursor: pointer;
-  flex: 1 1 calc(100% / 3 - 6px);
+  flex: 1 1 calc(100% / 3 - 3px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   margin: var(--innerPadding) var(--entryMargin) 0;
