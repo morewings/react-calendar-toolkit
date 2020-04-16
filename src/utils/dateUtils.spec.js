@@ -7,8 +7,8 @@ import {
   convertToTimestamp,
   convertToDate,
   convertToDayOfMonth,
-  incrementMonth,
-  decrementMonth,
+  addMonth,
+  subMonth,
   checkIsWithinInterval,
   checkIsWeekend,
   matchDatesWithPrecision,
@@ -144,27 +144,27 @@ describe('convertToDayOfMonth', () => {
   });
 });
 
-describe('incrementMonth', () => {
+describe('addMonth', () => {
   it('adds specified amount of months to provided date or timestamp and returns timestamp', () => {
     const timestamp = date.getTime();
     const firstExpected = 1582156800000;
     const secondExpected = 1587340800000;
-    expect(incrementMonth(date, 1)).toBe(firstExpected);
-    expect(incrementMonth(timestamp, 1)).toBe(firstExpected);
-    expect(incrementMonth(date, 3)).toBe(secondExpected);
-    expect(incrementMonth(timestamp, 3)).toBe(secondExpected);
+    expect(addMonth(date, 1)).toBe(firstExpected);
+    expect(addMonth(timestamp, 1)).toBe(firstExpected);
+    expect(addMonth(date, 3)).toBe(secondExpected);
+    expect(addMonth(timestamp, 3)).toBe(secondExpected);
   });
 });
 
-describe('decrementMonth', () => {
+describe('subMonth', () => {
   it('adds specified amount of months to provided date or timestamp and returns timestamp', () => {
     const timestamp = date.getTime();
     const firstExpected = 1576800000000;
     const secondExpected = 1571529600000;
-    expect(decrementMonth(date, 1)).toBe(firstExpected);
-    expect(decrementMonth(timestamp, 1)).toBe(firstExpected);
-    expect(decrementMonth(date, 3)).toBe(secondExpected);
-    expect(decrementMonth(timestamp, 3)).toBe(secondExpected);
+    expect(subMonth(date, 1)).toBe(firstExpected);
+    expect(subMonth(timestamp, 1)).toBe(firstExpected);
+    expect(subMonth(date, 3)).toBe(secondExpected);
+    expect(subMonth(timestamp, 3)).toBe(secondExpected);
   });
 });
 

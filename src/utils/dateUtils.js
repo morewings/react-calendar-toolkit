@@ -5,6 +5,7 @@ import {
   toDate,
   getTime,
   addMonths,
+  addDays,
   isWithinInterval,
   isWeekend,
   isSameDay,
@@ -12,6 +13,7 @@ import {
   startOfMonth,
   endOfMonth,
 } from 'date-fns/fp';
+import compose from 'utils/compose';
 
 /**
  * Unix timestamp
@@ -96,27 +98,6 @@ export const convertToDayOfMonth = timestamp => getDate(timestamp);
 
 /**
  * @function
- * @name incrementMonth
- * @description Adds months
- * @param {DateUnion} date - Date or Unix timestamp
- * @param {number} amount - Amount of months to add
- * @return {UnixTimestamp}
- */
-export const incrementMonth = (date, amount) =>
-  getTime(addMonths(amount, date));
-
-/**
- * @function
- * @name decrementMonth
- * @description Subtracts month
- * @param {DateUnion} date - Date or Unix timestamp to substract
- * @param {number} amount - Amount of months to substract
- * @return {UnixTimestamp}
- */
-export const decrementMonth = (date, amount) => incrementMonth(date, -amount);
-
-/**
- * @function
  * @name checkIsWithinInterval
  * @description Checks if date belongs to the interval
  * @typedef {Object} Interval
@@ -171,3 +152,47 @@ export const ceilMonth = endOfMonth;
  * @return {Date}
  */
 export const floorMonth = startOfMonth;
+
+/**
+ * @function
+ * @name addMonth
+ * @description Adds months
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of months to add
+ * @return {UnixTimestamp}
+ */
+
+export const addMonth = (date, amount) => getTime(addMonths(amount, date));
+
+/**
+ * @function
+ * @name subMonth
+ * @description Subtracts months
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of months to subtract
+ * @return {UnixTimestamp}
+ */
+
+export const subMonth = (date, amount) => getTime(addMonths(-amount, date));
+
+/**
+ * @function
+ * @name addDay
+ * @description Adds days
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of days to add
+ * @return {UnixTimestamp}
+ */
+
+export const addDay = (date, amount) => getTime(addDays(amount, date));
+
+/**
+ * @function
+ * @name subDay
+ * @description Adds days
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of days to subtract
+ * @return {UnixTimestamp}
+ */
+
+export const subDay = (date, amount) => getTime(addDays(-amount, date));
