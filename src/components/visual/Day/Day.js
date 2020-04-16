@@ -14,7 +14,6 @@ const Day = ({
   isHighlighted,
   isWeekend,
   name,
-  getHandleKeyPress,
 }) => {
   /**
    * Returns formatted date
@@ -26,17 +25,12 @@ const Day = ({
   const handleClick = () => {
     onDateSet(date);
   };
-  const handleKeyPress = e => {
-    e.preventDefault();
-    e.stopPropagation();
-    getHandleKeyPress({key: e.key, rowLength: 7, date});
-  };
   return belongsToSameMonth ? (
     <div
       tabIndex={isDisabled ? '-1' : '0'}
       role="button"
       onClick={handleClick}
-      onKeyDown={handleKeyPress}
+      onKeyDown={handleClick}
       className={classNames({
         [classes.wrapper]: true,
         /** Conditional class to display, if day is today */
@@ -72,11 +66,6 @@ Day.propTypes = {
   isWeekend: PropTypes.bool.isRequired,
   /** Function to set date for Calendar, e. g. `onDateSet(date)`. */
   onDateSet: PropTypes.func.isRequired,
-  /**
-   * Handle key press, used for keyboard navigation.
-   * @example
-   */
-  getHandleKeyPress: PropTypes.func.isRequired,
   /** Date for this day entry */
   date: PropTypes.instanceOf(Date).isRequired,
   /** Flag, showing if this day entry is __today__. */

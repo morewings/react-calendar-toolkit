@@ -27,7 +27,7 @@ There are many good datepickers on the market. Unfortunately, most of them are _
 - Uses `date-fns` as logic provider.
 - Supports **localization** for 69 languages, using `date-fns` locales. You can create custom one.
 - Lightweight: adds just **~10kb** to your bundle.
-- Has **type definitions** and **typescript** compatible.
+- **Typescript** friendly, type definitions included.
 - Disable any date: 
     ```js
     disableDate: ({isWeekend, precision, date}) => Boolean

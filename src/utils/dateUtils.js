@@ -45,8 +45,7 @@ export const formatDateWithLocale = formatWithOptions;
  * @param {DateUnion} dateRight - Date to check
  * @return {boolean}
  */
-export const checkIsSameMonth = (dateLeft, dateRight) =>
-  isSameMonth(dateLeft, dateRight);
+export const checkIsSameMonth = isSameMonth;
 
 /**
  * @function
@@ -56,8 +55,7 @@ export const checkIsSameMonth = (dateLeft, dateRight) =>
  * @param {DateUnion} dateRight - Date to check
  * @return {boolean}
  */
-export const checkIsSameYear = (dateLeft, dateRight) =>
-  isSameYear(dateLeft, dateRight);
+export const checkIsSameYear = isSameYear;
 
 /**
  * @function
@@ -67,8 +65,7 @@ export const checkIsSameYear = (dateLeft, dateRight) =>
  * @param {DateUnion} dateRight - Date to check
  * @return {boolean}
  */
-export const checkIsSameDay = (dateLeft, dateRight) =>
-  isSameDay(dateLeft, dateRight);
+export const checkIsSameDay = isSameDay;
 
 /**
  * @function
@@ -108,8 +105,7 @@ export const convertToDayOfMonth = timestamp => getDate(timestamp);
  * @param {Interval} interval - Time range to check
  * @return {boolean}
  */
-export const checkIsWithinInterval = (interval, date) =>
-  isWithinInterval(interval, date);
+export const checkIsWithinInterval = isWithinInterval;
 
 /**
  * @function
