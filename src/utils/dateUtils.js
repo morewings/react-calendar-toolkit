@@ -6,6 +6,7 @@ import {
   getTime,
   addMonths,
   addDays,
+  addYears,
   isWithinInterval,
   isWeekend,
   isSameDay,
@@ -161,8 +162,8 @@ export const floorMonth = startOfMonth;
  * @param {number} amount - Amount of months to add
  * @return {UnixTimestamp}
  */
-
-export const addMonth = (date, amount) => getTime(addMonths(amount, date));
+export const addMonth = (date, amount) =>
+  compose(convertToTimestamp, addMonths)(amount, date);
 
 /**
  * @function
@@ -172,8 +173,8 @@ export const addMonth = (date, amount) => getTime(addMonths(amount, date));
  * @param {number} amount - Amount of months to subtract
  * @return {UnixTimestamp}
  */
-
-export const subMonth = (date, amount) => getTime(addMonths(-amount, date));
+export const subMonth = (date, amount) =>
+  compose(convertToTimestamp, addMonths)(-amount, date);
 
 /**
  * @function
@@ -183,16 +184,38 @@ export const subMonth = (date, amount) => getTime(addMonths(-amount, date));
  * @param {number} amount - Amount of days to add
  * @return {UnixTimestamp}
  */
-
-export const addDay = (date, amount) => getTime(addDays(amount, date));
+export const addDay = (date, amount) =>
+  compose(convertToTimestamp, addDays)(amount, date);
 
 /**
  * @function
  * @name subDay
- * @description Adds days
+ * @description Subtracts days
  * @param {DateUnion} date - Date or Unix timestamp
  * @param {number} amount - Amount of days to subtract
  * @return {UnixTimestamp}
  */
+export const subDay = (date, amount) =>
+  compose(convertToTimestamp, addDays)(-amount, date);
 
-export const subDay = (date, amount) => getTime(addDays(-amount, date));
+/**
+ * @function
+ * @name addYear
+ * @description Adds years
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of years to add
+ * @return {UnixTimestamp}
+ */
+export const addYear = (date, amount) =>
+  compose(convertToTimestamp, addYears)(amount, date);
+
+/**
+ * @function
+ * @name subYear
+ * @description Subtracts years
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of days to subtract
+ * @return {UnixTimestamp}
+ */
+export const subYear = (date, amount) =>
+  compose(convertToTimestamp, addYears)(-amount, date);

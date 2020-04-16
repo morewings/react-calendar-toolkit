@@ -14,6 +14,10 @@ import {
   matchDatesWithPrecision,
   ceilMonth,
   floorMonth,
+  addDay,
+  subDay,
+  addYear,
+  subYear,
 } from './dateUtils';
 
 const date = new Date('2020-01-20T00:00:00.000'); // 20.01.2020
@@ -165,6 +169,54 @@ describe('subMonth', () => {
     expect(subMonth(timestamp, 1)).toBe(firstExpected);
     expect(subMonth(date, 3)).toBe(secondExpected);
     expect(subMonth(timestamp, 3)).toBe(secondExpected);
+  });
+});
+
+describe('addDay', () => {
+  it('adds specified amount of days to provided date or timestamp and returns timestamp', () => {
+    const timestamp = date.getTime();
+    const firstExpected = 1579564800000;
+    const secondExpected = 1579737600000;
+    expect(addDay(date, 1)).toBe(firstExpected);
+    expect(addDay(timestamp, 1)).toBe(firstExpected);
+    expect(addDay(date, 3)).toBe(secondExpected);
+    expect(addDay(timestamp, 3)).toBe(secondExpected);
+  });
+});
+
+describe('subDay', () => {
+  it('subtracts specified amount of days to provided date or timestamp and returns timestamp', () => {
+    const timestamp = date.getTime();
+    const firstExpected = 1579392000000;
+    const secondExpected = 1579219200000;
+    expect(subDay(date, 1)).toBe(firstExpected);
+    expect(subDay(timestamp, 1)).toBe(firstExpected);
+    expect(subDay(date, 3)).toBe(secondExpected);
+    expect(subDay(timestamp, 3)).toBe(secondExpected);
+  });
+});
+
+describe('addYear', () => {
+  it('adds specified amount of years to provided date or timestamp and returns timestamp', () => {
+    const timestamp = date.getTime();
+    const firstExpected = 1611100800000;
+    const secondExpected = 1674172800000;
+    expect(addYear(date, 1)).toBe(firstExpected);
+    expect(addYear(timestamp, 1)).toBe(firstExpected);
+    expect(addYear(date, 3)).toBe(secondExpected);
+    expect(addYear(timestamp, 3)).toBe(secondExpected);
+  });
+});
+
+describe('subYear', () => {
+  it('subtracts specified amount of years to provided date or timestamp and returns timestamp', () => {
+    const timestamp = date.getTime();
+    const firstExpected = 1547942400000;
+    const secondExpected = 1484870400000;
+    expect(subYear(date, 1)).toBe(firstExpected);
+    expect(subYear(timestamp, 1)).toBe(firstExpected);
+    expect(subYear(date, 3)).toBe(secondExpected);
+    expect(subYear(timestamp, 3)).toBe(secondExpected);
   });
 });
 
