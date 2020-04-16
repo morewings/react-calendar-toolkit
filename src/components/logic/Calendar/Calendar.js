@@ -32,7 +32,6 @@ const Calendar = ({
     getBelongsToSameMonth,
     getIsSelected,
     getIsCurrent,
-    getHandleKeyPress,
   } = useLogic({
     disableDate,
     endDate,
@@ -52,7 +51,6 @@ const Calendar = ({
     <Wrapper>
       {items.map(({name, date}) => (
         <VisualComponent
-          getHandleKeyPress={getHandleKeyPress}
           isWeekend={getIsWeekend(date)}
           onDateSet={handleDateSet}
           isSelected={getIsSelected(date)}

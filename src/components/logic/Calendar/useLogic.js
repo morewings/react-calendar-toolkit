@@ -62,16 +62,6 @@ const useLogic = ({
   const getIsCurrent = date =>
     matchDatesWithPrecision(precision, date, todayTimestamp);
 
-  const getHandleKeyPress = ({rowLength, key, date}) => {
-    const amount = {
-      ArrowUp: -rowLength,
-      ArrowDown: rowLength,
-      ArrowLeft: rowLength,
-      ArrowRight: rowLength,
-    }[key]
-    console.log('key press', rowLength, key, date);
-  };
-
   return {
     getIsDisabled,
     getIsHighlighted,
@@ -80,7 +70,6 @@ const useLogic = ({
     getBelongsToSameMonth,
     getIsSelected,
     getIsCurrent,
-    // getHandleKeyPress,
   };
 };
 
