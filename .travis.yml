@@ -9,8 +9,8 @@ cache:
     - node_modules
 
 script:
-  - yarn lint
-  - yarn stylelint
+  - yarn lint:js
+  - yarn lint:style
   - yarn test --coverage
   - PUBLIC_URL=https://morewings.github.io/react-calendar-toolkit yarn build
   - yarn build:docs
@@ -26,6 +26,7 @@ deploy:
     keep_history: false
     local_dir: build
     on:
+      tags: true
       branch: master
   - provider: npm
     edge: true
