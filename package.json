@@ -72,7 +72,7 @@
     "react-test-renderer": "16.13.1",
     "react-to-typescript-definitions": "2.0.0",
     "redux-mock-store": "1.5.4",
-    "rollup": "2.7.6",
+    "rollup": "2.9.1",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-filesize": "8.0.2",
     "rollup-plugin-includepaths": "0.2.3",
