@@ -64,7 +64,7 @@
     "husky": "4.3.0",
     "jest-environment-jsdom-sixteen": "1.0.3",
     "lint-staged": "10.2.11",
-    "postcss-custom-properties": "9.1.1",
+    "postcss-custom-properties": "10.0.0",
     "postcss-preset-env": "6.7.0",
     "prettier": "2.1.2",
     "react-scripts": "3.4.3",
