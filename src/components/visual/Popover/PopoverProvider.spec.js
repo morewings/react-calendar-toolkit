@@ -4,7 +4,11 @@ import {render} from '@testing-library/react';
 import PopoverProvider from './PopoverProvider';
 
 const Datepicker = () => <div data-testid="datepicker">Datepicker</div>;
-const Input = () => <div data-testid="input">Input</div>;
+const Input = React.forwardRef((_, ref) => (
+  <div ref={ref} data-testid="input">
+    Input
+  </div>
+));
 const Wrapper = ({children}) => <div data-testid="wrapper">{children}</div>;
 
 const toggleDatepicker = jest.fn();
