@@ -7,10 +7,10 @@ import classes from './PopoverWrapper.module.css';
 
 const PopoverWrapper = ({position, children, toggleDatepicker}) => {
   /* Apply postcss theme to containing div */
-  const [ref, setRef] = useThemePostCSS();
+  const [childRef, setChildRef] = useThemePostCSS();
 
   /* Close popover on click outside */
-  useOnClickOutside(ref, () => {
+  useOnClickOutside(childRef, () => {
     toggleDatepicker(false);
   });
 
@@ -27,7 +27,7 @@ const PopoverWrapper = ({position, children, toggleDatepicker}) => {
 
   return (
     <div
-      ref={setRef}
+      ref={setChildRef}
       className={classnames({
         [classes.wrapper]: true,
         /* Conditional class to position Popover relative to Input */

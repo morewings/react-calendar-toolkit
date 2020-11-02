@@ -55,6 +55,11 @@ const DatePickerInput = ({
   useSetInitialValues({initialDate, today, minPrecision});
   const hasInitialValues = useHasInitialValues();
 
+  // eslint-disable-next-line react/prop-types
+  const RefWrap = React.forwardRef(({children}, ref) => (
+    <div ref={ref}>{children}</div>
+  ));
+
   return (
     hasInitialValues && (
       <RenderingLogicProvider
@@ -63,12 +68,14 @@ const DatePickerInput = ({
         wrapPopoverWith={wrapPopoverWith}
         wrapModalWith={wrapModalWith}
         renderDatePickerAs={DatePickerWithProps}>
-        <InputComponent
-          onChange={onDateSet}
-          date={getDate()}
-          value={formatValue(formatPattern)}
-          toggleDatepicker={toggleDatePicker}
-        />
+        <RefWrap>
+          <InputComponent
+            onChange={onDateSet}
+            date={getDate()}
+            value={formatValue(formatPattern)}
+            toggleDatepicker={toggleDatePicker}
+          />
+        </RefWrap>
       </RenderingLogicProvider>
     )
   );

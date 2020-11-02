@@ -6,7 +6,9 @@ exports[`DatePicker renders with Modal if mode === \`modal\` 1`] = `
     data-testid="Modal"
   >
     <div>
-      Input
+      <div>
+        Input
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -14,12 +16,14 @@ exports[`DatePicker renders with Modal if mode === \`modal\` 1`] = `
 
 exports[`DatePicker renders with Modal if mode === \`modal\` 2`] = `
 Object {
-  "children": <mockConstructor
-    date={2020-01-08T00:00:00.000Z}
-    onChange={[MockFunction]}
-    toggleDatepicker={[Function]}
-    value="01/08/2020"
-  />,
+  "children": <ForwardRef>
+    <mockConstructor
+      date={2020-01-08T00:00:00.000Z}
+      onChange={[MockFunction]}
+      toggleDatepicker={[Function]}
+      value="01/08/2020"
+    />
+  </ForwardRef>,
   "isVisible": false,
   "renderDatePickerAs": [Function],
   "toggleDatepicker": [Function],
@@ -43,7 +47,9 @@ exports[`DatePicker renders with Popover by default 1`] = `
     data-testid="Popover"
   >
     <div>
-      Input
+      <div>
+        Input
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -51,12 +57,14 @@ exports[`DatePicker renders with Popover by default 1`] = `
 
 exports[`DatePicker renders with Popover by default 2`] = `
 Object {
-  "children": <mockConstructor
-    date={2020-01-08T00:00:00.000Z}
-    onChange={[MockFunction]}
-    toggleDatepicker={[Function]}
-    value="01/08/2020"
-  />,
+  "children": <ForwardRef>
+    <mockConstructor
+      date={2020-01-08T00:00:00.000Z}
+      onChange={[MockFunction]}
+      toggleDatepicker={[Function]}
+      value="01/08/2020"
+    />
+  </ForwardRef>,
   "isVisible": false,
   "renderDatePickerAs": [Function],
   "toggleDatepicker": [Function],
