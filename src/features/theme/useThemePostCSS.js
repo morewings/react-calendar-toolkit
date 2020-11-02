@@ -12,12 +12,12 @@ import {removeCSSVariable, setCSSVariable} from './cssVariables';
 const useThemePostCSS = (defaultTheme = defaults) => {
   const ref = useRef(null);
   const propsTheme = useThemeContext();
-  const mergedTheme = {
-    ...defaultTheme,
-    ...propsTheme,
-  };
   const setRef = useCallback(
     element => {
+      const mergedTheme = {
+        ...defaultTheme,
+        ...propsTheme,
+      };
       if (ref.current) {
         element &&
           Object.entries(mergedTheme).forEach(([variableName]) => {
@@ -31,7 +31,7 @@ const useThemePostCSS = (defaultTheme = defaults) => {
       }
       ref.current = element;
     },
-    [mergedTheme]
+    [defaultTheme, propsTheme]
   );
 
   return [ref, setRef];
