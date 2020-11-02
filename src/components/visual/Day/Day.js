@@ -30,7 +30,7 @@ const Day = ({
       tabIndex={isDisabled ? '-1' : '0'}
       role="button"
       onClick={handleClick}
-      onKeyPress={handleClick}
+      onKeyDown={handleClick}
       className={classNames({
         [classes.wrapper]: true,
         /** Conditional class to display, if day is today */

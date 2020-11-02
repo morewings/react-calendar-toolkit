@@ -5,6 +5,8 @@ import {
   toDate,
   getTime,
   addMonths,
+  addDays,
+  addYears,
   isWithinInterval,
   isWeekend,
   isSameDay,
@@ -12,6 +14,7 @@ import {
   startOfMonth,
   endOfMonth,
 } from 'date-fns/fp';
+import compose from 'utils/compose';
 
 /**
  * Unix timestamp
@@ -42,8 +45,7 @@ export const formatDateWithLocale = formatWithOptions;
  * @param {DateUnion} dateRight - Date to check
  * @return {boolean}
  */
-export const checkIsSameMonth = (dateLeft, dateRight) =>
-  isSameMonth(dateLeft, dateRight);
+export const checkIsSameMonth = isSameMonth;
 
 /**
  * @function
@@ -53,8 +55,7 @@ export const checkIsSameMonth = (dateLeft, dateRight) =>
  * @param {DateUnion} dateRight - Date to check
  * @return {boolean}
  */
-export const checkIsSameYear = (dateLeft, dateRight) =>
-  isSameYear(dateLeft, dateRight);
+export const checkIsSameYear = isSameYear;
 
 /**
  * @function
@@ -64,8 +65,7 @@ export const checkIsSameYear = (dateLeft, dateRight) =>
  * @param {DateUnion} dateRight - Date to check
  * @return {boolean}
  */
-export const checkIsSameDay = (dateLeft, dateRight) =>
-  isSameDay(dateLeft, dateRight);
+export const checkIsSameDay = isSameDay;
 
 /**
  * @function
@@ -96,27 +96,6 @@ export const convertToDayOfMonth = timestamp => getDate(timestamp);
 
 /**
  * @function
- * @name incrementMonth
- * @description Adds months
- * @param {DateUnion} date - Date or Unix timestamp
- * @param {number} amount - Amount of months to add
- * @return {UnixTimestamp}
- */
-export const incrementMonth = (date, amount) =>
-  getTime(addMonths(amount, date));
-
-/**
- * @function
- * @name decrementMonth
- * @description Subtracts month
- * @param {DateUnion} date - Date or Unix timestamp to substract
- * @param {number} amount - Amount of months to substract
- * @return {UnixTimestamp}
- */
-export const decrementMonth = (date, amount) => incrementMonth(date, -amount);
-
-/**
- * @function
  * @name checkIsWithinInterval
  * @description Checks if date belongs to the interval
  * @typedef {Object} Interval
@@ -126,8 +105,7 @@ export const decrementMonth = (date, amount) => incrementMonth(date, -amount);
  * @param {Interval} interval - Time range to check
  * @return {boolean}
  */
-export const checkIsWithinInterval = (interval, date) =>
-  isWithinInterval(interval, date);
+export const checkIsWithinInterval = isWithinInterval;
 
 /**
  * @function
@@ -171,3 +149,69 @@ export const ceilMonth = endOfMonth;
  * @return {Date}
  */
 export const floorMonth = startOfMonth;
+
+/**
+ * @function
+ * @name addMonth
+ * @description Adds months
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of months to add
+ * @return {UnixTimestamp}
+ */
+export const addMonth = (date, amount) =>
+  compose(convertToTimestamp, addMonths)(amount, date);
+
+/**
+ * @function
+ * @name subMonth
+ * @description Subtracts months
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of months to subtract
+ * @return {UnixTimestamp}
+ */
+export const subMonth = (date, amount) =>
+  compose(convertToTimestamp, addMonths)(-amount, date);
+
+/**
+ * @function
+ * @name addDay
+ * @description Adds days
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of days to add
+ * @return {UnixTimestamp}
+ */
+export const addDay = (date, amount) =>
+  compose(convertToTimestamp, addDays)(amount, date);
+
+/**
+ * @function
+ * @name subDay
+ * @description Subtracts days
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of days to subtract
+ * @return {UnixTimestamp}
+ */
+export const subDay = (date, amount) =>
+  compose(convertToTimestamp, addDays)(-amount, date);
+
+/**
+ * @function
+ * @name addYear
+ * @description Adds years
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of years to add
+ * @return {UnixTimestamp}
+ */
+export const addYear = (date, amount) =>
+  compose(convertToTimestamp, addYears)(amount, date);
+
+/**
+ * @function
+ * @name subYear
+ * @description Subtracts years
+ * @param {DateUnion} date - Date or Unix timestamp
+ * @param {number} amount - Amount of days to subtract
+ * @return {UnixTimestamp}
+ */
+export const subYear = (date, amount) =>
+  compose(convertToTimestamp, addYears)(-amount, date);

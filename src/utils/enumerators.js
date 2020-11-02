@@ -9,7 +9,7 @@ import {
   startOfWeekWithOptions,
   getDate,
 } from 'date-fns/fp';
-import {incrementMonth, ceilMonth, floorMonth} from 'utils/dateUtils';
+import {addMonth, ceilMonth, floorMonth} from 'utils/dateUtils';
 import curry from 'utils/curry';
 
 /**
@@ -98,7 +98,7 @@ const getMonths = (locale, date) => {
   }));
   return monthNames.map((name, i) => ({
     name,
-    date: toDate(incrementMonth(year, i)),
+    date: toDate(addMonth(year, i)),
   }));
 };
 

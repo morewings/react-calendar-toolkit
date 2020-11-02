@@ -23,6 +23,12 @@ const WrappedDatePickerInput = compose(
   withTheme
 )(DatePickerInput);
 
+const WrappedDatePicker = compose(
+  withDatepickerProvider,
+  withLocaleContext,
+  withTheme
+)(DatePicker);
+
 export {
   useFormatDate,
   useThemePostCSS,
@@ -34,10 +40,7 @@ export {
   useScrollIntoView,
   useOnClickOutside,
   WrappedDatePickerInput as DatePickerInput,
+  WrappedDatePicker as DatePicker,
 };
 
-export default compose(
-  withDatepickerProvider,
-  withLocaleContext,
-  withTheme
-)(DatePicker);
+export default WrappedDatePicker;

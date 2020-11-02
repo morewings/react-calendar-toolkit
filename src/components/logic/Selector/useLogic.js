@@ -2,9 +2,9 @@ import {useCallback} from 'react';
 import {
   ceilMonth,
   checkIsWithinInterval,
-  decrementMonth,
+  subMonth,
   floorMonth,
-  incrementMonth,
+  addMonth,
 } from 'utils/dateUtils';
 import {useDatePickerActions} from 'features/datepicker';
 
@@ -28,12 +28,12 @@ const useLogic = ({startDate, endDate, visibleTimestamp}) => {
   );
 
   const onIncrementMonth = useCallback(() => {
-    const nextDate = incrementMonth(visibleTimestamp, 1);
+    const nextDate = addMonth(visibleTimestamp, 1);
     isAvailable(nextDate) && setVisibility(nextDate);
   }, [isAvailable, setVisibility, visibleTimestamp]);
 
   const onDecrementMonth = useCallback(() => {
-    const nextDate = decrementMonth(visibleTimestamp, 1);
+    const nextDate = subMonth(visibleTimestamp, 1);
     isAvailable(nextDate) && setVisibility(nextDate);
   }, [isAvailable, setVisibility, visibleTimestamp]);
 

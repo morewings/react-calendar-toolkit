@@ -1,5 +1,5 @@
-export default (...fns) =>
+export default (...fns) => (...args) =>
   fns.reduceRight(
-    (prevFn, nextFn) => (...args) => nextFn(prevFn(...args)),
-    value => value
+    (params, f) => (Array.isArray(params) ? f(...params) : f(params)),
+    args
   );

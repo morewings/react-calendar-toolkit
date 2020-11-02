@@ -59,7 +59,7 @@ declare module 'react-calendar-toolkit' {
     datePickerProps?: DatePickerPropsShared
   }
 
-  const DatePicker: React.FC<DatePickerProps>;
+  export const DatePicker: React.FC<DatePickerProps>;
 
   export const DatePickerInput: React.FC<InputProps>;
 

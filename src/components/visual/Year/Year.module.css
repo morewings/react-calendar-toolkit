@@ -14,12 +14,13 @@
 }
 
 .wrapper {
+  background-clip: padding-box;
   border: 1px solid var(--bgColor);
   border-radius: var(--entryBorderRadius);
   box-sizing: border-box;
   color: var(--textColor);
   cursor: pointer;
-  flex: 0 1 calc(100% / 5 - 4px);
+  flex: 0 1 calc(100% / 5 - 2px);
   height: var(--entryHeight);
   line-height: var(--entryHeight);
   margin: var(--innerPadding) var(--entryMargin) 0;
