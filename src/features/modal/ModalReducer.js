@@ -4,7 +4,7 @@ export const initialState = {
   isVisible: false,
 };
 
-export default (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_DATEPICKER: {
       const isVisible = action.payload;
@@ -17,3 +17,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default reducer;

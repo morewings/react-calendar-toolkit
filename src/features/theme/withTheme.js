@@ -17,8 +17,11 @@ Provider.defaultProps = {
   theme: {},
 };
 
-export default WrappedComponent => ({theme, ...restProps}) => (
+// eslint-disable-next-line react/prop-types
+const withTheme = WrappedComponent => ({theme, ...restProps}) => (
   <Provider theme={theme}>
     <WrappedComponent {...restProps} />
   </Provider>
 );
+
+export default withTheme;

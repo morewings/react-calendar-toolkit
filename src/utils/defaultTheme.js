@@ -2,7 +2,7 @@ const baseColor = '#43a047';
 const gray = 'rgba(0, 0, 0, 0.38)';
 const borderRadius = '4px';
 
-export default {
+const theme = {
   /** Set font for datepicker */
   '--fontPrimary': 'Helvetica Neue',
   /** Font, which is applied, if --fontPrimary is not available */
@@ -47,3 +47,5 @@ export default {
   '--inputBorderColor': gray,
   '--inputHighlightColor': 'lightblue',
 };
+
+export default theme;

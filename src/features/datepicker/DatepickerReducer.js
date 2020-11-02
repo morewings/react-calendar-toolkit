@@ -7,7 +7,7 @@ import {
 
 export const initialState = {};
 
-export default (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_DATE: {
       const {selectedTimestamp, precision} = action.payload;
@@ -41,3 +41,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default reducer;

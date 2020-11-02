@@ -20,8 +20,14 @@ Provider.defaultProps = {
   dateFnsLocale: defaultLocale,
 };
 
-export default WrappedComponent => ({dateFnsLocale, ...restProps}) => (
+const withLocaleContext = WrappedComponent => ({
+  // eslint-disable-next-line react/prop-types
+  dateFnsLocale,
+  ...restProps
+}) => (
   <Provider dateFnsLocale={dateFnsLocale}>
     <WrappedComponent {...restProps} />
   </Provider>
 );
+
+export default withLocaleContext;
