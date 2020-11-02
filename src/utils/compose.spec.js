@@ -34,7 +34,7 @@ describe('compose function', () => {
     expect(fn1).toHaveBeenCalledWith(6);
   });
   it('handles multiple args', () => {
-    const fn4 = jest.fn((a, b) => a + b)
+    const fn4 = jest.fn((a, b) => a + b);
     const result = compose(fn4)(3, 6);
     expect(fn4).toHaveBeenCalledWith(3, 6);
     expect(result).toBe(9);
