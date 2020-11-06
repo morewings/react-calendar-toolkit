@@ -3,7 +3,8 @@ export default {
   menu: [
     'Overview',
     'Getting started',
-    'Available Components',
+    'Datepicker',
+    'Datepicker attached to the input',
     'Change visual theme',
     'Customize UI',
     'Utilities',

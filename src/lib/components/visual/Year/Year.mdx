@@ -6,7 +6,7 @@ import { Playground, Props } from 'docz';
 import Datepicker from 'lib';
 import Year from './Year';
 
-`Year` component displays specific date with __year precision__. `onDateSet` prop allows to set this date as selected. Here is how `Datepicker` with custom `Year` component looks like:
+`Year` component displays specific date with [__year precision__](/#calendar-views-and-precision). `onDateSet` callback prop allows to set provided Date object as selected in `Datepicker`. Replace it with custom component.
 
 <Playground>
   {() => {
@@ -29,8 +29,12 @@ import Year from './Year';
      isSameYear,
      name,
    }) => {
+      const handleClick = () => {
+        console.log('date set', date);
+        onDateSet(date);
+      };
       return (
-        <div style={style}>
+        <div onClick={handleClick} style={style}>
           {name.numeric}
         </div>
       )

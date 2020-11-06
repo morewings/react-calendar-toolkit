@@ -7,19 +7,35 @@ import { Playground, Props } from 'docz'
 import locale from 'date-fns/locale/fr';
 import DatePicker from 'lib';
 
-`react-calendar-toolkit` (RCT) is a set of React Components capable of rendering various calendars, datepickers etc. There are many good datepickers on the market. Unfortunately, most of them are _style-opinionated_, so if you like logic of chosen datepicker, you are subscribing to the visual style of it. But your website or application style may be completely different. With RCT you don't have hack third-party CSS, you can write your own styled UI components and RCT will render them.
+![Selector structure](./assets/datepicker-screenshot.png)
 
-You can use `react-calendar-toolkit` with default theme or use **custom UI components** to change look and feel to match your visual style.
+`react-calendar-toolkit` (RCT) is a set of React Components capable of rendering various calendars, datepickers etc. There are many good datepickers on the market. Unfortunately, most of them are _style-opinionated_, so if you like logic of chosen datepicker, you are subscribing to the design of it. But your website or application style may be completely different. With RCT you don't have hack third-party CSS, you can write your own styled UI components and RCT will render them.
 
-## Browsers support
+You can use `react-calendar-toolkit` with default theme or use **custom UI components** to change look and feel to match your website or application style.
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari |
-| --------- | --------- | --------- | --------- | --------- |
-| IE11*, Edge| last 2 versions, ESR| last 2 versions| last 2 versions| last 2 versions
+## Fully customizable user interface
 
-/* needs polyfills.
+RCT uses [render props](https://reactjs.org/docs/render-props.html) to decouple Calendar logic from the user interface part. Thus, developer can customize datepicker or calendar look and feel by providing custom React components to render parts of it.
+Frameworks, Styled components, CSS-in-JS solutions are all compatible with this approach.
 
-## Features
+ Date entry components ([`Day`](/src-lib-components-visual-day-day), [`Month`](/src-lib-components-visual-month-month), [`Year`](http://localhost:3000/src-lib-components-visual-year-year)) receive `date` prop, which is `Date` object, containing the date to render. Also, these components receive `onDateSet` prop, function expecting `Date` object to set as selected date (e.g. on click event) for the whole Calendar.
+
+```js
+// date comes from the props
+const handleClick = () => {
+  onDateSet(date);
+};
+```
+
+Date entry components can be wrapped with provided React Component or DOM node, see `wrapWith` props.
+
+[`Selector`](/src-lib-components-visual-selector-selector) component gets `incrementMonth` and `decrementMonth` props to set selected date plus or minus 1 month from selected. This props are bound to month stepper arrows. Also it gets `todayDate` and `selectedDate` props instead of just `date`, since it is not related to specific date.
+
+[`Header`](/src-lib-components-visual-header-header) component gets `todayDate` and `selectedDate` props for the same reasons as above. Also it gets `title` prop with the custom name of Datepicker.
+
+[`Weekday`](http://localhost:3000/src-lib-components-visual-week-day-week-day) component gets just week day localised name to render.
+
+## Other Features
 
 ### Localization
 
@@ -66,34 +82,24 @@ You can use [any locale](https://date-fns.org/docs/I18n) from `date-fns` or [cre
 
 Datepicker toolkit architecture introduces concepts of __precision__ and __calendar__.
 
-**Precision** defines accuracy of date being selected. E.g. if `props.precision === 'month'` user can select between only month entries. Also only year and month calendars are available with this setting.
+**Precision** defines accuracy of date being selected. E.g. if `props.precision === 'month'` user can select month, not specific day. Also, only year and month calendars are available with this setting.
 
-**Calendar** is a collection of date entries (year, month or day). Each entry (can be React Component or DOM node)  receives corresponding `Date` object and ``onDateSet`` props. Each Calendar has corresponding precision. Calendar renders collection of date entries and wraps them with provived Component or DOM node.
+**Calendar** is a collection of date entries (year, month or day). Each entry can be React Component or DOM node. It receives corresponding `Date` object and ``onDateSet`` props. Each Calendar has corresponding precision. Calendar renders collection of date entries and wraps them with provided React component or DOM node.
 
 #### Changing precision
 
-User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ entries on corresponding Calendar. If target precision was met, e. g. user click year entry when `props.minPrecision === 'year'` `onDateSet` callback is triggered. The value callback receives `Date` of the beginning of specified datetime precision, e. g.  when `props.minPrecision === 'month'` `onDateSet` `Date` value is 1st day of the month, when `props.minPrecision === 'year'` - Janurary 1st.
+User can switch "downwards" (from bigger to smaller unit) by clicking __year__ or __month__ entries on corresponding Calendar. If target precision was met, e. g. user click year entry when `props.minPrecision === 'year'` `onDateSet` callback is triggered. The value callback receives `Date` of the beginning of specified datetime precision, e.g.  when `props.minPrecision === 'month'` `onDateSet` `Date` value is 1st day of the month, when `props.minPrecision === 'year'` - January 1st of the selected year.
 
 User also can switch "downwards" and "upwards" by using Selector.
 
-
 ![Selector structure](./assets/selector-structure.png)
 
-### Custom UI components API
+## Browsers support
 
-RCT uses [render props](https://reactjs.org/docs/render-props.html), decoupled from Calendar logic, to display visual UI. Date entry components (`Day`, `Month`, `Year`) receive `date` prop, which is `Date` object, containing the date to render. Also these components receive `onDateSet` prop, function expecting `Date` object to set as selected date (e. g. on click event) for the whole Calendar.
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari |
+| --------- | --------- | --------- | --------- | --------- |
+| IE11*, Edge| last 2 versions, ESR| last 2 versions| last 2 versions| last 2 versions
 
-```js
-// date comes from the props
-const handleClick = () => {
-  onDateSet(date);
-};
-```
+/* needs polyfills.
 
-Date entry components can be wrapped with provided React Component or DOM node, see `wrapWith` props.
 
-`Selector` visual component gets `incrementMonth` and `decrementMonth` props to set selected date plus or minus 1 month from selected. This props are bound to month stepper arrows. Also it gets `todayDate` and `selectedDate` props instead of just `date`, since it is not related to specific date.
-
-`Header` visual component gets `todayDate` and `selectedDate` props for the same reasons as above. Also it gets `title` prop with the custom name of Datepicker.
-
-`Weekday` visual component gets just day name to render.

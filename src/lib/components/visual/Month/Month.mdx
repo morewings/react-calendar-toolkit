@@ -6,7 +6,7 @@ import { Playground, Props } from 'docz';
 import Datepicker from 'lib';
 import Month from './Month';
 
-`Month` component displays specific date with __month precision__. `onDateSet` prop allows to set this date as selected. Here is how `Datepicker` with custom `Month` component looks like:
+`Month` component displays specific date with [__month precision__](/#calendar-views-and-precision). `onDateSet` callback prop allows to set provided Date object as selected in `Datepicker`. Replace it with custom component.
 
 <Playground>
   {() => {
@@ -29,8 +29,12 @@ import Month from './Month';
      name,
      isHighlighted,
    }) => {
+      const handleClick = () => {
+        console.log('date set', date);
+        onDateSet(date);
+      };
       return (
-        <div style={style}>
+        <div onClick={handleClick} style={style}>
           {name.abbreviated}
         </div>
       )
@@ -51,7 +55,8 @@ import Month from './Month';
 
 
 ### Wrap with custom component
-You can provide wrapper component to Month Calendar, which can be React Component or DOM node.
+
+You can provide wrapper (React Component or DOM node) to the month calendar.
 
 <Playground>
   {() => {

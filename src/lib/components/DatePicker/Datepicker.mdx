@@ -1,6 +1,6 @@
 ---
 name: Datepicker
-menu: Available Components
+route: '/datepicker'
 ---
 import { Playground, Props } from 'docz';
 import Datepicker, {useThemePostCSS} from 'lib';
@@ -10,7 +10,10 @@ import DatepickerWithProps from './DatePicker';
 
 ## Description
 
-Datepicker is a component which allows user to see and pick from Calendar of provided dates. It has Selector, which allows to switch between precisions and step between months. Also renders Header with selected date and Datepicker title.
+Datepicker is a component which allows user to see and pick from Calendar of provided dates. It contains:
+ - [`Header`](/src-lib-components-visual-header-header) with selected date and Datepicker title.
+ - [`Selector`](/src-lib-components-visual-selector-selector), which allows switching between precisions and step between months.
+ - [`Day`](/src-lib-components-visual-day-day), [`Month`](/src-lib-components-visual-month-month) and [`Year`](/src-lib-components-visual-year-year) calendars.
 
 <Playground>
   <Datepicker
@@ -78,7 +81,7 @@ You can disable (custom style and non-clickable) or highlight (custom style) any
 
 ### Define minimal precision of `Calendar`
 
-Setting `minPrecision` prop allows to define what kind of date user is able to select. E. g. if `minPrecision === 'month''`, user can select only between _months_ and _years_.
+Setting `minPrecision` prop allows defining what kind of date user is able to select. E.g. if `minPrecision === 'month''`, user can select only between _months_ and _years_. [Read more](/#calendar-views-and-precision).
 
 <Playground>
   <Datepicker
@@ -86,12 +89,9 @@ Setting `minPrecision` prop allows to define what kind of date user is able to s
     onDateSet={date => {console.log('date set', date);}}/>
 </Playground>
 
-## UI customization
-You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node.
-
 ### Wrap Datepicker with custom component
-
-`Datepicker` `wrapWith` component wraps it with provided `DOM node` or `React.Element`. ALso in Default UI it's used to set CSS variables with `useThemePostCSS` hook, otherwise CSS variables will be undefined.
+You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node.
+You can set CSS variables here with [`useThemePostCSS`](/utilities#usethemepostcss) hook to apply your colors and fonts.
 
 <Playground>
   {() => {
@@ -122,5 +122,3 @@ You can override wrapping element or className of `Datepicker` with `wrapWith` p
     )
   }}
 </Playground>
-
-See [Datepicker custom UI](/#!/Available%20components/DatePicker) section for more info.

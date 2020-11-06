@@ -12,16 +12,13 @@ import DatePicker, {useFormatDate} from 'react-calendar-toolkit';
 
 <DatePicker dateFnsLocale={locale} />
 
-// later
-
 const Component = () => {
-/**
-   * Returns formatted date
+  const formatDate = useFormatDate();
+  /**
    * @param {string} pattern - Formatting pattern
    * @param {Date} date - Date object to apply format
    * @return {string} Formatted date
    */
-  const formatDate = useFormatDate();
   const date = formatDate('MMM do', new Date(2020, 0, 6)) // Янв. 6-е
   // ...
 }
@@ -29,7 +26,7 @@ const Component = () => {
 
 ## `useThemeContext`
 
-React hook, returns theme object from component props.
+React hook, returns [theme object](/change_theme) from component props.
 
 ```js static
 import DatePicker, {useThemeContext} from 'react-calendar-toolkit';
@@ -40,8 +37,7 @@ import DatePicker, {useThemeContext} from 'react-calendar-toolkit';
 
 const Component = () => {
 /**
-   * Returns theme object
-   * @return {Object} Formatted date
+   * @return {Object} theme object
    */
   const theme = useThemeContext(); // {foo: 'bar'}
 }
@@ -74,7 +70,7 @@ const Component = () => {
 }
 ```
 
-By default `useThemePostCSS` applies theme object from props on the top of defaultTheme. If you don't need default theme, call it with empty (or custom theme) object parameter.
+By default `useThemePostCSS` applies theme object from props on the top of defaultTheme. If you don't need the default theme, call it with empty or custom theme object parameter.
 
 ```js static
 const [getRef, setRef] = useThemePostCSS({})
@@ -111,7 +107,7 @@ const Component = () => {
 
 ## `useOnClickOutside`
 
-React hook to trigger provided callback, when user clicks outside provided node.
+React hook to trigger provided callback when user clicks outside provided node.
 
 ```js static
 import React, {useRef} from 'react';
@@ -119,11 +115,9 @@ import {useOnClickOutside} from 'react-calendar-toolkit';
 
 const Component = () => {
     const ref = useRef();
-
       /**
        * @function
-       * @name useScrollIntoView
-       * @description React hook. Scrolls element into viewport if parent container is visible.
+       * @name useOnClickOutside
        * @param {Object} ref - React ref
        * @param {Function} callback - Runs when users clicks
        * @return {void}

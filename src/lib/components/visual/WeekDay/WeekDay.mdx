@@ -6,7 +6,17 @@ import { Playground, Props } from 'docz';
 import Datepicker from 'lib';
 import WeekDay from './WeekDay';
 
-`Weekday` component renders grid with weekday names on the top of `Day Calendar`. Here is how `Datepicker` with custom `Weekday` component looks like:
+`Weekday` component displays row with weekday names on the top of day calendar. It receives collection of localised weekday names.
+```json
+{
+  "short": "su",
+  "narrow": "s",
+  "abbreviated": "Sun",
+  "wide": "Sunday",
+  "numeric": 0
+}
+```
+ Replace it with custom component.
 
 <Playground>
   {() => {
@@ -44,7 +54,7 @@ import WeekDay from './WeekDay';
 <Props of={WeekDay} />
 
 ## Wrap with custom component
-You can provide wrapper component to wrap all rendered `WeekDay`, which can be React Component or DOM node.
+You can provide wrapper (React Component or DOM node) to the weekday row.
 
 <Playground>
   {() => {

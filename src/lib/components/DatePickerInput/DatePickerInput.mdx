@@ -1,6 +1,6 @@
 ---
-name: DatepickerInput
-menu: Available Components
+name: Datepicker attached to the input
+route: '/datepicker-input'
 ---
 import { Playground, Props } from 'docz';
 import locale from 'date-fns/esm/locale/ru';
@@ -9,7 +9,11 @@ import DatepickerInputWithProps from './DatePickerInput';
 
 ## Description
 
-`DatepickerInput` renders provided `Input` with `Datepicker` attached.
+`DatepickerInput` component renders `Datepicker`, attached to the provided `input` (DOM node or React component). It contains:
+- [`Datepicker`](/datepicker) component without the header.
+- [`Input`](/src-lib-components-visual-input-input) which is displayed to user.
+- [`PopoverWrapper`](/src-lib-components-visual-popover-popover-wrapper) to display `Datepicker` when user clicks (or makes any other action) inside `Input`, when `mode` prop is set to `popover`.
+- [`ModalWrapper`](/src-lib-components-visual-modal-modal-wrapper) to display `Datepicker` when user clicks (or makes any other action) inside `Input`, when `mode` prop is set to `modal`.
 
 <Playground>
   <div>
@@ -26,7 +30,7 @@ import DatepickerInputWithProps from './DatePickerInput';
 
 ### `popover`
 
-Default mode. Position of popover is calculated dynamically to fit in the viewport.
+Position of popover is calculated dynamically to fit inside the viewport.
 
 <Playground>
   <div>
@@ -38,9 +42,9 @@ Default mode. Position of popover is calculated dynamically to fit in the viewpo
   </div>
 </Playground>
 
-#### `modal`
+### `modal`
 
-Renders `Datepicker` as modal window. More convenient for a small screen devices.
+Renders `Datepicker` as a modal window. More convenient for a small screen devices.
 
 <Playground>
   <div>
@@ -54,7 +58,7 @@ Renders `Datepicker` as modal window. More convenient for a small screen devices
 
 ## Set `Datepicker` props
 
-Set attached `Datepicker` props via `datePickerProps` property. Same validation rules apply as for `Datepicker` itself, except `onDateSet` callback, `theme` and `dateFnsLocale`, which should be defined in the upper scope.
+Set attached [`Datepicker` props](/datepicker#props) via `datePickerProps` property. Same validation rules apply as for `Datepicker` itself, except `onDateSet` callback, `theme` and `dateFnsLocale`, which should be defined in the upper scope.
 
 <Playground>
   {() => {
@@ -80,7 +84,7 @@ Set attached `Datepicker` props via `datePickerProps` property. Same validation 
 
 ### `hideOnSelect`
 
-Defines behavior after date was set.
+Defines `Datepicker` behavior after user clicks on the date entry.
 
 <Playground>
   <div>
@@ -113,5 +117,3 @@ Use `date-fns` [format strings](https://date-fns.org/docs/format) to define, wha
     )
   }}
 </Playground>
-
-See [Input custom UI](/#!/Input%20custom%20UI/Input%20custom%20UI) section for more info.

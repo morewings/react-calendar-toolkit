@@ -6,7 +6,7 @@ import { Playground, Props } from 'docz';
 import Datepicker from 'lib';
 import Day from './Day';
 
-`Day` component displays specific date with __day precision__. `onDateSet` prop allows to set this date as selected. Here is how `Datepicker` with custom `Day` component looks like:
+`Day` component displays specific date with [__day precision__](/#calendar-views-and-precision). `onDateSet` callback prop allows to set provided Date object as selected in `Datepicker`. Replace it with custom component.
 
 <Playground>
   {() => {
@@ -32,8 +32,12 @@ import Day from './Day';
      isWeekend,
      name
    }) => {
+      const handleClick = () => {
+        console.log('date set', date);
+        onDateSet(date);
+      };
       return (
-        <div style={style}>
+        <div onClick={handleClick} style={style}>
           {name.numeric}
         </div>
       )
@@ -52,7 +56,8 @@ import Day from './Day';
 <Props of={Day} />
 
 ## Wrap with custom component
-You can provide wrapper component to Day Calendar, which can be React Component or DOM node.
+
+You can provide wrapper (React Component or DOM node) to the day calendar.
 
 <Playground>
   {() => {
