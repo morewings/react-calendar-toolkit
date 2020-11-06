@@ -11,7 +11,7 @@ import stylelint from 'rollup-plugin-stylelint';
 import postcssPresetEnv from 'postcss-preset-env';
 import {terser} from 'rollup-plugin-terser';
 import pkg from './package.json';
-import defaultTheme from './src/utils/defaultTheme';
+import defaultTheme from './src/lib/utils/defaultTheme';
 
 const OUTPUT_DATA = [
   {
@@ -37,7 +37,7 @@ const POSTCSS_PLUGINS = [
 ];
 
 const config = OUTPUT_DATA.map(({file, format}) => ({
-  input: 'src/entryPoint.js',
+  input: 'src/lib/index.js',
   output: {
     file,
     format,
@@ -61,7 +61,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       throwOnError: true,
     }),
     postcss({
-      extract: format === 'umd' ? 'lib/ie.css' : pkg.style,
+      extract: format === 'umd' ? 'style/ie.css' : 'style/default.css',
       inline: false,
       plugins:
         format === 'umd'
@@ -81,12 +81,13 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
+      configFile: './babel.config.rollup.js',
     }),
     resolve({
       browser: true,
     }),
     commonjs(),
-    terser(),
+    // terser(),
     filesize(),
   ],
 }));

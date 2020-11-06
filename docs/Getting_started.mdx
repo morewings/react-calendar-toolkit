@@ -1,0 +1,63 @@
+---
+name: 'Getting started'
+route: '/getting_started'
+---
+
+## Install
+Install `react-calendar-toolkit` and peer-dependency `date-fns`.
+
+```bash
+yarn add react-calendar-toolkit date-fns@2
+```
+```bash
+npm install --save react-calendar-toolkit date-fns@2
+```
+
+## Usage
+
+Use `Datepicker` or any other export inside your component. Don't forget to import default styles from `react-calendar-toolkit/lib/default.css`.
+
+```js
+import React from 'react';
+import DatePicker from 'react-calendar-toolkit'; // datepicker component
+import 'react-calendar-toolkit/lib/style/default.css'; // styles
+
+const Component = () => (
+  <div>
+    <DatePicker onDateSet={date => {console.log('date set', date)}} />
+  </div>
+);
+
+export default Component;
+```
+
+## IE11 support
+To make `RCT` work in IE11 you need to
+
+1. Install polyfills:
+
+    ```shell script
+      yarn add react-app-polyfill element-closest
+    ```
+    ```shell script
+      npm install --save react-app-polyfill element-closest
+    ```
+
+2. Add following to the top of the entry point file:
+
+    ```js static
+    import 'react-app-polyfill/ie11';
+    import 'react-app-polyfill/stable';
+    import elementClosest from 'element-closest'
+
+    elementClosest(window);
+    ```
+
+3. Import IE11 compatible styles from package:
+
+```js
+import 'react-calendar-toolkit/lib/style/ie.css';
+```
+   Note: IE11 doesn't support css variables, so default UI theming will not work. You can use Custom UI instead or [add polyfill](https://github.com/nuxodin/ie11CustomProperties).
+
+

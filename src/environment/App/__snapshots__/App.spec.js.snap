@@ -1,0 +1,427 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`environment > App renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="app"
+  >
+    <div
+      class="container"
+    >
+      <div
+        aria-label="Demo datepicker"
+        class="datepickerWrapper"
+        role="dialog"
+        style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 32px; --entryMargin: 1px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: purple; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+      >
+        <div
+          class="wrapper"
+        >
+          <div
+            class="title"
+          >
+            Demo datepicker
+          </div>
+          <div
+            aria-live="polite"
+            class="currentDate"
+          >
+            Jan 6th
+          </div>
+        </div>
+        <div
+          class="wrapper"
+        >
+          <div
+            class="buttons"
+          >
+            <button
+              aria-live="polite"
+              type="button"
+            >
+              2020
+            </button>
+            <button
+              aria-live="polite"
+              type="button"
+            >
+              January
+            </button>
+          </div>
+          <div
+            class="stepper"
+          >
+            <button
+              aria-label="1 month ago"
+              type="button"
+            >
+              ⟨
+            </button>
+            <button
+              aria-label="in 1 month"
+              type="button"
+            >
+              ⟩
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid"
+          role="presentation"
+        >
+          <div
+            aria-label="Sunday"
+            class="wrapper"
+          >
+            Su
+          </div>
+          <div
+            aria-label="Monday"
+            class="wrapper"
+          >
+            Mo
+          </div>
+          <div
+            aria-label="Tuesday"
+            class="wrapper"
+          >
+            Tu
+          </div>
+          <div
+            aria-label="Wednesday"
+            class="wrapper"
+          >
+            We
+          </div>
+          <div
+            aria-label="Thursday"
+            class="wrapper"
+          >
+            Th
+          </div>
+          <div
+            aria-label="Friday"
+            class="wrapper"
+          >
+            Fr
+          </div>
+          <div
+            aria-label="Saturday"
+            class="wrapper"
+          >
+            Sa
+          </div>
+        </div>
+        <div
+          class="grid"
+        >
+          <div
+            class="placeholder"
+          />
+          <div
+            class="placeholder"
+          />
+          <div
+            class="placeholder"
+          />
+          <div
+            aria-disabled="false"
+            aria-label="1st January Wednesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            1
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="2nd January Thursday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            2
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="3rd January Friday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            3
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="4th January Saturday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            4
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="5th January Sunday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            5
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="6th January Monday"
+            class="wrapper isSelected"
+            role="button"
+            tabindex="0"
+          >
+            6
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="7th January Tuesday"
+            class="wrapper isHighlighted"
+            role="button"
+            tabindex="0"
+          >
+            7
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="8th January Wednesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            8
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="9th January Thursday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            9
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="10th January Friday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            10
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="11th January Saturday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            11
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="12th January Sunday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            12
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="13th January Monday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            13
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="14th January Tuesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            14
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="15th January Wednesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            15
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="16th January Thursday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            16
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="17th January Friday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            17
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="18th January Saturday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            18
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="19th January Sunday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            19
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="20th January Monday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            20
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="21st January Tuesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            21
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="22nd January Wednesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            22
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="23rd January Thursday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            23
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="24th January Friday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            24
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="25th January Saturday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            25
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="26th January Sunday"
+            class="wrapper isWeekend"
+            role="button"
+            tabindex="0"
+          >
+            26
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="27th January Monday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            27
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="28th January Tuesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            28
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="29th January Wednesday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            29
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="30th January Thursday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            30
+          </div>
+          <div
+            aria-disabled="false"
+            aria-label="31st January Friday"
+            class="wrapper"
+            role="button"
+            tabindex="0"
+          >
+            31
+          </div>
+          <div
+            class="placeholder"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="container"
+    >
+      <div>
+        <input
+          class="input"
+          readonly=""
+          style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 32px; --entryMargin: 1px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+          type="text"
+          value="01/08/2020"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

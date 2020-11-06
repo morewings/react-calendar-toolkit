@@ -1,0 +1,119 @@
+---
+name: Datepicker attached to the input
+route: '/datepicker-input'
+---
+import { Playground, Props } from 'docz';
+import locale from 'date-fns/esm/locale/ru';
+import {DatePickerInput} from 'lib';
+import DatepickerInputWithProps from './DatePickerInput';
+
+## Description
+
+`DatepickerInput` component renders `Datepicker`, attached to the provided `input` (DOM node or React component). It contains:
+- [`Datepicker`](/datepicker) component without the header.
+- [`Input`](/src-lib-components-visual-input-input) which is displayed to user.
+- [`PopoverWrapper`](/src-lib-components-visual-popover-popover-wrapper) to display `Datepicker` when user clicks (or makes any other action) inside `Input`, when `mode` prop is set to `popover`.
+- [`ModalWrapper`](/src-lib-components-visual-modal-modal-wrapper) to display `Datepicker` when user clicks (or makes any other action) inside `Input`, when `mode` prop is set to `modal`.
+
+<Playground>
+  <div>
+    <div>Click inside input</div>
+    <DatePickerInput onDateSet={date => {console.log('date set', date);}}/>
+  </div>
+</Playground>
+
+## Props
+
+<Props of={DatepickerInputWithProps} />
+
+## Display mode
+
+### `popover`
+
+Position of popover is calculated dynamically to fit inside the viewport.
+
+<Playground>
+  <div>
+    <div>Click inside input</div>
+    <DatePickerInput
+      mode="popover"
+      onDateSet={date => {console.log('date set', date);}}
+    />
+  </div>
+</Playground>
+
+### `modal`
+
+Renders `Datepicker` as a modal window. More convenient for a small screen devices.
+
+<Playground>
+  <div>
+    <div>Click inside input</div>
+    <DatePickerInput
+      mode="modal"
+      onDateSet={date => {console.log('date set', date);}}
+    />
+  </div>
+</Playground>
+
+## Set `Datepicker` props
+
+Set attached [`Datepicker` props](/datepicker#props) via `datePickerProps` property. Same validation rules apply as for `Datepicker` itself, except `onDateSet` callback, `theme` and `dateFnsLocale`, which should be defined in the upper scope.
+
+<Playground>
+  {() => {
+    const theme = {
+      '--bgColor': '#fffff0',
+      '--headerBgColor': 'purple',
+      '--entrySelectedColor': 'purple',
+    };
+    return (
+      <div>
+        <div>Click inside input</div>
+        <DatePickerInput
+          datePickerProps={{'minPrecision': 'month'}}
+          dateFnsLocale={locale}
+          theme={theme}
+          onDateSet={date => {console.log('date set', date);}}
+        />
+      </div>
+    )
+  }}
+</Playground>
+
+
+### `hideOnSelect`
+
+Defines `Datepicker` behavior after user clicks on the date entry.
+
+<Playground>
+  <div>
+    <div>Click inside input</div>
+    <DatePickerInput
+      hideOnSelect={false}
+      onDateSet={date => {console.log('date set', date);}}
+    />
+  </div>
+</Playground>
+
+### `formatPattern`
+
+Use `date-fns` [format strings](https://date-fns.org/docs/format) to define, what is displayed inside `Input`.
+
+<Playground>
+  {() => {
+    const theme = {
+      '--inputWidth': '160px'
+    };
+    return (
+      <div>
+        <div>Click inside input</div>
+        <DatePickerInput
+          theme={theme}
+          formatPattern='GGGG yo Do'
+          onDateSet={date => {console.log('date set', date);}}
+        />
+      </div>
+    )
+  }}
+</Playground>

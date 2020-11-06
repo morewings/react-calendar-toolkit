@@ -1,0 +1,135 @@
+---
+name: 'Change visual theme'
+route: '/change_theme'
+---
+import Datepicker from 'lib';
+import { Playground } from 'docz';
+
+You can apply a custom theme to `Datepicker` and `DatepickerInput` components.
+
+It supports basic theming (colors, width, paddings and fonts). You can provide custom theme object, overriding default theme properties.
+
+## Example
+
+<Playground>
+  {() => {
+    /**
+     * Default theme overrides
+     * @typedef {Object.<string, string>} theme
+     */
+    const theme = {
+      '--bgColor': '#fffff0',
+      '--headerBgColor': 'purple',
+      '--entrySelectedColor': 'purple',
+    };
+    return (
+      <Datepicker
+        theme={theme}
+        onDateSet={date => {console.log('date set', date);}}
+        title="Demo datepicker" />
+    )
+  }}
+</Playground>
+
+
+## Default theme
+
+```js
+// src/utils/defaultTheme.js
+
+const defaultTheme = {
+  /** Set font for datepicker */
+  '--fontPrimary': 'Helvetica Neue',
+  /** Font, which is applied, if --fontPrimary is not available */
+  '--fontSecondary': 'Arial',
+  /** Fallback font if two previous are unavailable */
+  '--fontFallback': 'sans-serif',
+  '--fontSize': '14px',
+  '--fontWeight': '400',
+  /** Applied to the title */
+  '--fontSizeSmall': '10px',
+  /** Applied to the header text */
+  '--fontSizeBig': '24px',
+  /** Set inner width */
+  '--calendarWidth': '240px',
+  /** Calculate total width */
+  '--datePickerWidth': 'calc(var(--calendarWidth) + var(--innerPadding) * 2)',
+  '--selectorHeight': '36px',
+  '--calendarHeight': '200px',
+  /** Set padding between elements */
+  '--innerPadding': '12px',
+  /** Day, month, year entries height */
+  '--entryHeight': '32px',
+  '--entryMargin': '1px',
+  '--datepickerBorderRadius': borderRadius,
+  '--entryBorderRadius': borderRadius,
+  /** Background color of Calendar */
+  '--bgColor': 'white',
+  /** Base color for text */
+  '--textColor': 'black',
+  '--headerBgColor': baseColor,
+  '--weekendTextColor': 'red',
+  '--headerTextColor': 'white',
+  '--borderColor': gray,
+  '--modalBgColor': gray,
+  '--weekDayColor': gray,
+  '--entryHoverColor': 'rgba(0, 0, 0, 0.08)',
+  '--entrySelectedColor': baseColor,
+  '--entryHighlightColor': 'lightblue',
+  '--inputWidth': '90px',
+  '--inputPadding': '8px',
+  '--inputBorderRadius': borderRadius,
+  '--inputBorderColor': gray,
+  '--inputHighlightColor': 'lightblue',
+};
+```
+
+Each theme entry is applied as [CSS Custom Property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) to the Datepicker wrapping DOM node.
+
+Default theme is defined here - `src/utils/defaultTheme.js`
+
+## CSS variables handling
+
+You can change each theme property dynamically. `RCT` exposes 3 helpers functions to handle CSS variables inside your components - `setCSSVariable`, `getCSSVariable` and `removeCSSVariable`. Values are set or changed inside provided HTML Element context.
+
+```js static
+import React, {useRef} from 'react';
+import {setCSSVariable, getCSSVariable, removeCSSVariable} from 'react-calendar-toolkit';
+
+const Component = () => {
+    const targetElement = useRef();
+    /** @function
+     * @name setCSSVariable
+     * @description Set CSS variable
+     * @param {HTMLElement} element - HTML element to contain variable
+     * @param {string} variableName - variable name, should start with `--`
+     * @param {string} value
+     * @return {void}
+     */
+    setCSSVariable(targetElement.current, '--varName', 'value');
+
+    /** @function
+     * @name getCSSVariable
+     * @description Get CSS variable value
+     * @param {HTMLElement} element - HTML element to contain variable
+     * @param {string} variableName - variable name, should start with `--`
+     * @return {string}
+     */
+    getCSSVariable(targetElement.current, '--varName'); // 'value'
+
+    /** @function
+     * @name removeCSSVariable
+     * @description Remove CSS variable
+     * @param {HTMLElement} element - HTML element to contain variable
+     * @param {string} variableName - variable name, should start with `--`
+     * @return {void}
+     */
+    removeCSSVariable(targetElement.current, '--varName');
+    return (
+      <div ref={targetElement}>
+        {/*...*/}
+      </div>
+    )
+}
+```
+

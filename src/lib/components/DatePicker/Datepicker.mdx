@@ -1,0 +1,124 @@
+---
+name: Datepicker
+route: '/datepicker'
+---
+import { Playground, Props } from 'docz';
+import Datepicker, {useThemePostCSS} from 'lib';
+import {isSameDay} from 'date-fns'
+import locale from 'date-fns/esm/locale/ru';
+import DatepickerWithProps from './DatePicker';
+
+## Description
+
+Datepicker is a component which allows user to see and pick from Calendar of provided dates. It contains:
+ - [`Header`](/src-lib-components-visual-header-header) with selected date and Datepicker title.
+ - [`Selector`](/src-lib-components-visual-selector-selector), which allows switching between precisions and step between months.
+ - [`Day`](/src-lib-components-visual-day-day), [`Month`](/src-lib-components-visual-month-month) and [`Year`](/src-lib-components-visual-year-year) calendars.
+
+<Playground>
+  <Datepicker
+    initialDate={new Date(2020, 1, 6)}
+    startDate={new Date(2019, 11, 6)}
+    endDate={new Date(2020, 1, 25)}
+    today={new Date()}
+    onDateSet={date => {console.log('date set', date);}}
+    title="Demo datepicker" />
+</Playground>
+
+## Props
+
+<Props of={DatepickerWithProps} />
+
+## Customization
+
+### No header
+
+<Playground>
+  <Datepicker
+    showHeader={false}
+    onDateSet={date => {console.log('date set', date);}} />
+</Playground>
+
+### Disable weekend highlight
+
+<Playground>
+  <Datepicker
+    highlightWeekends={false}
+    onDateSet={date => {console.log('date set', date);}}/>
+</Playground>
+
+### With custom locale
+
+<Playground>
+  <Datepicker
+    dateFnsLocale={locale} // import locale from 'date-fns/esm/locale/ru';
+    onDateSet={date => {console.log('date set', date);}} />
+</Playground>
+
+You can provide any locale included in ``date-fns`` or create a [custom one](https://date-fns.org/v2.9.0/docs/I18n-Contribution-Guide#adding-a-new-locale). First day of the week is defined inside locale object, see `locale.options.weekStartsOn`.
+
+#### Disable and highlight dates
+
+<Playground>
+  {() => {
+    // NB precision check, otherWise all months will be disabled in Month Calendar view
+    const disableWeekends = ({isWeekend, precision}) => {
+      return precision==='day' && isWeekend
+    };
+    const highlightDate = ({date, precision}) => {
+      return isSameDay(date, new Date(2020, 0, 7))
+    };
+    return (
+      <Datepicker
+        disableDate={disableWeekends}
+        highlightDate={highlightDate}
+        onDateSet={date => {console.log('date set', date);}} />
+    )
+  }}
+</Playground>
+
+You can disable (custom style and non-clickable) or highlight (custom style) any rendered date.
+
+### Define minimal precision of `Calendar`
+
+Setting `minPrecision` prop allows defining what kind of date user is able to select. E.g. if `minPrecision === 'month''`, user can select only between _months_ and _years_. [Read more](/#calendar-views-and-precision).
+
+<Playground>
+  <Datepicker
+    minPrecision="month"
+    onDateSet={date => {console.log('date set', date);}}/>
+</Playground>
+
+### Wrap Datepicker with custom component
+You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node.
+You can set CSS variables here with [`useThemePostCSS`](/utilities#usethemepostcss) hook to apply your colors and fonts.
+
+<Playground>
+  {() => {
+    const style = {
+      fontFamily: 'sans-serif',
+      width: '260px',
+      border: '2px dashed pink',
+    };
+    const CustomComponent = props => {
+      /** Hook to set style variables from Theme Context */
+      const [, setRef] = useThemePostCSS();
+      return (
+        <div
+          ref={setRef}
+          style={style}
+          aria-label={props.title}
+          role="dialog">
+          {props.children}
+        </div>
+      );
+    };
+    return (
+      <Datepicker
+        onDateSet={date => {console.log('date set', date);}}
+        minPrecision="day"
+        wrapWith={CustomComponent}
+        title="Demo datepicker" />
+    )
+  }}
+</Playground>

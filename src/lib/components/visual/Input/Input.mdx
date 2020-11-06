@@ -1,0 +1,51 @@
+---
+name: Input
+menu: Customize UI
+---
+import { Playground, Props } from 'docz';
+import {DatePickerInput} from 'lib';
+import Input from './Input';
+
+`Input` component renders form field to attach `Datepicker`. Used in [`DatepickerInput`](/datepicker-input). Replace it with custom component.
+
+<Playground>
+  {() => {
+    const style = {
+      color: 'black',
+      textAlign: 'center',
+      padding: '6px 12px',
+      fontSize: '12px',
+      lineHeight: '30px',
+      border: '2px dashed pink',
+      cursor: 'pointer',
+      background: 'white',
+    };
+    const CustomInput = ({toggleDatepicker, value, date, onChange}) => {
+      const handleClick = event => {
+        event.stopPropagation();
+        toggleDatepicker(true);
+      };
+      return (
+        <input
+          readOnly
+          style={style}
+          value={`Click me: ${value}`}
+          onClick={handleClick}
+          type="button"
+        />
+      );
+    };
+    return (
+      <DatePickerInput
+        renderInputAs={CustomInput}
+        onDateSet={date => {console.log('date set', date);}}
+      />
+    )
+  }}
+</Playground>
+
+## Props
+
+<Props of={Input} />
+
+

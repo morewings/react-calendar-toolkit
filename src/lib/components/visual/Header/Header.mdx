@@ -1,0 +1,39 @@
+---
+name: Header
+menu: Customize UI
+---
+import { Playground, Props } from 'docz';
+import Datepicker from 'lib';
+import Header from './Header';
+
+`Header` component is displayed on top of `Datepicker`. It receives today and selected Date objects. Replace it with custom component.
+
+<Playground>
+  {() => {
+    const style = {
+      color: 'black',
+      textAlign: 'center',
+      padding: '16px 0',
+      border: '2px dashed pink',
+      margin: '2px'
+    };
+    const CustomComponent = ({selectedDate, title, todayDate}) => {
+      return (
+        <div style={style}>
+          {title}
+        </div>
+      )
+    };
+    return (
+      <Datepicker
+        onDateSet={date => {console.log('date set', date);}}
+        minPrecision="month"
+        renderHeaderAs={CustomComponent}
+        title="Demo datepicker" />
+    )
+  }}
+</Playground>
+
+## Props
+<Props of={Header} />
+
