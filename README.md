@@ -8,7 +8,7 @@
 
 # React calendar toolkit
 
-[![Datepicker screenshot](./doc-assets/datepicker-screenshot.png)](#)
+[![Datepicker screenshot](./docs/assets/datepicker-screenshot.png)](#)
 
 ## Description
 `react-calendar-toolkit` (RCT) is a set of React Components capable of rendering various calendars, datepickers etc.
