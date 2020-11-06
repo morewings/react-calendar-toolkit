@@ -61,7 +61,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       throwOnError: true,
     }),
     postcss({
-      extract: format === 'umd' ? 'style/ie.css' : pkg.style,
+      extract: format === 'umd' ? 'style/ie.css' : 'style/default.css',
       inline: false,
       plugins:
         format === 'umd'
