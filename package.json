@@ -25,10 +25,10 @@
   "bugs": {
     "url": "https://github.com/morewings/react-calendar-toolkit/issues"
   },
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.esm.js",
-  "browser": "lib/index.js",
-  "style": "lib/default.css",
+  "main": "index.cjs.js",
+  "module": "index.esm.js",
+  "browser": "index.js",
+  "style": "style/default.css",
   "files": [
     "lib",
     "types"

@@ -20,7 +20,7 @@ Use `Datepicker` or any other export inside your component. Don't forget to impo
 ```js
 import React from 'react';
 import DatePicker from 'react-calendar-toolkit'; // datepicker component
-import 'react-calendar-toolkit/lib/default.css'; // styles
+import 'react-calendar-toolkit/style/default.css'; // styles
 
 const Component = () => (
   <div>
@@ -55,9 +55,9 @@ To make `RCT` work in IE11 you need to
 
 3. Import IE11 compatible styles from package:
 
-    ```js static
-    import 'react-calendar-toolkit/lib/ie.css';
-    ```
+```js
+import 'react-calendar-toolkit/style/ie.css';
+```
    Note: IE11 doesn't support css variables, so default UI theming will not work. You can use Custom UI instead or [add polyfill](https://github.com/nuxodin/ie11CustomProperties).
 
 

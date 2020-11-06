@@ -39,7 +39,7 @@ const POSTCSS_PLUGINS = [
 const config = OUTPUT_DATA.map(({file, format}) => ({
   input: 'src/lib/index.js',
   output: {
-    file,
+    file: `lib/${file}`,
     format,
     name: 'ReactCalendarToolkit',
     globals: {
@@ -61,7 +61,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       throwOnError: true,
     }),
     postcss({
-      extract: format === 'umd' ? 'lib/ie.css' : pkg.style,
+      extract: format === 'umd' ? 'style/ie.css' : pkg.style,
       inline: false,
       plugins:
         format === 'umd'
