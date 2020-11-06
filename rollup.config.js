@@ -87,7 +87,7 @@ const config = OUTPUT_DATA.map(({file, format}) => ({
       browser: true,
     }),
     commonjs(),
-    terser(),
+    // terser(),
     filesize(),
   ],
 }));
