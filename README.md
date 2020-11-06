@@ -60,7 +60,7 @@ Then use it like this:
 ```js
 import React from 'react';
 import DatePicker from 'react-calendar-toolkit'; // datepicker component
-import 'react-calendar-toolkit/style/default.css'; // styles
+import 'react-calendar-toolkit/lib/style/default.css'; // styles
 
 const Component = () => (
   <div>
