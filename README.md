@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/morewings/react-calendar-toolkit.svg?branch=master)](https://travis-ci.com/morewings/react-calendar-toolkit)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=morewings/react-calendar-toolkit)](https://dependabot.com)
 [![codecov](https://codecov.io/gh/morewings/react-calendar-toolkit/branch/master/graph/badge.svg)](https://codecov.io/gh/morewings/react-calendar-toolkit)
 [![npm version](https://badge.fury.io/js/react-calendar-toolkit.svg)](https://www.npmjs.com/package/react-calendar-toolkit)
+[![npm](https://img.shields.io/npm/dm/react-calendar-toolkit)](http://npm-stats.org/#/react-calendar-toolkit)
 [![types included](https://badgen.net/npm/types/tslib)](https://github.com/morewings/react-calendar-toolkit/blob/master/types/index.d.ts)
 [![types included](https://badgen.net/bundlephobia/minzip/react-calendar-toolkit)](https://bundlephobia.com/result?p=react-calendar-toolkit)
 
@@ -78,7 +78,7 @@ export default Component;
 - `start` - starts application in development mode;
 - `start:docs` - starts `Docz`;
 - `build:docs` - builds `Docz`;
-- `build:rollup` - builds package;
+- `build:lib` - builds package;
 - `lint:js` - runs eslint;
 - `fix:js` - runs eslint with fix option enabled;
 - `test` - runs tests.
