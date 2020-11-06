@@ -39,7 +39,7 @@ const POSTCSS_PLUGINS = [
 const config = OUTPUT_DATA.map(({file, format}) => ({
   input: 'src/lib/index.js',
   output: {
-    file: `lib/${file}`,
+    file,
     format,
     name: 'ReactCalendarToolkit',
     globals: {
