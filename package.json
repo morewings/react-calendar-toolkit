@@ -28,9 +28,10 @@
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.js",
-  "style": "lib/style/default.css",
+  "style": "style/default.css",
   "files": [
     "lib",
+    "style",
     "types"
   ],
   "types": "types/index.d.ts",
