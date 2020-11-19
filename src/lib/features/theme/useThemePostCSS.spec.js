@@ -6,9 +6,9 @@ import useThemePostCSS from './useThemePostCSS';
 import {Provider} from './withTheme';
 
 const Component = ({themeOverride}) => {
-  const [, setRef] = useThemePostCSS(themeOverride);
+  const {setRef, style} = useThemePostCSS(themeOverride);
   return (
-    <div data-testid="styleContainer" ref={setRef}>
+    <div style={style} data-testid="styleContainer" ref={setRef}>
       Theme PostCSS
     </div>
   );
@@ -23,15 +23,15 @@ describe('useThemePostCSS', () => {
     expect(asFragment()).toMatchSnapshot();
 
     Object.entries(defaultTheme).forEach(([key, value]) => {
-      expect(getByTestId('styleContainer').style.getPropertyValue(key)).toBe(
-        value
-      );
+      expect(
+        getByTestId('styleContainer').style.getPropertyValue(`--${key}`)
+      ).toBe(value);
     });
   });
 
   it('overrides default with custom theme when provided', async () => {
     const themeOverride = {
-      '--foo': 'bar',
+      foo: 'bar',
     };
 
     const {asFragment, getByTestId} = render(
@@ -44,26 +44,26 @@ describe('useThemePostCSS', () => {
     expect(asFragment()).toMatchSnapshot();
 
     Object.entries(defaultTheme).forEach(([key]) => {
-      expect(getByTestId('styleContainer').style.getPropertyValue(key)).toBe(
-        ''
-      );
+      expect(
+        getByTestId('styleContainer').style.getPropertyValue(`--${key}`)
+      ).toBe('');
     });
 
     Object.entries(themeOverride).forEach(([key, value]) => {
-      expect(getByTestId('styleContainer').style.getPropertyValue(key)).toBe(
-        value
-      );
+      expect(
+        getByTestId('styleContainer').style.getPropertyValue(`--${key}`)
+      ).toBe(value);
     });
   });
 
   it('overrides default with custom theme when provided', async () => {
     const themeOverride = {
-      '--foo': 'bar',
-      '--fiz': 'buz',
+      foo: 'bar',
+      fiz: 'buz',
     };
 
     const propsOverride = {
-      '--foo': 'baz',
+      foo: 'baz',
     };
 
     const {asFragment, getByTestId} = render(
@@ -78,9 +78,9 @@ describe('useThemePostCSS', () => {
     expect(asFragment()).toMatchSnapshot();
 
     Object.entries(propsOverride).forEach(([key, value]) => {
-      expect(getByTestId('styleContainer').style.getPropertyValue(key)).toBe(
-        value
-      );
+      expect(
+        getByTestId('styleContainer').style.getPropertyValue(`--${key}`)
+      ).toBe(value);
     });
   });
 
@@ -89,7 +89,7 @@ describe('useThemePostCSS', () => {
     const {result} = renderHook(() => useThemePostCSS(), {
       wrapper: ({children}) => <Provider>{children}</Provider>,
     });
-    const [ref, setRef] = result.current;
+    const {ref, setRef} = result.current;
     expect(result.current).toMatchSnapshot();
     setRef(element);
     expect(ref.current).toBe(element);

@@ -1,7 +1,7 @@
-import {useRef, useCallback} from 'react';
+import {useTheme} from 'css-vars-hook';
 import defaults from 'lib/utils/defaultTheme';
 import {useThemeContext} from './withTheme';
-import {removeCSSVariable, setCSSVariable} from './cssVariables';
+// import {removeCSSVariable, setCSSVariable} from './cssVariables';
 
 /** @function
  * @name useThemePostCSS
@@ -10,31 +10,13 @@ import {removeCSSVariable, setCSSVariable} from './cssVariables';
  * @return {[Object, Function]}
  */
 const useThemePostCSS = (defaultTheme = defaults) => {
-  const ref = useRef(null);
   const propsTheme = useThemeContext();
-  const setRef = useCallback(
-    element => {
-      const mergedTheme = {
-        ...defaultTheme,
-        ...propsTheme,
-      };
-      if (ref.current) {
-        element &&
-          Object.entries(mergedTheme).forEach(([variableName]) => {
-            removeCSSVariable(element, variableName);
-          });
-      }
-      if (element) {
-        Object.entries(mergedTheme).forEach(([variableName, value]) => {
-          setCSSVariable(element, variableName, value);
-        });
-      }
-      ref.current = element;
-    },
-    [defaultTheme, propsTheme]
-  );
-
-  return [ref, setRef];
+  const mergedTheme = {
+    ...defaultTheme,
+    ...propsTheme,
+  };
+  const {ref, setRef, style} = useTheme(mergedTheme);
+  return {ref, setRef, style};
 };
 
 export default useThemePostCSS;

@@ -1,12 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`useThemePostCSS creates valid ref 1`] = `
-Array [
-  Object {
+Object {
+  "ref": Object {
     "current": null,
   },
-  [Function],
-]
+  "setRef": [Function],
+  "style": Object {
+    "--bgColor": "white",
+    "--borderColor": "rgba(0, 0, 0, 0.38)",
+    "--calendarHeight": "200px",
+    "--calendarWidth": "240px",
+    "--datePickerWidth": "calc(var(--calendarWidth) + var(--innerPadding) * 2)",
+    "--datepickerBorderRadius": "4px",
+    "--entryBorderRadius": "4px",
+    "--entryHeight": "32px",
+    "--entryHighlightColor": "lightblue",
+    "--entryHoverColor": "rgba(0, 0, 0, 0.08)",
+    "--entryMargin": "1px",
+    "--entrySelectedColor": "#43a047",
+    "--fontFallback": "sans-serif",
+    "--fontPrimary": "Helvetica Neue",
+    "--fontSecondary": "Arial",
+    "--fontSize": "14px",
+    "--fontSizeBig": "24px",
+    "--fontSizeSmall": "10px",
+    "--fontWeight": "400",
+    "--headerBgColor": "#43a047",
+    "--headerTextColor": "white",
+    "--innerPadding": "12px",
+    "--inputBorderColor": "rgba(0, 0, 0, 0.38)",
+    "--inputBorderRadius": "4px",
+    "--inputHighlightColor": "lightblue",
+    "--inputPadding": "8px",
+    "--inputWidth": "90px",
+    "--modalBgColor": "rgba(0, 0, 0, 0.38)",
+    "--selectorHeight": "36px",
+    "--textColor": "black",
+    "--weekDayColor": "rgba(0, 0, 0, 0.38)",
+    "--weekendTextColor": "red",
+  },
+}
 `;
 
 exports[`useThemePostCSS overrides default with custom theme when provided 1`] = `
