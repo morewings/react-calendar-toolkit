@@ -95,5 +95,3 @@ describe('useThemePostCSS', () => {
     expect(ref.current).toBe(element);
   });
 });
-
-// hello
