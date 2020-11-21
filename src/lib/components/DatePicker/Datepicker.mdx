@@ -3,7 +3,7 @@ name: Datepicker
 route: '/datepicker'
 ---
 import { Playground, Props } from 'docz';
-import Datepicker, {useThemePostCSS} from 'lib';
+import Datepicker, {useTheme} from 'lib';
 import {isSameDay} from 'date-fns'
 import locale from 'date-fns/esm/locale/ru';
 import DatepickerWithProps from './DatePicker';
@@ -91,7 +91,7 @@ Setting `minPrecision` prop allows defining what kind of date user is able to se
 
 ### Wrap Datepicker with custom component
 You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node.
-You can set CSS variables here with [`useThemePostCSS`](/utilities#usethemepostcss) hook to apply your colors and fonts.
+You can set CSS variables here with [`useTheme`](/utilities#usetheme) hook to apply your colors and fonts.
 
 <Playground>
   {() => {
@@ -102,7 +102,7 @@ You can set CSS variables here with [`useThemePostCSS`](/utilities#usethemepostc
     };
     const CustomComponent = props => {
       /** Hook to set style variables from Theme Context */
-      const [, setRef] = useThemePostCSS();
+      const [, setRef] = useTheme();
       return (
         <div
           ref={setRef}

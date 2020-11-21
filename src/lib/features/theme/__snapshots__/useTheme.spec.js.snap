@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useThemePostCSS creates valid ref 1`] = `
+exports[`useTheme creates valid ref 1`] = `
 Object {
   "ref": Object {
     "current": null,
@@ -43,7 +43,7 @@ Object {
 }
 `;
 
-exports[`useThemePostCSS overrides default with custom theme when provided 1`] = `
+exports[`useTheme overrides default with custom theme when provided 1`] = `
 <DocumentFragment>
   <div
     data-testid="styleContainer"
@@ -54,7 +54,7 @@ exports[`useThemePostCSS overrides default with custom theme when provided 1`] =
 </DocumentFragment>
 `;
 
-exports[`useThemePostCSS overrides default with custom theme when provided 2`] = `
+exports[`useTheme overrides default with custom theme when provided 2`] = `
 <DocumentFragment>
   <div
     data-testid="styleContainer"
@@ -65,7 +65,7 @@ exports[`useThemePostCSS overrides default with custom theme when provided 2`] =
 </DocumentFragment>
 `;
 
-exports[`useThemePostCSS sets default theme to provided HTMLElement 1`] = `
+exports[`useTheme sets default theme to provided HTMLElement 1`] = `
 <DocumentFragment>
   <div
     data-testid="styleContainer"

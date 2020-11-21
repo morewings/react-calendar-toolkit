@@ -4,7 +4,7 @@ import {withDatepickerProvider} from 'lib/features/datepicker';
 import DatePicker from 'lib/components/DatePicker';
 import DatePickerInput from 'lib/components/DatePickerInput';
 import {useFormatDate, withLocaleContext} from 'lib/features/locale';
-import {withTheme, useThemePostCSS, useThemeContext} from 'lib/features/theme';
+import {withTheme, useTheme, useThemeContext} from 'lib/features/theme';
 import useOnClickOutside from 'lib/utils/useOnClickOutside';
 import defaultTheme from 'lib/utils/defaultTheme';
 import useScrollIntoView from 'lib/utils/scrollIntoView';
@@ -24,7 +24,7 @@ const WrappedDatePicker = compose(
 
 export {
   useFormatDate,
-  useThemePostCSS,
+  useTheme,
   useThemeContext,
   defaultTheme,
   useScrollIntoView,

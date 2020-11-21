@@ -2,11 +2,11 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import {renderHook} from '@testing-library/react-hooks';
 import defaultTheme from 'lib/utils/defaultTheme';
-import useThemePostCSS from './useThemePostCSS';
+import useTheme from 'lib/features/theme/useTheme';
 import {Provider} from './withTheme';
 
 const Component = ({themeOverride}) => {
-  const {setRef, style} = useThemePostCSS(themeOverride);
+  const {setRef, style} = useTheme(themeOverride);
   return (
     <div style={style} data-testid="styleContainer" ref={setRef}>
       Theme PostCSS
@@ -14,7 +14,7 @@ const Component = ({themeOverride}) => {
   );
 };
 
-describe('useThemePostCSS', () => {
+describe('useTheme', () => {
   it('sets default theme to provided HTMLElement', async () => {
     const {asFragment, getByTestId} = render(<Component />, {
       wrapper: ({children}) => <Provider>{children}</Provider>,
@@ -86,7 +86,7 @@ describe('useThemePostCSS', () => {
 
   it('creates valid ref', () => {
     const element = document.createElement('div');
-    const {result} = renderHook(() => useThemePostCSS(), {
+    const {result} = renderHook(() => useTheme(), {
       wrapper: ({children}) => <Provider>{children}</Provider>,
     });
     const {ref, setRef} = result.current;

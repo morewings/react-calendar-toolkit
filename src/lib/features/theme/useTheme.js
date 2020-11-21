@@ -1,15 +1,14 @@
 import {useTheme} from 'css-vars-hook';
 import defaults from 'lib/utils/defaultTheme';
 import {useThemeContext} from './withTheme';
-// import {removeCSSVariable, setCSSVariable} from './cssVariables';
 
 /** @function
- * @name useThemePostCSS
+ * @name useTheme
  * @description React hook. Sets css variables from Context and defaultTheme
  * @param {Object.<string, string>} [defaultTheme=defaults] Default theme to override with context values
  * @return {[Object, Function]}
  */
-const useThemePostCSS = (defaultTheme = defaults) => {
+const useThemeFeature = (defaultTheme = defaults) => {
   const propsTheme = useThemeContext();
   const mergedTheme = {
     ...defaultTheme,
@@ -19,4 +18,4 @@ const useThemePostCSS = (defaultTheme = defaults) => {
   return {ref, setRef, style};
 };
 
-export default useThemePostCSS;
+export default useThemeFeature;
