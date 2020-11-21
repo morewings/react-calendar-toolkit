@@ -12,7 +12,8 @@ script:
   - yarn lint:js
   - yarn lint:style
   - yarn test --coverage
-  - PUBLIC_URL=https://morewings.github.io/react-calendar-toolkit yarn build
+  #  TODO: remove CI=false when eslint config airbnb updated
+  - CI=false PUBLIC_URL=https://morewings.github.io/react-calendar-toolkit yarn build
   - yarn build:docs
   - yarn build:lib
 
