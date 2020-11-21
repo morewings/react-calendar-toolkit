@@ -20,12 +20,12 @@ const Modal = ({
 
   /** Create modal container node */
   useEffect(() => {
-    const propName = '--modalBgColor';
+    const propName = 'modalBgColor';
     const bgColor = theme[propName] || defaults[propName];
     if (isVisible && !isNodeAttached) {
       modalContainerRef.current = document.createElement('div');
       modalContainerRef.current.classList.add(classes.container);
-      setCSSVariable(modalContainerRef.current, propName, bgColor);
+      setCSSVariable(modalContainerRef.current, `--${propName}`, bgColor);
       document.body.appendChild(modalContainerRef.current);
       setIsNodeAttached(true);
     }
