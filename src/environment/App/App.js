@@ -28,6 +28,7 @@ const App = () => (
     </div>
     <div className="container">
       <DatePickerInput
+        mode="modal"
         minPrecision="month"
         onDateSet={date => {
           // console.log('date set', date);
