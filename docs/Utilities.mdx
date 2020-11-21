@@ -43,19 +43,19 @@ const Component = () => {
 }
 ```
 
-## `useThemePostCSS`
+## `useTheme`
 React hook, based on [callback ref](https://medium.com/@teh_builder/ref-objects-inside-useeffect-hooks-eb7c15198780), to inject your theme object as [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var) into HTML element it makes reference to. `theme` prop should be Record-like plain object structure `Object.<string, string>`.
 
 ```js static
 import React, {useRef, useEffect} from 'react';
-import DatePicker, {useThemePostCSS} from 'react-calendar-toolkit';
+import DatePicker, {useTheme} from 'react-calendar-toolkit';
 
 <DatePicker theme={{'--varName': 'value'}} />
 
 // later
 
 const Component = () => {
-    const [getRef, setRef] = useThemePostCSS();
+    const [getRef, setRef] = useTheme();
     /* Do something with ref */
     useEffect(() => {
       /* Note: we are using first member of returned tuple */
@@ -70,10 +70,10 @@ const Component = () => {
 }
 ```
 
-By default `useThemePostCSS` applies theme object from props on the top of defaultTheme. If you don't need the default theme, call it with empty or custom theme object parameter.
+By default `useTheme` applies theme object from props on the top of defaultTheme. If you don't need the default theme, call it with empty or custom theme object parameter.
 
 ```js static
-const [getRef, setRef] = useThemePostCSS({})
+const [getRef, setRef] = useTheme({})
 ```
 
 ## `useScrollIntoView`

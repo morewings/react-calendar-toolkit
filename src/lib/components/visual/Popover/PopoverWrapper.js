@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import {useThemePostCSS} from 'lib/features/theme';
+import {useTheme} from 'lib/features/theme';
 import useOnClickOutside from 'lib/utils/useOnClickOutside';
 import classes from './PopoverWrapper.module.css';
 
 const PopoverWrapper = ({position, children, toggleDatepicker}) => {
   /* Apply postcss theme to containing div */
-  const [childRef, setChildRef] = useThemePostCSS();
+  const {ref, setRef, style} = useTheme();
 
   /* Close popover on click outside */
-  useOnClickOutside(childRef, () => {
+  useOnClickOutside(ref, () => {
     toggleDatepicker(false);
   });
 
@@ -27,7 +27,8 @@ const PopoverWrapper = ({position, children, toggleDatepicker}) => {
 
   return (
     <div
-      ref={setChildRef}
+      style={style}
+      ref={setRef}
       className={classnames({
         [classes.wrapper]: true,
         /* Conditional class to position Popover relative to Input */

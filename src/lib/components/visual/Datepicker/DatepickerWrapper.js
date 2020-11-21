@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useThemePostCSS} from 'lib/features/theme';
+import {useTheme} from 'lib/features/theme';
 import classes from './DatepickerWrapper.module.css';
 
 const DatepickerWrapper = props => {
-  const [, setRef] = useThemePostCSS();
+  const {setRef, style} = useTheme();
   return (
     <div
+      style={style}
       ref={setRef}
       className={classes.datepickerWrapper}
       aria-label={props.title}

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useThemePostCSS} from 'lib/features/theme';
+import {useTheme} from 'lib/features/theme';
 import classes from './Input.module.css';
 
 const Input = ({toggleDatepicker, value, date, onChange}) => {
-  const [, setRef] = useThemePostCSS();
+  const {setRef, style} = useTheme();
 
   const handleClick = event => {
     event.stopPropagation();
@@ -12,6 +12,7 @@ const Input = ({toggleDatepicker, value, date, onChange}) => {
   };
   return (
     <input
+      style={style}
       ref={setRef}
       className={classes.input}
       readOnly
