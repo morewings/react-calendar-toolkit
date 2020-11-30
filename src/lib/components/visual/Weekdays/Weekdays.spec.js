@@ -29,7 +29,7 @@ const defaultProps = {
   ],
 };
 
-describe('WeekDay', () => {
+describe('WeekDays', () => {
   it(`it renders`, () => {
     const {asFragment} = render(<Weekdays {...defaultProps} />, {
       wrapper: ({children}) => <Provider>{children}</Provider>,
