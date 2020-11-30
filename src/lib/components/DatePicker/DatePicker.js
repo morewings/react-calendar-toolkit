@@ -15,7 +15,7 @@ import SelectorVisual from 'lib/components/visual/Selector';
 import Day, {DayGrid} from 'lib/components/visual/Day';
 import Month, {MonthGrid} from 'lib/components/visual/Month';
 import Year, {YearGrid} from 'lib/components/visual/Year';
-import WeekDays from 'lib/components/visual/Weekdays/index';
+import Weekdays from 'lib/components/visual/Weekdays';
 import useLogic from './useLogic';
 
 const DatePicker = ({
@@ -31,7 +31,7 @@ const DatePicker = ({
   wrapMonthWith,
   renderYearAs,
   wrapYearWith,
-  renderWeekDayAs,
+  renderWeekdaysAs,
   startDate,
   endDate,
   disableDate,
@@ -53,7 +53,7 @@ const DatePicker = ({
 
   const Wrapper = wrapWith;
 
-  const WeekdaysComponent = renderWeekDayAs;
+  const WeekdaysComponent = renderWeekdaysAs;
 
   const weekDayNames = useWeekDayNames();
 
@@ -155,8 +155,8 @@ export const propTypes = {
   renderYearAs: PropTypes.elementType,
   /** Define component which wraps __year__ entry. */
   wrapYearWith: PropTypes.elementType,
-  /** Define component which renders __week day__ entry. */
-  renderWeekDayAs: PropTypes.elementType,
+  /** Define component which renders __week days__ row inside day calendar. */
+  renderWeekdaysAs: PropTypes.elementType,
   /** Define component which renders __Header__. */
   renderHeaderAs: PropTypes.elementType,
   /** Define component which renders __Precision selector__. */
@@ -194,7 +194,7 @@ DatePicker.defaultProps = {
   wrapMonthWith: MonthGrid,
   renderYearAs: Year,
   wrapYearWith: YearGrid,
-  renderWeekDayAs: WeekDays,
+  renderWeekdaysAs: Weekdays,
   renderHeaderAs: HeaderUI,
   renderSelectorAs: SelectorVisual,
   disableDate: ({isWeekend, precision, date}) => false,
