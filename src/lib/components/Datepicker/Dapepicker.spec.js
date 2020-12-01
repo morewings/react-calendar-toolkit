@@ -5,7 +5,7 @@ import Calendar from 'lib/components/logic/Calendar';
 import Weekdays from 'lib/components/visual/Weekdays';
 import Selector from 'lib/components/logic/Selector';
 import Header from 'lib/components/logic/Header';
-import DatePicker from './DatePicker';
+import DatePicker from './Datepicker';
 
 jest.mock('lib/components/logic/Calendar', () => ({
   __esModule: true,

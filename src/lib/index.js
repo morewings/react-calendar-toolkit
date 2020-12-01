@@ -1,7 +1,7 @@
 import compose from 'lib/utils/compose';
 import {withModalProvider} from 'lib/features/modal';
 import {withDatepickerProvider} from 'lib/features/datepicker';
-import DatePicker from 'lib/components/DatePicker';
+import Datepicker from 'lib/components/Datepicker';
 import DatePickerInput from 'lib/components/DatePickerInput';
 import {useFormatDate, withLocaleContext} from 'lib/features/locale';
 import {withTheme, useTheme, useThemeContext} from 'lib/features/theme';
@@ -20,7 +20,7 @@ const WrappedDatePicker = compose(
   withDatepickerProvider,
   withLocaleContext,
   withTheme
-)(DatePicker);
+)(Datepicker);
 
 export {
   useFormatDate,

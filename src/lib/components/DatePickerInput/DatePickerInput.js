@@ -5,7 +5,7 @@ import {
   useHasInitialValues,
   useSetInitialValues,
 } from 'lib/features/datepicker';
-import DatePicker, {propTypes} from 'lib/components/DatePicker/DatePicker';
+import DatePicker, {propTypes} from 'lib/components/Datepicker/Datepicker';
 import Input from 'lib/components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'lib/components/visual/Popover';
 import ModalProvider, {ModalWrapper} from 'lib/components/visual/Modal';
