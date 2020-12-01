@@ -85,10 +85,59 @@ Object {
 }
 `;
 
-exports[`DatePicker passes Weekday(s) Row custom UI 1`] = `
+exports[`DatePicker passes Weekdays Row custom UI 1`] = `
 Object {
-  "renderAs": "MockComponent",
-  "wrapWith": "MockWrapper",
+  "names": Array [
+    Object {
+      "abbreviated": "Sun",
+      "narrow": "S",
+      "numeric": 0,
+      "short": "Su",
+      "wide": "Sunday",
+    },
+    Object {
+      "abbreviated": "Mon",
+      "narrow": "M",
+      "numeric": 1,
+      "short": "Mo",
+      "wide": "Monday",
+    },
+    Object {
+      "abbreviated": "Tue",
+      "narrow": "T",
+      "numeric": 2,
+      "short": "Tu",
+      "wide": "Tuesday",
+    },
+    Object {
+      "abbreviated": "Wed",
+      "narrow": "W",
+      "numeric": 3,
+      "short": "We",
+      "wide": "Wednesday",
+    },
+    Object {
+      "abbreviated": "Thu",
+      "narrow": "T",
+      "numeric": 4,
+      "short": "Th",
+      "wide": "Thursday",
+    },
+    Object {
+      "abbreviated": "Fri",
+      "narrow": "F",
+      "numeric": 5,
+      "short": "Fr",
+      "wide": "Friday",
+    },
+    Object {
+      "abbreviated": "Sat",
+      "narrow": "S",
+      "numeric": 6,
+      "short": "Sa",
+      "wide": "Saturday",
+    },
+  ],
 }
 `;
 
@@ -298,8 +347,57 @@ Object {
 
 exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  5`] = `
 Object {
-  "renderAs": [Function],
-  "wrapWith": [Function],
+  "names": Array [
+    Object {
+      "abbreviated": "Sun",
+      "narrow": "S",
+      "numeric": 0,
+      "short": "Su",
+      "wide": "Sunday",
+    },
+    Object {
+      "abbreviated": "Mon",
+      "narrow": "M",
+      "numeric": 1,
+      "short": "Mo",
+      "wide": "Monday",
+    },
+    Object {
+      "abbreviated": "Tue",
+      "narrow": "T",
+      "numeric": 2,
+      "short": "Tu",
+      "wide": "Tuesday",
+    },
+    Object {
+      "abbreviated": "Wed",
+      "narrow": "W",
+      "numeric": 3,
+      "short": "We",
+      "wide": "Wednesday",
+    },
+    Object {
+      "abbreviated": "Thu",
+      "narrow": "T",
+      "numeric": 4,
+      "short": "Th",
+      "wide": "Thursday",
+    },
+    Object {
+      "abbreviated": "Fri",
+      "narrow": "F",
+      "numeric": 5,
+      "short": "Fr",
+      "wide": "Friday",
+    },
+    Object {
+      "abbreviated": "Sat",
+      "narrow": "S",
+      "numeric": 6,
+      "short": "Sa",
+      "wide": "Saturday",
+    },
+  ],
 }
 `;
 

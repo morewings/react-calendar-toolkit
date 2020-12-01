@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import {DatepickerMockProvider as Provider} from 'lib/utils/testProvider';
 import Calendar from 'lib/components/logic/Calendar';
-import WeekDays from 'lib/components/logic/Weekdays';
+import Weekdays from 'lib/components/visual/Weekdays';
 import Selector from 'lib/components/logic/Selector';
 import Header from 'lib/components/logic/Header';
 import DatePicker from './DatePicker';
@@ -12,7 +12,7 @@ jest.mock('lib/components/logic/Calendar', () => ({
   default: jest.fn(() => <div>Calendar</div>),
 }));
 
-jest.mock('lib/components/logic/Weekdays', () => ({
+jest.mock('lib/components/visual/Weekdays', () => ({
   __esModule: true,
   default: jest.fn(() => <div>Weekdays</div>),
 }));
@@ -64,7 +64,7 @@ describe('DatePicker', () => {
     Header.mockClear();
     Calendar.mockClear();
     Selector.mockClear();
-    WeekDays.mockClear();
+    Weekdays.mockClear();
   });
 
   beforeAll(() => {
@@ -133,7 +133,7 @@ describe('DatePicker', () => {
         expect(Selector.mock.calls[0][0]).toMatchSnapshot();
         expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
         minPrecision === 'day' &&
-          expect(WeekDays.mock.calls[0][0]).toMatchSnapshot();
+          expect(Weekdays.mock.calls[0][0]).toMatchSnapshot();
       });
     }
   );
@@ -177,12 +177,10 @@ describe('DatePicker', () => {
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });
 
-  it('passes Weekday(s) Row custom UI', () => {
+  it('passes Weekdays Row custom UI', () => {
     renderWithProps({
-      renderWeekDayAs: 'MockComponent',
-      wrapWeekDaysWith: 'MockWrapper',
       minPrecision: 'day',
     });
-    expect(WeekDays.mock.calls[0][0]).toMatchSnapshot();
+    expect(Weekdays.mock.calls[0][0]).toMatchSnapshot();
   });
 });

@@ -1,12 +1,12 @@
 ---
-name: WeekDay
+name: WeekDays
 menu: Customize UI
 ---
 import { Playground, Props } from 'docz';
 import Datepicker from 'lib';
-import WeekDay from './WeekDay';
+import Weekdays from './Weekdays';
 
-`Weekday` component displays row with weekday names on the top of day calendar. It receives collection of localised weekday names.
+`Weekdays` component displays row with weekday names on the top of day calendar. It receives collection of localised weekday names.
 ```json
 {
   "short": "su",
@@ -51,34 +51,6 @@ import WeekDay from './WeekDay';
 
 ## Props
 
-<Props of={WeekDay} />
-
-## Wrap with custom component
-You can provide wrapper (React Component or DOM node) to the weekday row.
-
-<Playground>
-  {() => {
-    const style = {
-      display: 'flex',
-      width: 'auto',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      padding: '0 8px 8px',
-      margin: '0 8px 8px',
-      height: '24px',
-      border: '2px dashed pink',
-    };
-    const CustomComponent = ({children}) => (
-      <div style={style}>{children}</div>
-    );
-    return (
-      <Datepicker
-        onDateSet={date => {console.log('date set', date);}}
-        minPrecision="day"
-        wrapWeekDaysWith={CustomComponent}
-        title="Demo datepicker" />
-    )
-  }}
-</Playground>
+<Props of={Weekdays} />
 
 

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeekDays it renders 1`] = `
+<DocumentFragment>
+  <div
+    class="grid"
+    role="presentation"
+  >
+    <div
+      aria-label="wide1"
+      class="wrapper"
+    >
+      short1
+    </div>
+    <div
+      aria-label="wide2"
+      class="wrapper"
+    >
+      short2
+    </div>
+    <div
+      aria-label="wide3"
+      class="wrapper"
+    >
+      short3
+    </div>
+  </div>
+</DocumentFragment>
+`;
