@@ -2,7 +2,7 @@ import React from 'react';
 import {renderHook} from '@testing-library/react-hooks';
 import createStoreProvider from 'lib/store';
 import useHasInitialValues from './useHasInitialValues';
-import DatePickerContext from './context';
+import DatepickerContext from './context';
 
 const mockReducer = jest.fn();
 const date = new Date('2020-01-20T00:00:00.000'); // 20.01.2020
@@ -11,7 +11,7 @@ const createStoreProviderWithState = state =>
   createStoreProvider({
     initialState: state,
     reducer: mockReducer,
-    context: DatePickerContext,
+    context: DatepickerContext,
   });
 
 describe('useHasInitialValues', () => {

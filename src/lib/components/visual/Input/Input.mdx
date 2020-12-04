@@ -3,7 +3,7 @@ name: Input
 menu: Customize UI
 ---
 import { Playground, Props } from 'docz';
-import {DatePickerInput} from 'lib';
+import {DatepickerInput} from 'lib';
 import Input from './Input';
 
 `Input` component renders form field to attach `Datepicker`. Used in [`DatepickerInput`](/datepicker-input). Replace it with custom component.
@@ -36,7 +36,7 @@ import Input from './Input';
       );
     };
     return (
-      <DatePickerInput
+      <DatepickerInput
         renderInputAs={CustomInput}
         onDateSet={date => {console.log('date set', date);}}
       />

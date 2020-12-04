@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import createStoreProvider from 'lib/store';
-import DatePickerContext from 'lib/features/datepicker/context';
+import DatepickerContext from 'lib/features/datepicker/context';
 import Header from './Header';
 
 const mockReducer = jest.fn();
@@ -13,7 +13,7 @@ const createStoreProviderWithState = state =>
   createStoreProvider({
     initialState: state,
     reducer: mockReducer,
-    context: DatePickerContext,
+    context: DatepickerContext,
   });
 
 const MockComponent = jest.fn(() => <div>MockComponent</div>);

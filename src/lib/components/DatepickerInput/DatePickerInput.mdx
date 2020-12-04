@@ -4,8 +4,8 @@ route: '/datepicker-input'
 ---
 import { Playground, Props } from 'docz';
 import locale from 'date-fns/esm/locale/ru';
-import {DatePickerInput} from 'lib';
-import DatepickerInputWithProps from './DatePickerInput';
+import {DatepickerInput} from 'lib';
+import DatepickerInputWithProps from './DatepickerInput';
 
 ## Description
 
@@ -18,7 +18,7 @@ import DatepickerInputWithProps from './DatePickerInput';
 <Playground>
   <div>
     <div>Click inside input</div>
-    <DatePickerInput onDateSet={date => {console.log('date set', date);}}/>
+    <DatepickerInput onDateSet={date => {console.log('date set', date);}}/>
   </div>
 </Playground>
 
@@ -35,7 +35,7 @@ Position of popover is calculated dynamically to fit inside the viewport.
 <Playground>
   <div>
     <div>Click inside input</div>
-    <DatePickerInput
+    <DatepickerInput
       mode="popover"
       onDateSet={date => {console.log('date set', date);}}
     />
@@ -49,7 +49,7 @@ Renders `Datepicker` as a modal window. More convenient for a small screen devic
 <Playground>
   <div>
     <div>Click inside input</div>
-    <DatePickerInput
+    <DatepickerInput
       mode="modal"
       onDateSet={date => {console.log('date set', date);}}
     />
@@ -70,7 +70,7 @@ Set attached [`Datepicker` props](/datepicker#props) via `datePickerProps` prope
     return (
       <div>
         <div>Click inside input</div>
-        <DatePickerInput
+        <DatepickerInput
           datePickerProps={{'minPrecision': 'month'}}
           dateFnsLocale={locale}
           theme={theme}
@@ -89,7 +89,7 @@ Defines `Datepicker` behavior after user clicks on the date entry.
 <Playground>
   <div>
     <div>Click inside input</div>
-    <DatePickerInput
+    <DatepickerInput
       hideOnSelect={false}
       onDateSet={date => {console.log('date set', date);}}
     />
@@ -108,7 +108,7 @@ Use `date-fns` [format strings](https://date-fns.org/docs/format) to define, wha
     return (
       <div>
         <div>Click inside input</div>
-        <DatePickerInput
+        <DatepickerInput
           theme={theme}
           formatPattern='GGGG yo Do'
           onDateSet={date => {console.log('date set', date);}}

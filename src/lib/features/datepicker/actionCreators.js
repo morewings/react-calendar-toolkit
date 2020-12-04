@@ -5,10 +5,10 @@ import {
   SET_TODAY,
   SET_VISIBILITY,
 } from './actionTypes';
-import {useDatePickerContext} from './context';
+import {useDatepickerContext} from './context';
 
-const useDatePickerActions = () => {
-  const {dispatch} = useDatePickerContext();
+const useDatepickerActions = () => {
+  const {dispatch} = useDatepickerContext();
   return {
     setDate: date => {
       dispatch({
@@ -43,4 +43,4 @@ const useDatePickerActions = () => {
   };
 };
 
-export default useDatePickerActions;
+export default useDatepickerActions;

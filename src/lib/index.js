@@ -2,21 +2,21 @@ import compose from 'lib/utils/compose';
 import {withModalProvider} from 'lib/features/modal';
 import {withDatepickerProvider} from 'lib/features/datepicker';
 import Datepicker from 'lib/components/Datepicker';
-import DatePickerInput from 'lib/components/DatePickerInput';
+import DatepickerInput from 'lib/components/DatepickerInput';
 import {useFormatDate, withLocaleContext} from 'lib/features/locale';
 import {withTheme, useTheme, useThemeContext} from 'lib/features/theme';
 import useOnClickOutside from 'lib/utils/useOnClickOutside';
 import defaultTheme from 'lib/utils/defaultTheme';
 import useScrollIntoView from 'lib/utils/scrollIntoView';
 
-const WrappedDatePickerInput = compose(
+const WrappedDatepickerInput = compose(
   withDatepickerProvider,
   withModalProvider,
   withLocaleContext,
   withTheme
-)(DatePickerInput);
+)(DatepickerInput);
 
-const WrappedDatePicker = compose(
+const WrappedDatepicker = compose(
   withDatepickerProvider,
   withLocaleContext,
   withTheme
@@ -29,8 +29,8 @@ export {
   defaultTheme,
   useScrollIntoView,
   useOnClickOutside,
-  WrappedDatePickerInput as DatePickerInput,
-  WrappedDatePicker as DatePicker,
+  WrappedDatepickerInput as DatepickerInput,
+  WrappedDatepicker as Datepicker,
 };
 
-export default WrappedDatePicker;
+export default WrappedDatepicker;

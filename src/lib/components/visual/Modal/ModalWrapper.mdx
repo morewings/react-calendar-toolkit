@@ -3,7 +3,7 @@ name: ModalWrapper
 menu: Customize UI
 ---
 import { Playground, Props } from 'docz';
-import {DatePickerInput, useOnClickOutside} from 'lib';
+import {DatepickerInput, useOnClickOutside} from 'lib';
 import ModalWrapper from './ModalWrapper';
 
 `ModalWrapper` component  wraps `Datepicker` inside modal. Used in [`DatepickerInput`](/datepicker-input). You can set change background color using `theme` prop. Replace it with custom component.
@@ -30,7 +30,7 @@ import ModalWrapper from './ModalWrapper';
       );
     };
     return (
-      <DatePickerInput
+      <DatepickerInput
         theme={theme}
         mode="modal"
         wrapModalWith={CustomWrapper}

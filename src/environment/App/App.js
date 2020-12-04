@@ -2,7 +2,7 @@ import React from 'react';
 import {isSameDay} from 'date-fns';
 import customLocale from 'date-fns/locale/es';
 // eslint-disable-next-line import/no-named-as-default
-import DatePicker, {DatePickerInput} from 'lib';
+import Datepicker, {DatepickerInput} from 'lib';
 import './App.css';
 
 const highlightDate = ({date, precision}) =>
@@ -11,7 +11,7 @@ const highlightDate = ({date, precision}) =>
 const App = () => (
   <div className="app">
     <div className="container">
-      <DatePicker
+      <Datepicker
         startDate={new Date(1999, 11, 6)}
         endDate={new Date(2020, 1, 25)}
         minPrecision="day"
@@ -27,7 +27,7 @@ const App = () => (
       />
     </div>
     <div className="container">
-      <DatePickerInput
+      <DatepickerInput
         mode="modal"
         minPrecision="month"
         onDateSet={date => {

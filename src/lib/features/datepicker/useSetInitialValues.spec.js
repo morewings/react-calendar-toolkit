@@ -2,7 +2,7 @@ import React from 'react';
 import {renderHook} from '@testing-library/react-hooks';
 import createStoreProvider from 'lib/store';
 import {useSetInitialValues} from './useSetInitialValues';
-import DatePickerContext from './context';
+import DatepickerContext from './context';
 import {
   SET_DATE,
   SET_PRECISION,
@@ -24,7 +24,7 @@ const createStoreProviderWithState = state =>
   createStoreProvider({
     initialState: state,
     reducer: mockReducer,
-    context: DatePickerContext,
+    context: DatepickerContext,
   });
 
 describe('useHasInitialValues', () => {

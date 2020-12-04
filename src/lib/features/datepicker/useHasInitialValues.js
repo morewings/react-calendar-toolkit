@@ -1,9 +1,9 @@
-import {useDatePickerContext} from './context';
+import {useDatepickerContext} from './context';
 
 const useHasInitialValues = () => {
   const {
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp},
-  } = useDatePickerContext();
+  } = useDatepickerContext();
   return !!selectedTimestamp && !!todayTimestamp && !!visibleTimestamp;
 };
 

@@ -5,7 +5,7 @@ import Calendar from 'lib/components/logic/Calendar';
 import Weekdays from 'lib/components/visual/Weekdays';
 import Selector from 'lib/components/logic/Selector';
 import Header from 'lib/components/logic/Header';
-import DatePicker from './Datepicker';
+import Datepicker from './Datepicker';
 
 jest.mock('lib/components/logic/Calendar', () => ({
   __esModule: true,
@@ -46,7 +46,7 @@ const date = {
 
 const renderWithProps = (props = {}) =>
   render(
-    <DatePicker
+    <Datepicker
       {...props}
       today={new Date(2020, 0, 10)}
       onDateSet={onDateSet}
@@ -58,7 +58,7 @@ const renderWithProps = (props = {}) =>
 
 const scrollIntoView = jest.fn();
 
-describe('DatePicker', () => {
+describe('Datepicker', () => {
   beforeEach(() => {
     onDateSet.mockClear();
     Header.mockClear();

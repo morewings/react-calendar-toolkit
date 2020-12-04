@@ -23,17 +23,17 @@ describe('useModalActions', () => {
     const {result} = renderHook(() => useModalActions(), {
       wrapper: ({children}) => <Provider>{children}</Provider>,
     });
-    expect(result.current.toggleDatePicker).toBeInstanceOf(Function);
+    expect(result.current.toggleDatepicker).toBeInstanceOf(Function);
   });
 
-  it('`toggleDatePicker` actionCreator dispatches to reducer', () => {
+  it('`toggleDatepicker` actionCreator dispatches to reducer', () => {
     const payload = 'payload';
     const {result} = renderHook(() => useModalActions(), {
       wrapper: ({children}) => <Provider>{children}</Provider>,
     });
 
     act(() => {
-      result.current.toggleDatePicker(payload);
+      result.current.toggleDatepicker(payload);
     });
 
     expect(mockReducer).toHaveBeenCalledTimes(1);

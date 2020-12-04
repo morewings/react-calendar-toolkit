@@ -7,16 +7,16 @@ import {
   SET_TODAY,
   SET_VISIBILITY,
 } from './actionTypes';
-import useDatePickerActions from './actionCreators';
+import useDatepickerActions from './actionCreators';
 import {initialState} from './DatepickerReducer';
-import DatePickerContext from './context';
+import DatepickerContext from './context';
 
 const mockReducer = jest.fn();
 
 const Provider = createStoreProvider({
   initialState,
   reducer: mockReducer,
-  context: DatePickerContext,
+  context: DatepickerContext,
 });
 
 const date = new Date('2020-01-20T00:00:00.000'); // 20.01.2020
@@ -41,7 +41,7 @@ describe('useModalActions', () => {
   });
 
   it('returns action creators', () => {
-    const {result} = renderHook(() => useDatePickerActions(), {
+    const {result} = renderHook(() => useDatepickerActions(), {
       wrapper: ({children}) => <Provider>{children}</Provider>,
     });
     expect(result.current).toMatchSnapshot();
@@ -55,7 +55,7 @@ describe('useModalActions', () => {
     ${'setPrecision'}  | ${SET_PRECISION}  | ${precisionPayload} | ${precisionPayload}
   `('actions', ({action, type, value, expectedPayload}) => {
     it(`${action} creator dispatches to reducer`, () => {
-      const {result} = renderHook(() => useDatePickerActions(), {
+      const {result} = renderHook(() => useDatepickerActions(), {
         wrapper: ({children}) => <Provider>{children}</Provider>,
       });
 
