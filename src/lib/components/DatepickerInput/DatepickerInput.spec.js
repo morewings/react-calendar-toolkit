@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {InputMockProvider as Provider} from 'lib/utils/testProvider';
-import DatePickerInput from './DatePickerInput';
+import DatepickerInput from './DatepickerInput';
 
-const Datepicker = jest.fn(() => <div>DatePicker</div>);
+const Datepicker = jest.fn(() => <div>Datepicker</div>);
 const Input = jest.fn(() => <div>Input</div>);
 const PopoverProvider = jest.fn(({children}) => (
   <div data-testid="Popover">{children}</div>
@@ -22,8 +22,8 @@ const onDateSet = jest.fn();
 
 const renderWithProps = (props = {}) =>
   render(
-    <DatePickerInput
-      renderDatePickerAs={Datepicker}
+    <DatepickerInput
+      renderDatepickerAs={Datepicker}
       renderInputAs={Input}
       popoverProvider={PopoverProvider}
       wrapPopoverWith={PopoverWrapper}
@@ -38,7 +38,7 @@ const renderWithProps = (props = {}) =>
     }
   );
 
-describe('DatePicker', () => {
+describe('Datepicker', () => {
   beforeEach(() => {
     onDateSet.mockClear();
     Datepicker.mockClear();

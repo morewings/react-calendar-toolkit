@@ -35,7 +35,7 @@ const Provider = ({children, ...restProps}) => (
   </ProviderLocale>
 );
 
-describe('DatePicker > useLogic > handleDateSet', () => {
+describe('Datepicker > useLogic > handleDateSet', () => {
   beforeEach(() => {
     mockReducer.mockClear();
     onDateSet.mockClear();

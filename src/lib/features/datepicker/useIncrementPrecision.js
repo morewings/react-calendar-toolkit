@@ -1,13 +1,13 @@
 import config from 'lib/utils/config';
-import {useDatePickerContext} from './context';
-import useDatePickerActions from './actionCreators';
+import {useDatepickerContext} from './context';
+import useDatepickerActions from './actionCreators';
 
 const useIncrementPrecision = minPrecision => {
   const {
     state: {precision},
-  } = useDatePickerContext();
+  } = useDatepickerContext();
 
-  const {setPrecision} = useDatePickerActions();
+  const {setPrecision} = useDatepickerActions();
 
   const getNextPrecision = (precisionEnum, currentPrecision) => {
     const currentIndex = precisionEnum.indexOf(currentPrecision);

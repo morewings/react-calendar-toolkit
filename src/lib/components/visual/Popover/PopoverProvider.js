@@ -4,13 +4,13 @@ import Popover from 'react-tiny-popover';
 import classes from './PopoverProvider.module.css';
 
 const PopoverProvider = ({
-  renderDatePickerAs,
+  renderDatepickerAs,
   isVisible,
   children,
   toggleDatepicker,
   wrapPopoverWith,
 }) => {
-  const Datepicker = renderDatePickerAs;
+  const Datepicker = renderDatepickerAs;
   const Wrapper = wrapPopoverWith;
   return (
     <Popover
@@ -31,7 +31,7 @@ const PopoverProvider = ({
 
 PopoverProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  renderDatePickerAs: PropTypes.elementType.isRequired,
+  renderDatepickerAs: PropTypes.elementType.isRequired,
   wrapPopoverWith: PropTypes.elementType.isRequired,
   isVisible: PropTypes.bool.isRequired,
   toggleDatepicker: PropTypes.func.isRequired,

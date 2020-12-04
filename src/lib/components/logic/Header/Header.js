@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useDatePickerContext} from 'lib/features/datepicker';
+import {useDatepickerContext} from 'lib/features/datepicker';
 import {convertToDate} from 'lib/utils/dateUtils';
 
 const Header = ({renderAs, title}) => {
   const {
     state: {selectedTimestamp, todayTimestamp},
-  } = useDatePickerContext();
+  } = useDatepickerContext();
   const HeaderUI = renderAs;
   return (
     <HeaderUI

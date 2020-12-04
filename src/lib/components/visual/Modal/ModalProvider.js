@@ -9,12 +9,12 @@ const Modal = ({
   toggleDatepicker,
   children,
   isVisible,
-  renderDatePickerAs,
+  renderDatepickerAs,
   wrapModalWith,
 }) => {
   const modalContainerRef = useRef();
   const [isNodeAttached, setIsNodeAttached] = useState(false);
-  const Datepicker = renderDatePickerAs;
+  const Datepicker = renderDatepickerAs;
   const Wrapper = wrapModalWith;
   const theme = useThemeContext();
 
@@ -53,7 +53,7 @@ const Modal = ({
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   toggleDatepicker: PropTypes.func.isRequired,
-  renderDatePickerAs: PropTypes.elementType.isRequired,
+  renderDatepickerAs: PropTypes.elementType.isRequired,
   wrapModalWith: PropTypes.elementType.isRequired,
   isVisible: PropTypes.bool.isRequired,
 };

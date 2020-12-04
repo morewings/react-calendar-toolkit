@@ -5,17 +5,17 @@ import {
   useHasInitialValues,
   useSetInitialValues,
 } from 'lib/features/datepicker';
-import DatePicker, {propTypes} from 'lib/components/DatePicker/DatePicker';
+import Datepicker, {propTypes} from 'lib/components/Datepicker/Datepicker';
 import Input from 'lib/components/visual/Input';
 import PopoverProvider, {PopoverWrapper} from 'lib/components/visual/Popover';
 import ModalProvider, {ModalWrapper} from 'lib/components/visual/Modal';
 import useLogic from './useLogic';
 
-const DatePickerInput = ({
+const DatepickerInput = ({
   renderInputAs,
   mode,
   formatPattern,
-  renderDatePickerAs,
+  renderDatepickerAs,
   onDateSet,
   popoverProvider,
   wrapPopoverWith,
@@ -29,7 +29,7 @@ const DatePickerInput = ({
     state: {isVisible},
   } = useModalContext();
 
-  const {toggleDatePicker} = useModalActions();
+  const {toggleDatepicker} = useModalActions();
 
   const {handleDateSet, formatValue, getDate} = useLogic({
     onDateSet,
@@ -40,10 +40,10 @@ const DatePickerInput = ({
     mode === 'popover' ? popoverProvider : modalProvider;
 
   const InputComponent = renderInputAs;
-  const DatePickerComponent = renderDatePickerAs;
+  const DatepickerComponent = renderDatepickerAs;
 
-  const DatePickerWithProps = () => (
-    <DatePickerComponent
+  const DatepickerWithProps = () => (
+    <DatepickerComponent
       showHeader={mode === 'modal'}
       onDateSet={handleDateSet}
       {...datePickerProps}
@@ -67,16 +67,16 @@ const DatePickerInput = ({
     hasInitialValues && (
       <RenderingLogicProvider
         isVisible={isVisible}
-        toggleDatepicker={toggleDatePicker}
+        toggleDatepicker={toggleDatepicker}
         wrapPopoverWith={wrapPopoverWith}
         wrapModalWith={wrapModalWith}
-        renderDatePickerAs={DatePickerWithProps}>
+        renderDatepickerAs={DatepickerWithProps}>
         <RefWrap>
           <InputComponent
             onChange={onDateSet}
             date={getDate()}
             value={formatValue(formatPattern)}
-            toggleDatepicker={toggleDatePicker}
+            toggleDatepicker={toggleDatepicker}
           />
         </RefWrap>
       </RenderingLogicProvider>
@@ -84,7 +84,7 @@ const DatePickerInput = ({
   );
 };
 
-DatePickerInput.propTypes = {
+DatepickerInput.propTypes = {
   /** Callback when user selects date */
   onDateSet: PropTypes.func.isRequired,
   /** __Rendering__ mode of attached Datepicker */
@@ -94,10 +94,10 @@ DatePickerInput.propTypes = {
   /** Define component which renders __Input__. */
   renderInputAs: PropTypes.elementType,
   /**
-   * Define component which renders __DatePicker__ entry.
+   * Define component which renders __Datepicker__ entry.
    * @ignore
    */
-  renderDatePickerAs: PropTypes.elementType,
+  renderDatepickerAs: PropTypes.elementType,
   /** Define component which wraps __Popover__. */
   wrapPopoverWith: PropTypes.elementType,
   /**
@@ -119,7 +119,7 @@ DatePickerInput.propTypes = {
   formatPattern: PropTypes.string,
   /**
    * Set props for __Datepicker__ component.
-   * @see https://morewings.github.io/react-calendar-toolkit/#!/Available%20components/DatePicker
+   * @see https://morewings.github.io/react-calendar-toolkit/#!/Available%20components/Datepicker
    */
   datePickerProps: PropTypes.shape({
     ...propTypes,
@@ -142,11 +142,11 @@ DatePickerInput.propTypes = {
   dateFnsLocale: PropTypes.shape({}), // eslint-disable-line react/require-default-props
 };
 
-DatePickerInput.defaultProps = {
+DatepickerInput.defaultProps = {
   mode: 'popover',
   hideOnSelect: true,
   renderInputAs: Input,
-  renderDatePickerAs: DatePicker,
+  renderDatepickerAs: Datepicker,
   formatPattern: 'MM/dd/yyyy',
   popoverProvider: PopoverProvider,
   wrapPopoverWith: PopoverWrapper,
@@ -160,4 +160,4 @@ DatePickerInput.defaultProps = {
   },
 };
 
-export default DatePickerInput;
+export default DatepickerInput;

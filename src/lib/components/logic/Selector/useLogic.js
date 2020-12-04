@@ -6,10 +6,10 @@ import {
   floorMonth,
   addMonth,
 } from 'lib/utils/dateUtils';
-import {useDatePickerActions} from 'lib/features/datepicker';
+import {useDatepickerActions} from 'lib/features/datepicker';
 
 const useLogic = ({startDate, endDate, visibleTimestamp}) => {
-  const {setVisibility, setPrecision} = useDatePickerActions();
+  const {setVisibility, setPrecision} = useDatepickerActions();
 
   const isAvailable = useCallback(
     date =>

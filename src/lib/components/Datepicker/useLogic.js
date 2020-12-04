@@ -1,15 +1,15 @@
 import {useCallback} from 'react';
 import {
-  useDatePickerActions,
-  useDatePickerContext,
+  useDatepickerActions,
+  useDatepickerContext,
   useIncrementPrecision,
 } from 'lib/features/datepicker';
 
 const useLogic = (onDateSet, minPrecision) => {
   const {
     state: {precision},
-  } = useDatePickerContext();
-  const {setDate, setVisibility} = useDatePickerActions();
+  } = useDatepickerContext();
+  const {setDate, setVisibility} = useDatepickerActions();
   const incrementPrecision = useIncrementPrecision(minPrecision);
   const handleDateSet = useCallback(
     date => {

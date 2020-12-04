@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import useHasInitialValues from './useHasInitialValues';
-import useDatePickerActions from './actionCreators';
+import useDatepickerActions from './actionCreators';
 
 export const useSetInitialValues = ({initialDate, today, minPrecision}) => {
   const {
@@ -8,7 +8,7 @@ export const useSetInitialValues = ({initialDate, today, minPrecision}) => {
     setVisibility,
     setDate,
     setToday,
-  } = useDatePickerActions();
+  } = useDatepickerActions();
 
   const hasInitialValues = useHasInitialValues();
   useEffect(() => {

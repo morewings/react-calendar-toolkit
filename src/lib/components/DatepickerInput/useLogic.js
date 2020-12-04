@@ -2,21 +2,21 @@ import {useCallback} from 'react';
 import {useModalActions} from 'lib/features/modal';
 import {convertToDate} from 'lib/utils/dateUtils';
 import {useFormatDate} from 'lib/features/locale';
-import {useDatePickerContext} from 'lib/features/datepicker';
+import {useDatepickerContext} from 'lib/features/datepicker';
 
 const useLogic = ({onDateSet, hideOnSelect}) => {
-  const {toggleDatePicker} = useModalActions();
+  const {toggleDatepicker} = useModalActions();
   const formatDate = useFormatDate();
   const {
     state: {selectedTimestamp},
-  } = useDatePickerContext();
+  } = useDatepickerContext();
 
   const handleDateSet = useCallback(
     date => {
       onDateSet(date);
-      hideOnSelect && toggleDatePicker(false);
+      hideOnSelect && toggleDatepicker(false);
     },
-    [hideOnSelect, onDateSet, toggleDatePicker]
+    [hideOnSelect, onDateSet, toggleDatepicker]
   );
 
   const formatValue = useCallback(

@@ -3,7 +3,7 @@ import {renderHook, act} from '@testing-library/react-hooks';
 import createStoreProvider from 'lib/store';
 import {SET_PRECISION} from 'lib/features/datepicker/actionTypes';
 import useIncrementPrecision from './useIncrementPrecision';
-import DatePickerContext from './context';
+import DatepickerContext from './context';
 
 const mockReducer = jest.fn();
 
@@ -11,7 +11,7 @@ const createStoreProviderWithState = state =>
   createStoreProvider({
     initialState: state,
     reducer: mockReducer,
-    context: DatePickerContext,
+    context: DatepickerContext,
   });
 
 describe('useIncrementPrecision', () => {

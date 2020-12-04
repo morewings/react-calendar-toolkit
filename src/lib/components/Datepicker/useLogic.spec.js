@@ -1,7 +1,7 @@
 import React from 'react';
 import {renderHook, act} from '@testing-library/react-hooks';
 import createStoreProvider from 'lib/store';
-import DatePickerContext from 'lib/features/datepicker/context';
+import DatepickerContext from 'lib/features/datepicker/context';
 import DatepickerReducer from 'lib/features/datepicker/DatepickerReducer';
 import useLogic from './useLogic';
 
@@ -17,10 +17,10 @@ const createStoreProviderWithState = state =>
   createStoreProvider({
     initialState: state,
     reducer: mockReducer,
-    context: DatePickerContext,
+    context: DatepickerContext,
   });
 
-describe('DatePicker > useLogic > handleDateSet', () => {
+describe('Datepicker > useLogic > handleDateSet', () => {
   beforeEach(() => {
     onDateSet.mockClear();
     mockReducer.mockClear();

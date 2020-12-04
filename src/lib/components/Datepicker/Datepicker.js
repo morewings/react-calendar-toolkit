@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {
-  useDatePickerContext,
+  useDatepickerContext,
   useHasInitialValues,
   useSetInitialValues,
 } from 'lib/features/datepicker';
@@ -18,7 +18,7 @@ import Year, {YearGrid} from 'lib/components/visual/Year';
 import Weekdays from 'lib/components/visual/Weekdays';
 import useLogic from './useLogic';
 
-const DatePicker = ({
+const Datepicker = ({
   initialDate,
   today,
   showHeader,
@@ -43,7 +43,7 @@ const DatePicker = ({
 }) => {
   const {
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
-  } = useDatePickerContext();
+  } = useDatepickerContext();
 
   const hasInitialValues = useHasInitialValues();
 
@@ -177,9 +177,9 @@ export const propTypes = {
   theme: PropTypes.shape({}), // eslint-disable-line react/require-default-props
 };
 
-DatePicker.propTypes = propTypes;
+Datepicker.propTypes = propTypes;
 
-DatePicker.defaultProps = {
+Datepicker.defaultProps = {
   initialDate: new Date(2020, 0, 6),
   startDate: new Date(2020, 0, 1),
   endDate: new Date(2020, 1, 25),
@@ -202,4 +202,4 @@ DatePicker.defaultProps = {
   highlightWeekends: true,
 };
 
-export default DatePicker;
+export default Datepicker;

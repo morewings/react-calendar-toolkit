@@ -16,7 +16,7 @@ const toggleDatepicker = jest.fn();
 const defaultProps = {
   toggleDatepicker,
   isVisible: false,
-  renderDatePickerAs: Datepicker,
+  renderDatepickerAs: Datepicker,
   wrapPopoverWith: Wrapper,
 };
 
