@@ -70,13 +70,13 @@ declare module 'react-calendar-toolkit' {
   ): [Object, Function];
 
   export function useScrollIntoView(
-    ref: React.RefObject<HTMLInputElement>,
+    ref: React.RefObject<HTMLElement>,
     containerSelector: string,
     condition: boolean
   ): void;
 
   export function useOnClickOutside(
-    ref: React.RefObject<HTMLInputElement>,
+    ref: React.RefObject<HTMLElement>,
     handler: Function
   ): void;
 
