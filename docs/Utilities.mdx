@@ -8,9 +8,9 @@ React hook. Returns function, which formats date using provided locale. Use [dat
 
 ```js static
 import locale from 'date-fns/esm/locale/ru';
-import DatePicker, {useFormatDate} from 'react-calendar-toolkit';
+import Datepicker, {useFormatDate} from 'react-calendar-toolkit';
 
-<DatePicker dateFnsLocale={locale} />
+<Datepicker dateFnsLocale={locale} />
 
 const Component = () => {
   const formatDate = useFormatDate();
@@ -29,9 +29,9 @@ const Component = () => {
 React hook, returns [theme object](/change_theme) from component props.
 
 ```js static
-import DatePicker, {useThemeContext} from 'react-calendar-toolkit';
+import Datepicker, {useThemeContext} from 'react-calendar-toolkit';
 
-<DatePicker theme={{foo: 'bar'}} />
+<Datepicker theme={{foo: 'bar'}} />
 
 // later
 
@@ -48,9 +48,9 @@ React hook, based on [callback ref](https://medium.com/@teh_builder/ref-objects-
 
 ```js static
 import React, {useRef, useEffect} from 'react';
-import DatePicker, {useTheme} from 'react-calendar-toolkit';
+import Datepicker, {useTheme} from 'react-calendar-toolkit';
 
-<DatePicker theme={{'--varName': 'value'}} />
+<Datepicker theme={{'--varName': 'value'}} />
 
 // later
 

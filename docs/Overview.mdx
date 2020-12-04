@@ -5,7 +5,7 @@ route: '/'
 import {Fragment} from 'react';
 import { Playground, Props } from 'docz'
 import locale from 'date-fns/locale/fr';
-import DatePicker from 'lib';
+import Datepicker from 'lib';
 
 ![Selector structure](./assets/datepicker-screenshot.png)
 
@@ -42,7 +42,7 @@ Date entry components can be wrapped with provided React Component or DOM node, 
 You can use [any locale](https://date-fns.org/docs/I18n) from `date-fns` or [create custom one](https://date-fns.org/v2.10.0/docs/I18n-Contribution-Guide).
 
 <Playground >
-  <DatePicker
+  <Datepicker
     dateFnsLocale={locale}
     title="Demo datepicker"
     onDateSet={date => {console.log('date set', date);}} />
@@ -60,17 +60,17 @@ You can use [any locale](https://date-fns.org/docs/I18n) from `date-fns` or [cre
     };
     return (
       <div style={style}>
-        <DatePicker
+        <Datepicker
           minPrecision="year"
           renderSelectorAs={Fragment}
           showHeader={false}
           onDateSet={date => {console.log('date set', date);}} />
-        <DatePicker
+        <Datepicker
           minPrecision="month"
           renderSelectorAs={Fragment}
           showHeader={false}
           onDateSet={date => {console.log('date set', date);}} />
-        <DatePicker
+        <Datepicker
           minPrecision="day"
           renderSelectorAs={Fragment}
           showHeader={false}
