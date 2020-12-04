@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePicker > useLogic > handleDateSet increments precision and sets visibility when \`precision !== minPrecision\` 1`] = `
+exports[`Datepicker > useLogic > handleDateSet increments precision and sets visibility when \`precision !== minPrecision\` 1`] = `
 Object {
   "payload": Object {
     "visibleTimestamp": 1578787200000,
@@ -9,14 +9,14 @@ Object {
 }
 `;
 
-exports[`DatePicker > useLogic > handleDateSet increments precision and sets visibility when \`precision !== minPrecision\` 2`] = `
+exports[`Datepicker > useLogic > handleDateSet increments precision and sets visibility when \`precision !== minPrecision\` 2`] = `
 Object {
   "payload": "day",
   "type": "SET_PRECISION",
 }
 `;
 
-exports[`DatePicker > useLogic > handleDateSet sets date and calls callback when \`precision === minPrecision\` 1`] = `
+exports[`Datepicker > useLogic > handleDateSet sets date and calls callback when \`precision === minPrecision\` 1`] = `
 Object {
   "payload": Object {
     "selectedTimestamp": 1578787200000,

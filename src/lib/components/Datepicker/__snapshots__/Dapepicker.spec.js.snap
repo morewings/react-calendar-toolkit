@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePicker disables weekend highlight 1`] = `
+exports[`Datepicker disables weekend highlight 1`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -17,7 +17,7 @@ Object {
 }
 `;
 
-exports[`DatePicker passes \`disableDate\` 1`] = `
+exports[`Datepicker passes \`disableDate\` 1`] = `
 Object {
   "disableDate": [MockFunction],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -34,7 +34,7 @@ Object {
 }
 `;
 
-exports[`DatePicker passes \`highlightDate\` 1`] = `
+exports[`Datepicker passes \`highlightDate\` 1`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -51,7 +51,7 @@ Object {
 }
 `;
 
-exports[`DatePicker passes Day(s) Calendar custom UI 1`] = `
+exports[`Datepicker passes Day(s) Calendar custom UI 1`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -68,7 +68,7 @@ Object {
 }
 `;
 
-exports[`DatePicker passes Month(s) Calendar custom UI 1`] = `
+exports[`Datepicker passes Month(s) Calendar custom UI 1`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -85,7 +85,7 @@ Object {
 }
 `;
 
-exports[`DatePicker passes Weekdays Row custom UI 1`] = `
+exports[`Datepicker passes Weekdays Row custom UI 1`] = `
 Object {
   "names": Array [
     Object {
@@ -141,7 +141,7 @@ Object {
 }
 `;
 
-exports[`DatePicker passes Year(s) Calendar custom UI 1`] = `
+exports[`Datepicker passes Year(s) Calendar custom UI 1`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -158,7 +158,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders 1`] = `
+exports[`Datepicker renders 1`] = `
 <DocumentFragment>
   <div
     aria-label=""
@@ -182,14 +182,14 @@ exports[`DatePicker renders 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders 2`] = `
+exports[`Datepicker renders 2`] = `
 Object {
   "renderAs": [Function],
   "title": "",
 }
 `;
 
-exports[`DatePicker renders 3`] = `
+exports[`Datepicker renders 3`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
@@ -206,7 +206,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders 4`] = `
+exports[`Datepicker renders 4`] = `
 Object {
   "endDate": 2020-02-25T00:00:00.000Z,
   "precision": "day",
@@ -218,7 +218,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders Header custom UI 1`] = `
+exports[`Datepicker renders Header custom UI 1`] = `
 <DocumentFragment>
   <div
     aria-label=""
@@ -242,7 +242,7 @@ exports[`DatePicker renders Header custom UI 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders Selector custom UI 1`] = `
+exports[`Datepicker renders Selector custom UI 1`] = `
 <DocumentFragment>
   <div
     aria-label=""
@@ -266,7 +266,7 @@ exports[`DatePicker renders Selector custom UI 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders custom Wrapper 1`] = `
+exports[`Datepicker renders custom Wrapper 1`] = `
 <div
   data-testid="wrapper"
 >
@@ -285,7 +285,7 @@ exports[`DatePicker renders custom Wrapper 1`] = `
 </div>
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  1`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  1`] = `
 <DocumentFragment>
   <div
     aria-label=""
@@ -309,14 +309,14 @@ exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  2`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  2`] = `
 Object {
   "renderAs": [Function],
   "title": "",
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  3`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  3`] = `
 Object {
   "endDate": 2021-02-12T00:00:00.000Z,
   "precision": "day",
@@ -328,7 +328,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  4`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  4`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2021-02-12T00:00:00.000Z,
@@ -345,7 +345,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  5`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  5`] = `
 Object {
   "names": Array [
     Object {
@@ -401,7 +401,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  1`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  1`] = `
 <DocumentFragment>
   <div
     aria-label=""
@@ -422,14 +422,14 @@ exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  2`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  2`] = `
 Object {
   "renderAs": [Function],
   "title": "",
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  3`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  3`] = `
 Object {
   "endDate": 2021-02-12T00:00:00.000Z,
   "precision": "month",
@@ -441,7 +441,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  4`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: month  4`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2021-02-12T00:00:00.000Z,
@@ -457,7 +457,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  1`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  1`] = `
 <DocumentFragment>
   <div
     aria-label=""
@@ -478,14 +478,14 @@ exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  2`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  2`] = `
 Object {
   "renderAs": [Function],
   "title": "",
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  3`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  3`] = `
 Object {
   "endDate": 2021-02-12T00:00:00.000Z,
   "precision": "year",
@@ -497,7 +497,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  4`] = `
+exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: year  4`] = `
 Object {
   "disableDate": [Function],
   "endDate": 2021-02-12T00:00:00.000Z,
@@ -513,14 +513,14 @@ Object {
 }
 `;
 
-exports[`DatePicker renders title 1`] = `
+exports[`Datepicker renders title 1`] = `
 Object {
   "renderAs": [Function],
   "title": "Title",
 }
 `;
 
-exports[`DatePicker renders without header 1`] = `
+exports[`Datepicker renders without header 1`] = `
 <DocumentFragment>
   <div
     aria-label=""

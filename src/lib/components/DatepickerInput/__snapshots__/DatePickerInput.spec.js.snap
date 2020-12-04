@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePicker renders with Modal if mode === \`modal\` 1`] = `
+exports[`Datepicker renders with Modal if mode === \`modal\` 1`] = `
 <DocumentFragment>
   <div
     data-testid="Modal"
@@ -14,7 +14,7 @@ exports[`DatePicker renders with Modal if mode === \`modal\` 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders with Modal if mode === \`modal\` 2`] = `
+exports[`Datepicker renders with Modal if mode === \`modal\` 2`] = `
 Object {
   "children": <ForwardRef>
     <mockConstructor
@@ -25,14 +25,14 @@ Object {
     />
   </ForwardRef>,
   "isVisible": false,
-  "renderDatePickerAs": [Function],
+  "renderDatepickerAs": [Function],
   "toggleDatepicker": [Function],
   "wrapModalWith": [Function],
   "wrapPopoverWith": [MockFunction],
 }
 `;
 
-exports[`DatePicker renders with Modal if mode === \`modal\` 3`] = `
+exports[`Datepicker renders with Modal if mode === \`modal\` 3`] = `
 Object {
   "date": 2020-01-08T00:00:00.000Z,
   "onChange": [MockFunction],
@@ -41,7 +41,7 @@ Object {
 }
 `;
 
-exports[`DatePicker renders with Popover by default 1`] = `
+exports[`Datepicker renders with Popover by default 1`] = `
 <DocumentFragment>
   <div
     data-testid="Popover"
@@ -55,7 +55,7 @@ exports[`DatePicker renders with Popover by default 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DatePicker renders with Popover by default 2`] = `
+exports[`Datepicker renders with Popover by default 2`] = `
 Object {
   "children": <ForwardRef>
     <mockConstructor
@@ -66,14 +66,14 @@ Object {
     />
   </ForwardRef>,
   "isVisible": false,
-  "renderDatePickerAs": [Function],
+  "renderDatepickerAs": [Function],
   "toggleDatepicker": [Function],
   "wrapModalWith": [Function],
   "wrapPopoverWith": [MockFunction],
 }
 `;
 
-exports[`DatePicker renders with Popover by default 3`] = `
+exports[`Datepicker renders with Popover by default 3`] = `
 Object {
   "date": 2020-01-08T00:00:00.000Z,
   "onChange": [MockFunction],
