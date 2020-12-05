@@ -131,7 +131,8 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "date-fns": "2"
   },
   "jest": {
     "globalSetup": "<rootDir>/globalSetup.js"

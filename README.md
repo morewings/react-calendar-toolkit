@@ -59,12 +59,12 @@ Then use it like this:
 
 ```js
 import React from 'react';
-import DatePicker from 'react-calendar-toolkit'; // datepicker component
+import Datepicker from 'react-calendar-toolkit'; // datepicker component
 import 'react-calendar-toolkit/lib/style/default.css'; // styles
 
 const Component = () => (
   <div>
-    <DatePicker onDateSet={date => {console.log('date set', date)}} />
+    <Datepicker onDateSet={date => {console.log('date set', date)}} />
   </div>
 );
 
