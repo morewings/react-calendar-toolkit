@@ -15115,10 +15115,10 @@ react-test-renderer@17.0.1:
     react-shallow-renderer "^16.13.1"
     scheduler "^0.20.1"
 
-react-tiny-popover@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-5.1.0.tgz#a205b39844352f32b4b0658fd96a9738d8626d9c"
-  integrity sha512-VjBp6Q1f4cJ2xiuyU1rhFnrs+fdnWCYFSrKRN4DTGD2ovchOAGR1jbJ9vgV34TtvMPON+SqBBZFnahVsAGmrUQ==
+react-tiny-popover@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-6.0.2.tgz#0f6ad764c7d283822632845f53467cb22a372e68"
+  integrity sha512-2B6ydVrbPg1WDKkgD+CXk7ixifSoqV0/OslSqseoJDMBZ+0G77QZFOkx0znGn3Dpt++CZ724KkCEKUWOKBWs5g==
 
 react@^17.0.1:
   version "17.0.1"
