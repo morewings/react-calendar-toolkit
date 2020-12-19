@@ -90,34 +90,15 @@ Setting `minPrecision` prop allows defining what kind of date user is able to se
 </Playground>
 
 ### Wrap Datepicker with custom component
-You can override wrapping element or className of `Datepicker` with `wrapWith` prop, which expects React.Element or DOM node.
-You can set CSS variables here with [`useTheme`](/utilities#usetheme) hook to apply your colors and fonts.
+You can override wrapping className of `Datepicker` with `wrapperClassName` prop.
 
 <Playground>
   {() => {
-    const style = {
-      fontFamily: 'sans-serif',
-      width: '260px',
-      border: '2px dashed pink',
-    };
-    const CustomComponent = props => {
-      /** Hook to set style variables from Theme Context */
-      const [, setRef] = useTheme();
-      return (
-        <div
-          ref={setRef}
-          style={style}
-          aria-label={props.title}
-          role="dialog">
-          {props.children}
-        </div>
-      );
-    };
     return (
       <Datepicker
         onDateSet={date => {console.log('date set', date);}}
         minPrecision="day"
-        wrapWith={CustomComponent}
+        wrapperClassName="foo"
         title="Demo datepicker" />
     )
   }}

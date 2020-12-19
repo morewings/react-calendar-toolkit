@@ -149,8 +149,8 @@ describe('Datepicker', () => {
   });
 
   it('renders custom Wrapper', () => {
-    const {getByTestId} = renderWithProps({wrapWith: MockWrapper});
-    expect(getByTestId('wrapper')).toMatchSnapshot();
+    const {asFragment} = renderWithProps({wrapperClassName: 'foo'});
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('passes Day(s) Calendar custom UI', () => {

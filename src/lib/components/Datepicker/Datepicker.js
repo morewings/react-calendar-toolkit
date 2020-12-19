@@ -39,7 +39,7 @@ const Datepicker = ({
   renderHeaderAs,
   renderSelectorAs,
   highlightDate,
-  wrapWith,
+  wrapperClassName,
 }) => {
   const {
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
@@ -51,15 +51,15 @@ const Datepicker = ({
 
   useSetInitialValues({initialDate, today, minPrecision});
 
-  const Wrapper = wrapWith;
-
   const WeekdaysComponent = renderWeekdaysAs;
 
   const weekDayNames = useWeekDayNames();
 
   return (
     hasInitialValues && (
-      <Wrapper title={title}>
+      <DatepickerWrapper
+        className={wrapperClassName || undefined}
+        title={title}>
         {showHeader && <Header renderAs={renderHeaderAs} title={title} />}
         <Selector
           precision={precision}
@@ -119,7 +119,7 @@ const Datepicker = ({
             endDate={endDate}
           />
         )}
-      </Wrapper>
+      </DatepickerWrapper>
     )
   );
 };
@@ -141,8 +141,8 @@ export const propTypes = {
   minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
   /** Callback when user clicks selected date */
   onDateSet: PropTypes.func.isRequired,
-  /** Define component which wraps __Datepicker__. */
-  wrapWith: PropTypes.elementType,
+  /** Override __Datepicker__ wrapper classname. */
+  wrapperClassName: PropTypes.string,
   /** Define component which renders __day__ entry. */
   renderDayAs: PropTypes.elementType,
   /** Define component which wraps __day__ entry. */
@@ -184,10 +184,10 @@ Datepicker.defaultProps = {
   startDate: new Date(2020, 0, 1),
   endDate: new Date(2020, 1, 25),
   today: new Date(Date.now()),
+  wrapperClassName: '',
   showHeader: true,
   title: '',
   minPrecision: 'day',
-  wrapWith: DatepickerWrapper,
   renderDayAs: Day,
   wrapDaysWith: DayGrid,
   renderMonthAs: Month,
