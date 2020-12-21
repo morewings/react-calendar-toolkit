@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Popover from 'react-tiny-popover';
+import {Popover} from 'react-tiny-popover';
 import classes from './PopoverProvider.module.css';
 
 const PopoverProvider = ({
@@ -16,7 +16,6 @@ const PopoverProvider = ({
     <Popover
       align="start"
       isOpen={isVisible}
-      position={['bottom', 'top']}
       padding={0}
       containerClassName={classes.container}
       content={({position}) => (
