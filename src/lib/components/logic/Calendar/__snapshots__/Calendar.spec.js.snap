@@ -3,7 +3,7 @@
 exports[`Calendar basic date rendering creates date entries grid 1`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -677,7 +677,7 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 37`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -1351,7 +1351,7 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 73`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -2025,7 +2025,7 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 109`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -2699,7 +2699,7 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 145`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -3373,7 +3373,7 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 181`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -4047,7 +4047,8 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 217`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
+    role="grid"
   >
     <div>
       MockComponent
@@ -4320,7 +4321,8 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 230`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
+    role="grid"
   >
     <div>
       MockComponent
@@ -4593,7 +4595,8 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 243`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
+    role="grid"
   >
     <div>
       MockComponent
@@ -4866,7 +4869,8 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 256`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
+    role="grid"
   >
     <div>
       MockComponent
@@ -5139,76 +5143,80 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 269`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="scrollContainer"
   >
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
+    <div
+      class="foo"
+    >
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -5585,76 +5593,80 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 293`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="scrollContainer"
   >
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
+    <div
+      class="foo"
+    >
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -6031,76 +6043,80 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 317`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="scrollContainer"
   >
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
+    <div
+      class="foo"
+    >
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -6477,76 +6493,80 @@ Object {
 exports[`Calendar basic date rendering creates date entries grid 341`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="scrollContainer"
   >
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
+    <div
+      class="foo"
+    >
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -6923,7 +6943,7 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 1`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -7597,7 +7617,7 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 37`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -8271,7 +8291,7 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 73`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -8945,7 +8965,7 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 109`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
   >
     <div>
       MockComponent
@@ -9619,7 +9639,8 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 145`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
+    role="grid"
   >
     <div>
       MockComponent
@@ -9892,7 +9913,8 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 158`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="foo"
+    role="grid"
   >
     <div>
       MockComponent
@@ -10165,76 +10187,80 @@ Object {
 exports[`Calendar highlight and disable dates rendering creates date entries grid 171`] = `
 <DocumentFragment>
   <div
-    data-testid="wrapper"
+    class="scrollContainer"
   >
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
-    </div>
-    <div>
-      MockComponent
+    <div
+      class="foo"
+    >
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
+      <div>
+        MockComponent
+      </div>
     </div>
   </div>
 </DocumentFragment>
