@@ -12,9 +12,9 @@ import Header from 'lib/components/logic/Header';
 import DatepickerWrapper from 'lib/components/visual/Datepicker';
 import HeaderUI from 'lib/components/visual/Header';
 import SelectorVisual from 'lib/components/visual/Selector';
-import Day, {DayGrid} from 'lib/components/visual/Day';
-import Month, {MonthGrid} from 'lib/components/visual/Month';
-import Year, {YearGrid} from 'lib/components/visual/Year';
+import Day from 'lib/components/visual/Day';
+import Month from 'lib/components/visual/Month';
+import Year from 'lib/components/visual/Year';
 import Weekdays from 'lib/components/visual/Weekdays';
 import useLogic from './useLogic';
 
