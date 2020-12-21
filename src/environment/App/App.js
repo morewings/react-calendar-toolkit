@@ -1,8 +1,7 @@
 import React from 'react';
 import {isSameDay} from 'date-fns';
 import customLocale from 'date-fns/locale/es';
-// eslint-disable-next-line import/no-named-as-default
-import Datepicker, {DatepickerInput} from 'lib';
+import {Datepicker, DatepickerInput} from 'lib';
 import './App.css';
 
 const highlightDate = ({date, precision}) =>
@@ -28,7 +27,7 @@ const App = () => (
     </div>
     <div className="container">
       <DatepickerInput
-        mode="modal"
+        mode="popover"
         minPrecision="month"
         onDateSet={date => {
           // console.log('date set', date);
