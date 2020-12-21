@@ -29,10 +29,6 @@ jest.mock('lib/components/logic/Header', () => ({
 
 const MockComponent = jest.fn(() => <div>MockComponent</div>);
 
-const MockWrapper = jest.fn(({children}) => (
-  <div data-testid="wrapper">{children}</div>
-));
-
 const onDateSet = jest.fn();
 const date = {
   base: new Date(2020, 0, 12), // 12.01.2020
