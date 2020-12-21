@@ -55,33 +55,16 @@ import Day from './Day';
 ## Props
 <Props of={Day} />
 
-## Wrap with custom component
+## Wrap with custom CSS class
 
-You can provide wrapper (React Component or DOM node) to the day calendar.
+You can override CSS classname of Day Calendar element, see `dayCalendarClassName` prop.
 
-<Playground>
-  {() => {
-    const style = {
-      display: 'flex',
-      width: 'auto',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      padding: '0 8px 8px',
-      margin: '0 8px 8px',
-      height: '247px',
-      border: '2px dashed pink',
-    };
-    const CustomComponent = ({children}) => (
-      <div style={style}>{children}</div>
-    );
-    return (
-      <Datepicker
-        onDateSet={date => {console.log('date set', date);}}
-        minPrecision="day"
-        wrapDaysWith={CustomComponent}
-        title="Demo datepicker" />
-    )
-  }}
-</Playground>
+```jsx
+<Datepicker
+  onDateSet={date => {console.log('date set', date);}}
+  minPrecision="day"
+  dayCalendarClassName="your-custom-className"
+  title="Demo datepicker" />
+```
 
 

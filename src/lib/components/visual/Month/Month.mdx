@@ -54,33 +54,14 @@ import Month from './Month';
 <Props of={Month} />
 
 
-### Wrap with custom component
+## Wrap with custom CSS class
 
-You can provide wrapper (React Component or DOM node) to the month calendar.
+You can override CSS classname of Day Calendar element, see `monthCalendarClassName` prop.
 
-<Playground>
-  {() => {
-    const style = {
-      display: 'flex',
-      width: 'auto',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      padding: '0 8px 8px',
-      margin: '0 8px 8px',
-      height: '247px',
-      border: '2px dashed pink',
-    };
-    const CustomComponent = ({children}) => (
-      <div style={style}>{children}</div>
-    );
-    return (
-      <Datepicker
-        onDateSet={date => {console.log('date set', date);}}
-        minPrecision="month"
-        wrapMonthWith={CustomComponent}
-        title="Demo datepicker" />
-    )
-  }}
-</Playground>
-
-
+```jsx
+<Datepicker
+  onDateSet={date => {console.log('date set', date);}}
+  minPrecision="day"
+  monthCalendarClassName="your-custom-className"
+  title="Demo datepicker" />
+```

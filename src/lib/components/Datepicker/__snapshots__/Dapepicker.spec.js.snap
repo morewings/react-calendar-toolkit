@@ -13,7 +13,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -30,7 +30,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -47,7 +47,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -64,7 +64,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": "MockWrapper",
+  "wrapperClassName": "foo",
 }
 `;
 
@@ -73,15 +73,14 @@ Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
   "highlightDate": [Function],
-  "highlightWeekends": true,
   "onDateSet": [Function],
-  "precision": "day",
-  "renderAs": [Function],
+  "precision": "month",
+  "renderAs": "MockComponent",
   "selectedTimestamp": 1578268800000,
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "foo",
 }
 `;
 
@@ -146,15 +145,14 @@ Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
   "highlightDate": [Function],
-  "highlightWeekends": true,
   "onDateSet": [Function],
-  "precision": "day",
-  "renderAs": [Function],
+  "precision": "year",
+  "renderAs": "MockComponent",
   "selectedTimestamp": 1578268800000,
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "foo",
 }
 `;
 
@@ -202,7 +200,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -346,7 +344,7 @@ Object {
   "startDate": 2019-02-12T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578787200000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -458,7 +456,7 @@ Object {
   "startDate": 2019-02-12T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578787200000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -514,7 +512,7 @@ Object {
   "startDate": 2019-02-12T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578787200000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 

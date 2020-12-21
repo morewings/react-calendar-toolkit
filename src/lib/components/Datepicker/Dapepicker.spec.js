@@ -152,7 +152,8 @@ describe('Datepicker', () => {
   it('passes Day(s) Calendar custom UI', () => {
     renderWithProps({
       renderDayAs: 'MockComponent',
-      wrapDaysWith: 'MockWrapper',
+      dayCalendarClassName: 'foo',
+      minPrecision: 'day',
     });
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });
@@ -160,7 +161,8 @@ describe('Datepicker', () => {
   it('passes Month(s) Calendar custom UI', () => {
     renderWithProps({
       renderMonthAs: 'MockComponent',
-      wrapMonthWith: 'MockWrapper',
+      monthCalendarClassName: 'foo',
+      minPrecision: 'month',
     });
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });
@@ -168,7 +170,8 @@ describe('Datepicker', () => {
   it('passes Year(s) Calendar custom UI', () => {
     renderWithProps({
       renderYearAs: 'MockComponent',
-      wrapYearWith: 'MockWrapper',
+      yearCalendarClassName: 'foo',
+      minPrecision: 'year',
     });
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });
