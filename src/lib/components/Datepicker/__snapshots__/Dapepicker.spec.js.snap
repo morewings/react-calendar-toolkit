@@ -13,7 +13,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -30,7 +30,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -47,7 +47,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -64,7 +64,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": "MockWrapper",
+  "wrapperClassName": "foo",
 }
 `;
 
@@ -73,15 +73,14 @@ Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
   "highlightDate": [Function],
-  "highlightWeekends": true,
   "onDateSet": [Function],
-  "precision": "day",
-  "renderAs": [Function],
+  "precision": "month",
+  "renderAs": "MockComponent",
   "selectedTimestamp": 1578268800000,
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "foo",
 }
 `;
 
@@ -146,15 +145,14 @@ Object {
   "disableDate": [Function],
   "endDate": 2020-02-25T00:00:00.000Z,
   "highlightDate": [Function],
-  "highlightWeekends": true,
   "onDateSet": [Function],
-  "precision": "day",
-  "renderAs": [Function],
+  "precision": "year",
+  "renderAs": "MockComponent",
   "selectedTimestamp": 1578268800000,
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "foo",
 }
 `;
 
@@ -202,7 +200,7 @@ Object {
   "startDate": 2020-01-01T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578268800000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -267,22 +265,27 @@ exports[`Datepicker renders Selector custom UI 1`] = `
 `;
 
 exports[`Datepicker renders custom Wrapper 1`] = `
-<div
-  data-testid="wrapper"
->
-  <div>
-    Header
+<DocumentFragment>
+  <div
+    aria-label=""
+    class="foo"
+    role="dialog"
+    style="--fontPrimary: Helvetica Neue; --fontSecondary: Arial; --fontFallback: sans-serif; --fontSize: 14px; --fontWeight: 400; --fontSizeSmall: 10px; --fontSizeBig: 24px; --calendarWidth: 240px; --datePickerWidth: calc(var(--calendarWidth) + var(--innerPadding) * 2); --selectorHeight: 36px; --calendarHeight: 200px; --innerPadding: 12px; --entryHeight: 32px; --entryMargin: 1px; --datepickerBorderRadius: 4px; --entryBorderRadius: 4px; --bgColor: white; --textColor: black; --headerBgColor: #43a047; --weekendTextColor: red; --headerTextColor: white; --borderColor: rgba(0, 0, 0, 0.38); --modalBgColor: rgba(0, 0, 0, 0.38); --weekDayColor: rgba(0, 0, 0, 0.38); --entryHoverColor: rgba(0, 0, 0, 0.08); --entrySelectedColor: #43a047; --entryHighlightColor: lightblue; --inputWidth: 90px; --inputPadding: 8px; --inputBorderRadius: 4px; --inputBorderColor: rgba(0, 0, 0, 0.38); --inputHighlightColor: lightblue;"
+  >
+    <div>
+      Header
+    </div>
+    <div>
+      Selector
+    </div>
+    <div>
+      Weekdays
+    </div>
+    <div>
+      Calendar
+    </div>
   </div>
-  <div>
-    Selector
-  </div>
-  <div>
-    Weekdays
-  </div>
-  <div>
-    Calendar
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Datepicker renders date related props: initialDate: Sun Jan 12 2020 00:00:00 GMT+0000 (Coordinated Universal Time), startDate: Tue Feb 12 2019 00:00:00 GMT+0000 (Coordinated Universal Time), endDate: Fri Feb 12 2021 00:00:00 GMT+0000 (Coordinated Universal Time), today: Mon Jan 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time), minPrecision: day  1`] = `
@@ -341,7 +344,7 @@ Object {
   "startDate": 2019-02-12T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578787200000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -453,7 +456,7 @@ Object {
   "startDate": 2019-02-12T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578787200000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 
@@ -509,7 +512,7 @@ Object {
   "startDate": 2019-02-12T00:00:00.000Z,
   "todayTimestamp": 1578614400000,
   "visibleTimestamp": 1578787200000,
-  "wrapWith": [Function],
+  "wrapperClassName": "",
 }
 `;
 

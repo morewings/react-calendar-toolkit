@@ -8,7 +8,7 @@ const Mock = () => <div>Mock</div>;
 describe('MonthGrid', () => {
   it('renders', () => {
     const {asFragment} = render(
-      <YearGrid>
+      <YearGrid className="foo">
         <Mock />
       </YearGrid>,
       {

@@ -12,9 +12,9 @@ import Header from 'lib/components/logic/Header';
 import DatepickerWrapper from 'lib/components/visual/Datepicker';
 import HeaderUI from 'lib/components/visual/Header';
 import SelectorVisual from 'lib/components/visual/Selector';
-import Day, {DayGrid} from 'lib/components/visual/Day';
-import Month, {MonthGrid} from 'lib/components/visual/Month';
-import Year, {YearGrid} from 'lib/components/visual/Year';
+import Day from 'lib/components/visual/Day';
+import Month from 'lib/components/visual/Month';
+import Year from 'lib/components/visual/Year';
 import Weekdays from 'lib/components/visual/Weekdays';
 import useLogic from './useLogic';
 
@@ -26,11 +26,11 @@ const Datepicker = ({
   minPrecision,
   onDateSet,
   renderDayAs,
-  wrapDaysWith,
+  dayCalendarClassName,
   renderMonthAs,
-  wrapMonthWith,
+  monthCalendarClassName,
   renderYearAs,
-  wrapYearWith,
+  yearCalendarClassName,
   renderWeekdaysAs,
   startDate,
   endDate,
@@ -39,7 +39,7 @@ const Datepicker = ({
   renderHeaderAs,
   renderSelectorAs,
   highlightDate,
-  wrapWith,
+  wrapperClassName,
 }) => {
   const {
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
@@ -51,15 +51,15 @@ const Datepicker = ({
 
   useSetInitialValues({initialDate, today, minPrecision});
 
-  const Wrapper = wrapWith;
-
   const WeekdaysComponent = renderWeekdaysAs;
 
   const weekDayNames = useWeekDayNames();
 
   return (
     hasInitialValues && (
-      <Wrapper title={title}>
+      <DatepickerWrapper
+        className={wrapperClassName || undefined}
+        title={title}>
         {showHeader && <Header renderAs={renderHeaderAs} title={title} />}
         <Selector
           precision={precision}
@@ -76,7 +76,7 @@ const Datepicker = ({
             <Calendar
               precision="day"
               highlightWeekends={highlightWeekends}
-              wrapWith={wrapDaysWith}
+              wrapperClassName={dayCalendarClassName}
               renderAs={renderDayAs}
               disableDate={disableDate}
               highlightDate={highlightDate}
@@ -94,7 +94,7 @@ const Datepicker = ({
             precision="month"
             disableDate={disableDate}
             highlightDate={highlightDate}
-            wrapWith={wrapMonthWith}
+            wrapperClassName={monthCalendarClassName}
             renderAs={renderMonthAs}
             selectedTimestamp={selectedTimestamp}
             visibleTimestamp={visibleTimestamp}
@@ -109,7 +109,7 @@ const Datepicker = ({
             precision="year"
             disableDate={disableDate}
             highlightDate={highlightDate}
-            wrapWith={wrapYearWith}
+            wrapperClassName={yearCalendarClassName}
             renderAs={renderYearAs}
             selectedTimestamp={selectedTimestamp}
             visibleTimestamp={visibleTimestamp}
@@ -119,7 +119,7 @@ const Datepicker = ({
             endDate={endDate}
           />
         )}
-      </Wrapper>
+      </DatepickerWrapper>
     )
   );
 };
@@ -141,20 +141,20 @@ export const propTypes = {
   minPrecision: PropTypes.oneOf(['year', 'month', 'day']),
   /** Callback when user clicks selected date */
   onDateSet: PropTypes.func.isRequired,
-  /** Define component which wraps __Datepicker__. */
-  wrapWith: PropTypes.elementType,
+  /** Override __Datepicker__ wrapper classname. */
+  wrapperClassName: PropTypes.string,
   /** Define component which renders __day__ entry. */
   renderDayAs: PropTypes.elementType,
-  /** Define component which wraps __day__ entry. */
-  wrapDaysWith: PropTypes.elementType,
+  /** Override __Day calendar__ wrapping class name. */
+  dayCalendarClassName: PropTypes.string,
   /** Define component which renders __month__ entry. */
   renderMonthAs: PropTypes.elementType,
-  /** Define component which wraps __month__ entry. */
-  wrapMonthWith: PropTypes.elementType,
+  /** Override __Month calendar__ wrapping class name */
+  monthCalendarClassName: PropTypes.string,
   /** Define component which renders __year__ entry. */
   renderYearAs: PropTypes.elementType,
-  /** Define component which wraps __year__ entry. */
-  wrapYearWith: PropTypes.elementType,
+  /** Override __Year calendar__ wrapping class name */
+  yearCalendarClassName: PropTypes.string,
   /** Define component which renders __week days__ row inside day calendar. */
   renderWeekdaysAs: PropTypes.elementType,
   /** Define component which renders __Header__. */
@@ -184,16 +184,16 @@ Datepicker.defaultProps = {
   startDate: new Date(2020, 0, 1),
   endDate: new Date(2020, 1, 25),
   today: new Date(Date.now()),
+  wrapperClassName: '',
   showHeader: true,
   title: '',
   minPrecision: 'day',
-  wrapWith: DatepickerWrapper,
   renderDayAs: Day,
-  wrapDaysWith: DayGrid,
+  dayCalendarClassName: '',
   renderMonthAs: Month,
-  wrapMonthWith: MonthGrid,
+  monthCalendarClassName: '',
   renderYearAs: Year,
-  wrapYearWith: YearGrid,
+  yearCalendarClassName: '',
   renderWeekdaysAs: Weekdays,
   renderHeaderAs: HeaderUI,
   renderSelectorAs: SelectorVisual,

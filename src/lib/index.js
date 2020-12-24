@@ -32,5 +32,3 @@ export {
   WrappedDatepickerInput as DatepickerInput,
   WrappedDatepicker as Datepicker,
 };
-
-export default WrappedDatepicker;

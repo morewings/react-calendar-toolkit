@@ -8,7 +8,7 @@ const Mock = () => <div>Mock</div>;
 describe('DayGrid', () => {
   it('renders', () => {
     const {asFragment} = render(
-      <DayGrid>
+      <DayGrid className="foo">
         <Mock />
       </DayGrid>,
       {

@@ -6,7 +6,7 @@ exports[`MonthGrid renders 1`] = `
     class="scrollContainer"
   >
     <div
-      class="grid"
+      class="foo"
     >
       <div>
         Mock

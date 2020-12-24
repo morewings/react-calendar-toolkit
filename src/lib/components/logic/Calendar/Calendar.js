@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import config from 'lib/utils/config';
 import {useLocaleEnumerators} from 'lib/features/locale';
+import {DayGrid} from 'lib/components/visual/Day';
+import {MonthGrid} from 'lib/components/visual/Month';
+import {YearGrid} from 'lib/components/visual/Year';
 import useLogic from './useLogic';
 
 const Calendar = ({
   onDateSet,
-  wrapWith,
+  wrapperClassName,
   todayTimestamp,
   selectedTimestamp,
   visibleTimestamp,
@@ -45,10 +48,15 @@ const Calendar = ({
     todayTimestamp,
   });
 
-  const Wrapper = wrapWith;
+  const Wrapper = {
+    day: DayGrid,
+    month: MonthGrid,
+    year: YearGrid,
+  }[precision];
+
   const VisualComponent = renderAs;
   return (
-    <Wrapper>
+    <Wrapper className={wrapperClassName}>
       {items.map(({name, date}) => (
         <VisualComponent
           isWeekend={getIsWeekend(date)}
@@ -69,7 +77,7 @@ const Calendar = ({
 
 Calendar.propTypes = {
   precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
-  wrapWith: PropTypes.elementType.isRequired,
+  wrapperClassName: PropTypes.string.isRequired,
   renderAs: PropTypes.elementType.isRequired,
   onDateSet: PropTypes.func.isRequired,
   todayTimestamp: PropTypes.number.isRequired,

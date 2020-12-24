@@ -29,10 +29,6 @@ jest.mock('lib/components/logic/Header', () => ({
 
 const MockComponent = jest.fn(() => <div>MockComponent</div>);
 
-const MockWrapper = jest.fn(({children}) => (
-  <div data-testid="wrapper">{children}</div>
-));
-
 const onDateSet = jest.fn();
 const date = {
   base: new Date(2020, 0, 12), // 12.01.2020
@@ -149,14 +145,15 @@ describe('Datepicker', () => {
   });
 
   it('renders custom Wrapper', () => {
-    const {getByTestId} = renderWithProps({wrapWith: MockWrapper});
-    expect(getByTestId('wrapper')).toMatchSnapshot();
+    const {asFragment} = renderWithProps({wrapperClassName: 'foo'});
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('passes Day(s) Calendar custom UI', () => {
     renderWithProps({
       renderDayAs: 'MockComponent',
-      wrapDaysWith: 'MockWrapper',
+      dayCalendarClassName: 'foo',
+      minPrecision: 'day',
     });
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });
@@ -164,7 +161,8 @@ describe('Datepicker', () => {
   it('passes Month(s) Calendar custom UI', () => {
     renderWithProps({
       renderMonthAs: 'MockComponent',
-      wrapMonthWith: 'MockWrapper',
+      monthCalendarClassName: 'foo',
+      minPrecision: 'month',
     });
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });
@@ -172,7 +170,8 @@ describe('Datepicker', () => {
   it('passes Year(s) Calendar custom UI', () => {
     renderWithProps({
       renderYearAs: 'MockComponent',
-      wrapYearWith: 'MockWrapper',
+      yearCalendarClassName: 'foo',
+      minPrecision: 'year',
     });
     expect(Calendar.mock.calls[0][0]).toMatchSnapshot();
   });

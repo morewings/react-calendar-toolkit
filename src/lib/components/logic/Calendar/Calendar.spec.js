@@ -25,10 +25,6 @@ const endDate = new Date(2022, 11, 12); // 12.12.2022
 
 const MockComponent = jest.fn(() => <div>MockComponent</div>);
 
-const MockWrapper = jest.fn(({children}) => (
-  <div data-testid="wrapper">{children}</div>
-));
-
 const renderWithProviderProps = (Component, props = {}) =>
   render(<Component />, {
     wrapper: ({children}) => <Provider {...props}>{children}</Provider>,
@@ -36,7 +32,7 @@ const renderWithProviderProps = (Component, props = {}) =>
 
 const defaultProps = {
   onDateSet: jest.fn(),
-  wrapWith: MockWrapper,
+  wrapperClassName: 'foo',
   todayTimestamp: today,
   selectedTimestamp: yesterday,
   visibleTimestamp: tomorrow,

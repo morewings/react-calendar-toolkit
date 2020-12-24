@@ -3,7 +3,7 @@ name: Year
 menu: Customize UI
 ---
 import { Playground, Props } from 'docz';
-import Datepicker from 'lib';
+import {Datepicker} from 'lib';
 import Year from './Year';
 
 `Year` component displays specific date with [__year precision__](/#calendar-views-and-precision). `onDateSet` callback prop allows to set provided Date object as selected in `Datepicker`. Replace it with custom component.
@@ -55,34 +55,15 @@ import Year from './Year';
 
 <Props of={Year} />
 
-### Wrap with custom component
-You can provide wrapper component to Year Calendar, which can be React Component or DOM node.
+## Wrap with custom CSS class
 
-<Playground>
-  {() => {
-    const style = {
-      display: 'flex',
-      width: 'auto',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      padding: '0 8px 8px',
-      margin: '0 8px 8px',
-      height: '260px',
-      border: '2px dashed pink',
-      overflow: 'auto',
-    };
-    const CustomComponent = ({children}) => (
-      <div style={style}>{children}</div>
-    );
-    return (
-      <Datepicker
-        onDateSet={date => {console.log('date set', date);}}
-        minPrecision="year"
-        wrapYearWith={CustomComponent}
-        startDate={new Date(1999, 0, 1)}
-        endDate={new Date(2020, 1, 25)}
-        title="Demo datepicker" />
-    )
-  }}
-</Playground>
+You can override CSS classname of Day Calendar element, see `yearCalendarClassName` prop.
+
+```jsx
+<Datepicker
+  onDateSet={date => {console.log('date set', date);}}
+  minPrecision="day"
+  monthCalendarClassName="yearCalendarClassName"
+  title="Demo datepicker" />
+```
 
