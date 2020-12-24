@@ -89,17 +89,9 @@ Setting `minPrecision` prop allows defining what kind of date user is able to se
     onDateSet={date => {console.log('date set', date);}}/>
 </Playground>
 
-### Wrap Datepicker with custom component
+### Override CSS wrapper class name
 You can override wrapping className of `Datepicker` with `wrapperClassName` prop.
 
-<Playground>
-  {() => {
-    return (
-      <Datepicker
-        onDateSet={date => {console.log('date set', date);}}
-        minPrecision="day"
-        wrapperClassName="foo"
-        title="Demo datepicker" />
-    )
-  }}
-</Playground>
+```jsx
+<Datepicker wrapperClassName="foo" />
+```
