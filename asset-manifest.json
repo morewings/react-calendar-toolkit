@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "https://morewings.github.io/react-calendar-toolkit/static/css/main.26eb6bb8.chunk.css",
+    "main.js": "https://morewings.github.io/react-calendar-toolkit/static/js/main.77bc36b0.chunk.js",
+    "main.js.map": "https://morewings.github.io/react-calendar-toolkit/static/js/main.77bc36b0.chunk.js.map",
+    "runtime-main.js": "https://morewings.github.io/react-calendar-toolkit/static/js/runtime-main.7d5aafe5.js",
+    "runtime-main.js.map": "https://morewings.github.io/react-calendar-toolkit/static/js/runtime-main.7d5aafe5.js.map",
+    "static/js/2.9888ef66.chunk.js": "https://morewings.github.io/react-calendar-toolkit/static/js/2.9888ef66.chunk.js",
+    "static/js/2.9888ef66.chunk.js.map": "https://morewings.github.io/react-calendar-toolkit/static/js/2.9888ef66.chunk.js.map",
+    "index.html": "https://morewings.github.io/react-calendar-toolkit/index.html",
+    "precache-manifest.7bc6a8ffcbcae8395a09fb323b2ec237.js": "https://morewings.github.io/react-calendar-toolkit/precache-manifest.7bc6a8ffcbcae8395a09fb323b2ec237.js",
+    "service-worker.js": "https://morewings.github.io/react-calendar-toolkit/service-worker.js",
+    "static/css/main.26eb6bb8.chunk.css.map": "https://morewings.github.io/react-calendar-toolkit/static/css/main.26eb6bb8.chunk.css.map",
+    "static/js/2.9888ef66.chunk.js.LICENSE.txt": "https://morewings.github.io/react-calendar-toolkit/static/js/2.9888ef66.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d5aafe5.js",
+    "static/js/2.9888ef66.chunk.js",
+    "static/css/main.26eb6bb8.chunk.css",
+    "static/js/main.77bc36b0.chunk.js"
+  ]
+}
