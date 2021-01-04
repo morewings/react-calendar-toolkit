@@ -13,7 +13,7 @@ const App = () => (
       <Datepicker
         startDate={new Date(1999, 11, 6)}
         endDate={new Date(2020, 1, 25)}
-        minPrecision="day"
+        minPrecision="hour"
         highlightDate={highlightDate}
         onDateSet={date => {
           // eslint-disable-next-line no-console
