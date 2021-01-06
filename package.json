@@ -136,5 +136,8 @@
   },
   "jest": {
     "globalSetup": "<rootDir>/globalSetup.js"
+  },
+  "resolutions": {
+    "eslint-plugin-import": "^2.22.1"
   }
 }

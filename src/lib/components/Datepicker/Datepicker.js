@@ -9,6 +9,7 @@ import {useWeekDayNames} from 'lib/features/locale';
 import Calendar from 'lib/components/logic/Calendar';
 import Selector from 'lib/components/logic/Selector';
 import Header from 'lib/components/logic/Header';
+import Clock from 'lib/components/logic/Clock';
 import DatepickerWrapper from 'lib/components/visual/Datepicker';
 import HeaderUI from 'lib/components/visual/Header';
 import SelectorVisual from 'lib/components/visual/Selector';
@@ -16,6 +17,7 @@ import Day from 'lib/components/visual/Day';
 import Month from 'lib/components/visual/Month';
 import Year from 'lib/components/visual/Year';
 import Weekdays from 'lib/components/visual/Weekdays';
+import ClockUI from 'lib/components/visual/Clock';
 import useLogic from './useLogic';
 
 const Datepicker = ({
@@ -40,6 +42,7 @@ const Datepicker = ({
   renderSelectorAs,
   highlightDate,
   wrapperClassName,
+  renderClockAs,
 }) => {
   const {
     state: {selectedTimestamp, todayTimestamp, visibleTimestamp, precision},
@@ -70,6 +73,13 @@ const Datepicker = ({
           startDate={startDate}
           endDate={endDate}
         />
+        {(precision === 'hour' || precision === 'minute') && (
+          <Clock
+            renderAs={renderClockAs}
+            precision={precision}
+            onDateSet={handleDateSet}
+          />
+        )}
         {precision === 'day' && (
           <Fragment>
             <WeekdaysComponent names={weekDayNames} />
@@ -155,6 +165,8 @@ export const propTypes = {
   renderYearAs: PropTypes.elementType,
   /** Override __Year calendar__ wrapping class name */
   yearCalendarClassName: PropTypes.string,
+  /** Define component which renders __Clock__. */
+  renderClockAs: PropTypes.elementType,
   /** Define component which renders __week days__ row inside day calendar. */
   renderWeekdaysAs: PropTypes.elementType,
   /** Define component which renders __Header__. */
@@ -194,6 +206,7 @@ Datepicker.defaultProps = {
   monthCalendarClassName: '',
   renderYearAs: Year,
   yearCalendarClassName: '',
+  renderClockAs: ClockUI,
   renderWeekdaysAs: Weekdays,
   renderHeaderAs: HeaderUI,
   renderSelectorAs: SelectorVisual,

@@ -1,0 +1,85 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: var(--calendarHeight);
+  padding: 0 var(--innerPadding) calc(var(--innerPadding) / 2);
+  width: var(--calendarWidth);
+}
+
+.fieldset {
+  align-items: center;     /* center items horizontally, in this case */
+  border: none;
+  display: flex;
+  flex-direction: row;  /* make main axis vertical */
+  flex-wrap: wrap;
+  justify-content: center; /* center items vertically, in this case */
+  padding: 0;
+  width: 100%;
+}
+
+.separator {
+  font-size: 36px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin: 0 6px;
+  width: 66px;
+}
+
+.input {
+  box-sizing: border-box;
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+/* TODO: validate when react-scripts updated */
+/* stylelint-disable property-no-vendor-prefix */
+.inputGroup input::-webkit-outer-spin-button,
+.inputGroup input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputGroup input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* stylelint-enable property-no-vendor-prefix */
+
+.input:active,
+.input:focus {
+  outline: none;
+}
+
+.labelText {
+  display: block;
+}
+
+.inputGroup button {
+  align-self: center;
+  background: transparent;
+  border-style: solid;
+  height: 0;
+  margin: 3px 0;
+  overflow: hidden;
+  padding: 0;
+  width: 0;
+}
+
+.inputGroup button:hover {
+  cursor: pointer;
+}
+
+.increment {
+  border-color: transparent transparent var(--gray) transparent;
+  border-width: 0 9px 12px 9px;
+}
+
+.decrement {
+  border-color: var(--gray) transparent transparent transparent;
+  border-width: 12px 9px 0 9px;
+}
