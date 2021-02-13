@@ -1,4 +1,4 @@
-export default {
+const config = {
   files: '**/*.mdx',
   menu: [
     'Overview',
@@ -12,3 +12,5 @@ export default {
   dest: '/docz-dist',
   title: 'React Calendar Toolkit',
 };
+
+export default config;
