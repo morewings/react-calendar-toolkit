@@ -78,6 +78,10 @@ const Datepicker = ({
             renderAs={renderClockAs}
             precision={precision}
             onDateSet={handleDateSet}
+            selectedTimestamp={selectedTimestamp}
+            visibleTimestamp={visibleTimestamp}
+            startDate={startDate}
+            endDate={endDate}
           />
         )}
         {precision === 'day' && (

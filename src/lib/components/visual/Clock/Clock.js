@@ -46,11 +46,14 @@ const Clock = ({amLabel, pmLabel, timeFormat}) => (
         />
       </label>
       {timeFormat === '12' && (
-        <div>
+        <div className={classes.dayTime}>
           <button type="button">{amLabel}</button>
           <button type="button">{pmLabel}</button>
         </div>
       )}
+      <div className={classes.action}>
+        <button type="button">✓</button>
+      </div>
     </fieldset>
   </div>
 );

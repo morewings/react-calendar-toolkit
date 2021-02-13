@@ -8,17 +8,25 @@
 }
 
 .fieldset {
-  align-items: center;     /* center items horizontally, in this case */
+  align-items: center;
   border: none;
   display: flex;
-  flex-direction: row;  /* make main axis vertical */
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; /* center items vertically, in this case */
+  justify-content: center;
   padding: 0;
   width: 100%;
 }
 
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
 .separator {
+  animation: blink-animation 2s steps(5, start) infinite;
+  color: var(--gray);
   font-size: 36px;
 }
 
@@ -30,10 +38,16 @@
 }
 
 .input {
+  border: 1px solid var(--gray);
+  border-radius: 4px;
   box-sizing: border-box;
   font-size: 36px;
   text-align: center;
   width: 100%;
+}
+
+.input:focus {
+  border: 1px solid var(--baseColor);
 }
 
 /* TODO: validate when react-scripts updated */
@@ -59,27 +73,67 @@
   display: block;
 }
 
+.increment {
+  border-color: transparent transparent var(--baseColor) transparent;
+  border-width: 0 9px 12px 9px;
+}
+
+.decrement {
+  border-color: var(--baseColor) transparent transparent transparent;
+  border-width: 12px 9px 0 9px;
+}
+
+.dayTime {
+  display: flex;
+  flex-direction: column;
+}
+
+.dayTime button {
+  background: transparent;
+  border: none;
+  color: var(--gray);
+  font-size: 12px;
+  font-weight: bold;
+  margin: 6px 0 6px 3px;
+  padding: 0;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.action button {
+  background: white;
+  border: 1px solid var(--gray);
+  border-radius: 50%;
+  color: var(--baseColor);
+  font-size: 36px;
+  height: 48px;
+  line-height: 48px;
+  width: 48px;
+}
+
 .inputGroup button {
   align-self: center;
   background: transparent;
   border-style: solid;
   height: 0;
-  margin: 3px 0;
+  margin: 6px 0;
   overflow: hidden;
   padding: 0;
   width: 0;
 }
 
-.inputGroup button:hover {
+.action button:hover {
+  background: var(--baseColor);
+  color: white;
   cursor: pointer;
 }
 
-.increment {
-  border-color: transparent transparent var(--gray) transparent;
-  border-width: 0 9px 12px 9px;
-}
-
-.decrement {
-  border-color: var(--gray) transparent transparent transparent;
-  border-width: 12px 9px 0 9px;
+.inputGroup button:hover {
+  cursor: pointer;
 }

@@ -10,7 +10,7 @@
   background-color: transparent;
   border: none;
   border-radius: 4px;
-  color: var(--textColor);
+  color: var(--baseColor);
   cursor: pointer;
   font-size: var(--fontSize);
   margin-right: 2px;
@@ -22,7 +22,7 @@
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  color: var(--textColor);
+  color: var(--baseColor);
   cursor: pointer;
   font-size: var(--fontSize);
   font-weight: bold;

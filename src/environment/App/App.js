@@ -21,7 +21,7 @@ const App = () => (
         }}
         title="Demo datepicker"
         theme={{
-          headerBgColor: 'purple',
+          baseColor: 'purple',
         }}
       />
     </div>

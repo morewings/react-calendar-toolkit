@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFormatDate} from 'lib/features/locale';
+import config from 'lib/utils/config';
 import classes from './Selector.module.css';
 
 const Selector = ({
@@ -79,7 +80,7 @@ Selector.propTypes = {
   /** Today date */
   todayDate: PropTypes.instanceOf(Date).isRequired,
   /** Set minimum precision (measuring unit) of calendar. Possible values: 'day', 'month', 'year'. */
-  precision: PropTypes.oneOf(['year', 'month', 'day']).isRequired,
+  precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
   /** Localized accessibility labels for __month stepper__ */
   monthStepperLabels: PropTypes.shape({
     /** +1 month */

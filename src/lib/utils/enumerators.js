@@ -1,6 +1,7 @@
 import {
   startOfYear,
   getYear,
+  getHours as getHourValue,
   addYears,
   addDays,
   toDate,
@@ -8,6 +9,11 @@ import {
   endOfWeekWithOptions,
   startOfWeekWithOptions,
   getDate,
+  startOfDay,
+  endOfDay,
+  min,
+  max,
+  eachHourOfInterval,
 } from 'date-fns/fp';
 import {addMonth, ceilMonth, floorMonth} from 'lib/utils/dateUtils';
 import curry from 'lib/utils/curry';
@@ -131,3 +137,21 @@ const getDays = (locale, timestamp) => {
 const getDaysCurried = curry(getDays);
 
 export {getDaysCurried as getDays};
+
+/**
+ * @function
+ * @name getHours
+ * @description Returns collection of hours Date objects based on provided date and interval
+ * @param {DateUnion} timestamp - Unix timestamp or Date object
+ * @param {DateUnion} startDate - Unix timestamp or Date object
+ * @param {DateUnion} endDate - Unix timestamp or Date object
+ * @return {Array.<ItemDescription>}
+ */
+export const getHours = (timestamp, startDate, endDate) => {
+  const hourStart = max([startOfDay(timestamp), startDate]);
+  const hourEnd = min([endOfDay(timestamp), endDate]);
+  return eachHourOfInterval({start: hourStart, end: hourEnd}).map(date => ({
+    date,
+    name: getHourValue(date),
+  }));
+};
