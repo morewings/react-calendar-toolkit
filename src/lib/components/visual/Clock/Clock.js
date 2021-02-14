@@ -2,23 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './Clock.module.css';
 
-const Clock = ({amLabel, pmLabel, timeFormat}) => (
+const Clock = ({
+  amLabel,
+  pmLabel,
+  timeFormat,
+  onDecrementHour,
+  onIncrementHour,
+  hour,
+}) => (
   <div className={classes.grid}>
     <fieldset className={classes.fieldset}>
       <label className={classes.inputGroup}>
         <button
+          onClick={onIncrementHour}
           aria-label="increment"
           type="button"
           className={classes.increment}
         />
         <input
+          value={hour.name}
           placeholder="hh"
-          max={24}
+          max={timeFormat === '12' ? 12 : 24}
           min={0}
           className={classes.input}
           type="number"
         />
         <button
+          onClick={onDecrementHour}
           aria-label="decrement"
           type="button"
           className={classes.decrement}
@@ -47,8 +57,16 @@ const Clock = ({amLabel, pmLabel, timeFormat}) => (
       </label>
       {timeFormat === '12' && (
         <div className={classes.dayTime}>
-          <button type="button">{amLabel}</button>
-          <button type="button">{pmLabel}</button>
+          <button
+            className={hour.daytimeLabel === amLabel ? classes.active : ''}
+            type="button">
+            {amLabel}
+          </button>
+          <button
+            className={hour.daytimeLabel === pmLabel ? classes.active : ''}
+            type="button">
+            {pmLabel}
+          </button>
         </div>
       )}
       <div className={classes.action}>
@@ -61,7 +79,14 @@ const Clock = ({amLabel, pmLabel, timeFormat}) => (
 Clock.propTypes = {
   amLabel: PropTypes.string.isRequired,
   pmLabel: PropTypes.string.isRequired,
+  onDecrementHour: PropTypes.func.isRequired,
+  onIncrementHour: PropTypes.func.isRequired,
   timeFormat: PropTypes.oneOf(['12', '24']).isRequired,
+  hour: PropTypes.shape({
+    date: PropTypes.instanceOf(Date).isRequired,
+    name: PropTypes.number.isRequired,
+    daytimeLabel: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Clock;

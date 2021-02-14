@@ -1,16 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useDaytimeLabels, useLocaleEnumerators} from 'lib/features/locale';
-import {getHours} from 'lib/utils/enumerators';
 import config from 'lib/utils/config';
+import {useDatepickerActions} from 'lib/features/datepicker';
+import {checkIsSameHour} from 'lib/utils/dateUtils';
+
+const getVisibleHour = (hours, visibleTimestamp) =>
+  hours.find(({date}) => checkIsSameHour(date, visibleTimestamp));
 
 const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
   const {amLabel, pmLabel, timeFormat} = useDaytimeLabels();
+  const {setVisibility, setPrecision} = useDatepickerActions();
   const Component = renderAs;
   const getItems = useLocaleEnumerators(precision);
-  console.log(getHours(visibleTimestamp, startDate, endDate));
+  const hours = getItems(visibleTimestamp, startDate, endDate);
+
+  const onIncrementHour = () => {
+    const nextIndex =
+      hours.findIndex(({date}) => checkIsSameHour(date, visibleTimestamp)) + 1;
+    if (nextIndex < hours.length) {
+      setVisibility(hours[nextIndex].date);
+    }
+  };
+  const onDecrementHour = () => {
+    const nextIndex =
+      hours.findIndex(({date}) => checkIsSameHour(date, visibleTimestamp)) - 1;
+    if (nextIndex >= 0) {
+      setVisibility(hours[nextIndex].date);
+    }
+  };
   return (
-    <Component timeFormat={timeFormat} amLabel={amLabel} pmLabel={pmLabel} />
+    <Component
+      hour={getVisibleHour(hours, visibleTimestamp)}
+      onIncrementHour={onIncrementHour}
+      onDecrementHour={onDecrementHour}
+      timeFormat={timeFormat}
+      amLabel={amLabel}
+      pmLabel={pmLabel}
+    />
   );
 };
 
