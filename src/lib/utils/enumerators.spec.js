@@ -36,8 +36,3 @@ describe('getDays', () => {
     expect(getDays(ruLocale, startDate.getTime())).toMatchSnapshot();
   });
 });
-
-describe('getHours', () => {
-  // TODO: add test
-  it('works!');
-});

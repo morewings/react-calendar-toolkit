@@ -98,7 +98,6 @@ const Datepicker = ({
               visibleTimestamp={visibleTimestamp}
               todayTimestamp={todayTimestamp}
               onDateSet={handleDateSet}
-              onDateSet2={onDateSet}
               startDate={startDate}
               endDate={endDate}
             />
