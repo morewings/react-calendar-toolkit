@@ -1,8 +1,11 @@
 import React, {Fragment} from 'react';
 
-export const trackProps = jest.fn();
+export const assertChildProps = () => {
+  const trackProps = jest.fn();
 
-export const DummyComponent = props => {
-  trackProps(props);
-  return <Fragment>Child</Fragment>;
+  const Component = props => {
+    trackProps(props);
+    return <Fragment>Child</Fragment>;
+  };
+  return [Component, trackProps];
 };

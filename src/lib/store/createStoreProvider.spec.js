@@ -1,7 +1,9 @@
 import React from 'react';
 import {render} from '@testing-library/react';
-import {trackProps, DummyComponent} from 'lib/utils/assertChildProps';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import createStoreProvider from 'lib/store/createStoreProvider';
+
+const [DummyComponent, trackProps] = assertChildProps();
 
 const reducer = () => {};
 

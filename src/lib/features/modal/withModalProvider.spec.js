@@ -1,7 +1,9 @@
 import React from 'react';
 import {render} from '@testing-library/react';
-import {trackProps, DummyComponent} from 'lib/utils/assertChildProps';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import withModalProvider from './withModalProvider';
+
+const [DummyComponent, trackProps] = assertChildProps();
 
 describe('withModalProvider', () => {
   afterEach(() => {

@@ -2,11 +2,13 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import {renderHook} from '@testing-library/react-hooks';
 import defaultLocale from 'date-fns/locale/en-US';
-import {trackProps, DummyComponent} from 'lib/utils/assertChildProps';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import withLocaleContext, {
   useLocaleContext,
   Provider,
 } from './withLocaleContext';
+
+const [DummyComponent, trackProps] = assertChildProps();
 
 describe('withLocaleContext', () => {
   beforeEach(() => {

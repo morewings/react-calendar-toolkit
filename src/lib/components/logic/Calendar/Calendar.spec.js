@@ -7,8 +7,10 @@ import {
   checkIsSameMonth,
   checkIsSameYear,
 } from 'lib/utils/dateUtils';
-import {trackProps, DummyComponent} from 'lib/utils/assertChildProps';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import Calendar from './Calendar';
+
+const [DummyComponent, trackProps] = assertChildProps();
 
 const today = new Date(2011, 10, 11).getTime(); // 11.11.2011
 const yesterday = new Date(2011, 10, 10).getTime(); // 10.11.2011
