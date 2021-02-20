@@ -17,6 +17,7 @@ const Selector = ({
   const formatDate = useFormatDate();
   const year = formatDate('y', visibleDate);
   const month = formatDate('LLLL', visibleDate);
+  const day = formatDate('d', visibleDate);
   return (
     <div className={classes.wrapper}>
       {/** Render precision selectors */}
@@ -40,8 +41,17 @@ const Selector = ({
             {month}
           </button>
         )}
+        {(precision === 'hour' || precision === 'minute') && (
+          <button
+            onClick={() => {
+              setPrecision('day');
+            }}
+            aria-live="polite"
+            type="button">
+            {day}
+          </button>
+        )}
       </div>
-      {/** Render month stepper, only if minPrecision is not `year` */}
       {precision === 'day' && (
         <div className={classes.stepper}>
           <button

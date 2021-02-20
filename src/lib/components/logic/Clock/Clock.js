@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import {useDaytimeLabels, useLocaleEnumerators} from 'lib/features/locale';
 import config from 'lib/utils/config';
 import {useDatepickerActions} from 'lib/features/datepicker';
-import {checkIsSameHour, checkIsSameMinute} from 'lib/utils/dateUtils';
+import {
+  checkIsSameHour,
+  checkIsSameMinute,
+  convertToDate,
+} from 'lib/utils/dateUtils';
 
 const getVisibleHour = (hours, visibleTimestamp) =>
   hours.find(({date}) => checkIsSameHour(date, visibleTimestamp));
@@ -11,7 +15,14 @@ const getVisibleHour = (hours, visibleTimestamp) =>
 const getVisibleMinute = (minutes, visibleTimestamp) =>
   minutes.find(({date}) => checkIsSameMinute(date, visibleTimestamp));
 
-const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
+const Clock = ({
+  renderAs,
+  visibleTimestamp,
+  startDate,
+  endDate,
+  precision,
+  onDateSet,
+}) => {
   const {amLabel, pmLabel, timeFormat} = useDaytimeLabels();
   const {setVisibility} = useDatepickerActions();
   const Component = renderAs;
@@ -19,6 +30,7 @@ const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
   const getMinutes = useLocaleEnumerators('minute');
   const hours = getHours(visibleTimestamp, startDate, endDate);
   const minutes = getMinutes(visibleTimestamp, startDate, endDate);
+  console.log(visibleTimestamp);
 
   const onIncrementHour = () => {
     const nextIndex =
@@ -93,12 +105,15 @@ const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
       timeFormat={timeFormat}
       amLabel={amLabel}
       pmLabel={pmLabel}
+      onDateSet={onDateSet}
+      date={convertToDate(visibleTimestamp)}
     />
   );
 };
 
 Clock.propTypes = {
   renderAs: PropTypes.elementType.isRequired,
+  onDateSet: PropTypes.func.isRequired,
   visibleTimestamp: PropTypes.number.isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,

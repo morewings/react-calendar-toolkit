@@ -46,7 +46,16 @@
   width: 100%;
 }
 
+.input:read-only {
+  color: var(--gray);
+}
+
+.input:active,
 .input:focus {
+  outline: none;
+}
+
+.input:not(:read-only):focus {
   border: 1px solid var(--baseColor);
 }
 
@@ -61,13 +70,7 @@
 .inputGroup input[type=number] {
   -moz-appearance: textfield;
 }
-
 /* stylelint-enable property-no-vendor-prefix */
-
-.input:active,
-.input:focus {
-  outline: none;
-}
 
 .labelText {
   display: block;
@@ -81,6 +84,11 @@
 .decrement {
   border-color: var(--baseColor) transparent transparent transparent;
   border-width: 12px 9px 0 9px;
+}
+
+.increment:disabled,
+.decrement:disabled {
+  border-color: transparent;
 }
 
 .dayTime {

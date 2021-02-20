@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import config from 'lib/utils/config';
 import classes from './Clock.module.css';
 
 const Clock = ({
@@ -15,6 +16,9 @@ const Clock = ({
   onHourChange,
   onMinuteChange,
   onDaytimeToggle,
+  onDateSet,
+  date,
+  precision,
 }) => {
   const convertToNumber = value => parseInt(value, 10);
   const handleHourChange = e => {
@@ -22,6 +26,10 @@ const Clock = ({
   };
   const handleMinuteChange = e => {
     onMinuteChange(convertToNumber(e.target.value));
+  };
+
+  const handleDateSet = () => {
+    onDateSet(date);
   };
   return (
     <div className={classes.grid}>
@@ -52,12 +60,14 @@ const Clock = ({
         <span className={classes.separator}>:</span>
         <label className={classes.inputGroup}>
           <button
+            disabled={precision === 'hour'}
             onClick={onIncrementMinute}
             aria-label="increment"
             type="button"
             className={classes.increment}
           />
           <input
+            readOnly={precision === 'hour'}
             onChange={handleMinuteChange}
             value={minute.name.toString().padStart(2, 0)}
             min={0}
@@ -68,6 +78,7 @@ const Clock = ({
             type="number"
           />
           <button
+            disabled={precision === 'hour'}
             onClick={onDecrementMinute}
             aria-label="decrement"
             type="button"
@@ -95,7 +106,9 @@ const Clock = ({
           </div>
         )}
         <div className={classes.action}>
-          <button type="button">✓</button>
+          <button type="button" onClick={handleDateSet}>
+            ✓
+          </button>
         </div>
       </fieldset>
     </div>
@@ -112,6 +125,7 @@ Clock.propTypes = {
   onHourChange: PropTypes.func.isRequired,
   onMinuteChange: PropTypes.func.isRequired,
   onDaytimeToggle: PropTypes.func.isRequired,
+  onDateSet: PropTypes.func.isRequired,
   timeFormat: PropTypes.oneOf(['12', '24']).isRequired,
   hour: PropTypes.shape({
     date: PropTypes.instanceOf(Date).isRequired,
@@ -122,6 +136,8 @@ Clock.propTypes = {
     date: PropTypes.instanceOf(Date).isRequired,
     name: PropTypes.number.isRequired,
   }).isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  precision: PropTypes.oneOf(['hour', 'minute']).isRequired,
 };
 
 export default Clock;
