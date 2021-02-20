@@ -9,6 +9,9 @@ const Clock = ({
   onDecrementHour,
   onIncrementHour,
   hour,
+  minute,
+  onIncrementMinute,
+  onDecrementMinute,
 }) => (
   <div className={classes.grid}>
     <fieldset className={classes.fieldset}>
@@ -37,11 +40,13 @@ const Clock = ({
       <span className={classes.separator}>:</span>
       <label className={classes.inputGroup}>
         <button
+          onClick={onIncrementMinute}
           aria-label="increment"
           type="button"
           className={classes.increment}
         />
         <input
+          value={minute.name}
           min={0}
           max={60}
           placeholder="mm"
@@ -50,6 +55,7 @@ const Clock = ({
           type="number"
         />
         <button
+          onClick={onDecrementMinute}
           aria-label="decrement"
           type="button"
           className={classes.decrement}
@@ -81,11 +87,17 @@ Clock.propTypes = {
   pmLabel: PropTypes.string.isRequired,
   onDecrementHour: PropTypes.func.isRequired,
   onIncrementHour: PropTypes.func.isRequired,
+  onIncrementMinute: PropTypes.func.isRequired,
+  onDecrementMinute: PropTypes.func.isRequired,
   timeFormat: PropTypes.oneOf(['12', '24']).isRequired,
   hour: PropTypes.shape({
     date: PropTypes.instanceOf(Date).isRequired,
     name: PropTypes.number.isRequired,
     daytimeLabel: PropTypes.string.isRequired,
+  }).isRequired,
+  minute: PropTypes.shape({
+    date: PropTypes.instanceOf(Date).isRequired,
+    name: PropTypes.number.isRequired,
   }).isRequired,
 };
 

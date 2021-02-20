@@ -2,6 +2,7 @@ import {
   startOfYear,
   getYear,
   getHours as getHourValue,
+  getMinutes as getMinuteValue,
   addYears,
   addDays,
   toDate,
@@ -14,6 +15,10 @@ import {
   min,
   max,
   eachHourOfInterval,
+  startOfHour,
+  endOfHour,
+  isBefore,
+  addMinutes,
 } from 'date-fns/fp';
 import {addMonth, ceilMonth, floorMonth} from 'lib/utils/dateUtils';
 import curry from 'lib/utils/curry';
@@ -170,5 +175,22 @@ export const getHours = (locale, timestamp, startDate, endDate) => {
     date,
     name: getLocalizedHourName(date),
     daytimeLabel: checkIsAm(date) ? amLabel : pmLabel,
+  }));
+};
+
+export const getMinutes = (timestamp, startDate, endDate) => {
+  const minuteStart = max([startOfHour(timestamp), startDate]);
+  const minuteEnd = min([endOfHour(timestamp), endDate]);
+  const result = [];
+  let minute = minuteStart;
+  while (isBefore(minuteEnd, minute)) {
+    // eslint-disable-next-line fp/no-mutating-methods
+    result.push(minute);
+    // eslint-disable-next-line fp/no-mutation
+    minute = addMinutes(1, minute);
+  }
+  return result.map(date => ({
+    date,
+    name: getMinuteValue(date),
   }));
 };

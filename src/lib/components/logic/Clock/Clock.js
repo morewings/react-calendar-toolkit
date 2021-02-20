@@ -3,17 +3,22 @@ import PropTypes from 'prop-types';
 import {useDaytimeLabels, useLocaleEnumerators} from 'lib/features/locale';
 import config from 'lib/utils/config';
 import {useDatepickerActions} from 'lib/features/datepicker';
-import {checkIsSameHour} from 'lib/utils/dateUtils';
+import {checkIsSameHour, checkIsSameMinute} from 'lib/utils/dateUtils';
 
 const getVisibleHour = (hours, visibleTimestamp) =>
   hours.find(({date}) => checkIsSameHour(date, visibleTimestamp));
+
+const getVisibleMinute = (minutes, visibleTimestamp) =>
+  minutes.find(({date}) => checkIsSameMinute(date, visibleTimestamp));
 
 const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
   const {amLabel, pmLabel, timeFormat} = useDaytimeLabels();
   const {setVisibility, setPrecision} = useDatepickerActions();
   const Component = renderAs;
-  const getItems = useLocaleEnumerators(precision);
-  const hours = getItems(visibleTimestamp, startDate, endDate);
+  const getHours = useLocaleEnumerators('hour');
+  const getMinutes = useLocaleEnumerators('minute');
+  const hours = getHours(visibleTimestamp, startDate, endDate);
+  const minutes = getMinutes(visibleTimestamp, startDate, endDate);
 
   const onIncrementHour = () => {
     const nextIndex =
@@ -22,6 +27,7 @@ const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
       setVisibility(hours[nextIndex].date);
     }
   };
+
   const onDecrementHour = () => {
     const nextIndex =
       hours.findIndex(({date}) => checkIsSameHour(date, visibleTimestamp)) - 1;
@@ -29,11 +35,34 @@ const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
       setVisibility(hours[nextIndex].date);
     }
   };
+
+  const onIncrementMinute = () => {
+    const nextIndex =
+      minutes.findIndex(({date}) => checkIsSameMinute(date, visibleTimestamp)) +
+      1;
+    if (nextIndex < minutes.length) {
+      setVisibility(minutes[nextIndex].date);
+    }
+  };
+
+  const onDecrementMinute = () => {
+    const nextIndex =
+      minutes.findIndex(({date}) => checkIsSameMinute(date, visibleTimestamp)) -
+      1;
+    if (nextIndex >= 0) {
+      setVisibility(minutes[nextIndex].date);
+    }
+  };
+
   return (
     <Component
+      precision={precision}
       hour={getVisibleHour(hours, visibleTimestamp)}
+      minute={getVisibleMinute(minutes, visibleTimestamp)}
       onIncrementHour={onIncrementHour}
       onDecrementHour={onDecrementHour}
+      onIncrementMinute={onIncrementMinute}
+      onDecrementMinute={onDecrementMinute}
       timeFormat={timeFormat}
       amLabel={amLabel}
       pmLabel={pmLabel}
