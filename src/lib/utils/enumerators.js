@@ -149,23 +149,23 @@ export {getDaysCurried as getDays};
  * @name getHours
  * @description Returns collection of hours Date objects based on provided date and interval
  * @param {Object} locale - Date-fns locale object
- * @param {DateUnion} timestamp - Unix timestamp or Date object
+ * @param {DateUnion} currentDate - Unix timestamp or Date object
  * @param {DateUnion} startDate - Unix timestamp or Date object
  * @param {DateUnion} endDate - Unix timestamp or Date object
- * @return {Array.<ItemDescription>}
+ * @return {Array.<{date: Date, name: string, daytimeLabel: string}>}
  */
-export const getHours = (locale, timestamp, startDate, endDate) => {
+export const getHours = (locale, currentDate, startDate, endDate) => {
   const {timeFormat, amLabel, pmLabel} = getDaytimeLabels(locale);
   const HALF_DAY = 12;
-  const hourStart = max([startOfDay(timestamp), startDate]);
-  const hourEnd = min([endOfDay(timestamp), endDate]);
-  const checkIsAm = date => getHourValue(date) <= HALF_DAY;
+  const hourStart = max([startOfDay(currentDate), startDate]);
+  const hourEnd = min([endOfDay(currentDate), endDate]);
+  const checkIsAm = date => getHourValue(date) < HALF_DAY;
   const getLocalizedHourName = date => {
     if (timeFormat === '24') {
       return getHourValue(date);
     }
     if (timeFormat === '12') {
-      return checkIsAm(date)
+      return checkIsAm(date) || getHourValue(date) - HALF_DAY === 0
         ? getHourValue(date)
         : getHourValue(date) - HALF_DAY;
     }
@@ -178,9 +178,18 @@ export const getHours = (locale, timestamp, startDate, endDate) => {
   }));
 };
 
-export const getMinutes = (timestamp, startDate, endDate) => {
-  const minuteStart = max([startOfHour(timestamp), startDate]);
-  const minuteEnd = min([endOfHour(timestamp), endDate]);
+/**
+ * @function
+ * @name getMinutes
+ * @description Returns collection of minutes Date objects based on provided date and interval
+ * @param {DateUnion} currentDate - Unix timestamp or Date object
+ * @param {DateUnion} startDate - Unix timestamp or Date object
+ * @param {DateUnion} endDate - Unix timestamp or Date object
+ * @return {Array.<{date: Date, name: string, daytimeLabel: string}>}
+ */
+export const getMinutes = (currentDate, startDate, endDate) => {
+  const minuteStart = max([startOfHour(currentDate), startDate]);
+  const minuteEnd = min([endOfHour(currentDate), endDate]);
   const result = [];
   let minute = minuteStart;
   while (isBefore(minuteEnd, minute)) {

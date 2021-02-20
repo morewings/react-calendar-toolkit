@@ -12,75 +12,95 @@ const Clock = ({
   minute,
   onIncrementMinute,
   onDecrementMinute,
-}) => (
-  <div className={classes.grid}>
-    <fieldset className={classes.fieldset}>
-      <label className={classes.inputGroup}>
-        <button
-          onClick={onIncrementHour}
-          aria-label="increment"
-          type="button"
-          className={classes.increment}
-        />
-        <input
-          value={hour.name}
-          placeholder="hh"
-          max={timeFormat === '12' ? 12 : 24}
-          min={0}
-          className={classes.input}
-          type="number"
-        />
-        <button
-          onClick={onDecrementHour}
-          aria-label="decrement"
-          type="button"
-          className={classes.decrement}
-        />
-      </label>
-      <span className={classes.separator}>:</span>
-      <label className={classes.inputGroup}>
-        <button
-          onClick={onIncrementMinute}
-          aria-label="increment"
-          type="button"
-          className={classes.increment}
-        />
-        <input
-          value={minute.name}
-          min={0}
-          max={60}
-          placeholder="mm"
-          maxLength={2}
-          className={classes.input}
-          type="number"
-        />
-        <button
-          onClick={onDecrementMinute}
-          aria-label="decrement"
-          type="button"
-          className={classes.decrement}
-        />
-      </label>
-      {timeFormat === '12' && (
-        <div className={classes.dayTime}>
+  onHourChange,
+  onMinuteChange,
+  onDaytimeToggle,
+}) => {
+  const convertToNumber = value => parseInt(value, 10);
+  const handleHourChange = e => {
+    onHourChange(convertToNumber(e.target.value));
+  };
+  const handleMinuteChange = e => {
+    onMinuteChange(convertToNumber(e.target.value));
+  };
+  return (
+    <div className={classes.grid}>
+      <fieldset className={classes.fieldset}>
+        <label className={classes.inputGroup}>
           <button
-            className={hour.daytimeLabel === amLabel ? classes.active : ''}
-            type="button">
-            {amLabel}
-          </button>
+            onClick={onIncrementHour}
+            aria-label="increment"
+            type="button"
+            className={classes.increment}
+          />
+          <input
+            onChange={handleHourChange}
+            value={hour.name.toString().padStart(2, 0)}
+            placeholder="hh"
+            max={timeFormat === '12' ? 12 : 24}
+            min={0}
+            className={classes.input}
+            type="number"
+          />
           <button
-            className={hour.daytimeLabel === pmLabel ? classes.active : ''}
-            type="button">
-            {pmLabel}
-          </button>
+            onClick={onDecrementHour}
+            aria-label="decrement"
+            type="button"
+            className={classes.decrement}
+          />
+        </label>
+        <span className={classes.separator}>:</span>
+        <label className={classes.inputGroup}>
+          <button
+            onClick={onIncrementMinute}
+            aria-label="increment"
+            type="button"
+            className={classes.increment}
+          />
+          <input
+            onChange={handleMinuteChange}
+            value={minute.name.toString().padStart(2, 0)}
+            min={0}
+            max={60}
+            placeholder="mm"
+            maxLength={2}
+            className={classes.input}
+            type="number"
+          />
+          <button
+            onClick={onDecrementMinute}
+            aria-label="decrement"
+            type="button"
+            className={classes.decrement}
+          />
+        </label>
+        {timeFormat === '12' && (
+          <div className={classes.dayTime}>
+            <button
+              onClick={() => {
+                onDaytimeToggle(amLabel);
+              }}
+              disabled={hour.daytimeLabel === amLabel}
+              type="button">
+              {amLabel}
+            </button>
+            <button
+              onClick={() => {
+                onDaytimeToggle(pmLabel);
+              }}
+              disabled={hour.daytimeLabel === pmLabel}
+              type="button">
+              {pmLabel}
+            </button>
+          </div>
+        )}
+        <div className={classes.action}>
+          <button type="button">✓</button>
         </div>
-      )}
-      <div className={classes.action}>
-        <button type="button">✓</button>
-      </div>
-    </fieldset>
-  </div>
-);
+      </fieldset>
+    </div>
+  );
+};
 
 Clock.propTypes = {
   amLabel: PropTypes.string.isRequired,
@@ -89,6 +109,9 @@ Clock.propTypes = {
   onIncrementHour: PropTypes.func.isRequired,
   onIncrementMinute: PropTypes.func.isRequired,
   onDecrementMinute: PropTypes.func.isRequired,
+  onHourChange: PropTypes.func.isRequired,
+  onMinuteChange: PropTypes.func.isRequired,
+  onDaytimeToggle: PropTypes.func.isRequired,
   timeFormat: PropTypes.oneOf(['12', '24']).isRequired,
   hour: PropTypes.shape({
     date: PropTypes.instanceOf(Date).isRequired,

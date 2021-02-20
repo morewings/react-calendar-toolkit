@@ -98,10 +98,6 @@
   padding: 0;
 }
 
-.dayTime button.active {
-  color: var(--baseColor);
-}
-
 .action {
   display: flex;
   flex-direction: row;
@@ -132,6 +128,10 @@
   width: 0;
 }
 
+.dayTime button:disabled {
+  color: var(--baseColor);
+}
+
 .action button:hover {
   background: var(--baseColor);
   color: white;
@@ -139,5 +139,10 @@
 }
 
 .inputGroup button:hover {
+  cursor: pointer;
+}
+
+.dayTime button:not(:disabled):hover {
+  color: var(--baseColor);
   cursor: pointer;
 }

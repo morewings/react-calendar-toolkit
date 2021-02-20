@@ -13,7 +13,7 @@ const getVisibleMinute = (minutes, visibleTimestamp) =>
 
 const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
   const {amLabel, pmLabel, timeFormat} = useDaytimeLabels();
-  const {setVisibility, setPrecision} = useDatepickerActions();
+  const {setVisibility} = useDatepickerActions();
   const Component = renderAs;
   const getHours = useLocaleEnumerators('hour');
   const getMinutes = useLocaleEnumerators('minute');
@@ -54,6 +54,30 @@ const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
     }
   };
 
+  const handleHourChange = value => {
+    const hourLimit = timeFormat === '12' ? 12 : 24;
+    if (!isNaN(value) && value >= 0 && value <= hourLimit) {
+      setVisibility(hours[value].date);
+    }
+  };
+
+  const handleMinuteChange = value => {
+    if (!isNaN(value) && value >= 0 && value < 60) {
+      setVisibility(minutes[value].date);
+    }
+  };
+
+  const handleDaytimeToggle = daytime => {
+    const currentIndex = hours.findIndex(({date}) =>
+      checkIsSameHour(date, visibleTimestamp)
+    );
+    const nextIndex =
+      daytime === pmLabel ? currentIndex + 12 : currentIndex - 12;
+    if (nextIndex >= 0 && nextIndex < hours.length) {
+      setVisibility(hours[nextIndex].date);
+    }
+  };
+
   return (
     <Component
       precision={precision}
@@ -63,6 +87,9 @@ const Clock = ({renderAs, visibleTimestamp, startDate, endDate, precision}) => {
       onDecrementHour={onDecrementHour}
       onIncrementMinute={onIncrementMinute}
       onDecrementMinute={onDecrementMinute}
+      onHourChange={handleHourChange}
+      onMinuteChange={handleMinuteChange}
+      onDaytimeToggle={handleDaytimeToggle}
       timeFormat={timeFormat}
       amLabel={amLabel}
       pmLabel={pmLabel}
