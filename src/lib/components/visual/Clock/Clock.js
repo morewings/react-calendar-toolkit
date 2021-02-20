@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import config from 'lib/utils/config';
 import classes from './Clock.module.css';
 
 const Clock = ({
