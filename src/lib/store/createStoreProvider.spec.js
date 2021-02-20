@@ -1,18 +1,17 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {render} from '@testing-library/react';
+import {trackProps, DummyComponent} from 'lib/utils/assertChildProps';
 import createStoreProvider from 'lib/store/createStoreProvider';
-
-const Child = jest.fn(() => <Fragment>Child</Fragment>);
 
 const reducer = () => {};
 
 const Context = {
-  Provider: jest.fn(({children}) => <Fragment>{children}</Fragment>),
+  Provider: DummyComponent,
 };
 
 describe('createStoreProvider', () => {
   beforeEach(() => {
-    Context.Provider.mockClear();
+    trackProps.mockClear();
   });
 
   it('creates Store Provider HOC', () => {
@@ -24,7 +23,7 @@ describe('createStoreProvider', () => {
 
     const {asFragment} = render(
       <Provider>
-        <Child />
+        <DummyComponent />
       </Provider>
     );
 
@@ -40,11 +39,11 @@ describe('createStoreProvider', () => {
 
     render(
       <Provider>
-        <Child />
+        <DummyComponent />
       </Provider>
     );
 
-    expect(Context.Provider).toHaveBeenCalledTimes(1);
-    expect(Context.Provider.mock.calls[0][0].value).toMatchSnapshot();
+    expect(trackProps).toHaveBeenCalledTimes(1);
+    expect(trackProps.mock.calls[0][0].value).toMatchSnapshot();
   });
 });

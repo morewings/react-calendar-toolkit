@@ -7,6 +7,7 @@ import {
   checkIsSameMonth,
   checkIsSameYear,
 } from 'lib/utils/dateUtils';
+import {trackProps, DummyComponent} from 'lib/utils/assertChildProps';
 import Calendar from './Calendar';
 
 const today = new Date(2011, 10, 11).getTime(); // 11.11.2011
@@ -23,8 +24,6 @@ const matchNextYear = ({date, precision}) =>
 const startDate = new Date(2000, 11, 12); // 12.12.2000
 const endDate = new Date(2022, 11, 12); // 12.12.2022
 
-const MockComponent = jest.fn(() => <div>MockComponent</div>);
-
 const renderWithProviderProps = (Component, props = {}) =>
   render(<Component />, {
     wrapper: ({children}) => <Provider {...props}>{children}</Provider>,
@@ -36,7 +35,7 @@ const defaultProps = {
   todayTimestamp: today,
   selectedTimestamp: yesterday,
   visibleTimestamp: tomorrow,
-  renderAs: MockComponent,
+  renderAs: DummyComponent,
   precision: 'day',
   startDate: new Date(2000, 11, 12), // stays after refactoring
   endDate: new Date(2022, 11, 12), // stays after refactoring
@@ -47,7 +46,7 @@ const defaultProps = {
 
 describe('Calendar', () => {
   beforeEach(() => {
-    MockComponent.mockClear();
+    trackProps.mockClear();
     defaultProps.highlightDate.mockReset();
     defaultProps.disableDate.mockReset();
   });
@@ -96,7 +95,7 @@ describe('Calendar', () => {
         );
         expect(asFragment()).toMatchSnapshot();
 
-        MockComponent.mock.calls.forEach(call => {
+        trackProps.mock.calls.forEach(call => {
           expect(call[0]).toMatchSnapshot();
         });
       });
@@ -130,7 +129,7 @@ describe('Calendar', () => {
         );
         expect(asFragment()).toMatchSnapshot();
 
-        MockComponent.mock.calls.forEach(call => {
+        trackProps.mock.calls.forEach(call => {
           expect(call[0]).toMatchSnapshot();
         });
       });
