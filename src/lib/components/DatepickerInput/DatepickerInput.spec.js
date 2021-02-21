@@ -1,22 +1,15 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {InputMockProvider as Provider} from 'lib/utils/testProvider';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import DatepickerInput from './DatepickerInput';
 
-const Datepicker = jest.fn(() => <div>Datepicker</div>);
-const Input = jest.fn(() => <div>Input</div>);
-const PopoverProvider = jest.fn(({children}) => (
-  <div data-testid="Popover">{children}</div>
-));
-const PopoverWrapper = jest.fn(({children}) => (
-  <div data-testid="PopoverWrapper">{children}</div>
-));
-const ModalProvider = jest.fn(({children}) => (
-  <div data-testid="Modal">{children}</div>
-));
-const ModalWrapper = jest.fn(({children}) => (
-  <div data-testid="ModalWrapper">{children}</div>
-));
+const [Datepicker, DatepickerProps] = assertChildProps();
+const [Input, InputProps] = assertChildProps();
+const [PopoverProvider, PopoverProviderProps] = assertChildProps();
+const [PopoverWrapper, PopoverWrapperProps] = assertChildProps();
+const [ModalProvider, ModalProviderProps] = assertChildProps();
+const [ModalWrapper, ModalWrapperProps] = assertChildProps();
 
 const onDateSet = jest.fn();
 
@@ -41,25 +34,23 @@ const renderWithProps = (props = {}) =>
 describe('Datepicker', () => {
   beforeEach(() => {
     onDateSet.mockClear();
-    Datepicker.mockClear();
-    Input.mockClear();
-    PopoverProvider.mockClear();
-    PopoverWrapper.mockClear();
-    ModalProvider.mockClear();
-    ModalWrapper.mockClear();
+    DatepickerProps.mockClear();
+    InputProps.mockClear();
+    PopoverProviderProps.mockClear();
+    PopoverWrapperProps.mockClear();
+    ModalProviderProps.mockClear();
+    ModalWrapperProps.mockClear();
   });
 
   it('renders with Popover by default', () => {
     const {asFragment} = renderWithProps();
     expect(asFragment()).toMatchSnapshot();
-    expect(PopoverProvider.mock.calls[0][0]).toMatchSnapshot();
-    expect(Input.mock.calls[0][0]).toMatchSnapshot();
+    expect(PopoverProviderProps.mock.calls[0][0]).toMatchSnapshot();
   });
 
   it('renders with Modal if mode === `modal`', () => {
     const {asFragment} = renderWithProps({mode: 'modal'});
     expect(asFragment()).toMatchSnapshot();
-    expect(ModalProvider.mock.calls[0][0]).toMatchSnapshot();
-    expect(Input.mock.calls[0][0]).toMatchSnapshot();
+    expect(ModalProviderProps.mock.calls[0][0]).toMatchSnapshot();
   });
 });

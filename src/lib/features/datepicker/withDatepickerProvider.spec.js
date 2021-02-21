@@ -1,16 +1,17 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {render} from '@testing-library/react';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import withDatepickerProvider from './withDatepickerProvider';
 
-const Child = jest.fn(() => <Fragment>Child</Fragment>);
+const [DummyComponent, trackProps] = assertChildProps();
 
 describe('withDatepickerProvider', () => {
   beforeEach(() => {
-    Child.mockClear();
+    trackProps.mockClear();
   });
 
   it('creates DatepickerProvider HOC', () => {
-    const Component = withDatepickerProvider(Child);
+    const Component = withDatepickerProvider(DummyComponent);
     const {asFragment} = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
@@ -19,9 +20,9 @@ describe('withDatepickerProvider', () => {
     const props = {
       foo: 'bar',
     };
-    const Component = withDatepickerProvider(Child);
+    const Component = withDatepickerProvider(DummyComponent);
     render(<Component {...props} />);
-    expect(Child).toHaveBeenCalledTimes(1);
-    expect(Child.mock.calls[0][0]).toStrictEqual(props);
+    expect(trackProps).toHaveBeenCalledTimes(1);
+    expect(trackProps.mock.calls[0][0]).toStrictEqual(props);
   });
 });

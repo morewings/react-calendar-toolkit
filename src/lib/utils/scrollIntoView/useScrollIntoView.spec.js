@@ -30,27 +30,15 @@ const ref = {
   current: child,
 };
 
-const scrollIntoView = jest.fn();
-
 const parentAddEventListener = jest.spyOn(parent, 'addEventListener');
 const windowRemoveEventListener = jest.spyOn(window, 'removeEventListener');
 
 describe('useOnClickOutside', () => {
   afterEach(() => {
-    scrollIntoView.mockClear();
     scrollStop.mockClear();
     noScroll.mockClear();
     parentAddEventListener.mockClear();
-    scrollIntoView.mockClear();
     windowRemoveEventListener.mockClear();
-  });
-
-  beforeAll(() => {
-    window.HTMLElement.prototype.scrollIntoView = scrollIntoView; // eslint-disable-line fp/no-mutation
-  });
-
-  afterAll(() => {
-    window.HTMLElement.prototype.scrollIntoView = undefined; // eslint-disable-line fp/no-mutation
   });
 
   it('renders', () => {
@@ -69,14 +57,12 @@ describe('useOnClickOutside', () => {
     renderHook(() => useScrollIntoView({}, '#parent', true));
     expect(parentAddEventListener).not.toHaveBeenCalled();
     expect(scrollStop).not.toHaveBeenCalled();
-    expect(scrollIntoView).not.toHaveBeenCalled();
   });
 
   it('does not do anything, when false condition provided', () => {
     renderHook(() => useScrollIntoView(ref, '#parent', false));
     expect(parentAddEventListener).not.toHaveBeenCalled();
     expect(scrollStop).not.toHaveBeenCalled();
-    expect(scrollIntoView).not.toHaveBeenCalled();
   });
 
   it('attaches listeners and scrolls element into view, when valid HTMLElement and true condition provided', () => {
@@ -88,6 +74,5 @@ describe('useOnClickOutside', () => {
       false
     );
     expect(scrollStop).toHaveBeenCalledTimes(1);
-    expect(scrollIntoView).toHaveBeenCalledTimes(1);
   });
 });

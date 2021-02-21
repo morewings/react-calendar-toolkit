@@ -2,22 +2,14 @@
 
 exports[`Datepicker renders with Modal if mode === \`modal\` 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="Modal"
-  >
-    <div>
-      <div>
-        Input
-      </div>
-    </div>
-  </div>
+  Child
 </DocumentFragment>
 `;
 
 exports[`Datepicker renders with Modal if mode === \`modal\` 2`] = `
 Object {
   "children": <ForwardRef>
-    <mockConstructor
+    <Component
       date={2020-01-08T00:00:00.000Z}
       onChange={[MockFunction]}
       toggleDatepicker={[Function]}
@@ -28,37 +20,20 @@ Object {
   "renderDatepickerAs": [Function],
   "toggleDatepicker": [Function],
   "wrapModalWith": [Function],
-  "wrapPopoverWith": [MockFunction],
-}
-`;
-
-exports[`Datepicker renders with Modal if mode === \`modal\` 3`] = `
-Object {
-  "date": 2020-01-08T00:00:00.000Z,
-  "onChange": [MockFunction],
-  "toggleDatepicker": [Function],
-  "value": "01/08/2020",
+  "wrapPopoverWith": [Function],
 }
 `;
 
 exports[`Datepicker renders with Popover by default 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="Popover"
-  >
-    <div>
-      <div>
-        Input
-      </div>
-    </div>
-  </div>
+  Child
 </DocumentFragment>
 `;
 
 exports[`Datepicker renders with Popover by default 2`] = `
 Object {
   "children": <ForwardRef>
-    <mockConstructor
+    <Component
       date={2020-01-08T00:00:00.000Z}
       onChange={[MockFunction]}
       toggleDatepicker={[Function]}
@@ -69,15 +44,6 @@ Object {
   "renderDatepickerAs": [Function],
   "toggleDatepicker": [Function],
   "wrapModalWith": [Function],
-  "wrapPopoverWith": [MockFunction],
-}
-`;
-
-exports[`Datepicker renders with Popover by default 3`] = `
-Object {
-  "date": 2020-01-08T00:00:00.000Z,
-  "onChange": [MockFunction],
-  "toggleDatepicker": [Function],
-  "value": "01/08/2020",
+  "wrapPopoverWith": [Function],
 }
 `;
