@@ -11,7 +11,7 @@ exports[`ModalProvider renders with modal 1`] = `
   </div>
   <div
     class="container"
-    style="--modalBgColor: rgba(0, 0, 0, 0.38);"
+    style="--modalBgColor: var(--gray);"
   >
     <div
       data-testid="wrapper"

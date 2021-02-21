@@ -42,7 +42,7 @@ const defaultProps = {
   highlightWeekends: true,
 };
 
-describe('Calendar > useLogic ', () => {
+describe.skip('Calendar > useLogic ', () => {
   beforeEach(() => {
     defaultProps.onDateSet.mockClear();
     matchYesterday.mockClear();
@@ -105,7 +105,7 @@ describe('Calendar > useLogic ', () => {
     ${'day'}   | ${today}    | ${matchTrue}
     ${'day'}   | ${tomorrow} | ${matchTrue}
   `('getIsHighlighted', ({precision, date, matcher}) => {
-    it(`invokes matcher with arguments`, () => {
+    it(`invokes matcher with arguments - ${precision}`, () => {
       const initialProps = {
         ...defaultProps,
         precision,

@@ -2,27 +2,28 @@ import React from 'react';
 import {render} from '@testing-library/react';
 import {renderHook} from '@testing-library/react-hooks';
 import defaultLocale from 'date-fns/locale/en-US';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import withLocaleContext, {
   useLocaleContext,
   Provider,
 } from './withLocaleContext';
 
-const Mock = jest.fn(() => 'Mock');
+const [DummyComponent, trackProps] = assertChildProps();
 
 describe('withLocaleContext', () => {
   beforeEach(() => {
-    Mock.mockClear();
+    trackProps.mockClear();
   });
 
   it('returns valid React Component', () => {
-    const Wrapped = withLocaleContext(Mock);
+    const Wrapped = withLocaleContext(DummyComponent);
     expect(Wrapped).toBeInstanceOf(Function);
     const {container} = render(<Wrapped />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('passes props to provided Component', () => {
-    const Wrapped = withLocaleContext(Mock);
+    const Wrapped = withLocaleContext(DummyComponent);
     const props = {
       hello: 'world',
     };
@@ -30,7 +31,7 @@ describe('withLocaleContext', () => {
       foo: 'bar',
     };
     render(<Wrapped {...props} dateFnsLocale={customLocale} />);
-    expect(Mock.mock.calls[0][0]).toEqual(props);
+    expect(trackProps.mock.calls[0][0]).toEqual(props);
   });
 });
 

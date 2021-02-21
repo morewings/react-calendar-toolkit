@@ -76,6 +76,7 @@ const Calendar = ({
 };
 
 Calendar.propTypes = {
+  // TODO: validate if we need to use string here
   precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
   wrapperClassName: PropTypes.string.isRequired,
   renderAs: PropTypes.elementType.isRequired,

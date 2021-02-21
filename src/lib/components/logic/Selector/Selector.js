@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import config from 'lib/utils/config';
 import {convertToDate} from 'lib/utils/dateUtils';
 import {useMonthStepperLabels} from 'lib/features/locale';
 import useLogic from './useLogic';
@@ -43,7 +44,7 @@ Selector.propTypes = {
   renderAs: PropTypes.elementType.isRequired,
   startDate: PropTypes.instanceOf(Date).isRequired,
   endDate: PropTypes.instanceOf(Date).isRequired,
-  precision: PropTypes.oneOf(['year', 'month', 'day']).isRequired,
+  precision: PropTypes.oneOf(config.supportedPrecisions).isRequired,
 };
 
 export default Selector;

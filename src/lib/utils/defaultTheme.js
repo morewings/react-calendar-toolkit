@@ -1,8 +1,7 @@
-const baseColor = '#43a047';
-const gray = 'rgba(0, 0, 0, 0.38)';
-const borderRadius = '4px';
-
 const defaultTheme = {
+  gray: 'rgba(0, 0, 0, 0.38)',
+  baseColor: '#43a047',
+  borderRadius: '4px',
   /** Set font for datepicker */
   fontPrimary: 'Helvetica Neue',
   /** Font, which is applied, if --fontPrimary is not available */
@@ -26,25 +25,25 @@ const defaultTheme = {
   /** Day, month, year entries height */
   entryHeight: '32px',
   entryMargin: '1px',
-  datepickerBorderRadius: borderRadius,
-  entryBorderRadius: borderRadius,
+  datepickerBorderRadius: 'var(--borderRadius)',
+  entryBorderRadius: 'var(--borderRadius)',
   /** Background color of Calendar */
   bgColor: 'white',
   /** Base color for text */
   textColor: 'black',
-  headerBgColor: baseColor,
+  headerBgColor: 'var(--baseColor)',
   weekendTextColor: 'red',
   headerTextColor: 'white',
-  borderColor: gray,
-  modalBgColor: gray,
-  weekDayColor: gray,
+  borderColor: 'var(--gray)',
+  modalBgColor: 'var(--gray)',
+  weekDayColor: 'var(--gray)',
   entryHoverColor: 'rgba(0, 0, 0, 0.08)',
-  entrySelectedColor: baseColor,
+  entrySelectedColor: 'var(--baseColor)',
   entryHighlightColor: 'lightblue',
   inputWidth: '90px',
   inputPadding: '8px',
-  inputBorderRadius: borderRadius,
-  inputBorderColor: gray,
+  inputBorderRadius: 'var(--borderRadius)',
+  inputBorderColor: 'var(--gray)',
   inputHighlightColor: 'lightblue',
 };
 

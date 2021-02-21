@@ -2,9 +2,7 @@
 
 exports[`Header renders 1`] = `
 <DocumentFragment>
-  <div>
-    MockComponent
-  </div>
+  Child
 </DocumentFragment>
 `;
 

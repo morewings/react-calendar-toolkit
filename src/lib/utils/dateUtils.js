@@ -10,6 +10,8 @@ import {
   isWithinInterval,
   isWeekend,
   isSameDay,
+  isSameHour,
+  isSameMinute,
   getDate,
   startOfMonth,
   endOfMonth,
@@ -66,6 +68,26 @@ export const checkIsSameYear = isSameYear;
  * @return {boolean}
  */
 export const checkIsSameDay = isSameDay;
+
+/**
+ * @function
+ * @name checkIsSameHour
+ * @description Checks if two dates belong to the same hour
+ * @param {DateUnion} dateLeft - Date to check
+ * @param {DateUnion} dateRight - Date to check
+ * @return {boolean}
+ */
+export const checkIsSameHour = isSameHour;
+
+/**
+ * @function
+ * @name checkIsSameMinute
+ * @description Checks if two dates belong to the same minute
+ * @param {DateUnion} dateLeft - Date to check
+ * @param {DateUnion} dateRight - Date to check
+ * @return {boolean}
+ */
+export const checkIsSameMinute = isSameMinute;
 
 /**
  * @function

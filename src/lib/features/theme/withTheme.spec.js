@@ -1,24 +1,25 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import {renderHook} from '@testing-library/react-hooks';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import withTheme, {useThemeContext, Provider} from './withTheme';
 
-const Mock = jest.fn(() => 'Mock');
+const [DummyComponent, trackProps] = assertChildProps();
 
 describe('withTheme', () => {
   beforeEach(() => {
-    Mock.mockClear();
+    trackProps.mockClear();
   });
 
   it('returns valid React Component', () => {
-    const Wrapped = withTheme(Mock);
+    const Wrapped = withTheme(DummyComponent);
     expect(Wrapped).toBeInstanceOf(Function);
     const {container} = render(<Wrapped />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('passes props to provided Component', () => {
-    const Wrapped = withTheme(Mock);
+    const Wrapped = withTheme(DummyComponent);
     const props = {
       hello: 'world',
     };
@@ -26,7 +27,7 @@ describe('withTheme', () => {
       foo: 'bar',
     };
     render(<Wrapped {...props} theme={theme} />);
-    expect(Mock.mock.calls[0][0]).toEqual(props);
+    expect(trackProps.mock.calls[0][0]).toEqual(props);
   });
 });
 

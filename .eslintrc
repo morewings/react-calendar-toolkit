@@ -51,7 +51,9 @@
           {"property": "current"}
         ]
       }
-    ]
+    ],
+    // TODO: Update react-scripts and check if it's working
+    "jsx-a11y/label-has-associated-control": [0]
   },
   "plugins": ["prettier", "fp"],
   "settings": {

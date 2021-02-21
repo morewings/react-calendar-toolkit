@@ -1,6 +1,8 @@
 import {
   startOfYear,
   getYear,
+  getHours as getHourValue,
+  getMinutes as getMinuteValue,
   addYears,
   addDays,
   toDate,
@@ -8,9 +10,19 @@ import {
   endOfWeekWithOptions,
   startOfWeekWithOptions,
   getDate,
+  startOfDay,
+  endOfDay,
+  min,
+  max,
+  eachHourOfInterval,
+  startOfHour,
+  endOfHour,
+  isBefore,
+  addMinutes,
 } from 'date-fns/fp';
 import {addMonth, ceilMonth, floorMonth} from 'lib/utils/dateUtils';
 import curry from 'lib/utils/curry';
+import getDaytimeLabels from 'lib/utils/getDaytimeLabels';
 
 /**
  * Item name
@@ -38,7 +50,7 @@ import curry from 'lib/utils/curry';
  * @function
  * @name getWeekDayNames
  * @description Returns array of weekday names
- * @param {Object} locale - Locale object
+ * @param {Object} locale - Date-fns locale object
  * @return {Array.<ItemName>}
  */
 export const getWeekDayNames = locale =>
@@ -84,7 +96,7 @@ export {getYearsCurried as getYears};
  * @function
  * @name getMonths
  * @description Returns collection of month description objects based on provided date
- * @param {Object} locale - Locale object
+ * @param {Object} locale - Date-fns locale object
  * @param {DateUnion} date - Date or Unix timestamp
  * @return {Array.<ItemDescription>}
  */
@@ -110,7 +122,7 @@ export {getMonthsCurried as getMonths};
  * @function
  * @name getDays
  * @description Returns collection of day description objects based on provided date
- * @param {Object} locale - Locale object
+ * @param {Object} locale - Date-fns locale object
  * @param {DateUnion} timestamp - Unix timestamp or Date object
  * @return {Array.<ItemDescription>}
  */
@@ -131,3 +143,63 @@ const getDays = (locale, timestamp) => {
 const getDaysCurried = curry(getDays);
 
 export {getDaysCurried as getDays};
+
+/**
+ * @function
+ * @name getHours
+ * @description Returns collection of hours Date objects based on provided date and interval
+ * @param {Object} locale - Date-fns locale object
+ * @param {DateUnion} currentDate - Unix timestamp or Date object
+ * @param {DateUnion} startDate - Unix timestamp or Date object
+ * @param {DateUnion} endDate - Unix timestamp or Date object
+ * @return {Array.<{date: Date, name: string, daytimeLabel: string}>}
+ */
+export const getHours = (locale, currentDate, startDate, endDate) => {
+  const {timeFormat, amLabel, pmLabel} = getDaytimeLabels(locale);
+  const HALF_DAY = 12;
+  const hourStart = max([startOfDay(currentDate), startDate]);
+  const hourEnd = min([endOfDay(currentDate), endDate]);
+  const checkIsAm = date => getHourValue(date) < HALF_DAY;
+  const getLocalizedHourName = date => {
+    if (timeFormat === '24') {
+      return getHourValue(date);
+    }
+    if (timeFormat === '12') {
+      return checkIsAm(date) || getHourValue(date) - HALF_DAY === 0
+        ? getHourValue(date)
+        : getHourValue(date) - HALF_DAY;
+    }
+    return null;
+  };
+  return eachHourOfInterval({start: hourStart, end: hourEnd}).map(date => ({
+    date,
+    name: getLocalizedHourName(date),
+    daytimeLabel: checkIsAm(date) ? amLabel : pmLabel,
+  }));
+};
+
+/**
+ * @function
+ * @name getMinutes
+ * @description Returns collection of minutes Date objects based on provided date and interval
+ * @param {DateUnion} currentDate - Unix timestamp or Date object
+ * @param {DateUnion} startDate - Unix timestamp or Date object
+ * @param {DateUnion} endDate - Unix timestamp or Date object
+ * @return {Array.<{date: Date, name: string, daytimeLabel: string}>}
+ */
+export const getMinutes = (currentDate, startDate, endDate) => {
+  const minuteStart = max([startOfHour(currentDate), startDate]);
+  const minuteEnd = min([endOfHour(currentDate), endDate]);
+  const result = [];
+  let minute = minuteStart;
+  while (isBefore(minuteEnd, minute)) {
+    // eslint-disable-next-line fp/no-mutating-methods
+    result.push(minute);
+    // eslint-disable-next-line fp/no-mutation
+    minute = addMinutes(1, minute);
+  }
+  return result.map(date => ({
+    date,
+    name: getMinuteValue(date),
+  }));
+};
