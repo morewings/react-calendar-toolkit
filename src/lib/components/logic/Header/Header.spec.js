@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import createStoreProvider from 'lib/store';
+import {assertChildProps} from 'lib/utils/assertChildProps';
 import DatepickerContext from 'lib/features/datepicker/context';
 import Header from './Header';
 
@@ -16,7 +17,7 @@ const createStoreProviderWithState = state =>
     context: DatepickerContext,
   });
 
-const MockComponent = jest.fn(() => <div>MockComponent</div>);
+const [MockComponent, mockComponentProps] = assertChildProps();
 
 const Provider = createStoreProviderWithState({
   selectedTimestamp,
@@ -25,7 +26,7 @@ const Provider = createStoreProviderWithState({
 
 describe('Header', () => {
   beforeEach(() => {
-    MockComponent.mockClear();
+    mockComponentProps.mockClear();
   });
 
   it('renders', () => {
@@ -42,6 +43,6 @@ describe('Header', () => {
     render(<Header title="Title" renderAs={MockComponent} />, {
       wrapper: ({children}) => <Provider>{children}</Provider>,
     });
-    expect(MockComponent.mock.calls[0][0]).toMatchSnapshot();
+    expect(mockComponentProps.mock.calls[0][0]).toMatchSnapshot();
   });
 });
