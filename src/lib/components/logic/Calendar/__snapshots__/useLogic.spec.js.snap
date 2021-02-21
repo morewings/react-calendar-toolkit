@@ -3,8 +3,8 @@
 exports[`Calendar > useLogic  getIsDisabled checks if date is within provided range,  if precision === day 1`] = `
 Array [
   Object {
-    "date": 1320883200000,
-    "isWeekend": false,
+    "date": 1323561600000,
+    "isWeekend": true,
     "precision": "day",
   },
 ]
@@ -13,8 +13,8 @@ Array [
 exports[`Calendar > useLogic  getIsDisabled checks if date is within provided range,  if precision === day 2`] = `
 Array [
   Object {
-    "date": 1323561600000,
-    "isWeekend": true,
+    "date": 1318291200000,
+    "isWeekend": false,
     "precision": "day",
   },
 ]
@@ -25,46 +25,6 @@ Array [
   Object {
     "date": 1318291200000,
     "isWeekend": false,
-    "precision": "day",
-  },
-]
-`;
-
-exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 1`] = `
-Array [
-  Object {
-    "date": 1320969600000,
-    "isWeekend": false,
-    "precision": "year",
-  },
-]
-`;
-
-exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 2`] = `
-Array [
-  Object {
-    "date": 1320969600000,
-    "isWeekend": false,
-    "precision": "month",
-  },
-]
-`;
-
-exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 3`] = `
-Array [
-  Object {
-    "date": 1320969600000,
-    "isWeekend": false,
-    "precision": "day",
-  },
-]
-`;
-
-exports[`Calendar > useLogic  getIsHighlighted invokes matcher with arguments 4`] = `
-Array [
-  Object {
-    "date": 1321056000000,
-    "isWeekend": true,
     "precision": "day",
   },
 ]
