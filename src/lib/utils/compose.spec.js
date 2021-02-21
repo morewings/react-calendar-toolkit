@@ -8,7 +8,6 @@ describe('compose function', () => {
   it('return curried function', () => {
     const value = 1;
     const getResult = compose(fn1, fn2, fn3);
-    expect(getResult()).toMatchSnapshot();
     const result = getResult(value);
     expect(result).toBe(7);
   });
