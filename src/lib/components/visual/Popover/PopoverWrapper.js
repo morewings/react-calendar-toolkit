@@ -51,7 +51,11 @@ PopoverWrapper.propTypes = {
   /** Method to toggle Datepicker visibility */
   toggleDatepicker: PropTypes.func.isRequired,
   /** Calculated position of Popover to fit into viewport */
-  position: PropTypes.oneOf(['bottom', 'top', 'left', 'right']).isRequired,
+  position: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
+};
+
+PopoverWrapper.defaultProps = {
+  position: 'bottom',
 };
 
 export default PopoverWrapper;
